@@ -1,0 +1,34 @@
+# NET API — Cloudflare Worker configuration.
+#
+# Deploy with:
+#   npx wrangler deploy
+# Set the two secrets first (they must never be committed):
+#   npx wrangler secret put ADMIN_TOKEN        # required for /api/leads and DELETE
+#   npx wrangler secret put ALLOWED_ORIGINS    # optional; comma-separated, defaults to "*"
+#
+# Then paste the deployed URL into the site's <meta name="net-api" content="...">
+# on every page, or set it once per browser with:
+#   NET.api.setEndpoint("https://net-api.<your-subdomain>.workers.dev")
+
+name = "net-api"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+workers_dev = true
+
+# The store. SQLite-backed Durable Object — the storage default for new classes.
+[[durable_objects.bindings]]
+name = "NET_STORE"
+class_name = "NETStore"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["NETStore"]
+
+[vars]
+# Non-secret configuration only. Leave ALLOWED_ORIGINS unset (or "*") until the
+# site has a fixed origin, then lock it to that origin — a wide-open CORS policy
+# on an enquiry endpoint is how a form becomes somebody else's form.
+SERVICE_NOTE = "NET enquiry API — see backend/README.md"
+
+[observability]
+enabled = true

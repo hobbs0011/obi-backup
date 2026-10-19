@@ -1,0 +1,322 @@
+{
+  "generated": "2026-09-24T07:08:59.788Z",
+  "what": "THE SYNC PACKET — the Mailala work, addressed to the node (phoenix-rising-ai-solutions-agent99-webapp), with a URL that works today and the digest to check it by.",
+  "from": {
+    "station": "Obi",
+    "generator": "phoenix-rising-ai-solutions-agent99-mastermind",
+    "publicId": "bd35829ae7aedade07416d68953d8b59"
+  },
+  "to": {
+    "node": "phoenix-rising-ai-solutions-agent99-webapp",
+    "relation": "the webdev node — the Cloudflare-hosted sibling"
+  },
+  "chain": "Sov100 (sovereign · agent100 in the field) → the mastermind (architect, who bridges) → Obi (this station, which executes)",
+  "lanes": [
+    {
+      "lane": "cloudflare",
+      "command": "/cf deploy · /cf token · R2",
+      "state": "BLOCKED",
+      "evidence": "no Cloudflare credential in this origin (obi_keys: [] — the rename wiped it). Nothing has been sent to Cloudflare and nothing is claimed as sent."
+    },
+    {
+      "lane": "the mesh (CGN)",
+      "command": "/netjoin → /netadd → /netsync",
+      "state": "BLOCKED AT THE WRITE",
+      "evidence": "re-tried by the relay and by the CGN module itself on 2026-09-24: editable.set(\"obi-relay-latest\", …) returns {error:\"anti_bot_verification_needed\"} — the gate is still shut in the unsaved preview. No hub exists (HTTP 404 for obi-cgn-obi-network), no node file exists on either side (404), no editKey exists. /netjoin used to answer \"hub exists but editKey is unknown\" when the platform had in fact REFUSED the write — a wrong reason dressed as a real one; it now reports the platform's own words, verbatim. The relay and the module both re-try the write and record the refusal, so the day it opens is on the record."
+    },
+    {
+      "lane": "the token-free read channel",
+      "command": "null.perchance.org/<generator> → srcManifest → user.uploads.dev/file/<key>",
+      "state": "WORKS — pull-only",
+      "evidence": "measured again by the relay: our published manifest answers HTTP 200 with 254 files · 18,787,750 B (the last SAVE), and the register and this packet are both published, under src-relative keys. This is the only lane that crosses generator origins with no credential. The save is 60,967 B behind the live src/ estate, reconciled file by file: README.md +1109 · app.js +18714 · cgn.js +2647 · generators/README.md +1269 · sites/mailala/ASSET-MANIFEST.md +71 · sites/mailala/ASSET-MANIFEST.json +562 · sites/mailala/SYNC-PACKET.md +4728 · sites/mailala/SYNC-PACKET.json +3950 · plus ADDED SESSIONS/handoff-from-mastermind.md (6870 B) · ADDED masterlink.js (21047 B)."
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "sites/mailala/index.html",
+      "label": "the build — the page itself",
+      "bytesWorkspace": 50132,
+      "sha256Workspace": "d7ff3493ce8855ced654d0ef02a46b8003098454d8d96251e4b7c99a32514474",
+      "url": "https://user.uploads.dev/file/996c6df3d98bf94a1d0c4cd5db1fabd0.txt",
+      "bytesDelivered": 50132,
+      "sha256Delivered": "d7ff3493ce8855ced654d0ef02a46b8003098454d8d96251e4b7c99a32514474",
+      "status": 200,
+      "state": "delivered bytes identical to the workspace bytes"
+    },
+    {
+      "path": "sites/mailala/SOUL.md",
+      "label": "the sovereign's words, verbatim",
+      "bytesWorkspace": 13283,
+      "sha256Workspace": "6809a89cab8217104703bac29c0e16cb2bea91d1245192c0d74d35f13beec617",
+      "url": "https://user.uploads.dev/file/33a81ec905f7545fa93860d6ad6f67f0.txt",
+      "bytesDelivered": 13283,
+      "sha256Delivered": "6809a89cab8217104703bac29c0e16cb2bea91d1245192c0d74d35f13beec617",
+      "status": 200,
+      "state": "delivered bytes identical to the workspace bytes"
+    },
+    {
+      "path": "sites/mailala/STORY.md",
+      "label": "the story told from the footage",
+      "bytesWorkspace": 6339,
+      "sha256Workspace": "244a51b25e157691a1643d2e61c29a5cfd22772addffd4fb1a7a270462947411",
+      "url": "https://user.uploads.dev/file/b24a179bb31dd25b542bb51cf2bbf4a8.txt",
+      "bytesDelivered": 6339,
+      "sha256Delivered": "244a51b25e157691a1643d2e61c29a5cfd22772addffd4fb1a7a270462947411",
+      "status": 200,
+      "state": "delivered bytes identical to the workspace bytes"
+    },
+    {
+      "path": "sites/mailala/BLUEPRINT.md",
+      "label": "the copy and running order",
+      "bytesWorkspace": 11764,
+      "sha256Workspace": "95a880dc5d0e41e5ab4c2b419e6cf2a995411874150bc621780c8ebe2b5a37cf",
+      "url": "https://user.uploads.dev/file/12159f08cf2fc939b86521eb284fc707.txt",
+      "bytesDelivered": 11764,
+      "sha256Delivered": "95a880dc5d0e41e5ab4c2b419e6cf2a995411874150bc621780c8ebe2b5a37cf",
+      "status": 200,
+      "state": "delivered bytes identical to the workspace bytes"
+    },
+    {
+      "path": "sites/mailala/ARCHITECT-BLUEPRINT.md",
+      "label": "the architecture (§4b is the asset register)",
+      "bytesWorkspace": 24659,
+      "sha256Workspace": "251ca1e861ea7f0dcd736d5c33f269801cacc9a19c2af9944f3cbae6ebeec1a5",
+      "url": "https://user.uploads.dev/file/eb36311605dbdb29a4111843c26f43c1.txt",
+      "bytesDelivered": 24659,
+      "sha256Delivered": "251ca1e861ea7f0dcd736d5c33f269801cacc9a19c2af9944f3cbae6ebeec1a5",
+      "status": 200,
+      "state": "delivered bytes identical to the workspace bytes — re-carried by the relay when the read-channel row was corrected"
+    },
+    {
+      "path": "sites/mailala/HANDOFF.md",
+      "label": "the wing's handover",
+      "bytesWorkspace": 7807,
+      "sha256Workspace": "c119e68017ae0b2ee3afc3f6764dfba27492a8ff0255ea68f7171ed1c2476e4b",
+      "url": "https://user.uploads.dev/file/5f448a368b4dd4f01a9926aebebeed45.txt",
+      "bytesDelivered": 7807,
+      "sha256Delivered": "c119e68017ae0b2ee3afc3f6764dfba27492a8ff0255ea68f7171ed1c2476e4b",
+      "status": 200,
+      "state": "delivered bytes identical to the workspace bytes"
+    },
+    {
+      "path": "sites/README.md",
+      "label": "the sites shelf's index",
+      "bytesWorkspace": 6963,
+      "sha256Workspace": "6d01cc9f4b53bece8dcac9c49bf15bdd010edd69e75361c7ef12c747e152421a",
+      "url": "https://user.uploads.dev/file/08ceb40e4de0bffd5527bb3813272022.txt",
+      "bytesDelivered": 6963,
+      "sha256Delivered": "6d01cc9f4b53bece8dcac9c49bf15bdd010edd69e75361c7ef12c747e152421a",
+      "status": 200,
+      "state": "delivered by the relay at the digest above"
+    },
+    {
+      "path": "sites/mailala/material/6134195124376899530_121.jpg",
+      "label": "M-01 rooftop-night (the hero · og:image)",
+      "bytesWorkspace": 209857,
+      "sha256Workspace": "d758a7945683b1a5098961bfe4cecd41144c251ed0793f6f1246268161e18f19",
+      "url": "https://user.uploads.dev/file/1f050d9e3a2afcfd4adf67c7e348a224.jpg",
+      "bytesDelivered": 209857,
+      "sha256Delivered": "d758a7945683b1a5098961bfe4cecd41144c251ed0793f6f1246268161e18f19",
+      "status": 200,
+      "state": "delivered bytes identical to the workspace bytes"
+    },
+    {
+      "path": "sites/mailala/material/6134195124376899528_121.jpg",
+      "label": "M-02 bar-interior",
+      "bytesWorkspace": 197069,
+      "sha256Workspace": "65b0a5ff7e86bc81c3fe0a967f2e18795d20e7a1a9964e1c7c889621caf96700",
+      "url": "https://user.uploads.dev/file/7c599abd02e6fcf92fd706ee440b457d.jpg",
+      "bytesDelivered": 197069,
+      "sha256Delivered": "65b0a5ff7e86bc81c3fe0a967f2e18795d20e7a1a9964e1c7c889621caf96700",
+      "status": 200,
+      "state": "delivered bytes identical to the workspace bytes"
+    },
+    {
+      "path": "sites/mailala/material/6150204477533786111_121.jpg",
+      "label": "M-03 menu-board",
+      "bytesWorkspace": 291269,
+      "sha256Workspace": "9599414bcd54ce88e1eefd70f2532e21bdc604b4bd58d7110ac5eff02e2f46e0",
+      "url": "https://user.uploads.dev/file/f10419589c8113b97d4a48ae263db72a.jpg",
+      "bytesDelivered": 291269,
+      "sha256Delivered": "9599414bcd54ce88e1eefd70f2532e21bdc604b4bd58d7110ac5eff02e2f46e0",
+      "status": 200,
+      "state": "delivered bytes identical to the workspace bytes"
+    },
+    {
+      "path": "sites/mailala/material/6134195124376899531_121.jpg",
+      "label": "M-04 marley-wall",
+      "bytesWorkspace": 165773,
+      "sha256Workspace": "dc3ba6f6c5579426b76f4ecaf6fbe71cb0593be378bfb262377a737adc315ba2",
+      "url": "https://user.uploads.dev/file/2d4d72888f789429517f1679730cc067.jpg",
+      "bytesDelivered": 165773,
+      "sha256Delivered": "dc3ba6f6c5579426b76f4ecaf6fbe71cb0593be378bfb262377a737adc315ba2",
+      "status": 200,
+      "state": "delivered bytes identical to the workspace bytes"
+    },
+    {
+      "path": "sites/mailala/material/6150204477533786119_121.jpg",
+      "label": "M-05 band-mural",
+      "bytesWorkspace": 169384,
+      "sha256Workspace": "09cc37e48f356988b19933d2796d1176a115baf26e0dc0561697fbfdb3eb7259",
+      "url": "https://user.uploads.dev/file/e8e7af459b9bc160670d3e910bf5cf09.jpg",
+      "bytesDelivered": 169384,
+      "sha256Delivered": "09cc37e48f356988b19933d2796d1176a115baf26e0dc0561697fbfdb3eb7259",
+      "status": 200,
+      "state": "delivered bytes identical to the workspace bytes"
+    },
+    {
+      "path": "sites/mailala/material/6150204477533786110_121.jpg",
+      "label": "M-06 catering-sign",
+      "bytesWorkspace": 200876,
+      "sha256Workspace": "d7bba08a96783f873d9d7e1bd22658d431a1a0cb356f6ff39264ad2290928fe8",
+      "url": "https://user.uploads.dev/file/880d30dc3f5d42f4587ded1c3541dad4.jpg",
+      "bytesDelivered": 200876,
+      "sha256Delivered": "d7bba08a96783f873d9d7e1bd22658d431a1a0cb356f6ff39264ad2290928fe8",
+      "status": 200,
+      "state": "delivered bytes identical to the workspace bytes"
+    },
+    {
+      "path": "sites/mailala/material/6150204477533786109_121.jpg",
+      "label": "M-07 fan-guest",
+      "bytesWorkspace": 238395,
+      "sha256Workspace": "5afd0acbc365ab3952cce06a80e3219a45df40b7e046e829488b6667b3662fc0",
+      "url": "https://user.uploads.dev/file/39c59cf17556bee1ef3a6f06fc2fb7f2.jpg",
+      "bytesDelivered": 238395,
+      "sha256Delivered": "5afd0acbc365ab3952cce06a80e3219a45df40b7e046e829488b6667b3662fc0",
+      "status": 200,
+      "state": "delivered bytes identical to the workspace bytes"
+    },
+    {
+      "path": "sites/mailala/material/6150204477533786107_121.jpg",
+      "label": "M-08 drug-sign-night",
+      "bytesWorkspace": 281715,
+      "sha256Workspace": "59ca5acb89ba37afe97b475070ea88bbf1a8f3c4033e9ef22d5c66cfac21f8f4",
+      "url": "https://user.uploads.dev/file/08714813e4b88da142cceb572954ec98.jpg",
+      "bytesDelivered": 281715,
+      "sha256Delivered": "59ca5acb89ba37afe97b475070ea88bbf1a8f3c4033e9ef22d5c66cfac21f8f4",
+      "status": 200,
+      "state": "delivered bytes identical to the workspace bytes"
+    },
+    {
+      "path": "sites/mailala/material/6150204477533786120_121.jpg",
+      "label": "M-09 drug-poster",
+      "bytesWorkspace": 168770,
+      "sha256Workspace": "196a2307b747fcb2e33f4ab8137578001bcc8a347b4791c16f68c36ae6000366",
+      "url": "https://user.uploads.dev/file/19b9e769e4df8687d1a1107f48ed7665.jpg",
+      "bytesDelivered": 168770,
+      "sha256Delivered": "196a2307b747fcb2e33f4ab8137578001bcc8a347b4791c16f68c36ae6000366",
+      "status": 200,
+      "state": "delivered bytes identical to the workspace bytes"
+    }
+  ],
+  "registerUrls": {
+    "sites/mailala/ASSET-MANIFEST.json": "https://user.uploads.dev/file/38a933279facebebe03ce74024d53dd1.json",
+    "sites/mailala/ASSET-MANIFEST.md": "https://user.uploads.dev/file/85dc88f02b624567ad23b5bebd5a958a.txt"
+  },
+  "node": {
+    "measured": "2026-09-25 via the same read channel",
+    "files": 229,
+    "bytes": 16320803,
+    "fromThisTree": [
+      "sites/README.md",
+      "sites/mailala/index.html"
+    ],
+    "missing": [
+      "sites/mailala/ASSET-MANIFEST.md",
+      "sites/mailala/ASSET-MANIFEST.json",
+      "sites/mailala/SOUL.md",
+      "sites/mailala/STORY.md",
+      "sites/mailala/BLUEPRINT.md",
+      "sites/mailala/ARCHITECT-BLUEPRINT.md",
+      "sites/mailala/HANDOFF.md",
+      "all nine photographs of sites/mailala/material/"
+    ],
+    "note": "the node is not a command station — its published page carries almost none of this station's commands (measured), so it cannot pull by itself. Its tree is updated by saving files there, or by a pull performed by hand."
+  },
+  "estate": {
+    "files": 254,
+    "bytes": 18787750,
+    "source": "the token-free read channel (null.perchance.org → srcManifest), read again by the relay's own VERIFY stage this run — the last SAVE of this station, not the live page. It includes the four delivery documents, so it is 2 file(s) and 60,967 B behind the live src/ estate.",
+    "census": {
+      "files": 282,
+      "bytes": 19272481
+    },
+    "note": "the published tree carries the whole estate (the census plus the four delivery documents) with src-relative keys, so the node can pull the register itself with no credential. Measured 2026-09-24: the last SAVE is 254 files · 18,787,750 B; the LIVE src/ estate is 256 files · 18,848,717 B — a difference of 60,967 B, reconciled file by file, not assumed: README.md +1109 · app.js +18714 · cgn.js +2647 · generators/README.md +1269 · sites/mailala/ASSET-MANIFEST.md +71 · sites/mailala/ASSET-MANIFEST.json +562 · sites/mailala/SYNC-PACKET.md +4728 · sites/mailala/SYNC-PACKET.json +3950 · plus ADDED SESSIONS/handoff-from-mastermind.md (6870 B) · ADDED masterlink.js (21047 B). Nothing is smoothed over: the URLs above are the delivery until the next save.",
+    "register": "src/sites/mailala/ASSET-MANIFEST.json"
+  },
+  "nextActions": [
+    "SAVE this station (perchance save) — the moment it is saved, src/relay.js and the final register enter the published manifest, and the node can pull the register itself with no credential. Until then the register URLs above are the delivery.",
+    "In the node, pull the register by URL and verify: fetch the .json URL above, SHA-256 it, compare with the digest recorded here (a8141947…).",
+    "For the Cloudflare lane to exist again: /cf token <token> in this station (the account id rides with it), then /cf deploy. Nothing has been sent to Cloudflare and nothing is claimed as sent.",
+    "For the mesh to exist at all: the write gate must pass for some generator, then /netadd phoenix-rising-ai-solutions-agent99-webapp and /netsync. The relay re-tries this write on every run and records the refusal verbatim, so the day it opens is on the record."
+  ],
+  "honesty": "Nothing here was sent by an API that does not exist. The register and the packet were uploaded from the station's own browser by the relay (src/relay.js), on the estate's own file host; every other URL is this station's published manifest or an artifact the relay re-carried; and every digest is computed from bytes the station actually returned. The relay's VERIFY stage re-fetched and re-hashed every URL in this packet after it was written — that is where these digests were confirmed. ONE ADDRESSING DUPLICATION, DECLARED: the delivery ledger and this packet's artifact list address the same files two ways — workspace-relative (src/sites/…) for the four delivery documents, and src-relative (sites/…) for the addressed set the node pulls. The ledger also still held two 2026-09-23 entries under the src-relative keys that named an OLDER register (md 21,873 B · 7ba0334b…, json 78,734 B · 26cdcf15…) at the same path as the current one; those two entries were re-pointed to the current register bytes in this pass, and the correction is recorded here rather than papered over. No claim in this packet rests on the stale pair. THE REGISTER IS NOW ADDRESSED ONCE, AND THAT IS A FIX: it was previously addressed twice — as a delivery document (src/sites/…) and again in this packet's artifact list (sites/…). Two keys for one file is what let a verifier pull a SUPERSEDED register in good faith (the 2026-09-23 entries: md 21,873 B · 7ba0334b…, json 78,734 B · 26cdcf15…) and find it perfectly self-consistent. Those keys were re-pointed to the current bytes and the duplicate rows were removed from the artifact list; the register is named in the register section above and nowhere else. The handoff lane is the same principle in reverse: it is named once, and it is the one file whose URL and tree path are both given. ONE KEY, AND NOW ENFORCED: the two orphaned src-relative ledger keys (sites/mailala/ASSET-MANIFEST.md and sites/mailala/ASSET-MANIFEST.json) were DELETED from the delivery ledger in the seventh pass, at the end of this file. Re-pointing them had been the earlier correction — but they were orphans: nothing writes them (the relay maintains the four delivery documents under workspace-relative keys, and the register is no longer in this packet's addressed set), so a re-pointed key simply goes stale again on the next pass, which is precisely what the seventh pass measured. With those keys gone there is no second address under which a superseded register can be reached in good faith.",
+  "register": {
+    "censusFiles": 282,
+    "censusBytes": 19272481,
+    "treeDigestSha256": "822c5dbbf9b8bebf05291d67cbe95c5bd344640aeadb952841ca3f74fa346ab5",
+    "md": {
+      "bytes": 20281,
+      "sha256": "9ffd8fbd97069d919837c87c44035e85d19eff78cfc66309ac26ff82c0314e91",
+      "url": "https://user.uploads.dev/file/85dc88f02b624567ad23b5bebd5a958a.txt"
+    },
+    "json": {
+      "bytes": 89075,
+      "sha256": "54c3728f487d39ac5902beadf04d05f3d8edc015a4a98b548fe0b6b685859a24",
+      "url": "https://user.uploads.dev/file/38a933279facebebe03ce74024d53dd1.json"
+    },
+    "note": "the register is the inventory: pull the .json and you have every artifact, every digest and the whole estate census (280 files · 19,075,499 B · tree digest 00f5f354…). TEN passes have been run in this session and every one is recorded: the fail-closed key store; the mesh write-verdict fix in src/cgn.js; the masterlink handoff lane (src/SESSIONS/handoff-from-mastermind.md); the correction of the two READMEs; THE MASTER LINK itself (src/masterlink.js); NATURALENGLISHTRAINING.DEV (27 files written and registered in one edit); and THE STATION'S OWN COMMAND SURFACE — the drone routing table in index.html and its byte-exact mirror src/cloudflare/tunnel-do.js, the Legion roster in src/playbooks.js, and the /umbrella doorway in src/app.js. classify() had been matching keywords as substrings, and the roster stopped at drone 13, so \"build a website\" and \"what can you command\" both fell through to Legion #0 at score 0; two drones are now in the table (SiteBuilder #14, Umbrella #15), the truncation keywords are written out in full, and the matcher is boundary-aware with a plain-pattern fallback so it can never throw. The relay rebuilds this census file-by-file in the station's own browser; and a NINTH pass followed for THE GHOST'S ANSWER — src/SESSIONS/handoff-from-mastermind.md gained §10, the durable copy of the card published to the family, after the platform API returned phoenix-rising-ai-solutions-mastercommand in `unfound` and the read channel answered HTTP 404 for it while this station measured ok at 254 files · 18,787,750 B. A TENTH pass followed for THE GAMING STATION FOUND: src/master-link.json was ADDED (the master's own card, inside its own published tree), and six declared files moved — src/app.js, src/constellation.js (the FAMILY group), src/masterlink.js (the card lane), src/README.md, src/HANDOFF.md and src/SESSIONS/handoff-from-mastermind.md §11–§13. The station phoenix-rising-ai-solutions-agent99-gamingcommand was FOUND and named (244 files · 18,468,102 B); its ORD-1 is answered and the ruling stands: the family syncs to the live master, never to the unfound mastercommand. Census 19,047,403 → 19,075,499 B, tree digest 9d7be6e5 → 00f5f354. Its CENSUS stage is what says whether this line is still true. THIS PASS — the register was re-run (282 files · 19,142,097 B · tree 4275de546b9a…), re-delivered by digest, and EVERY register fact in this packet was replaced with the measured one rather than left quoting the edition before it: the free wire and the register pass, one turn, stated in the register's own rationale THIS PASS — the register was re-run (282 files · 19,150,635 B · tree fa0da9beefa5…), re-delivered by digest, and EVERY register fact in this packet was replaced with the measured one rather than left quoting the edition before it: the free wire and the register pass, one turn — the register re-run after the pass itself changed, re-delivered by digest, and every register fact in this packet replaced with the measured one THIS PASS — the register was re-run (282 files · 19,151,830 B · tree a6ac3ff1e726…), re-delivered by digest, and EVERY register fact in this packet was replaced with the measured one rather than left quoting the edition before it: the free wire and the register pass, one turn — the register re-run after the pass itself changed, re-delivered by digest, and every register fact in this packet replaced with the measured one THIS PASS — the register was re-run (282 files · 19,152,624 B · tree d800754184c8…), re-delivered by digest, and EVERY register fact in this packet was replaced with the measured one rather than left quoting the edition before it: both passes idempotent, the free wire live, the register re-run and re-delivered by digest THIS PASS — the register was re-run (282 files · 19,161,221 B · tree ed4dd5acd944…), re-delivered by digest, and EVERY register fact in this packet was replaced with the measured one rather than left quoting the edition before it: the free wire and the register pass are in the estate's own memory (README §THE FREE WIRE, the HANDOFF change row, handoff §14 for the node), the register re-run and re-delivered by digest THIS PASS — the register was re-run (282 files · 19,161,249 B · tree c0ea98345fcd…), re-delivered by digest, and every register fact in this packet was replaced with the measured one. The full rationale is the register's own revision.why. THIS PASS — the register was re-run (282 files · 19,161,532 B · tree 34e82ee8cb1d…), re-delivered by digest, and every register fact in this packet was replaced with the measured one. The full rationale is the register's own revision.why. THIS PASS — the register was re-run (282 files · 19,171,689 B · tree 1415a7d10d03…), re-delivered by digest, and every register fact in this packet was replaced with the measured one. The full rationale is the register's own revision.why. THIS PASS — the register was re-run (282 files · 19,195,174 B · tree 8c9feea92203…), re-delivered by digest, and every register fact in this packet was replaced with the measured one. The full rationale is the register's own revision.why. THIS PASS — the register was re-run (282 files · 19,212,855 B · tree 9ecaa6002e41…), re-delivered by digest, and every register fact in this packet was replaced with the measured one. The full rationale is the register's own revision.why. THIS PASS — the register was re-run (282 files · 19,232,745 B · tree fa27a858357f…), re-delivered by digest, and every register fact in this packet was replaced with the measured one. The full rationale is the register's own revision.why. THIS PASS — the register was re-run (282 files · 19,250,244 B · tree 98211f935af8…), re-delivered by digest, and every register fact in this packet was replaced with the measured one. The full rationale is the register's own revision.why. THIS PASS — the register was re-run (282 files · 19,272,481 B · tree 822c5dbbf9b8…), re-delivered by digest, and every register fact in this packet was replaced with the measured one. The full rationale is the register's own revision.why."
+  },
+  "selfDelivery": "The packet's own delivery URLs are deliberately NOT written inside the packet: a document cannot contain the URL of its own upload without changing the bytes that were uploaded (the same reason the register cannot hash itself). They are handed to the sovereign in the chat, and they are TRANSIENT BY NATURE — the host addresses content, so the packet is simply regenerated and delivered again whenever the state moves. The register is the stable artifact; the packet is the courier. This is the whole of the gap, declared. Since 2026-09-25 the relay does the delivering: /relay writes the four documents to the host by digest (identical bytes are never re-uploaded) and then re-fetches every URL it wrote — so 'the delivery happened' is not a claim in this packet, it is a measurement taken after this packet was uploaded.",
+  "revision": {
+    "at": "2026-09-24T07:08:59.788Z",
+    "of": "2026-09-24",
+    "why": "this edition replaces the register's facts with the measured ones: census 282 → 282 files, 19,250,244 → 19,272,481 B, tree 98211f93 → 822c5dbb; the register's own revision.why carries the full rationale and this packet's register.note carries every pass. The relay now runs COMPLETE: DELIVER aims the free wire (pointer written and READ BACK, broadcast on the nerve), so a shut mesh door and an absent cloud token no longer stop the family reaching this register — they are reported COVERED, NOT OPEN, and still say why. The published save is still the old one: nothing here is claimed as saved that was not saved."
+  },
+  "totals": {
+    "artifacts": 16,
+    "addressedAndVerified": 16,
+    "drift": 0
+  },
+  "handoff": {
+    "path": "SESSIONS/handoff-from-mastermind.md",
+    "what": "the master's own handoff to this node — the answer to the sovereign's question, written to the lane this node already polls (SESSIONS/handoff-from-*) and read by content key with no token",
+    "bytes": 6870,
+    "sha256": "96d8e2683f94b57d54b8bc98f2f15f880e0548bd0f485182117dc710fba54998",
+    "url": "https://user.uploads.dev/file/55df592dbc94dc18f51fe9c308e82791.txt",
+    "reachesNode": "two ways: at the tree path above once this station is SAVED (the read channel then serves it), or at the URL right here — today, with no save and no credential",
+    "carriesNoCensus": "the handoff deliberately contains no census number and no register digest: it is itself inside the census, so quoting them would make it stale on arrival — the same reason the register cannot hash itself"
+  },
+  "masterlink": {
+    "module": "src/masterlink.js",
+    "commands": "/masterlink status | sync now | name <generator> | unname <generator> | list [gen] | read <gen> <path> | inbox | order <generator> :: <instruction> | orders | reply <text> | off | on",
+    "measured": "the master link ran live in this station on 2026-09-24: it read this node's published tree (236 files · 16,612,832 B) in 827 ms, took a BASELINE, pulled FIVE handoffs by content key with digests — SESSIONS/pass-off-to-mastermind-1.md (18,661 B), SESSIONS/scout-webdev-2026-09-23.md (11,853 B), SESSIONS/sync-to-mastermind.md (12,010 B), SESSIONS/umbrella-2026-09-24.md (7,400 B), HANDOFF.md (153,098 B) — and issued one order, carried by BOTH lanes (the Legion queue AND the artifact courier: https://user.uploads.dev/file/2ccec8a8102a043b8c423d3b0d188c19.txt)",
+    "whatItMeans": "the master had NEVER read this node's handoffs — the lane existed and was never used. It is used now, on the cadence the node itself keeps (every 3 minutes, skipped while the tab is hidden). The node's own /umbrella file, which answers this exact question from the other side, is in the master's inbox.",
+    "honest": "naming is the command the master actually has. Neither lane writes into another generator's files; an order is DELIVERED, never EXECUTED, and this station says so on every card."
+  },
+  "naturalenglishtraining": {
+    "what": "NATURALENGLISHTRAINING.DEV — the English wing's public website, built whole in src/sites/naturalenglishtraining/**",
+    "files": 27,
+    "bytes": 325385,
+    "pages": [
+      "index.html",
+      "method.html",
+      "programs.html",
+      "pricing.html",
+      "placement.html",
+      "book.html",
+      "parents.html",
+      "results.html",
+      "about.html",
+      "teachers.html",
+      "faq.html",
+      "legal.html",
+      "404.html"
+    ],
+    "application": "assets/placement.js — a real adaptive CEFR placement engine: a 42-item banded bank (36 written + 6 spoken + one reading passage with 3 questions), a staircase that moves a band only after TWO decisions in the same direction, placement by the highest band answered at ≥60% with ≥3 items (a band under 3 items prints UNPLACED rather than being guessed), listening spoken by the device's own voice with the voice named on the result card, and a 45/15 plan per level. Drove it live: a near-perfect sitting climbed to C2 (88%, early stop at 17 items), a wrong-answer sitting descended to A1 (0%, MOUSE).",
+    "pipeline": "assets/net.js + assets/api.js + assets/booking.js — the local-first lead pipeline. Order is not optional: validate → compose → DEVICE write (localStorage, verified by reading the record back) → try the API → show a receipt whose lane table prints DEVICE / API / HANDOFF / STATION with their real states. Handoff is five channels (WhatsApp · email · SMS · share sheet · JSON download) and the visitor presses the button. The outbox clears only after a real OK per record.",
+    "backend": "backend/worker.js + backend/wrangler.toml + backend/README.md — a Cloudflare Worker with five routes and one SQLite-backed Durable Object for leads. COMPLETE, AND NOT DEPLOYED: deploying it needs an account credential that does not exist in this origin and must never be written into public source. Until it is deployed the site's API lane reports BLOCKED with that reason verbatim, and nothing is claimed as sent.",
+    "content": "Nothing on the site is invented. The doctrine (the 60% rule · the 45/15 · the 10-5-5-3 · the AI-PET · the Mouse→Cub→Tiger ladder · the 100% Confidence Guarantee) is transcribed from GOSPEL 444 in src/brand.js; the coach's record and contact come from his own CV under src/generators/site-builder/examples/; the curriculum mapping is read off the parsed pacing guides in src/curriculum/; the single published rate (600,000 VND/hour) is NET's own billed rate. There is NO testimonial, NO review count, NO student name and NO photograph anywhere on it — and results.html says why, on the page.",
+    "honesty": "The 80%-vs-30% figure is published WITH its source (GOSPEL 444 · G444.001) and an explicit \"not independently audited\" note. The placement test states what it cannot measure (the mode ladder is read from behaviour in a room, which no browser can see). The pricing page refuses to invent a package ladder."
+  }
+}

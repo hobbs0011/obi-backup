@@ -1,0 +1,128 @@
+{
+  "topic": "Look 4 · Unit 1 + Unit 2 — Function 1: Giving Directions · SB 25 · WB 20 · Grade 4 · 4P2 (periods 5–6, Thu 24/09/2026)",
+  "title": "Look 4 · Unit 1 + Unit 2 — Function 1 (giving directions)",
+  "logo": "🧭",
+  "subtitle": "Left, right, straight — say it clearly and they will find you 🧭",
+  "cta": "🚀 Start the Walk",
+  "features": [
+    {
+      "icon": "🧭",
+      "title": "Six Words That Move You",
+      "desc": "Turn, go straight, go past, follow, continue, corner — the words that move a person through a place."
+    },
+    {
+      "icon": "🗺️",
+      "title": "A Map and a Message",
+      "desc": "Read written directions, follow them in order, and land on the one right place."
+    },
+    {
+      "icon": "🎮",
+      "title": "Three Games",
+      "desc": "Scramble the words, match each phrase to its job, sort the moves by what they do."
+    },
+    {
+      "icon": "🚶",
+      "title": "Say It, Walk It",
+      "desc": "Give your partner a real route out loud — then follow theirs without looking."
+    }
+  ],
+  "coins": {
+    "start": 0,
+    "correct": 10,
+    "wrong": 0
+  },
+  "method": {
+    "structure": "10-5-5-3",
+    "phase": "Vocab → Route → Game → Review (Function 1 of the unit-1-and-2 session)",
+    "games": [
+      {
+        "name": "Direction Word Scramble",
+        "type": "competition",
+        "why": "production under a clock — the hint is the meaning, so the word is retrieved, not copied"
+      },
+      {
+        "name": "Phrase & Job Match",
+        "type": "collaboration",
+        "why": "paired recall — the phrase and the job it does are stored as one chunk, which is how a route is remembered"
+      },
+      {
+        "name": "Go, Turn or Where It Is",
+        "type": "creation",
+        "why": "metacognitive sorting — the learner has to name what each phrase does to the walker before using it"
+      }
+    ],
+    "voice": [
+      "Say it LOUD. Say it WRONG. But SAY IT.",
+      "A direction you can say is a direction someone else can follow."
+    ]
+  },
+  "storyline": "A new student cannot find the music room at the school gate. Linh gives directions too fast and they fail; Nam gives them in the group chat in the wrong order and they fail too. The class fixes both by learning the four sentence shapes — then reads a map, and ends by walking a route out loud.",
+  "rooms": [
+    {
+      "graphic": "🏠",
+      "title": "The Entrance",
+      "label": "Warm-Up",
+      "content": "<p>One class, one route 🧭 By the end you can <strong>give directions</strong> someone else can follow — and read directions someone else wrote.</p><ul><li>Six moving words: turn, straight, past, follow, continue, corner</li><li>The four sentence shapes: <em>Go straight.</em> · <em>Turn left.</em> · <em>Follow the path.</em> · <em>Go past the bank.</em></li><li>A map you read, and a route you say out loud</li><li>WB page 20 — you write your own short route</li></ul><div class=\"chatty-hint\"><strong>How this lesson works:</strong> every room gives you words first and the route second. Say each line out loud as you read it — a direction that stays in your head never gets anyone anywhere.</div>"
+    },
+    {
+      "graphic": "🖥️",
+      "title": "The Lost Visitor",
+      "label": "Scene",
+      "content": "<div class=\"dialogue-block\"><span class=\"speaker\">Visitor:</span> Excuse me — where is the music room? 👋</div><div class=\"dialogue-block\"><span class=\"speaker\">Linh:</span> Go straight along this corridor. Turn left at the stairs. Go past the library. It is on the right.</div><div class=\"dialogue-block\"><span class=\"speaker\">Visitor:</span> Straight, left, past the library, right. Got it. Thank you!</div><div class=\"dialogue-block\"><span class=\"speaker\">Linh:</span> Wait — turn left, not right. And that was too fast. Come with me, I will show you.</div><div class=\"dialogue-block\"><span class=\"speaker\">Nam:</span> That is why I always say the route back first. Say it, then walk it.</div><div class=\"chatty-clue\">🤔 Reality check: Linh's directions were <em>correct</em> and still useless — she said them once, quickly, with no order. A route is a <strong>sequence</strong>: first go straight, then turn, then go past, then it is on your right.</div>"
+    },
+    {
+      "graphic": "📱",
+      "title": "The Group Chat",
+      "label": "Text Scene",
+      "content": "<div class=\"dialogue-block\"><span class=\"speaker\">Linh:</span> where are you? the presentation starts in 5 😬</div><div class=\"dialogue-block\"><span class=\"speaker\">Nam:</span> outside the wrong building. your directions were a map of chaos</div><div class=\"dialogue-block\"><span class=\"speaker\">Linh:</span> ok. go straight, do not turn. go past the bakery. turn left at the corner 🔁</div><div class=\"dialogue-block\"><span class=\"speaker\">Nam:</span> past the bakery, then LEFT at the corner. ok walking</div><div class=\"dialogue-block\"><span class=\"speaker\">Linh:</span> continue straight past the park. the sports centre is on your right. we are next to it ✅</div><div class=\"dialogue-block\"><span class=\"speaker\">Nam:</span> found you. that took 4 minutes. the first one took 15 😄</div><div class=\"chatty-hint\"><strong>The four shapes that carry a route:</strong> <em>Go straight.</em> · <em>Turn left / right.</em> · <em>Go past [a place].</em> · <em>It is on the left / right.</em> Every direction your teacher gives you is one of those four, or two of them joined with <em>then</em>.</div>"
+    },
+    {
+      "graphic": "📚",
+      "title": "The Words",
+      "label": "Learn",
+      "content": "<div class=\"vocab-list\"><div class=\"vocab-item\"><strong>1. turn:</strong> <span>change the way you are walking — <em>Turn left at the stairs.</em></span></div><div class=\"vocab-item\"><strong>2. straight:</strong> <span>forward, without turning — <em>Go straight along the corridor.</em></span></div><div class=\"vocab-item\"><strong>3. past:</strong> <span>in front of a place, and then continuing — <em>Go past the library.</em></span></div><div class=\"vocab-item\"><strong>4. follow:</strong> <span>go the same way as someone or something — <em>Follow the path to the gate.</em></span></div><div class=\"vocab-item\"><strong>5. continue:</strong> <span>keep going, do not stop — <em>Continue straight for 100 metres.</em></span></div><div class=\"vocab-item\"><strong>6. corner:</strong> <span>the place where two streets meet — <em>Turn right at the corner.</em></span></div><div class=\"vocab-item\"><strong>7. route:</strong> <span>the way from one place to another — <em>This route goes past the park.</em></span></div><div class=\"vocab-item\"><strong>8. on the left / on the right:</strong> <span>which side of the street the place is on — <em>The bank is on the left.</em></span></div></div><div class=\"chatty-hint\"><strong>The rule in one line:</strong> a direction is a verb + a way. <em>Go</em> straight · <em>Turn</em> left · <em>Follow</em> the path · <em>Go past</em> the bank. Give one at a time, in order, and the other person will always arrive.</div>"
+    },
+    {
+      "graphic": "🗺️",
+      "title": "The Map — Find the Way",
+      "label": "Reading",
+      "content": "<div class=\"chatty-hint\"><strong>How to use this room:</strong> read the route with your finger on the page — one phrase, one step. The order is the answer.</div><div class=\"reading\"><p><strong>🗺️ A route to the library</strong></p><p>Start at the school gate. <strong>Go straight</strong> along Nguyen Trai Street. <strong>Go past</strong> the bakery and the bank. <strong>Turn left</strong> at the corner. <strong>Continue straight</strong> past the park. The library is <strong>on the right</strong>, next to the sports centre.</p><p>Now the other way: from the library to the music room. Turn right at the corner, go past the sports centre, and continue straight past the park. The music room is on the left, opposite the bakery.</p></div><div class=\"chatty-choices\" data-correct-feedback=\"🎉 Yes — the library is on the right, next to the sports centre. Follow the route in order and the last phrase tells you where it is.\" data-wrong-feedback=\"❌ Walk the route again, one step at a time. Go straight, past the bakery, past the bank, turn left, then continue past the park. What is next to it?\"><div><strong>Follow the route:</strong> after you turn left at the corner and continue past the park, where is the library?</div><button data-answer=\"correct\">on the right, next to the sports centre</button><button data-answer=\"wrong\">on the left, opposite the bakery</button><button data-answer=\"wrong\">directly behind the bank</button></div><div class=\"chatty-choices\" data-correct-feedback=\"🎉 Exactly — the first thing you do after turning left is continue straight past the park.\" data-wrong-feedback=\"❌ Read the sentences in order. Turning left is step three, so the next step is the one written after it.\"><div><strong>Follow the route:</strong> you have just turned left at the corner. What do you do next?</div><button data-answer=\"wrong\">turn right at the corner</button><button data-answer=\"correct\">continue straight past the park</button><button data-answer=\"wrong\">go past the bakery again</button></div><div class=\"chatty-clue\">🤔 Reality check: the map never says <em>turn</em> twice in a row and never says <em>past</em> without naming the place. Directions are a list — if you lose the order, you lose the person.</div><div class=\"chatty-feedback empty\" aria-live=\"polite\"></div>"
+    },
+    {
+      "graphic": "🧩",
+      "title": "The Route — Say It In Order",
+      "label": "Route",
+      "content": "<div class=\"chatty-hint\"><strong>How to use this room:</strong> a direction is a verb plus a way. Choose the verb that moves the person forward, then check the place that follows it.</div><div class=\"chatty-choices\" data-correct-feedback=\"🎉 Go straight — Go is the verb that starts a route, and straight tells you the way.\" data-wrong-feedback=\"❌ Read the whole sentence first: the gap comes before straight, so you need the verb that means move forward. Take and make do not move anybody.\"><div><strong>Complete the direction:</strong> _____ straight along the corridor, then turn left at the stairs.</div><button data-answer=\"correct\">Go</button><button data-answer=\"wrong\">Take</button><button data-answer=\"wrong\">Make</button></div><div class=\"chatty-choices\" data-correct-feedback=\"🎉 Go past the bank — past means in front of it and then continue, which is exactly what the route does.\" data-wrong-feedback=\"❌ Which phrase keeps the walker moving? Follow needs something to follow, and on the left only tells you a side — it does not move you.\"><div><strong>Choose the best direction:</strong> you are walking along the street and the bank is in front of you. You do not want to stop there.</div><button data-answer=\"wrong\">Follow the bank</button><button data-answer=\"correct\">Go past the bank</button><button data-answer=\"wrong\">On the left of the bank</button></div><div class=\"chatty-hint\"><strong>Say it back:</strong> before you walk anywhere, repeat the route in your own words — <em>Straight, then left at the stairs, then past the library, then on the right.</em> The repeat catches the mistake before the walker does.</div><div class=\"chatty-feedback empty\" aria-live=\"polite\"></div>"
+    },
+    {
+      "graphic": "🔤",
+      "title": "Game 1 — Direction Scramble",
+      "label": "Game 1",
+      "content": "<p>How to win: the hint under each row is the meaning — read it, then click the tiles in order. A wrong word shakes and clears itself, so nothing is lost.</p><div class=\"game\" data-game=\"scramble\" data-title=\"🔤 Direction Scramble\" data-items=\"turn=change the way you are walking;straight=forward, without turning;past=in front of it, then continue;follow=go the same way as someone;continue=keep going, do not stop;corner=where two streets meet;route=the way from one place to another;left=the opposite side to right\"></div>"
+    },
+    {
+      "graphic": "🔗",
+      "title": "Game 2 — Phrase & Job",
+      "label": "Game 2",
+      "content": "<p>How to win: click a phrase on the left, then the job it does on the right. Eight pairs. Wrong pairs shake and let go — guess boldly.</p><div class=\"game\" data-game=\"match\" data-title=\"🔗 Phrase &amp; Job\" data-items=\"Go straight=walk forward and do not turn;Turn left=change direction to the left side;Go past the bank=walk in front of the bank and continue;Follow the path=go the same way as the path;Continue straight=keep walking, do not stop;On the right=the side where the library is;At the corner=where two streets meet;Show me the way=help me find the route\"></div>"
+    },
+    {
+      "graphic": "📦",
+      "title": "Game 3 — Go, Turn or Where It Is",
+      "label": "Game 3",
+      "content": "<p>How to win: click a phrase, then the group it belongs to. Ask one question about each phrase — does it move me on, does it change my direction, or does it only tell me where something is?</p><div class=\"chatty-hint\"><strong>The three groups:</strong> <strong>GO</strong> = you keep walking the way you are going · <strong>TURN</strong> = you change direction · <strong>WHERE IT IS</strong> = it tells you the place, not the move.</div><div class=\"game\" data-game=\"sort\" data-title=\"📦 Go, Turn or Where It Is\" data-groups=\"GO: go straight, go past the bank, continue straight | TURN: turn left, turn right, turn at the corner | WHERE IT IS: on the left, on the right, next to the park\"></div>"
+    },
+    {
+      "graphic": "🎯",
+      "title": "The Test",
+      "label": "Test",
+      "content": "<div class=\"chatty-choices\" data-correct-feedback=\"🎉 Go straight — go is the verb, straight is the way, and then comes the turn.\" data-wrong-feedback=\"❌ The gap is before straight. Which verb moves a person forward? Take and make do not.\"><div><strong>Scenario:</strong> You are at the school gate. _____ straight, then turn left at the stairs.</div><button data-answer=\"correct\">Go</button><button data-answer=\"wrong\">Take</button><button data-answer=\"wrong\">Make</button></div><div class=\"chatty-choices\" data-correct-feedback=\"🎉 Yes — go past means walk in front of it and continue, which is what you do with a bank on your route.\" data-wrong-feedback=\"❌ You are still on the same street and you do not want to stop. Which phrase keeps the walker moving past the place?\"><div><strong>Scenario:</strong> The bank is in front of you on the same street. You want to keep walking.</div><button data-answer=\"wrong\">The bank is on the left.</button><button data-answer=\"correct\">Go past the bank.</button><button data-answer=\"wrong\">Follow the bank.</button></div><div class=\"chatty-choices\" data-correct-feedback=\"🎉 Continue past the park — that is step two, and the route happens in order.\" data-wrong-feedback=\"❌ Read the direction as a list: first turn right, then the next step. Which phrase comes after the turn?\"><div><strong>Scenario:</strong> Your friend says: Turn right at the corner, then continue past the park. What do you do SECOND?</div><button data-answer=\"wrong\">turn right at the corner</button><button data-answer=\"correct\">continue past the park</button><button data-answer=\"wrong\">stop at the corner</button></div><div class=\"chatty-feedback empty\" aria-live=\"polite\"></div>"
+    },
+    {
+      "graphic": "🔑",
+      "title": "The Key",
+      "label": "Mastery",
+      "content": "<div class=\"summary-card\"><strong>🎓 You now hold the key</strong><ul><li><strong>Six moving words:</strong> turn · straight · past · follow · continue · corner.</li><li><strong>The four shapes:</strong> <em>Go straight.</em> · <em>Turn left / right.</em> · <em>Go past [place].</em> · <em>It is on the left / right.</em></li><li><strong>Order is the meaning:</strong> say the steps one at a time, in sequence, and the walker arrives.</li><li><strong>Go past</strong> means walk in front of it and continue — you do not stop at the bank.</li><li><strong>Say it back first:</strong> repeat the route in your own words, then walk it.</li></ul></div><div class=\"chatty-hint\"><strong>Level Up:</strong> tonight, give someone at home a real route from your front door to the nearest shop — out loud, in order, using three of the six words. Then let them give you one back, and follow it exactly.</div><div class=\"chatty-hint\"><strong>Write it down (WB page 20):</strong> write four sentences that take a friend from your school gate to your classroom. Use <em>go straight</em>, <em>turn</em>, <em>go past</em>, and <em>on the left</em> or <em>on the right</em>.<textarea class=\"write-task\" id=\"route-write\" placeholder=\"Go straight past the gate. Turn left at the _____. Go past the _____. My classroom is on the _____.\"></textarea></div>"
+    }
+  ]
+}

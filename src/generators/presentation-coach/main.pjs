@@ -1,0 +1,8 @@
+$meta
+  title = THE WEEKLY PRESENTATION — a PrAis role
+  description = One function of the NET intake, as its own generator: a 15–20 minute recorded presentation, a few times a week, about an hour a week spread out — the five-beat shape, the topic bank, the run log and the six-row reading sheet with the tutor's own rule on it: ONE correction per run. PrAis · NET.
+  tags = prais, net, intake, presentation, speaking, student, education, role
+  header
+    mode = minimal
+
+kv = {import:kv-plugin}

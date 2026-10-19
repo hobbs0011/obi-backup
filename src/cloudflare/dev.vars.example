@@ -1,0 +1,26 @@
+# Local secrets/vars for `npm run dev` — wrangler reads a file named `.dev.vars` in this
+# folder during local dev only. Copy this file to `.dev.vars` and fill it in:
+#
+#     cp dev.vars.example .dev.vars
+#
+# `.dev.vars` is never deployed: the deployed Worker gets real secrets with
+# `npx wrangler secret put <NAME>`. Nothing here is required to boot — the app runs and
+# says honestly what is missing (the ear shows its key card; text falls back to Workers AI).
+
+# --- transcription (/transcribe) ---------------------------------------------
+# Without this, only the ear is dark — everything else works.
+DEEPGRAM_API_KEY=""
+
+# --- optional: run the BRAIN locally, no cloud, no key ------------------------
+# Any OpenAI-compatible /chat/completions endpoint. Left unset, local dev uses the
+# `[ai]` binding (which needs `npx wrangler dev --remote` and a Cloudflare account).
+# With these set, nothing leaves your machine — e.g. Ollama on the same box:
+#   ollama serve && ollama pull llama3.1
+# LLM_BASE_URL="http://localhost:11434/v1"
+# LLM_MODEL="llama3.1"
+# LLM_API_KEY="ollama"
+
+# --- optional: images (same idea) --------------------------------------------
+# IMAGE_BASE_URL="http://localhost:11434/v1"
+# IMAGE_MODEL=""
+# IMAGE_API_KEY=""

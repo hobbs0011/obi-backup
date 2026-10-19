@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /backend/
+Disallow: /README.md
+Disallow: /BLUEPRINT.md
+Disallow: /ASSET-MANIFEST.json
+
+# NET — Natural English Training
+# A static site with no analytics, no cookies and no tracking. There is nothing
+# here to crawl that a person cannot read.
+Sitemap: https://naturalenglishtraining.dev/sitemap.xml

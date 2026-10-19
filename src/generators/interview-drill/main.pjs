@@ -1,0 +1,8 @@
+$meta
+  title = THE INTERVIEW — a PrAis role
+  description = One function of the NET intake, as its own generator: the interview bank this market actually asks (the awkward personal ones first, because they were really asked), and the drill — run it cold on camera, mark the three that broke, rewrite only those, until it is boring to say. PrAis · NET.
+  tags = prais, net, intake, interview, questions, student, education, role
+  header
+    mode = minimal
+
+kv = {import:kv-plugin}

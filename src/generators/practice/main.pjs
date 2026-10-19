@@ -1,0 +1,11 @@
+$meta
+  title = Obi · Practice Node — PrAis umbrella
+  description = The umbrella's practice node (role: practice): it turns the student's OWN filed evidence — their transcript, their mistakes, their words — into short drills, quizzes and vocabulary, with a citation on every item, and reports the results back to the command station as evidence. Nothing is invented; missing evidence is reported, never filled with a generic worksheet.
+  tags = practice, drills, quiz, vocabulary, pr-ais, obi, cgn, sdnad
+  header
+    mode = minimal
+
+generateText = {import:ai-text-plugin}
+kv = {import:kv-plugin}
+superFetch = {import:super-fetch-plugin}
+uploadPlugin = {import:upload-plugin}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0f0f1a">
+<title>Page not found | Natural English Training</title>
+<meta name="description" content="That page does not exist. Here is the way back — the method, the programmes, the pricing, or the free placement test.">
+<meta name="robots" content="noindex,follow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%230f0f1a'/%3E%3Cpath d='M16 5c2.2 3.4 2 6.1-.4 8.6 2.6-.8 4.3-2.4 5.3-4.6 1.2 3 .5 5.7-1.7 7.8 2.2-.2 3.9-1.2 5.1-3-.3 3.3-1.8 5.7-4.4 7.2 1.7.7 3.5.8 5.3.4-1.6 3-4.3 4.7-7.6 4.7l-.8 4.2h-3l-.8-4.2c-3.3 0-6-1.7-7.6-4.7 1.8.4 3.6.3 5.3-.4-2.6-1.5-4.1-3.9-4.4-7.2 1.2 1.8 2.9 2.8 5.1 3-2.2-2.1-2.9-4.8-1.7-7.8 1 2.2 2.7 3.8 5.3 4.6C14 11.1 13.8 8.4 16 5Z' fill='%23f59e0b'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@500;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/net.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="spectrum"></div>
+<nav class="nav" aria-label="Primary">
+  <div class="wrap bar">
+    <a class="brand" href="index.html"><span class="sig" data-sig="phoenix"></span><span class="wm">NET<small>Natural English Training</small></span></a>
+    <button class="burger" id="netBurger" aria-expanded="false" aria-controls="netLinks">MENU</button>
+    <div class="navlinks" id="netLinks">
+      <a href="method.html">Method</a>
+      <a href="programs.html">Programmes</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="placement.html">Placement test</a>
+      <a href="results.html">Results</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+      <a class="cta" href="book.html">Book free diagnostic</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+  <header class="hero">
+    <div class="wrap narrow center">
+      <p class="kick solo">Error 404</p>
+      <h1>That page is not here.</h1>
+      <p class="lede">Which is a change from the usual problem — most English students are here, and would rather not be. Nothing is broken; the link is simply pointing at a room that does not exist.</p>
+      <div class="btnrow center mt3">
+        <a class="btn btn-primary" href="index.html">Back to the front page</a>
+        <a class="btn btn-ghost" href="placement.html">Take the placement test instead</a>
+      </div>
+    </div>
+    <div class="spectrum"></div>
+  </header>
+
+  <section class="tight">
+    <div class="wrap">
+      <p class="kick">Where you were probably going</p>
+      <div class="ctagrid" id="fourOhFour"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site" id="netFooter"></footer>
+<script src="assets/net.js"></script>
+<script src="assets/api.js"></script>
+<script>
+(function () {
+  var cards = [
+    ["The Method", "method.html", "The 60% rule, the 45/15, the 10-5-5-3 anatomy and the Mouse→Tiger ladder — the whole thing in the open."],
+    ["Programmes", "programs.html", "Eight tracks from ages 1 to 70, mapped to the curriculum guides the schools actually teach from."],
+    ["Pricing", "pricing.html", "One published rate, a free diagnostic, and the estimate calculator."],
+    ["Placement test", "placement.html", "A real adaptive test in your browser. Eight minutes, no signup, a level and a plan at the end."],
+    ["Results &amp; proof", "results.html", "The guarantee, the evidence chain, and an explicit refusal to publish invented reviews."],
+    ["For parents", "parents.html", "What happens inside the hour, what you will see at home, and the honest limits."],
+    ["FAQ", "faq.html", "Sixteen questions answered without a sales voice."],
+    ["Book the free diagnostic", "book.html", "Thirty minutes, in your home or online, no card, no obligation."]
+  ];
+  document.getElementById("fourOhFour").innerHTML = cards.map(function (c) {
+    return '<a class="hud" href="' + c[1] + '" style="text-decoration:none;display:block"><h3>' + c[0] + '</h3><p class="small muted mb0">' + c[2] + "</p></a>";
+  }).join("");
+})();
+</script>
+</body>
+</html>

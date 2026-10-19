@@ -1,0 +1,191 @@
+/* ============================================================================
+   THE DROP — the desk's theme (src/offer-desk/src/styles.css)
+
+   The frozen tokens are the family's own (BRAND.002 / LESSON.008): purple is
+   the SYSTEM, gold is the REWARD, #0f0f1a is the GROUND, and the four semantic
+   colours are only ever STATE. This file changes none of them; it wears them,
+   so a client opening this link sees the same house as every other PrAis page.
+
+   MOBILE FIRST, DELIBERATELY. The person opening this link is standing in their
+   own venue holding a phone. Every control is thumb-sized, the single column is
+   the default, and the two-column layout only appears when there is room for it.
+   ========================================================================== */
+:root{
+  --void:#0f0f1a;
+  --purple:#a855f7; --purple-dim:rgba(168,85,247,.3); --purple-glow:rgba(168,85,247,.15);
+  --gold:#f59e0b;   --gold-dim:rgba(245,158,11,.3);
+  --glass:rgba(15,15,26,.75); --glass-light:rgba(255,255,255,.05); --glass-border:rgba(168,85,247,.2);
+  --text-solid:#e2e8f0; --text-dim:#94a3b8; --text-bright:#f8fafc;
+  --ok:#22c55e; --warn:#eab308; --notice:#f97316; --bad:#ef4444;
+  --radius:1rem; --radius-sm:.5rem;
+  --font-head:'Orbitron',sans-serif;
+  --font-body:'Rajdhani',sans-serif;
+  --font-ui:'Inter',system-ui,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  background:
+    radial-gradient(1200px 700px at 70% -10%, rgba(168,85,247,.10) 0%, transparent 60%),
+    radial-gradient(900px 600px at 10% 110%, rgba(245,158,11,.08) 0%, transparent 55%),
+    var(--void);
+  color:var(--text-solid);
+  font-family:var(--font-ui);
+  font-size:16px; line-height:1.55;
+  text-align:left;
+  -webkit-text-size-adjust:100%;
+}
+/* the [hidden] ATTRIBUTE must win over every display below. The perchance engine
+   guarantees that; a plain page does not, and this page has to be honest on
+   both — so the rule is written here rather than trusted. */
+[hidden]{display:none !important}
+.hidden{display:none !important}
+.net-shell{position:relative; min-height:100vh}
+.glow-blob{position:fixed; border-radius:50%; filter:blur(100px); opacity:.12; pointer-events:none; z-index:0}
+.blob-1{width:420px;height:420px;background:var(--purple);top:-120px;left:-80px}
+.blob-2{width:360px;height:360px;background:var(--gold);bottom:-140px;right:-60px}
+
+/* ------------------------------------------------------------------ topbar */
+#topbar{
+  position:sticky; top:0; z-index:5;
+  display:flex; align-items:center; gap:10px; padding:10px 14px; flex-wrap:wrap;
+  background:linear-gradient(90deg, rgba(15,15,26,.94), rgba(15,15,26,.82));
+  border-bottom:1px solid var(--glass-border); backdrop-filter:blur(16px);
+}
+.logo{font-family:var(--font-head); font-size:16px; font-weight:800; letter-spacing:.5px; text-transform:uppercase}
+.logo .grad{background-image:linear-gradient(90deg,var(--purple),var(--gold)); -webkit-background-clip:text; background-clip:text; color:transparent}
+@supports not ((-webkit-background-clip:text) or (background-clip:text)){ .logo .grad{color:var(--purple)} }
+.logo .divider{color:var(--text-dim); margin:0 4px; font-weight:400}
+.logo .obi{color:var(--gold)}
+.spacer{flex:1}
+.tabmeta{font-size:10.5px; color:var(--text-dim); font-family:var(--font-mono); white-space:nowrap; text-overflow:ellipsis; overflow:hidden; max-width:60vw}
+.tabmeta b{color:var(--gold); font-weight:700}
+
+/* --------------------------------------------------------------- structure */
+.wrap{position:relative; z-index:1; max-width:1080px; margin:0 auto; padding:14px 14px 60px; display:flex; flex-direction:column; gap:14px}
+.card{
+  background:var(--glass); border:1px solid var(--glass-border); border-radius:var(--radius);
+  padding:16px; backdrop-filter:blur(16px);
+}
+.step{font-family:var(--font-mono); font-size:10.5px; letter-spacing:1.4px; color:var(--gold); text-transform:uppercase; margin-bottom:6px}
+h1{font-family:var(--font-head); font-size:clamp(22px,5.4vw,34px); line-height:1.2; margin:.1em 0 .35em; letter-spacing:.4px}
+h2{font-family:var(--font-head); font-size:clamp(17px,4vw,22px); line-height:1.3; margin:.1em 0 .4em; letter-spacing:.3px}
+.lead{font-family:var(--font-body); font-size:clamp(16px,4.2vw,19px); color:var(--text-bright); margin:.2em 0}
+.hint{font-size:13.5px; color:var(--text-dim); margin:.5em 0}
+/* the proof of work — the one statement of what is received. Set apart by a left
+   rule rather than by size or colour: it is a stated fact, not a headline. */
+.proof{font-size:13.5px; color:var(--text-solid); margin:.7em 0 .2em; padding-left:10px; border-left:2px solid var(--purple-dim); line-height:1.55}
+.sub2{font-size:11px; letter-spacing:1.2px; text-transform:uppercase; color:var(--text-dim); font-family:var(--font-mono); margin:14px 0 6px}
+.rule{height:1px; background:linear-gradient(90deg,var(--purple-dim),transparent); margin:14px 0}
+.meta{font-family:var(--font-mono); font-size:11.5px; color:var(--text-dim); margin:6px 0}
+.meta b{color:var(--gold)}
+.ok{color:var(--ok)} .warn{color:var(--warn)} .notice{color:var(--notice)} .bad{color:var(--bad)}
+.foot{font-size:12px; color:var(--text-dim); text-align:center; padding:8px 4px 0}
+.foot b{color:var(--gold)}
+
+/* ------------------------------------------------------------------ inputs */
+input[type=text],textarea{
+  width:100%; background:rgba(255,255,255,.04); color:var(--text-bright);
+  border:1px solid var(--glass-border); border-radius:var(--radius-sm);
+  padding:12px 13px; font-family:var(--font-ui); font-size:15px; line-height:1.5;
+}
+textarea{resize:vertical; min-height:90px}
+input[type=text]:focus,textarea:focus{outline:2px solid var(--purple); outline-offset:1px}
+label{display:block; font-size:14px; margin:8px 0 6px; color:var(--text-solid)}
+.askrow{margin:6px 0 2px}
+
+/* ----------------------------------------------------------------- buttons */
+.btnrow{display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 2px}
+.tbtn{
+  background:var(--glass-light); color:var(--text-solid); border:1px solid var(--glass-border);
+  border-radius:99px; padding:11px 16px; font-size:14px; font-family:var(--font-ui); cursor:pointer;
+  display:inline-flex; align-items:center; gap:6px; text-decoration:none; transition:background .15s,border-color .15s;
+}
+.tbtn:hover{background:rgba(168,85,247,.14); border-color:var(--purple-dim)}
+.tbtn:focus-visible{outline:2px solid var(--gold); outline-offset:2px}
+.tbtn.primary{background:var(--purple); border-color:var(--purple); color:#0d0616; font-weight:700}
+.tbtn.primary:hover{background:#b975f8}
+.tbtn.danger{background:rgba(239,68,68,.16); border-color:rgba(239,68,68,.4); color:#fecaca}
+.tbtn[disabled]{opacity:.45; cursor:not-allowed}
+.tbtn.sm{padding:7px 12px; font-size:12.5px}
+
+/* ------------------------------------------------------------- trade grid */
+.grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(190px,1fr)); gap:8px; margin-top:14px}
+.trade{
+  text-align:left; background:rgba(255,255,255,.03); border:1px solid var(--glass-border);
+  border-radius:var(--radius-sm); padding:11px 12px; cursor:pointer; color:var(--text-solid);
+  font-family:var(--font-ui); font-size:13.5px; line-height:1.35;
+}
+.trade:hover{background:rgba(168,85,247,.12); border-color:var(--purple-dim)}
+.trade.on{background:rgba(168,85,247,.2); border-color:var(--purple); color:var(--text-bright)}
+.trade b{display:block; font-family:var(--font-head); font-size:12px; letter-spacing:.4px; text-transform:uppercase; margin-bottom:3px}
+
+/* ---------------------------------------------------------- trade panel */
+.tp-need{font-family:var(--font-body); font-size:17px; color:var(--text-bright)}
+.tp-grid{display:grid; grid-template-columns:1fr; gap:12px; margin-top:10px}
+@media(min-width:820px){ .tp-grid{grid-template-columns:1fr 1fr} }
+.tp-box{border:1px solid var(--glass-border); border-radius:var(--radius-sm); padding:12px}
+.tp-box h3{font-family:var(--font-head); font-size:12.5px; letter-spacing:.6px; text-transform:uppercase; margin:0 0 8px; color:var(--purple)}
+.tp-box ul{margin:0; padding-left:18px}
+.tp-box li{margin:5px 0; font-size:13.5px; color:var(--text-solid)}
+.tp-box li span{color:var(--text-dim)}
+.tp-box p{margin:0; font-size:13.5px}
+
+/* --------------------------------------------------------------- shot list */
+.shot{display:flex; gap:11px; padding:11px 0; border-top:1px solid rgba(255,255,255,.06); cursor:pointer}
+.shot:first-of-type{border-top:0}
+.shot .n{
+  flex:0 0 30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  background:rgba(168,85,247,.16); border:1px solid var(--purple-dim); color:var(--purple);
+  font-family:var(--font-mono); font-size:12.5px;
+}
+.shot.done .n{background:rgba(34,197,94,.18); border-color:rgba(34,197,94,.45); color:var(--ok)}
+.shot.done .t{color:var(--text-dim); text-decoration:line-through}
+.shot .t{font-size:14.5px; color:var(--text-bright)}
+.shot .w{font-size:12.5px; color:var(--text-dim); margin-top:2px}
+
+/* -------------------------------------------------------------- drop zone */
+#dropZone{
+  margin:10px 0; padding:26px 16px; text-align:center; cursor:pointer;
+  border:2px dashed var(--glass-border); border-radius:var(--radius); background:rgba(255,255,255,.02);
+}
+#dropZone:hover{border-color:var(--purple-dim); background:rgba(168,85,247,.06)}
+#dropZone .big{font-size:16px}
+#dropZone .sm{font-size:12.5px; color:var(--text-dim); margin-top:6px}
+
+/* ---------------------------------------------------------------- the queue */
+.qitem{display:flex; align-items:center; gap:10px; padding:9px 0; border-top:1px solid rgba(255,255,255,.06); font-size:13.5px}
+.qitem:first-child{border-top:0}
+.qitem .nm{flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.qitem .nm i{font-style:normal; color:var(--text-dim); font-family:var(--font-mono); font-size:11px; display:block}
+.qitem .st{font-family:var(--font-mono); font-size:11px; color:var(--text-dim)}
+.pill{font-family:var(--font-mono); font-size:10.5px; padding:2px 8px; border-radius:99px; border:1px solid var(--glass-border); color:var(--text-dim)}
+.pill.ok{color:var(--ok); border-color:rgba(34,197,94,.4)}
+.pill.bad{color:var(--bad); border-color:rgba(239,68,68,.4)}
+.pill.warn{color:var(--warn); border-color:rgba(234,179,8,.4)}
+
+/* ------------------------------------------------------------------ media */
+#sheetImg{width:100%; height:auto; border-radius:var(--radius-sm); border:1px solid var(--glass-border); display:block}
+#reelVideo{width:100%; max-width:340px; border-radius:var(--radius-sm); border:1px solid var(--glass-border); display:block; background:#000}
+#reelCanvas{width:100%; max-width:340px; border-radius:var(--radius-sm); border:1px solid var(--glass-border)}
+.bar{height:7px; background:rgba(255,255,255,.08); border-radius:99px; overflow:hidden; margin:8px 0}
+.bar > i{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--purple),var(--gold)); transition:width .2s}
+
+/* -------------------------------------------------------------- pulse read */
+.pline{display:flex; gap:10px; padding:7px 0; border-top:1px solid rgba(255,255,255,.06); font-size:13.5px}
+.pline:first-child{border-top:0}
+.pline b{flex:0 0 92px; color:var(--text-bright); font-weight:600}
+.pline span{color:var(--text-dim)}
+.strip{display:flex; gap:6px; overflow-x:auto; padding:8px 0}
+.strip img{height:104px; width:auto; border-radius:6px; border:1px solid var(--glass-border)}
+
+/* ---------------------------------------------------------------- answers */
+.q{margin:12px 0 2px}
+.qh{font-size:14px; color:var(--text-bright); margin-bottom:6px}
+.rec{display:flex; align-items:center; gap:10px; padding:7px 0; border-top:1px solid rgba(255,255,255,.06); font-size:13px}
+.rec audio{height:34px}
+
+/* -------------------------------------------------------------------- log */
+.log{font-family:var(--font-mono); font-size:11.5px; line-height:1.7; color:var(--text-dim); max-height:280px; overflow:auto; white-space:pre-wrap}
+.log b{color:var(--gold)} .log .l-ok{color:var(--ok)} .log .l-bad{color:var(--bad)} .log .l-warn{color:var(--warn)}

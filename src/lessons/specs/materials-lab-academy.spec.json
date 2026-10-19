@@ -1,0 +1,127 @@
+{
+  "topic": "Science · Unit 2: Materials — Properties and Changes (change of state · fair testing · gases) · Grade 6 · 6P1 (periods 1–2, Wed 23/09/2026)",
+  "title": "Materials Lab Academy",
+  "logo": "🧪",
+  "subtitle": "Everything changes — the only question is how fast 🧊",
+  "cta": "🚀 Enter the Lab",
+  "features": [
+    {
+      "icon": "🧊",
+      "title": "Three States, One Water",
+      "desc": "Ice, water, steam — the same stuff in three states, and the words that name each move."
+    },
+    {
+      "icon": "🔬",
+      "title": "A Fair Test",
+      "desc": "Change one thing, keep everything else the same — or your result means nothing at all."
+    },
+    {
+      "icon": "🎮",
+      "title": "Three Games",
+      "desc": "Scramble the words, match each change, sort melting from freezing from boiling."
+    },
+    {
+      "icon": "🗣️",
+      "title": "Say It Like A Scientist",
+      "desc": "Predict first, then measure, then record — the sentence a scientist says out loud."
+    }
+  ],
+  "coins": {
+    "start": 0,
+    "correct": 10,
+    "wrong": 0
+  },
+  "method": {
+    "structure": "10-5-5-3",
+    "phase": "Vocab → Fair Test → Game → Review (periods 1–2 of the unit-2 Science session)",
+    "games": [
+      {
+        "name": "State Scramble",
+        "type": "competition",
+        "why": "retrieval speed — the word has to come out before the meaning is needed"
+      },
+      {
+        "name": "State & Change Match",
+        "type": "collaboration",
+        "why": "social proof — a pair that cannot name the change cannot move, so the pair teaches itself"
+      },
+      {
+        "name": "Melting, Freezing or Boiling",
+        "type": "creation",
+        "why": "ownership — the learner judges each change for themselves, which is the first real act of a scientist"
+      }
+    ],
+    "voice": [
+      "Say it LOUD. Say it WRONG. But SAY IT.",
+      "Loud and wrong beats silent and correct. Every single time."
+    ]
+  },
+  "rooms": [
+    {
+      "graphic": "🏠",
+      "title": "The Entrance",
+      "label": "Warm-Up",
+      "content": "<p>Two periods, one lab 🧪 Today the <strong>matter</strong> does the work — ice, water and steam are the same substance in three states, and a scientist needs three things to prove it: a <strong>fair test</strong>, a <strong>prediction</strong>, and a <strong>record</strong>.</p><ul><li>Eight words for the states and the changes between them</li><li>What <em>melting</em>, <em>freezing</em>, <em>evaporating</em> and <em>condensing</em> actually do to the particles</li><li>The one rule of a fair test — change <strong>one</strong> thing</li><li>A puddle that disappears without ever boiling</li></ul>"
+    },
+    {
+      "graphic": "🖥️",
+      "title": "The Science Room",
+      "label": "Scene",
+      "content": "<div class=\"dialogue-block\"><span class=\"speaker\">Minh:</span> Sir, my ice is gone. It was a solid when the bell rang — now it is just water in the cup 🧊</div><div class=\"dialogue-block\"><span class=\"speaker\">Teacher:</span> Good. So what happened to it? Use the word, not the story.</div><div class=\"dialogue-block\"><span class=\"speaker\">Minh:</span> It <em>melted</em>. It changed from solid to liquid.</div><div class=\"dialogue-block\"><span class=\"speaker\">Linh:</span> Mine is still ice. I put mine in the cool bag — so mine stayed a solid.</div><div class=\"dialogue-block\"><span class=\"speaker\">Teacher:</span> Same substance, two cups, one difference. Linh, what did you change?</div><div class=\"dialogue-block\"><span class=\"speaker\">Linh:</span> The <em>temperature</em>. Just the temperature. Everything else was the same.</div><div class=\"dialogue-block\"><span class=\"speaker\">Teacher:</span> Then Linh has run a fair test, and Minh has run a puddle. Write both down.</div><div class=\"chatty-clue\">🤔 Reality check: nothing was added and nothing was lost — the water is still there, in a different state. <strong>Melting</strong>, <strong>freezing</strong>, <strong>evaporating</strong> and <strong>condensing</strong> are not new substances. They are the same substance with a new state.</div>"
+    },
+    {
+      "graphic": "📱",
+      "title": "The Group Chat",
+      "label": "Text Scene",
+      "content": "<div class=\"dialogue-block\"><span class=\"speaker\">Linh:</span> ok real question. If ice and steam are both water why do we have four words for it 😤</div><div class=\"dialogue-block\"><span class=\"speaker\">Nam:</span> bc theyre different STATES. solid liquid gas</div><div class=\"dialogue-block\"><span class=\"speaker\">Minh:</span> and the words tell you which way it went. melt = solid → liquid. freeze = liquid → solid</div><div class=\"dialogue-block\"><span class=\"speaker\">Nam:</span> and evaporate = liquid → gas. condense = gas → liquid</div><div class=\"dialogue-block\"><span class=\"speaker\">Linh:</span> ok that actually makes sense. whats the fair test thing then</div><div class=\"dialogue-block\"><span class=\"speaker\">Minh:</span> change ONE thing. keep everything else the SAME. then you know what did it</div><div class=\"dialogue-block\"><span class=\"speaker\">Linh:</span> 🙌 so my cool bag was the one thing</div><div class=\"chatty-hint\"><strong>Pro Tip:</strong> in an experiment, say the sentence out loud before you start — <em>\"I am changing only the _____, and I predict that _____.\"</em> If you cannot fill both blanks, the test is not fair yet.</div>"
+    },
+    {
+      "graphic": "📚",
+      "title": "The Words",
+      "label": "Learn",
+      "content": "<div class=\"vocab-list\"><div class=\"vocab-item\"><strong>1. solid:</strong> <span>the state that keeps its own shape — ice, a pencil, a stone. Particles locked tightly in place.</span></div><div class=\"vocab-item\"><strong>2. liquid:</strong> <span>the state that takes the shape of its container — water in a cup, still the same amount.</span></div><div class=\"vocab-item\"><strong>3. gas:</strong> <span>the state that spreads out to fill the whole room — steam, air, the smell of food.</span></div><div class=\"vocab-item\"><strong>4. melt:</strong> <span>solid → liquid, when it is heated. Ice melts on the desk.</span></div><div class=\"vocab-item\"><strong>5. freeze:</strong> <span>liquid → solid, when it is cooled. Water freezes in the freezer.</span></div><div class=\"vocab-item\"><strong>6. evaporate:</strong> <span>liquid → gas, without boiling. The puddle disappears on a warm day.</span></div><div class=\"vocab-item\"><strong>7. condense:</strong> <span>gas → liquid, when it cools. Steam becomes drops on a cold window.</span></div><div class=\"vocab-item\"><strong>8. fair test:</strong> <span>changing only ONE thing and keeping every other thing the same, so the result means something.</span></div></div>"
+    },
+    {
+      "graphic": "🔬",
+      "title": "A Fair Test",
+      "label": "Investigation",
+      "content": "<div class=\"reading\"><strong>The question:</strong> does sugar dissolve faster in hot water than in cold water?<br><br><strong>Plan A.</strong> Put two spoons of sugar in hot water and stir quickly. Put five spoons of sugar in cold water and do not stir. The hot water wins. <strong>Result: useless.</strong> You changed the temperature <em>and</em> the amount of sugar <em>and</em> the stirring — you have no idea which one did it.<br><br><strong>Plan B.</strong> Put two spoons of sugar in 200 ml of hot water. Put two spoons of sugar in 200 ml of cold water. Stir both, the same way, for the same time. Only one thing differs: the temperature. Now the hot water wins and you can say <em>why</em>.</div><div class=\"chatty-clue\">🤔 Reality check: an unfair test does not give a wrong answer — it gives <strong>no</strong> answer. The only difference between the two plans is the number of things that changed at once.</div>"
+    },
+    {
+      "graphic": "💨",
+      "title": "The Puddle",
+      "label": "Reading",
+      "content": "<div class=\"reading\">At break time there is a puddle beside the stairs. It is 31 degrees. By 3 o'clock the puddle is gone — but nobody boiled it, and the sun never touched that corner.<br><br>What happened: the water <strong>evaporated</strong>. Fast-moving particles at the surface escaped into the air as a gas. The puddle did not need to boil; it only needed to be warm and open to the air.<br><br>Now watch the window of the air-conditioned room. There are drops of water on the <em>inside</em> of the glass, and nobody sprayed anything. The water vapour in the warm air met the cold glass and <strong>condensed</strong> — gas → liquid, the other direction.</div><div class=\"chatty-hint\"><strong>Watch For:</strong> <em>evaporate</em> and <em>condense</em> are the quiet pair. No boiling, no freezing, no obvious drama — just a state change you have to notice, not hear.</div>"
+    },
+    {
+      "graphic": "🔤",
+      "title": "Game 1 — State Scramble",
+      "label": "Game 1",
+      "content": "<p>How to win: the letters are shuffled. Click them in the right order to rebuild the word, and read the meaning when it lands. Eight words, no time limit — but the clock in your head is running 😄</p><div class=\"game\" data-game=\"scramble\" data-title=\"🔤 State Scramble\" data-items=\"solid=the state that keeps its own shape;liquid=the state that takes the shape of the cup;gas=the state that spreads out to fill the room;melt=solid to liquid, when heated;freeze=liquid to solid, when cooled;evaporate=liquid to gas, without boiling;condense=gas to liquid, when it cools;puddle=a small pool of water on the ground\"></div>"
+    },
+    {
+      "graphic": "🔗",
+      "title": "Game 2 — State & Change",
+      "label": "Game 2",
+      "content": "<p>How to win: click the change on the left, then the state it <em>starts</em> from on the right. Wrong pairs shake and let go — guess boldly.</p><div class=\"game\" data-game=\"match\" data-title=\"🔗 Change &amp; Starting State\" data-items=\"ice on a warm desk=solid → liquid;water in the freezer=liquid → solid;steam on a cold window=gas → liquid;a puddle on a hot day=liquid → gas\"></div>"
+    },
+    {
+      "graphic": "📦",
+      "title": "Game 3 — Which Change?",
+      "label": "Game 3",
+      "content": "<div class=\"chatty-hint\"><strong>One word per bucket:</strong> MELTING is solid → liquid · FREEZING is liquid → solid · BOILING is liquid → gas, with bubbles and heat.</div><div class=\"game\" data-game=\"sort\" data-title=\"📦 Melting, Freezing or Boiling\" data-groups=\"MELTING: ice to water, chocolate in the sun, butter in a hot pan | FREEZING: water to ice, ice cream in the freezer, a lake on a cold night | BOILING: water with big bubbles, steam from a kettle, cooking rice\"></div>"
+    },
+    {
+      "graphic": "🎯",
+      "title": "The Test",
+      "label": "Test",
+      "content": "<div class=\"chatty-choices\" data-correct-feedback=\"🎉 Yes — melting. Solid to liquid, and nothing was added.\" data-wrong-feedback=\"❌ Look at the two states. It was a solid and it is now a liquid — that direction has its own word.\"><div><strong>Scenario:</strong> Minh's ice turns to water on the desk before the bell. What is the change called?</div><button data-answer=\"correct\">melting</button><button data-answer=\"wrong\">freezing</button><button data-answer=\"wrong\">boiling</button></div><div class=\"chatty-choices\" data-correct-feedback=\"🎉 Correct — one thing changes, everything else stays the same.\" data-wrong-feedback=\"❌ A fair test changes exactly ONE thing. If two things differ between the cups, the result cannot tell you which one did it.\"><div><strong>Scenario:</strong> You want to know whether hot water dissolves sugar faster. Which rule makes it a fair test?</div><button data-answer=\"wrong\">use more sugar in the hot water</button><button data-answer=\"correct\">change only the temperature, keep everything else the same</button><button data-answer=\"wrong\">stir the hot cup and leave the cold one still</button></div><div class=\"chatty-choices\" data-correct-feedback=\"🎉 Yes — it evaporated. Liquid to gas, without ever boiling.\" data-wrong-feedback=\"❌ Nothing boiled. The water left as a gas slowly, from the surface — that quiet change has its own word.\"><div><strong>Scenario:</strong> A puddle beside the stairs is gone by 3 o'clock, on a warm day, with no heat and no bubbles. What happened to the water?</div><button data-answer=\"wrong\">it condensed</button><button data-answer=\"wrong\">it froze</button><button data-answer=\"correct\">it evaporated</button></div><div class=\"chatty-feedback empty\" aria-live=\"polite\"></div>"
+    },
+    {
+      "graphic": "🔑",
+      "title": "The Key",
+      "label": "Mastery",
+      "content": "<div class=\"summary-card\"><strong>🧪 You can now talk like a scientist</strong><ul><li><strong>One substance, three states:</strong> ice · water · steam — and the state is decided by heat, not by the substance.</li><li><strong>Four directions, four words:</strong> melt = solid → liquid · freeze = liquid → solid · evaporate = liquid → gas · condense = gas → liquid.</li><li><strong>Evaporate and condense are the quiet pair:</strong> no boiling, no freezing — the change happens at the surface, and you have to notice it.</li><li><strong>A fair test changes ONE thing:</strong> \"I am changing only the _____, and I predict that _____.\" If you cannot say both blanks, the test is not fair.</li><li><strong>Say the prediction before the result:</strong> a scientist who writes the guess down first cannot quietly change it afterwards.</li></ul></div><div class=\"chatty-hint\"><strong>Level Up:</strong> tonight, find one change of state in your own house — the freezer, the kettle, a glass of cold water — and say the sentence to somebody: <em>\"This is a ____ change: it went from ___ to ___.\"</em> Two states, one word, out loud. That is the whole lesson, applied.</div><div class=\"chatty-hint\"><strong>Write it down:</strong> describe your own fair test in two or three sentences. Name the ONE thing you would change, say what you predict, and name one thing you would keep the same.<textarea class=\"write-task\" id=\"matter-write\" placeholder=\"I am changing only the _____. I predict that _____. I will keep the _____ the same.\"></textarea></div>"
+    }
+  ]
+}

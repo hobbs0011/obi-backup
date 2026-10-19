@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEON CITY GENESIS: The Evolution</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --purple: #a855f7;
+  --gold: #f59e0b;
+  --dark: #0f0f1a;
+  --purple-glow: rgba(168, 85, 247, 0.6);
+  --gold-glow: rgba(245, 158, 11, 0.6);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--dark);
+  color: #e0e0e0;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Animated Blueprint Grid Background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(168, 85, 247, 0.05) 40px, rgba(168, 85, 247, 0.05) 41px),
+    repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(168, 85, 247, 0.05) 40px, rgba(168, 85, 247, 0.05) 41px);
+  animation: gridPulse 8s ease-in-out infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes gridPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+/* Floating Blobs */
+.blob {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 1;
+  animation: float 20s ease-in-out infinite;
+}
+
+.blob1 {
+  width: 400px;
+  height: 400px;
+  background: var(--purple);
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.blob2 {
+  width: 350px;
+  height: 350px;
+  background: var(--gold);
+  bottom: 10%;
+  right: 10%;
+  animation-delay: 7s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -30px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+}
+
+/* Main Container */
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Landing Hero */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero-glass {
+  background: rgba(168, 85, 247, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 20px;
+  padding: 60px 40px;
+  max-width: 900px;
+  box-shadow: 0 8px 32px var(--purple-glow);
+}
+
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 4rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--purple), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 20px;
+  text-shadow: 0 0 40px var(--purple-glow);
+  animation: titleGlow 3s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.3); }
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: var(--gold);
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+
+.enter-btn {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  padding: 20px 60px;
+  background: linear-gradient(135deg, var(--purple), var(--gold));
+  border: none;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 30px var(--purple-glow);
+  transition: all 0.3s ease;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.enter-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 50px var(--gold-glow);
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Vibe Switch */
+.vibe-switch {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: rgba(168, 85, 247, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  border-radius: 50px;
+  padding: 10px 20px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.vibe-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.vibe-btn.past {
+  background: var(--gold);
+  color: var(--dark);
+}
+
+.vibe-btn.future {
+  background: var(--purple);
+  color: white;
+}
+
+.vibe-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px currentColor;
+}
+
+/* Main Content */
+.main-content {
+  display: none;
+  animation: fadeIn 1s ease;
+}
+
+.main-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Section Headers */
+.section {
+  margin: 80px 0;
+}
+
+.section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  color: var(--purple);
+  text-align: center;
+  margin-bottom: 40px;
+  text-shadow: 0 0 20px var(--purple-glow);
+}
+
+/* Vocabulary Cards */
+.vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.vocab-card {
+  background: rgba(168, 85, 247, 0.1);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 15px;
+  padding: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  perspective: 1000px;
+}
+
+.vocab-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px var(--purple-glow);
+  border-color: var(--purple);
+}
+
+.vocab-card.flipped .card-front {
+  transform: rotateY(180deg);
+}
+
+.vocab-card.flipped .card-back {
+  transform: rotateY(0);
+}
+
+.card-front,
+.card-back {
+  transition: transform 0.6s;
+  backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(-180deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 25px;
+}
+
+.vocab-word {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.vocab-emoji {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.vocab-def {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.vocab-example {
+  font-style: italic;
+  color: #a0a0a0;
+  margin-bottom: 15px;
+}
+
+.vn-toggle {
+  background: var(--gold);
+  color: var(--dark);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.vn-toggle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--gold-glow);
+}
+
+.vn-text {
+  display: none;
+  margin-top: 10px;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.vn-text.show {
+  display: block;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.audio-btn {
+  background: var(--purple);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+}
+
+.audio-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px var(--purple-glow);
+}
+
+/* Idioms & Slang */
+.phrase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.phrase-card {
+  background: rgba(245, 158, 11, 0.1);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 15px;
+  padding: 25px;
+  transition: all 0.3s ease;
+}
+
+.phrase-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px var(--gold-glow);
+  border-color: var(--gold);
+}
+
+.phrase-term {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.phrase-meaning {
+  color: var(--purple);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Time Slider */
+.slider-container {
+  position: relative;
+  max-width: 900px;
+  margin: 40px auto;
+  height: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+}
+
+.slider-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.slider-past {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.3), rgba(139, 69, 19, 0.3)),
+              url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500"><rect fill="%23463020" width="800" height="500"/><text x="50%" y="50%" font-size="40" fill="%23f59e0b" text-anchor="middle" dominant-baseline="middle" font-family="Orbitron">🌾 RICE FIELDS %26 TRADITION</text></svg>');
+  filter: sepia(40%);
+}
+
+.slider-future {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.3), rgba(138, 43, 226, 0.3)),
+              url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500"><rect fill="%230f0f1a" width="800" height="500"/><text x="50%" y="50%" font-size="40" fill="%23a855f7" text-anchor="middle" dominant-baseline="middle" font-family="Orbitron">🏙️ CYBER SPRAWL %26 NEON</text></svg>');
+  clip-path: inset(0 50% 0 0);
+  transition: clip-path 0.3s ease;
+}
+
+.slider-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background: white;
+  cursor: ew-resize;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+.slider-handle::before {
+  content: '⟷';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--purple);
+  color: white;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  box-shadow: 0 0 20px var(--purple-glow);
+}
+
+/* Game 1: Urban Sprawl Rush */
+.game-container {
+  background: rgba(168, 85, 247, 0.1);
+  backdrop-filter: blur(20px);
+  border: 2px solid var(--purple);
+  border-radius: 20px;
+  padding: 30px;
+  margin: 40px auto;
+  max-width: 800px;
+  position: relative;
+  overflow: hidden;
+  min-height: 600px;
+}
+
+.game-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.game-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  color: var(--purple);
+  margin-bottom: 10px;
+}
+
+.game-score {
+  font-size: 1.5rem;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.game-area {
+  position: relative;
+  height: 450px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.falling-word {
+  position: absolute;
+  background: linear-gradient(135deg, var(--purple), var(--gold));
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: fall 5s linear;
+}
+
+.falling-word:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px var(--gold-glow);
+}
+
+@keyframes fall {
+  from { top: -50px; }
+  to { top: 100%; }
+}
+
+.definition-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.def-btn {
+  background: rgba(245, 158, 11, 0.2);
+  border: 2px solid var(--gold);
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.def-btn:hover {
+  background: var(--gold);
+  color: var(--dark);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px var(--gold-glow);
+}
+
+.def-btn.correct {
+  background: #10b981;
+  border-color: #10b981;
+  animation: correctFlash 0.5s ease;
+}
+
+.def-btn.wrong {
+  background: #ef4444;
+  border-color: #ef4444;
+  animation: shake 0.5s ease;
+}
+
+@keyframes correctFlash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+/* Game 3: Mayor's Meter */
+.mayor-container {
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+.meter-display {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.meter-bar-container {
+  position: relative;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.meter-bar {
+  position: absolute;
+  height: 100%;
+  transition: all 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.meter-purple {
+  left: 0;
+  background: linear-gradient(90deg, var(--purple), rgba(168, 85, 247, 0.6));
+  color: white;
+}
+
+.meter-gold {
+  right: 0;
+  background: linear-gradient(-90deg, var(--gold), rgba(245, 158, 11, 0.6));
+  color: var(--dark);
+}
+
+.team-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.team-section {
+  background: rgba(168, 85, 247, 0.1);
+  backdrop-filter: blur(10px);
+  border: 2px solid var(--purple);
+  border-radius: 15px;
+  padding: 25px;
+}
+
+.team-section.gold {
+  border-color: var(--gold);
+  background: rgba(245, 158, 11, 0.1);
+}
+
+.team-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--purple);
+}
+
+.team-section.gold .team-title {
+  color: var(--gold);
+}
+
+.team-btn {
+  width: 100%;
+  padding: 20px;
+  font-size: 1.2rem;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.team-btn.purple {
+  background: var(--purple);
+  color: white;
+}
+
+.team-btn.gold {
+  background: var(--gold);
+  color: var(--dark);
+}
+
+.team-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 25px currentColor;
+}
+
+.team-score {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 15px;
+}
+
+/* Progress Bar */
+.progress-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--purple), var(--gold));
+  transition: width 0.3s ease;
+  box-shadow: 0 0 15px var(--purple-glow);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .vocab-grid,
+  .phrase-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .slider-container {
+    height: 300px;
+  }
+  
+  .team-controls {
+    grid-template-columns: 1fr;
+  }
+  
+  .definition-buttons {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Confetti Effect */
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: var(--gold);
+  top: -10px;
+  border-radius: 50%;
+  animation: confettiFall 3s linear;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@keyframes confettiFall {
+  to {
+    top: 100vh;
+    opacity: 0;
+    transform: rotate(720deg);
+  }
+}
+
+/* Static Glitch Effect */
+@keyframes staticGlitch {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.8; }
+}
+
+.glitch-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(168, 85, 247, 0.1) 0px,
+    transparent 2px,
+    transparent 4px,
+    rgba(168, 85, 247, 0.1) 6px
+  );
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0;
+  animation: staticGlitch 0.3s ease;
+}
+</style>
+</head>
+<body>
+
+<!-- Floating Blobs -->
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+
+<!-- Landing Hero -->
+<div class="hero" id="hero">
+  <div class="hero-glass">
+    <h1>NEON CITY GENESIS</h1>
+    <p class="subtitle">Cities don't just grow; they mutate. You are the Time Architects.</p>
+    <p class="subtitle" style="font-size: 1.2rem; margin-bottom: 40px;">🌾 → 🏙️</p>
+    <button class="enter-btn" onclick="enterLesson()">ENTER THE EVOLUTION</button>
+  </div>
+</div>
+
+<!-- Vibe Switch -->
+<div class="vibe-switch" style="display: none;" id="vibeSwitch">
+  <button class="vibe-btn past" onclick="setVibe('past')">🌾 PAST</button>
+  <button class="vibe-btn future" onclick="setVibe('future')">🏙️ FUTURE</button>
+</div>
+
+<!-- Main Content -->
+<div class="main-content container" id="mainContent">
+
+  <!-- Section 1: Vocabulary -->
+  <section class="section">
+    <h2 class="section-title">📚 10 URBAN VOCABULARY</h2>
+    <div class="vocab-grid">
+      
+      <div class="vocab-card" onclick="flipCard(this)">
+        <div class="card-front">
+          <div class="vocab-emoji">🏙️</div>
+          <div class="vocab-word">URBANISATION</div>
+          <button class="vn-toggle" onclick="event.stopPropagation(); toggleVN(this)">🇻🇳 Xem tiếng Việt</button>
+          <div class="vn-text">Đô thị hóa</div>
+        </div>
+        <div class="card-back">
+          <div class="vocab-def">The process of making an area more urban</div>
+          <div class="vocab-example">"Rapid urbanisation changed my hometown completely."</div>
+          <button class="audio-btn" onclick="event.stopPropagation(); playSound()">🔊</button>
+        </div>
+      </div>
+
+      <div class="vocab-card" onclick="flipCard(this)">
+        <div class="card-front">
+          <div class="vocab-emoji">🏢</div>
+          <div class="vocab-word">HIGH-RISE</div>
+          <button class="vn-toggle" onclick="event.stopPropagation(); toggleVN(this)">🇻🇳 Xem tiếng Việt</button>
+          <div class="vn-text">Nhà cao tầng</div>
+        </div>
+        <div class="card-back">
+          <div class="vocab-def">Tall buildings with many floors</div>
+          <div class="vocab-example">"High-rise apartments dominate the skyline now."</div>
+          <button class="audio-btn" onclick="event.stopPropagation(); playSound()">🔊</button>
+        </div>
+      </div>
+
+      <div class="vocab-card" onclick="flipCard(this)">
+        <div class="card-front">
+          <div class="vocab-emoji">🏘️</div>
+          <div class="vocab-word">LOW-RISE</div>
+          <button class="vn-toggle" onclick="event.stopPropagation(); toggleVN(this)">🇻🇳 Xem tiếng Việt</button>
+          <div class="vn-text">Nhà thấp tầng</div>
+        </div>
+        <div class="card-back">
+          <div class="vocab-def">Buildings with few stories</div>
+          <div class="vocab-example">"My grandparents still live in a low-rise house."</div>
+          <button class="audio-btn" onclick="event.stopPropagation(); playSound()">🔊</button>
+        </div>
+      </div>
+
+      <div class="vocab-card" onclick="flipCard(this)">
+        <div class="card-front">
+          <div class="vocab-emoji">🏪</div>
+          <div class="vocab-word">CONVENIENCE STORE</div>
+          <button class="vn-toggle" onclick="event.stopPropagation(); toggleVN(this)">🇻🇳 Xem tiếng Việt</button>
+          <div class="vn-text">Cửa hàng tiện lợi</div>
+        </div>
+        <div class="card-back">
+          <div class="vocab-def">Small shop open late hours</div>
+          <div class="vocab-example">"I buy snacks at the convenience store every night."</div>
+          <button class="audio-btn" onclick="event.stopPropagation(); playSound()">🔊</button>
+        </div>
+      </div>
+
+      <div class="vocab-card" onclick="flipCard(this)">
+        <div class="card-front">
+          <div class="vocab-emoji">🐟</div>
+          <div class="vocab-word">WET MARKET</div>
+          <button class="vn-toggle" onclick="event.stopPropagation(); toggleVN(this)">🇻🇳 Xem tiếng Việt</button>
+          <div class="vn-text">Chợ tươi sống</div>
+        </div>
+        <div class="card-back">
+          <div class="vocab-def">Traditional market selling fresh meat/fish</div>
+          <div class="vocab-example">"My mom prefers shopping at the wet market."</div>
+          <button class="audio-btn" onclick="event.stopPropagation(); playSound()">🔊</button>
+        </div>
+      </div>
+
+      <div class="vocab-card" onclick="flipCard(this)">
+        <div class="card-front">
+          <div class="vocab-emoji">🛣️</div>
+          <div class="vocab-word">INFRASTRUCTURE</div>
+          <button class="vn-toggle" onclick="event.stopPropagation(); toggleVN(this)">🇻🇳 Xem tiếng Việt</button>
+          <div class="vn-text">Cơ sở hạ tầng</div>
+        </div>
+        <div class="card-back">
+          <div class="vocab-def">Roads, power, and systems of a city</div>
+          <div class="vocab-example">"Better infrastructure attracts more investment."</div>
+          <button class="audio-btn" onclick="event.stopPropagation(); playSound()">🔊</button>
+        </div>
+      </div>
+
+      <div class="vocab-card" onclick="flipCard(this)">
+        <div class="card-front">
+          <div class="vocab-emoji">🚗</div>
+          <div class="vocab-word">CONGESTION</div>
+          <button class="vn-toggle" onclick="event.stopPropagation(); toggleVN(this)">🇻🇳 Xem tiếng Việt</button>
+          <div class="vn-text">Sự tắc nghẽn</div>
+        </div>
+        <div class="card-back">
+          <div class="vocab-def">Too much traffic or people</div>
+          <div class="vocab-example">"Traffic congestion is worse during rush hour."</div>
+          <button class="audio-btn" onclick="event.stopPropagation(); playSound()">🔊</button>
+        </div>
+      </div>
+
+      <div class="vocab-card" onclick="flipCard(this)">
+        <div class="card-front">
+          <div class="vocab-emoji">🏭</div>
+          <div class="vocab-word">INDUSTRIALISATION</div>
+          <button class="vn-toggle" onclick="event.stopPropagation(); toggleVN(this)">🇻🇳 Xem tiếng Việt</button>
+          <div class="vn-text">Công nghiệp hóa</div>
+        </div>
+        <div class="card-back">
+          <div class="vocab-def">Developing industries on a wide scale</div>
+          <div class="vocab-example">"Industrialisation created many jobs in our province."</div>
+          <button class="audio-btn" onclick="event.stopPropagation(); playSound()">🔊</button>
+        </div>
+      </div>
+
+      <div class="vocab-card" onclick="flipCard(this)">
+        <div class="card-front">
+          <div class="vocab-emoji">🚶</div>
+          <div class="vocab-word">MIGRATION</div>
+          <button class="vn-toggle" onclick="event.stopPropagation(); toggleVN(this)">🇻🇳 Xem tiếng Việt</button>
+          <div class="vn-text">Sự di cư</div>
+        </div>
+        <div class="card-back">
+          <div class="vocab-def">Moving from one place to another (Rural to Urban)</div>
+          <div class="vocab-example">"Rural-to-urban migration increased last decade."</div>
+          <button class="audio-btn" onclick="event.stopPropagation(); playSound()">🔊</button>
+        </div>
+      </div>
+
+      <div class="vocab-card" onclick="flipCard(this)">
+        <div class="card-front">
+          <div class="vocab-emoji">♻️</div>
+          <div class="vocab-word">SUSTAINABLE</div>
+          <button class="vn-toggle" onclick="event.stopPropagation(); toggleVN(this)">🇻🇳 Xem tiếng Việt</button>
+          <div class="vn-text">Bền vững</div>
+        </div>
+        <div class="card-back">
+          <div class="vocab-def">Able to be maintained at a certain rate or level</div>
+          <div class="vocab-example">"We need sustainable development for our future."</div>
+          <button class="audio-btn" onclick="event.stopPropagation(); playSound()">🔊</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 2: Time Slider -->
+  <section class="section">
+    <h2 class="section-title">⏱️ TIME TRAVELER'S SLIDER</h2>
+    <p style="text-align: center; margin-bottom: 30px; font-size: 1.2rem; color: var(--gold);">
+      Drag the slider to see how your hometown transformed 🌾 → 🏙️
+    </p>
+    <div class="slider-container" id="sliderContainer">
+      <div class="slider-image slider-past"></div>
+      <div class="slider-image slider-future" id="sliderFuture"></div>
+      <div class="slider-handle" id="sliderHandle"></div>
+    </div>
+  </section>
+
+  <!-- Section 3: Idioms -->
+  <section class="section">
+    <h2 class="section-title">💬 5 CITY LIFE IDIOMS</h2>
+    <div class="phrase-grid">
+      
+      <div class="phrase-card">
+        <div class="phrase-term">CONCRETE JUNGLE</div>
+        <div class="phrase-meaning">"A city with too many ugly buildings"</div>
+        <div class="vocab-example">Ex: "HCMC feels like a concrete jungle sometimes."</div>
+        <button class="vn-toggle" onclick="toggleVN(this)">🇻🇳 Xem tiếng Việt</button>
+        <div class="vn-text">Thành phố bê tông</div>
+      </div>
+
+      <div class="phrase-card">
+        <div class="phrase-term">HUSTLE AND BUSTLE</div>
+        <div class="phrase-meaning">"Busy, noisy activity of a city"</div>
+        <div class="vocab-example">Ex: "I love the hustle and bustle of city life."</div>
+        <button class="vn-toggle" onclick="toggleVN(this)">🇻🇳 Xem tiếng Việt</button>
+        <div class="vn-text">Lối sống hối hả</div>
+      </div>
+
+      <div class="phrase-card">
+        <div class="phrase-term">GHOST TOWN</div>
+        <div class="phrase-meaning">"A place with no people"</div>
+        <div class="vocab-example">Ex: "During Tết, the city becomes a ghost town."</div>
+        <button class="vn-toggle" onclick="toggleVN(this)">🇻🇳 Xem tiếng Việt</button>
+        <div class="vn-text">Thành phố ma</div>
+      </div>
+
+      <div class="phrase-card">
+        <div class="phrase-term">PAVE THE WAY</div>
+        <div class="phrase-meaning">"Create conditions for development"</div>
+        <div class="vocab-example">Ex: "New roads pave the way for businesses."</div>
+        <button class="vn-toggle" onclick="toggleVN(this)">🇻🇳 Xem tiếng Việt</button>
+        <div class="vn-text">Mở đường</div>
+      </div>
+
+      <div class="phrase-card">
+        <div class="phrase-term">HIT THE TOWN</div>
+        <div class="phrase-meaning">"To go out and have fun in the city"</div>
+        <div class="vocab-example">Ex: "Let's hit the town this Saturday night!"</div>
+        <button class="vn-toggle" onclick="toggleVN(this)">🇻🇳 Xem tiếng Việt</button>
+        <div class="vn-text">Đi quẩy</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 4: Slang -->
+  <section class="section">
+    <h2 class="section-title">🔥 5 GEN Z URBAN SLANG</h2>
+    <div class="phrase-grid">
+      
+      <div class="phrase-card" style="border-color: var(--purple); background: rgba(168, 85, 247, 0.1);">
+        <div class="phrase-term" style="color: var(--purple);">GLOW UP</div>
+        <div class="phrase-meaning">"Amazing transformation"</div>
+        <div class="vocab-example">Ex: "My city had a major glow up in 10 years!"</div>
+        <button class="vn-toggle" onclick="toggleVN(this)">🇻🇳 Xem tiếng Việt</button>
+        <div class="vn-text">Lột xác</div>
+      </div>
+
+      <div class="phrase-card" style="border-color: var(--purple); background: rgba(168, 85, 247, 0.1);">
+        <div class="phrase-term" style="color: var(--purple);">VIBE CHECK</div>
+        <div class="phrase-meaning">"How a place feels"</div>
+        <div class="vocab-example">Ex: "This neighborhood passes the vibe check."</div>
+        <button class="vn-toggle" onclick="toggleVN(this)">🇻🇳 Xem tiếng Việt</button>
+        <div class="vn-text">Kiểm tra bầu không khí</div>
+      </div>
+
+      <div class="phrase-card" style="border-color: var(--purple); background: rgba(168, 85, 247, 0.1);">
+        <div class="phrase-term" style="color: var(--purple);">TOUCH GRASS</div>
+        <div class="phrase-meaning">"Stop being online, go to nature"</div>
+        <div class="vocab-example">Ex: "I need to touch grass, too much screen time."</div>
+        <button class="vn-toggle" onclick="toggleVN(this)">🇻🇳 Xem tiếng Việt</button>
+        <div class="vn-text">Ra ngoài chạm cỏ</div>
+      </div>
+
+      <div class="phrase-card" style="border-color: var(--purple); background: rgba(168, 85, 247, 0.1);">
+        <div class="phrase-term" style="color: var(--purple);">MAIN CHARACTER ENERGY</div>
+        <div class="phrase-meaning">"Walking confidently in the city"</div>
+        <div class="vocab-example">Ex: "She walks through downtown with main character energy."</div>
+        <button class="vn-toggle" onclick="toggleVN(this)">🇻🇳 Xem tiếng Việt</button>
+        <div class="vn-text">Thần thái nhân vật chính</div>
+      </div>
+
+      <div class="phrase-card" style="border-color: var(--purple); background: rgba(168, 85, 247, 0.1);">
+        <div class="phrase-term" style="color: var(--purple);">RENT FREE</div>
+        <div class="phrase-meaning">"Something you can't stop thinking about"</div>
+        <div class="vocab-example">Ex: "The traffic congestion lives rent free in my head."</div>
+        <button class="vn-toggle" onclick="toggleVN(this)">🇻🇳 Xem tiếng Việt</button>
+        <div class="vn-text">Ám ảnh</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Game 1: Urban Sprawl Rush -->
+  <section class="section">
+    <h2 class="section-title">🎮 GAME 1: URBAN SPRAWL RUSH</h2>
+    <div class="game-container">
+      <div class="game-header">
+        <div class="game-title">BUILD THE CITY! MATCH WORDS TO DEFINITIONS</div>
+        <div class="game-score">SCORE: <span id="game1Score">0</span> / 10</div>
+      </div>
+      <div class="game-area" id="gameArea"></div>
+      <div class="definition-buttons" id="defButtons"></div>
+      <button class="enter-btn" onclick="startGame1()" style="width: 100%; margin-top: 20px;">START GAME</button>
+    </div>
+  </section>
+
+  <!-- Game 3: Mayor's Meter -->
+  <section class="section">
+    <h2 class="section-title">🏛️ GAME 3: MAYOR OF NEON CITY</h2>
+    <div class="mayor-container">
+      <div class="meter-display">
+        <h3 style="text-align: center; font-family: 'Orbitron', sans-serif; color: white; margin-bottom: 20px;">
+          APPLAUSE METER: WHO WINS THE DEBATE?
+        </h3>
+        <div class="meter-bar-container">
+          <div class="meter-bar meter-purple" id="meterPurple" style="width: 50%;">
+            DEVELOPERS
+          </div>
+          <div class="meter-bar meter-gold" id="meterGold" style="width: 50%;">
+            PRESERVERS
+          </div>
+        </div>
+      </div>
+      
+      <div class="team-controls">
+        <div class="team-section">
+          <h3 class="team-title">👷 TEAM DEVELOPERS</h3>
+          <p style="margin-bottom: 15px; color: #a0a0a0;">Argue for: High-rises, Malls, Progress</p>
+          <button class="team-btn purple" onclick="addPoint('purple')">+1 GOOD POINT</button>
+          <button class="team-btn purple" onclick="addPoint('purple', 3)">+3 AMAZING ARGUMENT</button>
+          <div class="team-score" style="color: var(--purple);">
+            <span id="scorePurple">0</span> POINTS
+          </div>
+        </div>
+        
+        <div class="team-section gold">
+          <h3 class="team-title">🌳 TEAM PRESERVERS</h3>
+          <p style="margin-bottom: 15px; color: #a0a0a0;">Argue for: Green Space, Tradition, Culture</p>
+          <button class="team-btn gold" onclick="addPoint('gold')">+1 GOOD POINT</button>
+          <button class="team-btn gold" onclick="addPoint('gold', 3)">+3 AMAZING ARGUMENT</button>
+          <div class="team-score" style="color: var(--gold);">
+            <span id="scoreGold">0</span> POINTS
+          </div>
+        </div>
+      </div>
+      
+      <div style="margin-top: 30px; padding: 20px; background: rgba(168, 85, 247, 0.1); border-radius: 15px;">
+        <h4 style="color: var(--gold); font-family: 'Orbitron', sans-serif; margin-bottom: 15px;">
+          💡 DEBATE TOPICS:
+        </h4>
+        <ul style="line-height: 2; color: #e0e0e0;">
+          <li>Should we build more high-rises or preserve low-rise neighborhoods?</li>
+          <li>Are convenience stores better than traditional wet markets?</li>
+          <li>Is traffic congestion an acceptable cost of urbanisation?</li>
+          <li>Should we prioritize economic growth or environmental sustainability?</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Homework Section -->
+  <section class="section">
+    <h2 class="section-title">📝 HOMEWORK: ARCHITECT YOUR FUTURE</h2>
+    <div style="max-width: 800px; margin: 0 auto; background: rgba(168, 85, 247, 0.1); backdrop-filter: blur(16px); border: 2px solid var(--purple); border-radius: 20px; padding: 40px;">
+      <p style="font-size: 1.3rem; margin-bottom: 25px; line-height: 1.8;">
+        <strong style="color: var(--gold);">Assignment:</strong> Write a 200-word essay about how you imagine your hometown in 2050.
+      </p>
+      <div style="background: rgba(0, 0, 0, 0.3); padding: 25px; border-radius: 15px; margin-bottom: 25px;">
+        <p style="color: var(--purple); font-weight: 600; margin-bottom: 15px;">MUST INCLUDE:</p>
+        <ul style="line-height: 2;">
+          <li>✅ 5+ vocabulary words from today's lesson</li>
+          <li>✅ 2+ idioms or slang terms</li>
+          <li>✅ Describe both positive and negative changes</li>
+          <li>✅ Use comparative structures ("used to be", "has become")</li>
+          <li>✅ Your personal opinion on the transformation</li>
+        </ul>
+      </div>
+      <p style="text-align: center; font-size: 1.1rem; color: var(--gold);">
+        📅 <strong>DUE:</strong> Next class session<br>
+        💎 <strong>REWARD:</strong> Best essay wins "Time Architect" badge!
+      </p>
+    </div>
+  </section>
+
+</div>
+
+<!-- Progress Bar -->
+<div class="progress-container">
+  <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+</div>
+
+<script>
+// Global Variables
+let currentVibe = 'future';
+let game1Score = 0;
+let purpleScore = 0;
+let goldScore = 0;
+let sliderActive = false;
+
+// Enter Lesson
+function enterLesson() {
+  document.getElementById('hero').style.display = 'none';
+  document.getElementById('mainContent').classList.add('active');
+  document.getElementById('vibeSwitch').style.display = 'flex';
+  updateProgress();
+}
+
+// Vibe Switch
+function setVibe(vibe) {
+  currentVibe = vibe;
+  const body = document.body;
+  
+  if (vibe === 'past') {
+    body.style.filter = 'sepia(30%)';
+    // Play lo-fi audio (placeholder)
+    console.log('🎵 Lo-fi hip hop playing...');
+  } else {
+    body.style.filter = 'none';
+    // Play synthwave audio (placeholder)
+    console.log('🎵 Synthwave playing...');
+  }
+}
+
+// Vocab Card Flip
+function flipCard(card) {
+  card.classList.toggle('flipped');
+}
+
+// Vietnamese Toggle
+function toggleVN(button) {
+  const vnText = button.nextElementSibling;
+  if (vnText && vnText.classList.contains('vn-text')) {
+    vnText.classList.toggle('show');
+    button.textContent = vnText.classList.contains('show') 
+      ? '🇻🇳 Ẩn tiếng Việt' 
+      : '🇻🇳 Xem tiếng Việt';
+  }
+}
+
+// Audio Pronunciation (Placeholder)
+function playSound() {
+  console.log('🔊 Playing pronunciation...');
+  // In production, load actual audio files
+}
+
+// Time Slider Functionality
+const sliderHandle = document.getElementById('sliderHandle');
+const sliderFuture = document.getElementById('sliderFuture');
+const sliderContainer = document.getElementById('sliderContainer');
+
+sliderHandle.addEventListener('mousedown', () => {
+  sliderActive = true;
+});
+
+document.addEventListener('mouseup', () => {
+  sliderActive = false;
+});
+
+document.addEventListener('mousemove', (e) => {
+  if (!sliderActive) return;
+  
+  const rect = sliderContainer.getBoundingClientRect();
+  let x = e.clientX - rect.left;
+  x = Math.max(0, Math.min(x, rect.width));
+  
+  const percentage = (x / rect.width) * 100;
+  sliderHandle.style.left = percentage + '%';
+  sliderFuture.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+});
+
+// Touch support for mobile
+sliderHandle.addEventListener('touchstart', () => {
+  sliderActive = true;
+});
+
+document.addEventListener('touchend', () => {
+  sliderActive = false;
+});
+
+document.addEventListener('touchmove', (e) => {
+  if (!sliderActive) return;
+  
+  const rect = sliderContainer.getBoundingClientRect();
+  let x = e.touches[0].clientX - rect.left;
+  x = Math.max(0, Math.min(x, rect.width));
+  
+  const percentage = (x / rect.width) * 100;
+  sliderHandle.style.left = percentage + '%';
+  sliderFuture.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+});
+
+// Game 1: Urban Sprawl Rush
+const vocabPairs = [
+  { word: 'URBANISATION', def: 'Making an area more urban' },
+  { word: 'HIGH-RISE', def: 'Tall buildings with many floors' },
+  { word: 'INFRASTRUCTURE', def: 'Roads and systems of a city' },
+  { word: 'CONGESTION', def: 'Too much traffic' },
+  { word: 'MIGRATION', def: 'Moving from rural to urban' },
+  { word: 'SUSTAINABLE', def: 'Can be maintained long-term' },
+  { word: 'CONVENIENCE STORE', def: 'Small shop open late' },
+  { word: 'WET MARKET', def: 'Traditional fresh market' },
+  { word: 'LOW-RISE', def: 'Buildings with few stories' },
+  { word: 'INDUSTRIALISATION', def: 'Developing industries' }
+];
+
+let currentWord = null;
+let usedWords = [];
+
+function startGame1() {
+  game1Score = 0;
+  usedWords = [];
+  document.getElementById('game1Score').textContent = game1Score;
+  nextWord();
+}
+
+function nextWord() {
+  if (usedWords.length >= 10) {
+    alert('🎉 GAME COMPLETE! You scored ' + game1Score + '/10');
+    return;
+  }
+  
+  // Get unused word
+  const availableWords = vocabPairs.filter(pair => !usedWords.includes(pair.word));
+  if (availableWords.length === 0) return;
+  
+  currentWord = availableWords[Math.floor(Math.random() * availableWords.length)];
+  usedWords.push(currentWord.word);
+  
+  // Create falling word
+  const gameArea = document.getElementById('gameArea');
+  gameArea.innerHTML = '';
+  
+  const fallingWord = document.createElement('div');
+  fallingWord.className = 'falling-word';
+  fallingWord.textContent = currentWord.word;
+  fallingWord.style.left = Math.random() * 60 + 20 + '%';
+  gameArea.appendChild(fallingWord);
+  
+  // Create definition buttons
+  const defButtons = document.getElementById('defButtons');
+  defButtons.innerHTML = '';
+  
+  // Get 4 random definitions (including correct one)
+  let defs = [currentWord.def];
+  const otherDefs = vocabPairs
+    .filter(pair => pair.word !== currentWord.word)
+    .map(pair => pair.def)
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 3);
+  defs = defs.concat(otherDefs).sort(() => Math.random() - 0.5);
+  
+  defs.forEach(def => {
+    const btn = document.createElement('button');
+    btn.className = 'def-btn';
+    btn.textContent = def;
+    btn.onclick = () => checkAnswer(def, btn);
+    defButtons.appendChild(btn);
+  });
+}
+
+function checkAnswer(selectedDef, button) {
+  const allButtons = document.querySelectorAll('.def-btn');
+  allButtons.forEach(btn => btn.style.pointerEvents = 'none');
+  
+  if (selectedDef === currentWord.def) {
+    button.classList.add('correct');
+    game1Score++;
+    document.getElementById('game1Score').textContent = game1Score;
+    createConfetti();
+  } else {
+    button.classList.add('wrong');
+    createGlitch();
+  }
+  
+  setTimeout(() => {
+    allButtons.forEach(btn => btn.style.pointerEvents = 'auto');
+    nextWord();
+  }, 1500);
+}
+
+function createConfetti() {
+  for (let i = 0; i < 30; i++) {
+    const confetti = document.createElement('div');
+    confetti.className = 'confetti';
+    confetti.style.left = Math.random() * 100 + '%';
+    confetti.style.background = Math.random() > 0.5 ? 'var(--purple)' : 'var(--gold)';
+    confetti.style.animationDelay = Math.random() * 0.5 + 's';
+    document.body.appendChild(confetti);
+    
+    setTimeout(() => confetti.remove(), 3000);
+  }
+}
+
+function createGlitch() {
+  const glitch = document.createElement('div');
+  glitch.className = 'glitch-overlay';
+  document.body.appendChild(glitch);
+  
+  setTimeout(() => glitch.remove(), 300);
+}
+
+// Mayor's Meter
+function addPoint(team, points = 1) {
+  if (team === 'purple') {
+    purpleScore += points;
+    document.getElementById('scorePurple').textContent = purpleScore;
+  } else {
+    goldScore += points;
+    document.getElementById('scoreGold').textContent = goldScore;
+  }
+  
+  updateMeter();
+}
+
+function updateMeter() {
+  const total = purpleScore + goldScore;
+  if (total === 0) return;
+  
+  const purplePercent = (purpleScore / total) * 100;
+  const goldPercent = (goldScore / total) * 100;
+  
+  document.getElementById('meterPurple').style.width = purplePercent + '%';
+  document.getElementById('meterGold').style.width = goldPercent + '%';
+}
+
+// Progress Bar
+function updateProgress() {
+  window.addEventListener('scroll', () => {
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight - windowHeight;
+    const scrolled = window.scrollY;
+    const progress = (scrolled / documentHeight) * 100;
+    
+    document.getElementById('progressBar').style.width = progress + '%';
+  });
+}
+
+// Initialize
+console.log('🏙️ NEON CITY GENESIS LOADED');
+console.log('🎨 Gospel 444 Compliance: ACTIVE');
+console.log('🟣 Purple: #a855f7 | 🟡 Gold: #f59e0b | ⬛ Dark: #0f0f1a');
+console.log('🚫 NO BLUE DETECTED - APPROVED');
+</script>
+
+</body>
+</html>

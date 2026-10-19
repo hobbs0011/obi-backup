@@ -1,0 +1,10 @@
+$meta
+  title = Student Portal — PrAis umbrella
+  description = A student's own portal (role: portal): today's plan, homework, minutes, books, audio and games — and every word the student or parent types is captured verbatim (Soul DNA, SDNAD) and synced to the whole organism through the Connected Generator Network. The command station (Obi) reads this portal's evidence when it writes the review.
+  tags = portal, student, homework, parent, pr-ais, obi, cgn, sdnad
+  header
+    mode = minimal
+
+kv = {import:kv-plugin}
+superFetch = {import:super-fetch-plugin}
+uploadPlugin = {import:upload-plugin}

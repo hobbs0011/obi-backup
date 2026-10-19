@@ -1,0 +1,165 @@
+<!-- THE DROP — the offer desk (src/offer-desk/). The page a client opens from a
+     single link, and the whole reason it is dynamic: the SAME link goes to a
+     coach, a trainer, a guesthouse, a reggae bar, a café, a salon, a builder —
+     and the page re-reads itself for whichever one opens it.
+
+     NOTHING IS UPLOADED. Every file is read from the client's own disk by their
+     own browser, measured there, and rendered there. There is no server on this
+     page and no requirement for one.
+
+     Every id below is wired in src/desk.js and nowhere else. Six files live
+     beside this one: desk.js, trades.js, bundle.js, pulse.js, reel.js and
+     styles.css — see README.md in this folder. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>THE DROP — a reading of what your business shows on a phone</title>
+<meta name="description" content="A reading of what a stranger can find of your business on a phone, and what I would build out of what you already have — one walk around the place, a few photographs, your links and your own voice. Nothing is uploaded: every file is read in your own browser.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="src/styles.css">
+
+<div id="app" class="net-shell">
+  <div class="glow-blob blob-1"></div>
+  <div class="glow-blob blob-2"></div>
+
+  <div id="topbar">
+    <div class="logo"><span class="grad">PrAis</span> <span class="divider">/</span> <span class="obi">THE DROP</span></div>
+    <div class="spacer"></div>
+    <div id="tradeChip" class="tabmeta">no trade selected</div>
+    <button class="tbtn" id="capsBtn" title="What this browser can do">⚙ This device</button>
+  </div>
+
+  <div id="capsBox" class="card hidden"></div>
+
+  <div class="wrap">
+
+    <!-- ------------------------------------------------------------ 0 · the reading -->
+    <section class="card" id="offerCard">
+      <div class="step">0 · the reading</div>
+      <h1 id="offerHead"></h1>
+      <p id="offerLine" class="lead"></p>
+      <p id="offerCost" class="hint"></p>
+      <p id="offerProof" class="proof"></p>
+      <div class="rule"></div>
+      <div class="askrow">
+        <label for="whoInput"><b>What do you do?</b> Say it in your own words — everything below is read from that answer, so a vague answer produces a vague reading.</label>
+        <input id="whoInput" type="text" placeholder="say it in your own words — “reggae bar and dorms”, “swimming coach”, “family guesthouse”…" autocomplete="off">
+        <div class="btnrow">
+          <button class="tbtn primary" id="routeBtn">Read that</button>
+          <button class="tbtn" id="tradeResetBtn" hidden>Change</button>
+        </div>
+      </div>
+      <div id="tradeGrid" class="grid"></div>
+      <div id="tradePanel" class="hidden"></div>
+    </section>
+
+    <!-- ------------------------------------------------------------ 1 · shoot this -->
+    <section class="card hidden" id="shootCard">
+      <div class="step">1 · shoot this</div>
+      <h2>Six frames, with a phone, in one walk around the place</h2>
+      <p class="hint">You do not need to be a professional. Shoot it vertical (hold the phone upright), walk slowly, and do not stop recording between the shots — one long take is <b>better</b> than six clips. It takes about three minutes.</p>
+      <div id="shotList"></div>
+      <p class="hint" id="shotNote"></p>
+    </section>
+
+    <!-- ------------------------------------------------------------ 2 · drop it -->
+    <section class="card hidden" id="dropCard">
+      <div class="step">2 · drop it here</div>
+      <h2>Your video, your pictures, your voice — read on your own device</h2>
+      <p class="hint">Nothing is uploaded. Your browser opens the file where it sits, so there is no size limit and no waiting: a 4&nbsp;GB video costs exactly what a 4&nbsp;MB one costs. Close this tab and it is all gone — so <b>send the bundle</b> when the desk has it (step 4).</p>
+      <div id="dropZone" tabindex="0" role="button" aria-label="Choose videos or pictures">
+        <div class="big">Drop your <b>walkthrough video</b> here — or tap to choose</div>
+        <div class="sm">Video: mp4 · mov · webm · whatever your phone records. Pictures: jpg · png · heic if the browser can read it. Several of each at once is fine.</div>
+      </div>
+      <input id="fileInput" type="file" accept="video/*" multiple class="hidden">
+      <input id="picInput" type="file" accept="image/*" multiple class="hidden">
+      <div class="btnrow">
+        <button class="tbtn" id="addPicBtn">🖼 Add pictures</button>
+        <button class="tbtn" id="probeBtn">↻ Re-read</button>
+        <button class="tbtn danger" id="clearBtn" hidden>✕ Empty the desk</button>
+      </div>
+      <div id="queueBox"></div>
+    </section>
+
+    <!-- ------------------------------------------------------------ 3 · the read -->
+    <section class="card hidden" id="readCard">
+      <div class="step">3 · what the desk reads</div>
+      <h2>It measures your footage, then builds you a reel</h2>
+      <p class="hint">The desk watches your video properly: it walks it, measures where the life actually is (movement and sound), pulls the frames at those moments, and lays them out as a sheet you can look at. Then it renders a vertical reel — with movement, fades and your own words on it — <b>on your device</b>. The reel is silent by design: it is built from your frames, and the sound and the music are added later, on my side.</p>
+      <div class="btnrow">
+        <button class="tbtn primary" id="allBtn">✦ Read everything and build the reel</button>
+        <button class="tbtn" id="pulseBtn">◎ Just measure the pulse</button>
+        <button class="tbtn" id="sheetBtn">▦ The contact sheet</button>
+        <button class="tbtn danger" id="cancelBtn" hidden>■ Stop</button>
+      </div>
+      <div id="readBox"></div>
+      <div id="sheetBox" class="hidden">
+        <div class="sub2">The contact sheet — every tile carries its own second</div>
+        <img id="sheetImg" alt="contact sheet of the walkthrough">
+      </div>
+      <div id="pulseBox"></div>
+      <div id="reelBox" class="hidden">
+        <div class="sub2">Your reel</div>
+        <video id="reelVideo" playsinline controls></video>
+        <canvas id="reelCanvas" class="hidden"></canvas>
+        <div id="reelMeta" class="meta"></div>
+        <div class="btnrow">
+          <button class="tbtn primary" id="reelDlBtn">⬇ Download the reel</button>
+          <button class="tbtn" id="posterDlBtn">⬇ The cover frame</button>
+          <button class="tbtn" id="previewBtn">▶ Preview it</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------ 3b · your voice -->
+    <section class="card hidden" id="voiceCard">
+      <div class="step">3b · your words</div>
+      <h2>Answer these out loud, if you would rather talk than type</h2>
+      <p class="hint">Type them below, or press record and just talk — the recordings go into the bundle as they are. Your own words matter more than tidy answers. Nothing here is sent anywhere until you send it.</p>
+      <div id="answersWrap"></div>
+      <div class="btnrow">
+        <button class="tbtn" id="recBtn">● Record a voice note</button>
+        <span id="recState" class="meta"></span>
+      </div>
+      <div id="recList"></div>
+      <div class="sub2">Your links</div>
+      <p class="hint">One per line: your website if you have one, Instagram, Facebook, your Google listing, TikTok, your booking page, and your phone and email. The desk <b>records</b> these here; the reading of them happens on my side, where a proper reader is allowed to look at them.</p>
+      <textarea id="linksInput" rows="6" placeholder="instagram.com/yourplace&#10;facebook.com/yourplace&#10;yourplace.com"></textarea>
+    </section>
+
+    <!-- ------------------------------------------------------------ 4 · send it back -->
+    <section class="card hidden" id="sendCard">
+      <div class="step">4 · send it back</div>
+      <h2>One file back, and one message to send it</h2>
+      <p class="hint">The bundle holds your reel, the cover frame, the contact sheet, every still, your voice notes, your answers and your links. Send it however you already send things — the button below opens a message to me with the short version already written.</p>
+      <div class="btnrow">
+        <button class="tbtn primary" id="bundleBtn">⬇ Make the bundle</button>
+        <button class="tbtn" id="briefBtn">📄 The brief (text)</button>
+        <button class="tbtn" id="pingBtn">✉ Copy the short message</button>
+        <a class="tbtn" id="waLink" href="#" target="_blank" rel="noopener">↗ Open WhatsApp</a>
+      </div>
+      <div id="sendBox"></div>
+    </section>
+
+    <!-- ------------------------------------------------------------ log + ledger -->
+    <section class="card">
+      <div class="step">the log</div>
+      <div id="logBox" class="log"></div>
+      <div class="rule"></div>
+      <div class="sub2" id="memHead">Everything you typed or dropped, kept on this device only</div>
+      <div id="memBox" class="meta"></div>
+    </section>
+
+    <footer class="foot">
+      <b>THE DROP</b> · a PrAis instrument · nothing you drop here is uploaded, and no number is ever invented —
+      what the desk did not measure, it says it did not measure.
+    </footer>
+  </div>
+</div>
+
+<script src="src/trades.js"></script>
+<script src="src/bundle.js"></script>
+<script src="src/pulse.js"></script>
+<script src="src/reel.js"></script>
+<script src="src/desk.js"></script>

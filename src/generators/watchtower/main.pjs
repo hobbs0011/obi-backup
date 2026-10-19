@@ -1,0 +1,11 @@
+$meta
+  title = Obi · Watchtower — PrAis umbrella
+  description = The umbrella's class board (role: watchtower): every student on one screen — minutes, evidence, term progress — and, above all, what the syllabus asked for versus what the evidence shows was actually taught. Every number links to the moment it came from; omissions are reported as omissions, never rounded up to done.
+  tags = dashboard, roster, coverage, term, pr-ais, obi, cgn, sdnad
+  header
+    mode = minimal
+
+generateText = {import:ai-text-plugin}
+kv = {import:kv-plugin}
+superFetch = {import:super-fetch-plugin}
+uploadPlugin = {import:upload-plugin}

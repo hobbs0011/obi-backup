@@ -1,0 +1,10 @@
+$meta
+  title = Obi · Image Node — PrAis umbrella
+  description = The PrAis umbrella's image-creation generator (role: image). Speak or type a prompt, and it becomes a picture — while every sovereign word is still Soul DNA (captured verbatim, SDNAD) and synced to the whole organism via the Connected Generator Network (CGN). The umbrella's command station (Obi) routes /img here.
+  tags = image, ai, generator, pr-ais, obi, cgn, sdnad, legion
+  header
+    mode = minimal
+
+generateImage = {import:text-to-image-plugin}
+superFetch = {import:super-fetch-plugin}
+uploadPlugin = {import:upload-plugin}

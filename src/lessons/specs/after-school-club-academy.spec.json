@@ -1,0 +1,100 @@
+{
+  "topic": "Close-up A1+ · Unit 2: Friends & Fun — Reading · SB 18, 19 · WB 10 (HW) · Grade 6 (periods 4–5)",
+  "title": "After-School Club Academy",
+  "logo": "🎟️",
+  "subtitle": "Invite them properly, or they will never come 🎟️",
+  "cta": "🚀 Start the Club",
+  "features": [
+    { "icon": "📖", "title": "Read for the Answer", "desc": "Four friends, four timetables — find who is free, on which day, and where." },
+    { "icon": "🗣️", "title": "Invite, Accept, Refuse", "desc": "The three moves of a polite exchange, drilled until they come out by themselves." },
+    { "icon": "🧩", "title": "Fill the Gaps", "desc": "Complete two real conversations — predict the missing language, then check it." },
+    { "icon": "🎮", "title": "Four Games", "desc": "Match the people, scramble the words, pair the replies, sort the phrases." }
+  ],
+  "coins": { "start": 0, "correct": 10, "wrong": 0 },
+  "method": {
+    "structure": "10-5-5-3",
+    "phase": "Vocab → Reading → Game → Review (periods 4–5 of the unit-2 session)",
+    "games": [
+      { "name": "People & Information", "type": "collaboration", "why": "reading against a text — the reader must hold one person's line and search the whole text for the matching detail" },
+      { "name": "Word Scramble", "type": "competition", "why": "retrieval under a clock — the hint is the meaning, so the word comes back out of memory, not off the page" },
+      { "name": "Invite & Reply", "type": "collaboration", "why": "functional pairing — an invitation and its answer are learned as ONE exchange, which is how a conversation is produced" },
+      { "name": "Invite, Accept or Refuse", "type": "creation", "why": "metacognitive sorting — the learner must name what the speaker is DOING with the words, which is the functional-language skill itself" }
+    ],
+    "voice": ["Loud and wrong beats silent and correct. Every single time.", "You are not teaching English. You are building Tigers."]
+  },
+  "storyline": "Mai invites Nam to the chess club and Nam says no first, with a reason, then yes to a better day. The group chat shows four friends failing to find a free afternoon. The reading text is their four timetables, and the lesson ends with an invitation the learner writes himself.",
+  "rooms": [
+    {
+      "graphic": "🏠",
+      "title": "The Entrance",
+      "label": "Warm-Up",
+      "content": "<p>Two periods, four games, one invitation you write yourself 🎟️ Period 4 is the <strong>reading</strong>; period 5 is the <strong>speaking</strong>. By the end you can invite a friend, accept properly, and refuse <em>without losing the friend</em>.</p><ul><li>Nine words: the days of the week, hobbies, clubs, practice — and the phrases that invite and answer</li><li>Four friends, four timetables, and how to match a person to the right information</li><li>How to say no politely — with a reason, not just “no”</li><li>You will invite a partner to something real, out loud</li></ul>"
+    },
+    {
+      "graphic": "🖥️",
+      "title": "The Invitation",
+      "label": "Scene",
+      "content": "<div class=\"dialogue-block\"><span class=\"speaker\">Mai:</span> Nam, would you like to join the chess club? We meet on Tuesday and Thursday 🎟️</div><div class=\"dialogue-block\"><span class=\"speaker\">Nam:</span> Tuesday is impossible for me — I have swimming practice.</div><div class=\"dialogue-block\"><span class=\"speaker\">Mai:</span> What about Thursday, then?</div><div class=\"dialogue-block\"><span class=\"speaker\">Nam:</span> Thursday is fine! I'd love to.</div><div class=\"dialogue-block\"><span class=\"speaker\">Mai:</span> Good. How often do you practise swimming?</div><div class=\"dialogue-block\"><span class=\"speaker\">Nam:</span> Three times a week. My dad says I am never at home 😄</div><div class=\"chatty-clue\">🤔 Reality check: Nam says no first, then yes — and he gives a reason for both. A refusal with a reason is not a rejection; it is information. That is how you keep the friend <em>and</em> still get your Thursday.</div>"
+    },
+    {
+      "graphic": "📱",
+      "title": "The Group Chat",
+      "label": "Text Scene",
+      "content": "<div class=\"dialogue-block\"><span class=\"speaker\">Linh:</span> guys, after-school club sign-up is today 🙄</div><div class=\"dialogue-block\"><span class=\"speaker\">Tuan:</span> do you fancy the science club? Tuesday, Room 8 😏</div><div class=\"dialogue-block\"><span class=\"speaker\">Linh:</span> Tuesday I have guitar. How about Thursday?</div><div class=\"dialogue-block\"><span class=\"speaker\">Tuan:</span> Thursday I'm at art club. Maybe next time 🎨</div><div class=\"dialogue-block\"><span class=\"speaker\">Linh:</span> Friday I sing in the choir. We are all busy. That is why we plan first!</div><div class=\"chatty-clue\">🤔 Reality check: nobody in this chat says the word “no”. They say <em>I have…</em> + a day. Giving your reason is what makes a refusal sound friendly instead of rude.</div><div class=\"chatty-hint\"><strong>Pro Tip:</strong> the three moves of a polite exchange — <strong>invite</strong> (“Would you like to…?” / “Do you fancy…?” / “How about…?”), <strong>accept</strong> (“I'd love to!” / “That sounds great.”), <strong>refuse politely</strong> (“Sorry, I can't — I have…” / “Maybe next time.”). A refusal without a reason sounds cold; a refusal with a reason sounds like a friend.</div>"
+    },
+    {
+      "graphic": "📚",
+      "title": "The Words",
+      "label": "Learn",
+      "content": "<div class=\"vocab-list\"><div class=\"vocab-item\"><strong>1. the days of the week:</strong> <span>Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday — the club meets on Tuesday and Thursday.</span></div><div class=\"vocab-item\"><strong>2. hobby:</strong> <span>something you enjoy doing in your free time — chess, swimming, singing.</span></div><div class=\"vocab-item\"><strong>3. after-school activity:</strong> <span>something you do when lessons finish — a club, a class, a practice.</span></div><div class=\"vocab-item\"><strong>4. club:</strong> <span>a group that meets to do one activity together — a chess club, a science club.</span></div><div class=\"vocab-item\"><strong>5. practice:</strong> <span>the time you spend training at a sport or a skill — swimming practice, football practice.</span></div><div class=\"vocab-item\"><strong>6. Would you like to…?</strong> <span>the polite way to invite someone. <em>Would you like to join the club?</em></span></div><div class=\"vocab-item\"><strong>7. I'd love to!</strong> <span>saying yes to an invitation — and it sounds happy, not flat.</span></div><div class=\"vocab-item\"><strong>8. Sorry, I can't — I have…</strong> <span>saying no politely, and giving your reason. <em>Sorry, I can't — I have guitar.</em></span></div><div class=\"vocab-item\"><strong>9. How often…?</strong> <span>the question that asks about a routine. <em>How often do you practise?</em> — <em>Three times a week.</em></span></div></div><div class=\"chatty-hint\"><strong>The move to keep:</strong> a bare “no” sounds cold. <em>Sorry, I can't — I have football practice.</em> says the same thing and keeps the friend.</div>"
+    },
+    {
+      "graphic": "📖",
+      "title": "Four Friends, Four Clubs",
+      "label": "Reading",
+      "content": "<div class=\"reading\"><p><strong>Mai</strong> likes quiet games. She goes to the <strong>chess club</strong> on Tuesday and Thursday in <strong>Room 12</strong>. She is free on Monday and Friday.</p><p><strong>Nam</strong> is sporty. He has <strong>swimming practice</strong> on Wednesday after school and he plays <strong>football</strong> at the weekend. Practice finishes at six.</p><p><strong>Linh</strong> is musical. She has a <strong>guitar lesson</strong> on Monday and she sings in the school <strong>choir</strong> on Friday.</p><p><strong>Tuan</strong> joins everything. On Tuesday he goes to the <strong>science club</strong> and on Thursday he has the <strong>art club</strong>. He says those are his favourite days of the week.</p></div><div class=\"chatty-hint\"><strong>Reading move 1 — matching people and information:</strong> read the question first (which day? which club?), then find the person, then find the information next to that name. The answer is where the two meet — never guess from the first name you see.</div><div class=\"chatty-hint\"><strong>Reading move 2 — predicting missing language:</strong> in a gap in a conversation, read the words <em>before</em> the gap. A question with “Would you like…?” can only be answered with an accept or a refuse — that is your prediction. Then check it against the words <em>after</em> the gap.</div><div class=\"chatty-clue\">🤔 Reality check: Mai, Nam, Linh and Tuan are all busy on different days. Anyone who wants to start a new club has to read the <em>whole</em> text before choosing a day — that is what “matching people and information” really tests.</div>"
+    },
+    {
+      "graphic": "🧩",
+      "title": "Complete the Conversation",
+      "label": "Gaps",
+      "content": "<div class=\"chatty-hint\"><strong>How to do this room:</strong> do not read the gap first — read the line <em>after</em> it. The reply tells you what kind of line the gap has to be. Predict, then choose.</div><div class=\"chatty-choices\" data-correct-feedback=\"🎉 Would you like to…? is the invitation — and the line after the gap answers it and then refuses, so the first line had to be an invitation.\" data-wrong-feedback=\"❌ Read the line AFTER the gap first. It says “I'd love to, but I can't — I have swimming practice.” That is an answer to an invitation, so the gap needs the inviting words, not a question about routine.\"><div><strong>Complete the conversation:</strong> _____ join the chess club? We meet on Tuesday and Thursday.<br>— I'd love to, but I can't on Tuesday — I have swimming practice.</div><button data-answer=\"correct\">Would you like to</button><button data-answer=\"wrong\">How often do you</button><button data-answer=\"wrong\">Sorry, I can't</button></div><div class=\"chatty-choices\" data-correct-feedback=\"🎉 Sorry, I can't — is the polite refusal, and the reason follows it immediately.\" data-wrong-feedback=\"❌ The words after the gap give a reason (“I have guitar on Tuesday”) and then offer a new day. Only the polite refusal fits in front of a reason — the other two would contradict it.\"><div><strong>Complete the conversation:</strong> Do you fancy the science club on Tuesday?<br>— _____ I have guitar on Tuesday. How about Thursday?</div><button data-answer=\"wrong\">I'd love to —</button><button data-answer=\"correct\">Sorry, I can't —</button><button data-answer=\"wrong\">Would you like to</button></div><div class=\"chatty-choices\" data-correct-feedback=\"🎉 How often…? asks about a routine, so the answer is a frequency — three times a week.\" data-wrong-feedback=\"❌ How often…? asks HOW MANY TIMES. A yes/no reply or an invitation does not answer it. You need a number of times, like “three times a week”.\"><div><strong>Complete the conversation:</strong> How often do you practise swimming?<br>— _____.</div><button data-answer=\"wrong\">I'd love to!</button><button data-answer=\"wrong\">Would you like to join?</button><button data-answer=\"correct\">Three times a week.</button></div><div class=\"chatty-clue\">🤔 Reality check: you did not need a grammar rule for any of these — you needed the line <em>after</em> the gap. In a real conversation, the reply is your best clue about what to say next.</div><div class=\"chatty-feedback empty\" aria-live=\"polite\"></div>"
+    },
+    {
+      "graphic": "🔗",
+      "title": "Game 1 — People & Information",
+      "label": "Game 1",
+      "content": "<p>How to win: click a name on the left, then the information that belongs to that person on the right. Six pairs — every answer is in the text you just read, so read slowly and match the whole line.</p><div class=\"game\" data-game=\"match\" data-title=\"🔗 People &amp; Information\" data-items=\"Mai=quiet games — the chess club, Tuesday and Thursday;Nam=sporty — swimming on Wednesday, football at the weekend;Linh=musical — guitar on Monday, choir on Friday;Tuan=joins everything — science on Tuesday, art on Thursday;Room 12=where the chess club meets;six o'clock=when Nam's practice finishes\"></div>"
+    },
+    {
+      "graphic": "🔤",
+      "title": "Game 2 — Word Scramble",
+      "label": "Game 2",
+      "content": "<p>How to win: the hint under each row is the meaning — read it, then click the tiles in order. A wrong word shakes and clears itself, so nothing is lost.</p><div class=\"game\" data-game=\"scramble\" data-title=\"🔤 Word Scramble\" data-items=\"Monday=the first school day of the week;Tuesday=the day after Monday;Wednesday=the middle school day of the week;Thursday=the day after Wednesday;Friday=the last school day of the week;Saturday=the first day of the weekend;Sunday=the second day of the weekend;practice=training time for a sport or a skill\"></div>"
+    },
+    {
+      "graphic": "🎮",
+      "title": "Game 3 — Invite & Reply",
+      "label": "Game 3",
+      "content": "<p>How to win: click an invitation on the left, then the reply that answers it on the right. Six pairs — three accept and three refuse politely. Wrong pairs shake and let go.</p><div class=\"game\" data-game=\"match\" data-title=\"🎮 Invite &amp; Reply\" data-items=\"Would you like to join the chess club?=I'd love to! When is it?;Do you want to come swimming on Saturday?=Sorry, I can't - I have football practice;How about the guitar club on Friday?=That sounds great. What time does it start?;Are you free after school today?=I'm not, sorry - I have my piano lesson;Let's meet at the club at four.=Perfect, see you there!;Do you fancy playing basketball this weekend?=Maybe next time - I'm visiting my grandma\"></div>"
+    },
+    {
+      "graphic": "📦",
+      "title": "Game 4 — Invite, Accept or Refuse?",
+      "label": "Game 4",
+      "content": "<p>How to win: click a phrase, then the group it belongs to. Ask yourself one question — what is this person <em>doing</em> with these words: asking, agreeing, or saying no nicely?</p><div class=\"chatty-hint\"><strong>The three groups:</strong> <strong>INVITING</strong> = you are asking someone to do something · <strong>ACCEPTING</strong> = you are saying yes, happily · <strong>REFUSING</strong> = you are saying no, with a reason.</div><div class=\"game\" data-game=\"sort\" data-title=\"📦 Invite, Accept or Refuse?\" data-groups=\"INVITING: Would you like to...?, Do you fancy...?, How about Thursday?, Let's meet at four. | ACCEPTING: I'd love to!, That sounds great., Count me in. | REFUSING: Sorry I can't — I have guitar, Maybe next time, I'd love to but I'm busy\"></div>"
+    },
+    {
+      "graphic": "🎯",
+      "title": "The Test",
+      "label": "Test",
+      "content": "<div class=\"chatty-choices\" data-correct-feedback=\"🎉 Yes — and it is polite because it asks rather than tells.\" data-wrong-feedback=\"❌ Look at who is speaking. An invitation sounds like a question or an offer: Would you like to…? Do you fancy…? How about…? Commands like “Join the club now” are orders, not invitations.\"><div><strong>Scenario:</strong> You want your friend to come to the chess club with you. Which sentence is a real invitation?</div><button data-answer=\"correct\">Would you like to join the chess club with me?</button><button data-answer=\"wrong\">You come to the chess club.</button><button data-answer=\"wrong\">Join the club now, please.</button></div><div class=\"chatty-choices\" data-correct-feedback=\"🎉 A refusal with a reason keeps the friendship — and it leaves the door open for another day.\" data-wrong-feedback=\"❌ A bare “no” sounds cold and finishes the conversation. Say sorry, say you can't, give your reason — and if you can, offer another day.\"><div><strong>Scenario:</strong> Your friend invites you to the art club on Thursday. You play football on Thursday. What do you say?</div><button data-answer=\"wrong\">No.</button><button data-answer=\"correct\">Sorry, I can't — I have football practice on Thursday.</button><button data-answer=\"wrong\">I don't want to.</button></div><div class=\"chatty-choices\" data-correct-feedback=\"🎉 Exactly — Linh sings in the school choir on Friday. You had to find Linh first, then find Friday.\" data-wrong-feedback=\"❌ Match the person to the information. Monday is Linh's guitar lesson, not the choir. Tuesday and Thursday are Mai's chess club and Tuan's science and art clubs. Linh sings in the choir on Friday.\"><div><strong>Scenario:</strong> A new club meets on Friday after school. Which friend already has something on that day?</div><button data-answer=\"wrong\">Nam</button><button data-answer=\"wrong\">Tuan</button><button data-answer=\"correct\">Linh</button></div><div class=\"chatty-feedback empty\" aria-live=\"polite\"></div>"
+    },
+    {
+      "graphic": "🔑",
+      "title": "The Key",
+      "label": "Mastery",
+      "content": "<div class=\"summary-card\"><strong>🎓 You now hold the key</strong><ul><li><strong>Invite:</strong> Would you like to…? · Do you fancy…? · How about…? · Let's…</li><li><strong>Accept happily:</strong> I'd love to! · That sounds great. · Count me in.</li><li><strong>Refuse politely:</strong> Sorry, I can't — I have… · Maybe next time. <em>Always give the reason.</em></li><li><strong>Words:</strong> the days of the week · hobby · after-school activity · club · practice · How often…?</li><li><strong>Match people and information:</strong> read the question, find the person, find the information next to that name — the answer is where the two meet.</li><li><strong>Predict the gap:</strong> the words before a gap tell you what kind of reply fits, and the words after it confirm your prediction.</li></ul></div><div class=\"chatty-hint\"><strong>Level Up:</strong> invite a partner to a real after-school activity, out loud — by name, with a day and a time. They refuse politely with a reason, and you offer a second day. Then swap.</div><div class=\"chatty-hint\"><strong>Challenge:</strong> write three short sentences to summarise the four friends' text, then write two extra comprehension questions for a partner — with the answers underlined in the text.</div><div class=\"chatty-clue\">🤔 Reality check: the value in this lesson is <em>including others</em>. A polite refusal is not a closed door — it is a friend telling you the truth about their week, and it usually comes with another day.</div><div class=\"chatty-hint\"><strong>Write it down (WB page 10):</strong> write your own invitation — a name, an activity and a day — and then the polite refusal you would give if you were busy.<textarea class=\"write-task\" id=\"club-write\" placeholder=\"Hi _____, would you like to ______ on ______?  /  Sorry, I can't — I have ______.\"></textarea></div>"
+    }
+  ]
+}

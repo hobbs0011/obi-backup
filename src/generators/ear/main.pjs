@@ -1,0 +1,11 @@
+$meta
+  title = Obi · Ear Node — PrAis umbrella
+  description = The umbrella's listening node (role: ear): leave it in the room and a long class recording becomes one verbatim transcript — pause-split into parts, retried part by part, stitched back into a single timeline, raw preserved and pointed at its audio. Soul DNA is captured verbatim and synced to the whole organism over the Connected Generator Network.
+  tags = transcription, audio, ear, pr-ais, obi, cgn, sdnad
+  header
+    mode = minimal
+
+superFetch = {import:super-fetch-plugin}
+uploadPlugin = {import:upload-plugin}
+kv = {import:kv-plugin}
+generateText = {import:ai-text-plugin}

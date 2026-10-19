@@ -1,0 +1,138 @@
+{
+  "note": "Every programme line here maps to curriculum NET actually teaches: the Ecogreen primary pacing guides (grades 1-5) and the secondary guide (grades 6-9) carried in the house curriculum data, plus the in-house lesson academies and the IELTS/business tracks the coach has taught. Nothing here is a made-up course name.",
+  "programmes": [
+    {
+      "id": "early-years",
+      "name": "Early Years",
+      "vn": "Mầm non",
+      "ages": "1–5",
+      "format": "Play-led, in-home or at your school",
+      "cadence": "2 × 30–45 min / week",
+      "books": "None — songs, story, movement and naming",
+      "blurb": "A child this age cannot be taught grammar and does not need to be. This track builds the ear: the sounds, the rhythm, and the fact that another language is a normal thing to hear in your own living room.",
+      "does": [
+        "Listening first — the 60% rule at its purest: mostly-understood input, repeated",
+        "Phonics groundwork: the 42 core sounds of UK Jolly Phonics, used to fix Vietnamese phonetic interference early",
+        "Naming games, action songs, and story time in English",
+        "Zero correction of errors inside a sentence — the target is willingness, not accuracy"
+      ],
+      "outcome": "By the end of the year: follows simple instructions in English, names the world around them, and never flinches when English is spoken."
+    },
+    {
+      "id": "primary",
+      "name": "Primary",
+      "vn": "Tiểu học",
+      "ages": "Grades 1–5 (ages 6–11)",
+      "format": "In-home 1-on-1 or small group (max 4)",
+      "cadence": "2 × 60 min / week, plus the 45/15 at home",
+      "books": "Look · Global Success · Cambridge Primary Science · Cambridge",
+      "blurb": "This is the track that keeps a child ahead of the school pacing guide instead of chasing it. NET teaches from the guides the schools actually use — Look and Global Success for English, Cambridge for Science — so the private hour reinforces the classroom week rather than competing with it.",
+      "does": [
+        "The 10-5-5-3 anatomy: 10 words in real sentences, 5 idioms, 5 slang, 3 games",
+        "Reading aloud with comprehension, not decoding — the student must be able to say what it meant",
+        "Cambridge Primary Science vocabulary in English, so science class stops being a language problem",
+        "Games at warm-up, middle and finale so the hour does not sag"
+      ],
+      "outcome": "By the end of the year: reads a grade-level page aloud and explains it, and answers a teacher's question without translating in their head first."
+    },
+    {
+      "id": "secondary",
+      "name": "Secondary",
+      "vn": "Trung học cơ sở",
+      "ages": "Grades 6–9 (ages 11–15)",
+      "format": "In-home, online, or small group",
+      "cadence": "2 × 60–90 min / week, plus the 45/15 at home",
+      "books": "Close-up A1+ · New Close-up A2 · New Close Up B1 / B1+ · Global Success · Science",
+      "blurb": "The CEFR progression the schools run — A1+ through B1+ — taught with output on top of it. The school hour is for the exam; this hour is for the student who has to hold a conversation in it.",
+      "does": [
+        "Close-up and Global Success content worked through at speed, then re-used in speech",
+        "The register items: how to disagree in a meeting, how to open and close, how to refuse without apologising",
+        "Writing that is checked for argument, not just grammar",
+        "The AI-PET spaced repetition schedule — 1, 3, 7, 14, 30 days — on the vocabulary that keeps slipping"
+      ],
+      "outcome": "By the end of the year: a two-minute unscripted opinion, defended, with the postponing phrases gone."
+    },
+    {
+      "id": "ielts",
+      "name": "IELTS — Grade 12 and university entry",
+      "vn": "Luyện thi IELTS",
+      "ages": "Grade 11–12 and adults",
+      "format": "In-home or online 1-on-1",
+      "cadence": "2 × 90 min / week for 8–12 weeks",
+      "books": "IELTS materials + the student's own target band",
+      "blurb": "Three years of teaching IELTS in public high schools, and the same conclusion every year: the band is lost in the speaking and writing rooms, and gained back by drills the student will actually do alone. This track is a band plan, not a textbook walk.",
+      "does": [
+        "A diagnostic band sheet on day one — current band per paper, not a guess",
+        "Speaking under a timer, recorded, with the transcript written out by hand",
+        "Writing task 1 and 2 rebuilt from the band descriptors upward",
+        "Weekly listening at full speed, because the exam does not slow down"
+      ],
+      "outcome": "A stated target band and a dated plan to it, or the coach tells you the target is unrealistic on day one."
+    },
+    {
+      "id": "business",
+      "name": "Business English & Corporate",
+      "vn": "Tiếng Anh doanh nghiệp",
+      "ages": "Adults (to 70)",
+      "format": "In-home, at your office, or online — teams welcome",
+      "cadence": "1–2 × 60–90 min / week",
+      "blurb": "Built for the person whose English is the only thing standing between them and the contract. Meetings, negotiation, presenting, and the high-stakes small talk around all three.",
+      "does": [
+        "Meeting English: opening, interrupting, redirecting, and closing with an action",
+        "Presentation rehearsal with recording, playback and a delivery score (volume, pace, eye contact)",
+        "Negotiation language and the refusal that does not damage the relationship",
+        "Email and messaging register — the difference between firm and hostile in one line",
+        "Team option: a shared block of group hours plus private sessions for the ones who need it"
+      ],
+      "outcome": "The next boardroom: you speak, you are understood, and you do not hand your authority to the other side."
+    },
+    {
+      "id": "advantage",
+      "name": "The 2026 Advantage — English + AI",
+      "vn": "Thế mạnh 2026: Tiếng Anh + AI",
+      "ages": "Teens and adults",
+      "format": "1-on-1, in-home or online",
+      "cadence": "1 × 90 min / week, 8 weeks",
+      "blurb": "English alone is the old game. AI alone leaves you unable to sell what the machine produced. This track teaches the overlap: command the tool, then report on it in fluent English.",
+      "does": [
+        "Prompting that gets usable work out of an AI assistant, in English",
+        "Turning machine output into a written update a manager will read",
+        "Presenting an AI-assisted result in English, including what the AI got wrong",
+        "The workflow itself: 10x output, then a fluent human report on it"
+      ],
+      "outcome": "You can hand in work that ten people used to do, and explain how you did it — in English."
+    },
+    {
+      "id": "summer",
+      "name": "Summer Intensive — Break the Chains",
+      "vn": "Hè cấp tốc: Phá vỡ xiềng xích",
+      "ages": "Grades 4–12",
+      "format": "In-home or online, 4–6 week block",
+      "cadence": "4 × 60 min / week plus daily 45/15",
+      "blurb": "The holiday block for the student who has studied English for years and still whispers. It is not a grammar sprint. It is a speaking project with a finish line.",
+      "does": [
+        "Daily 45/15 tracked on paper — the streaks are visible to the student, not just the coach",
+        "A week-by-week output ladder: 30 seconds → 2 minutes → 5 minutes unscripted",
+        "One recorded monologue a week, played back and self-assessed against the mode ladder",
+        "The final session: a live presentation in front of someone the student did not choose"
+      ],
+      "outcome": "A student who stopped apologising. The Summer Intensive is the fastest route out of Mouse Mode that NET runs."
+    },
+    {
+      "id": "adults",
+      "name": "One-to-One, Any Age",
+      "vn": "1-1 mọi lứa tuổi",
+      "ages": "Any age — from 1 to 70",
+      "format": "In-home, online, or at your workplace",
+      "cadence": "Whatever fits the week you actually have",
+      "blurb": "The core NET product: one student, one coach, a plan built around the hour you actually have rather than the hour a centre would prefer to sell you. Five years of teaching in Vietnam, students from one year old to seventy.",
+      "does": [
+        "A diagnostic that starts with a conversation, not a test paper",
+        "The 60% rule applied to material chosen for that student's interests",
+        "The 45/15 lifestyle integration — 45 minutes of input, 15 of output, inside a life that already exists",
+        "The 100% Confidence Guarantee: the first month, or the tuition comes back"
+      ],
+      "outcome": "Your own plan, your own material, your own hour. The measure is whether you open your mouth without fear."
+    }
+  ]
+}

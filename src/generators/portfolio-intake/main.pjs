@@ -1,0 +1,8 @@
+$meta
+  title = THE PORTFOLIO — a PrAis role
+  description = One function of the NET intake, as its own generator: a bin with a label on it. Whatever a student sends is kept verbatim the moment it arrives and filed against the promise it can serve, so nothing already made goes unused. Reads and writes one record per student, in the browser. PrAis · NET.
+  tags = prais, net, intake, portfolio, student, education, role
+  header
+    mode = minimal
+
+kv = {import:kv-plugin}

@@ -1,0 +1,8 @@
+$meta
+  title = THE HEADSHOT — a PrAis role
+  description = One function of the NET intake, as its own generator: the brief for one clean photo — the wardrobe the tutor settled on tape, the room, the twenty-shot list, the pick, and the crops each surface needs. Records the chosen file so the CV, LinkedIn and presence all wear the same face. PrAis · NET.
+  tags = prais, net, intake, headshot, photo, student, education, role
+  header
+    mode = minimal
+
+kv = {import:kv-plugin}

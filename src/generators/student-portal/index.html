@@ -1,0 +1,64 @@
+<!-- STUDENT PORTAL (role: portal) — the shell. Every view below is a PLACEHOLDER:
+     keep the ids and the wiring, fill the bodies. Companion files this generator needs in its
+     OWN src/ folder: styles.css, app.js, cgn-node.js (see README.md in this folder). -->
+<link rel="stylesheet" href="src/styles.css">
+
+<div id="portal" class="net-shell">
+  <div id="topbar">
+    <div class="logo"><span class="grad">PrAis</span> <span class="divider">/</span> <span class="obi">PORTAL</span></div>
+    <div class="sub" id="whoEl">—</div>
+    <div class="spacer"></div>
+    <button class="tbtn" id="voiceBtn" title="Read things out loud">🔊 <span id="voiceLbl">Voice on</span></button>
+    <button class="tbtn" id="syncBtn" title="Sync with the station">⟳ Sync</button>
+    <button class="tbtn" id="logoutBtn">⏻ Sign out</button>
+  </div>
+
+  <!-- LOGIN — a curtain, not a security boundary. Move the check server-side before real use. -->
+  <section id="viewLogin">
+    <h2 id="loginTitle">Who's signing in?</h2>
+    <div class="chips">
+      <button class="cmd" id="tabStudent">🎒 Student</button>
+      <button class="cmd" id="tabParent">👩 Parent</button>
+    </div>
+    <input id="pinInput" inputmode="numeric" placeholder="PIN" autocomplete="off">
+    <button class="tbtn" id="pinBtn">Enter</button>
+    <div id="pinMsg"></div>
+  </section>
+
+  <!-- STUDENT — today, homework, points, books, audio, games -->
+  <section id="viewStudent" hidden>
+    <h2 id="greetEl">Today</h2>
+    <div id="todayCtn"><!-- today's plan: 2-3 items, tickable --></div>
+    <div id="homeworkCtn"><!-- homework checklist with +10/+15/+20 min buttons --></div>
+    <div id="pointsCtn"><!-- points / streak / next reward --></div>
+    <div id="audioCtn"><!-- the audio library: title, words, <audio controls src="..."> --></div>
+    <div id="gamesCtn"><!-- flashcards / word match --></div>
+  </section>
+
+  <!-- PARENT — progress, log, minutes, requests, teacher's note -->
+  <section id="viewParent" hidden>
+    <h2>Progress</h2>
+    <div id="progressCtn"><!-- bars: minutes vs target, homework done, streak --></div>
+    <div id="dailyLogCtn"><!-- dated log of what actually happened --></div>
+    <div id="requestsCtn"><!-- study requests filed + their state --></div>
+    <div id="noteCtn"><!-- teacher's note for this week --></div>
+  </section>
+
+  <!-- PLAN — the multi-week plan -->
+  <section id="viewPlan" hidden>
+    <h2>Plan</h2>
+    <div id="planCtn"><!-- W1..Wn, current week highlighted --></div>
+  </section>
+
+  <!-- REQUEST — "cover this again": lands in the station as evidence -->
+  <section id="viewRequest" hidden>
+    <h2>Ask for help</h2>
+    <textarea id="requestInput" rows="3" placeholder="What should the teacher go over again?"></textarea>
+    <button class="tbtn primary" id="requestBtn">Send to the station</button>
+  </section>
+
+  <div id="toastEl"></div>
+</div>
+
+<script src="src/app.js"></script>
+<script src="src/cgn-node.js"></script>

@@ -1,0 +1,128 @@
+{
+  "topic": "Close-up A1+ · Unit 2: Friends & Fun — Vocabulary · SB 20, 21 · WB pp 11, 12 (HW) · Grade 6 · 6P1 (periods 3–4, Thu 24/09/2026)",
+  "title": "Close-up A1+ · Unit 2: Friends & Fun — Vocabulary",
+  "logo": "🗂️",
+  "subtitle": "Clothes, hobbies, personality — build the file on your best friend 🗂️",
+  "cta": "🚀 Open the File",
+  "features": [
+    {
+      "icon": "👕",
+      "title": "What They Wear",
+      "desc": "Sweatshirt, jeans, trainers — the clothes words a description needs before it can start."
+    },
+    {
+      "icon": "🎽",
+      "title": "Go, Play or Do",
+      "desc": "The collocation rule: play football · do karate · go swimming. Get it wrong and the English sounds foreign."
+    },
+    {
+      "icon": "😄",
+      "title": "What They're Like",
+      "desc": "Energetic, sporty, sociable, shy, organised — the adjectives that make one friend different from another."
+    },
+    {
+      "icon": "🤝",
+      "title": "What They Do Together",
+      "desc": "Chat to, hang out with, meet up, get on with — the verb phrases a real description is built from."
+    }
+  ],
+  "coins": {
+    "start": 0,
+    "correct": 10,
+    "wrong": 0
+  },
+  "method": {
+    "structure": "10-5-5-3",
+    "phase": "Vocab → Reading → Game → Review (Vocabulary of the unit-2 session; the grammar room follows)",
+    "games": [
+      {
+        "name": "Friend Word Scramble",
+        "type": "competition",
+        "why": "production under a clock — the hint is the meaning, so the word is retrieved, not copied"
+      },
+      {
+        "name": "Adjective & Person Match",
+        "type": "collaboration",
+        "why": "paired recall — the adjective is stored attached to a face and a habit, which is how personality words are actually remembered"
+      },
+      {
+        "name": "Go, Play or Do Sort",
+        "type": "creation",
+        "why": "metacognitive sorting — the learner has to hear the collocation as one word, which is the whole rule"
+      }
+    ],
+    "voice": [
+      "Say it LOUD. Say it WRONG. But SAY IT.",
+      "One true sentence about a real friend is worth ten correct sentences about nobody."
+    ]
+  },
+  "storyline": "Mai asks the class to write a short file on a friend for the school magazine. Linh describes Mai — clothes, hobbies, personality — and gets one adjective wrong. The group chat votes on the correction, and the class learns that go, play and do are not interchangeable.",
+  "rooms": [
+    {
+      "graphic": "🏠",
+      "title": "The Entrance",
+      "label": "Warm-Up",
+      "content": "<p>Two periods, one file 🗂️ By the end you can describe a friend so well that the class knows who it is — clothes, hobbies, personality, and the things you do together.</p><ul><li>Nine words: clothes, personality adjectives, and two verb phrases</li><li>The collocation rule: <strong>play</strong> football · <strong>do</strong> karate · <strong>go</strong> swimming</li><li>The difference between <em>sociable</em> and <em>shy</em> — and why it changes the whole sentence</li><li>WB pages 11, 12 — you write the file yourself</li></ul><div class=\"chatty-hint\"><strong>How this lesson works:</strong> every room gives you the words first and the people second. Read every example out loud and swap in a real name from your class — a word you have used about a real person is a word you keep.</div>"
+    },
+    {
+      "graphic": "🖥️",
+      "title": "The Friend File",
+      "label": "Scene",
+      "content": "<div class=\"dialogue-block\"><span class=\"speaker\">Mai:</span> For the school magazine, write a short file on one friend. Six lines. No names — we guess who it is 🙋</div><div class=\"dialogue-block\"><span class=\"speaker\">Linh:</span> Easy. She is sporty and very sociable. She wears a sweatshirt and trainers every day.</div><div class=\"dialogue-block\"><span class=\"speaker\">Mai:</span> Good. What does she do at the weekend?</div><div class=\"dialogue-block\"><span class=\"speaker\">Linh:</span> She plays badminton and goes swimming. She does karate too. And she hangs out with us at the park.</div><div class=\"dialogue-block\"><span class=\"speaker\">Nam:</span> You said sociable. That is not Mai — Mai talks to everybody. This one is shy. She is quiet until she knows you 😅</div><div class=\"dialogue-block\"><span class=\"speaker\">Linh:</span> You are right. I will write shy and organised instead. One wrong adjective and you described a different person.</div><div class=\"chatty-clue\">🤔 Reality check: the clothes told you <em>what she wears</em>. The verbs told you <em>what she does</em>. Only <em>sociable</em> and <em>shy</em> told you <em>who she is</em> — and that is the part that made Nam recognise her.</div>"
+    },
+    {
+      "graphic": "📱",
+      "title": "The Group Chat",
+      "label": "Text Scene",
+      "content": "<div class=\"dialogue-block\"><span class=\"speaker\">Linh:</span> ok which one is me: creative, organised, or a complete mess 🧠</div><div class=\"dialogue-block\"><span class=\"speaker\">Nam:</span> creative. your notebook has glitter in it and no dates</div><div class=\"dialogue-block\"><span class=\"speaker\">Mai:</span> organised. she colours the timetable. in three colours 🙄</div><div class=\"dialogue-block\"><span class=\"speaker\">Linh:</span> both then. I am creative AND organised. people can have two</div><div class=\"dialogue-block\"><span class=\"speaker\">Nam:</span> fine. so what do we do at the weekend — go shopping or hang out at the park?</div><div class=\"dialogue-block\"><span class=\"speaker\">Linh:</span> we go shopping, then we get on the bus and hang out at the park. we do both 😄</div><div class=\"chatty-hint\"><strong>The collocation rule in one line:</strong> <strong>play</strong> + a game or a sport with a ball or a board (play football, play chess) · <strong>do</strong> + a martial art, a job or schoolwork (do karate, do homework) · <strong>go</strong> + an activity that ends in <em>-ing</em> (go swimming, go shopping).</div>"
+    },
+    {
+      "graphic": "📚",
+      "title": "The Words",
+      "label": "Learn",
+      "content": "<div class=\"vocab-list\"><div class=\"vocab-item\"><strong>1. sweatshirt:</strong> <span>a warm, soft top with long sleeves and no buttons — <em>She wears a grey sweatshirt to school.</em></span></div><div class=\"vocab-item\"><strong>2. trainers:</strong> <span>the soft shoes you wear for sport — also called sneakers — <em>He is wearing new trainers.</em></span></div><div class=\"vocab-item\"><strong>3. energetic:</strong> <span>full of movement and never tired — <em>Nam is so energetic he runs everywhere.</em></span></div><div class=\"vocab-item\"><strong>4. sporty:</strong> <span>good at, or always doing, sport — <em>Mai is sporty: badminton, swimming, karate.</em></span></div><div class=\"vocab-item\"><strong>5. sociable:</strong> <span>happy to talk to everyone, likes being with people — <em>Linh is sociable, she knows the whole school.</em></span></div><div class=\"vocab-item\"><strong>6. shy:</strong> <span>quiet with people you do not know well — <em>She is shy until you talk to her first.</em></span></div><div class=\"vocab-item\"><strong>7. organised:</strong> <span>everything in its place, always ready on time — <em>Her timetable is organised in three colours.</em></span></div><div class=\"vocab-item\"><strong>8. hang out with:</strong> <span>spend relaxed free time with someone — <em>We hang out with our friends at the park.</em></span></div><div class=\"vocab-item\"><strong>9. get on with:</strong> <span>have a good, easy relationship with someone — <em>I get on with my cousin really well.</em></span></div></div><div class=\"chatty-hint\"><strong>Build a file in three lines:</strong> clothes + personality + what you do together. <em>He wears a sweatshirt and trainers. He is sporty and sociable. We play badminton and hang out at the park.</em> That is the whole task, done.</div>"
+    },
+    {
+      "graphic": "📖",
+      "title": "Three Friends, Three Files",
+      "label": "Reading",
+      "content": "<div class=\"chatty-hint\"><strong>How to use this room:</strong> read the file, then the question — the answer is the one line in the file that belongs to that person, not the first name you see.</div><div class=\"reading\"><p><strong>🗂️ File 1.</strong> He is the loudest person in the room. He wears a red sweatshirt and old trainers, and he is <strong>energetic</strong> — he never sits down. He <strong>plays</strong> basketball and football, and he <strong>does</strong> karate on Sundays. Everybody knows him.</p><p><strong>🗂️ File 2.</strong> She is <strong>organised</strong> and <strong>creative</strong>. Her pencil case has everything in it and her drawings are on every wall in the classroom. She <strong>goes</strong> swimming twice a week, and when she is not drawing she <strong>hangs out with</strong> two close friends — she is a bit <strong>shy</strong> with new people.</p><p><strong>🗂️ File 3.</strong> He is <strong>sociable</strong> and very <strong>sporty</strong>. He <strong>plays</strong> chess, badminton and the guitar, and he <strong>gets on with</strong> everybody, teachers included. He wears a blue T-shirt and jeans every single day.</p></div><div class=\"chatty-choices\" data-correct-feedback=\"🎉 File 2 — she is organised and creative, goes swimming, and is a bit shy with new people. That is the file with the shy line.\" data-wrong-feedback=\"❌ Check the personality words. Only one file says the person is quiet with people they do not know well — read each file for the adjective.\"><div><strong>Read for the answer:</strong> which file describes someone who is shy with new people?</div><button data-answer=\"wrong\">File 1</button><button data-answer=\"correct\">File 2</button><button data-answer=\"wrong\">File 3</button></div><div class=\"chatty-choices\" data-correct-feedback=\"🎉 Yes — File 1 does karate on Sundays, and karate takes do, not play or go.\" data-wrong-feedback=\"❌ Look for the activity that is not a ball game and not an -ing activity. Karate is a martial art, so it takes a different verb.\"><div><strong>Read for the answer:</strong> which file shows the verb <em>do</em> used with a sport?</div><button data-answer=\"correct\">File 1 — he does karate on Sundays</button><button data-answer=\"wrong\">File 2 — she goes swimming twice a week</button><button data-answer=\"wrong\">File 3 — he plays chess and badminton</button></div><div class=\"chatty-clue\">🤔 Reality check: three files, three people, and not one of them is described by their name. Clothes and hobbies narrow it down; the personality adjective is what actually identifies them — which is why Linh's wrong adjective described a stranger.</div><div class=\"chatty-feedback empty\" aria-live=\"polite\"></div>"
+    },
+    {
+      "graphic": "🧩",
+      "title": "Go, Play or Do",
+      "label": "Gaps",
+      "content": "<div class=\"chatty-hint\"><strong>How to use this room:</strong> the activity tells you the verb. A ball or a board takes <em>play</em>, a martial art or schoolwork takes <em>do</em>, an activity ending in <em>-ing</em> takes <em>go</em>.</div><div class=\"chatty-choices\" data-correct-feedback=\"🎉 Do — karate is a martial art, so it takes do, exactly like judo and homework.\" data-wrong-feedback=\"❌ Karate is not a ball game and it is not an -ing activity. Which verb goes with martial arts and with schoolwork?\"><div><strong>Complete the file:</strong> She is sporty. She _____ karate on Sundays and swimming on Fridays.</div><button data-answer=\"wrong\">plays</button><button data-answer=\"correct\">does</button><button data-answer=\"wrong\">goes</button></div><div class=\"chatty-choices\" data-correct-feedback=\"🎉 Go shopping — shopping ends in -ing, so it takes go, just like go swimming and go running.\" data-wrong-feedback=\"❌ Look at the activity. Shopping is not a ball game and not a martial art. Which verb goes with every -ing activity?\"><div><strong>Complete the file:</strong> We meet up on Saturdays and we _____ shopping in the market.</div><button data-answer=\"wrong\">play</button><button data-answer=\"wrong\">do</button><button data-answer=\"correct\">go</button></div><div class=\"chatty-hint\"><strong>The two verb phrases in this lesson:</strong> <em>hang out with</em> = relaxed free time together · <em>get on with</em> = a good relationship. <em>I hang out with Nam at the park. I get on with my cousin.</em> Both take <em>with</em> — never forget it.</div><div class=\"chatty-feedback empty\" aria-live=\"polite\"></div>"
+    },
+    {
+      "graphic": "🔤",
+      "title": "Game 1 — Friend Scramble",
+      "label": "Game 1",
+      "content": "<p>How to win: the hint under each row is the meaning — read it, then click the tiles in order. A wrong word shakes and clears itself, so nothing is lost.</p><div class=\"game\" data-game=\"scramble\" data-title=\"🔤 Friend Scramble\" data-items=\"sweatshirt=a warm soft top with long sleeves;trainers=the soft shoes you wear for sport;energetic=full of movement, never tired;sporty=always doing or good at sport;sociable=happy to talk to everybody;shy=quiet with people you do not know well;organised=everything in its place, always ready\"></div>"
+    },
+    {
+      "graphic": "🔗",
+      "title": "Game 2 — Adjective & Habit",
+      "label": "Game 2",
+      "content": "<p>How to win: click an adjective on the left, then the habit that goes with it on the right. Seven pairs. Wrong pairs shake and let go — guess boldly.</p><div class=\"game\" data-game=\"match\" data-title=\"🔗 Adjective &amp; Habit\" data-items=\"Energetic=never sits down, runs everywhere;Sporty=plays basketball, does karate;Sociable=knows the whole school;Shy=quiet until you talk to her first;Organised=her timetable is in three colours;Creative=draws on every wall;Hang out with=relaxed free time together;Get on with=a good, easy relationship\"></div>"
+    },
+    {
+      "graphic": "📦",
+      "title": "Game 3 — Go, Play or Do",
+      "label": "Game 3",
+      "content": "<p>How to win: click a phrase, then the group it belongs to. Say each one out loud as a single word — it should sound like one word, not three.</p><div class=\"chatty-hint\"><strong>The three groups:</strong> <strong>PLAY</strong> = a ball game, a board game, an instrument · <strong>DO</strong> = a martial art, a job, schoolwork · <strong>GO</strong> = an activity ending in <em>-ing</em>.</div><div class=\"game\" data-game=\"sort\" data-title=\"📦 Go, Play or Do\" data-groups=\"PLAY: play football, play chess, play the guitar | DO: do karate, do homework, do judo | GO: go swimming, go shopping, go running\"></div>"
+    },
+    {
+      "graphic": "🎯",
+      "title": "The Test",
+      "label": "Test",
+      "content": "<div class=\"chatty-choices\" data-correct-feedback=\"🎉 Shy — she is quiet with people she does not know well, which is exactly the opposite of sociable.\" data-wrong-feedback=\"❌ Read the whole sentence: she says nothing in class but talks all evening with her close friends. Which adjective matches that?\"><div><strong>Scenario:</strong> In class she says nothing. In the evening, with two close friends, she talks for hours. Which word describes her?</div><button data-answer=\"wrong\">sociable</button><button data-answer=\"correct\">shy</button><button data-answer=\"wrong\">organised</button></div><div class=\"chatty-choices\" data-correct-feedback=\"🎉 Do karate — a martial art takes do, so it sounds like one word: do-karate.\" data-wrong-feedback=\"❌ Karate is not a ball game, a board game or an instrument, and it does not end in -ing. Which verb is left?\"><div><strong>Scenario:</strong> Complete the file: He is sporty. He plays basketball and _____ karate.</div><button data-answer=\"wrong\">goes</button><button data-answer=\"wrong\">plays</button><button data-answer=\"correct\">does</button></div><div class=\"chatty-choices\" data-correct-feedback=\"🎉 We hang out with our friends — hang out always takes with, and it means relaxed free time together.\" data-wrong-feedback=\"❌ Which verb phrase means spend relaxed free time with someone? The other two are about relationships and swimming.\"><div><strong>Scenario:</strong> Which sentence is correct English?</div><button data-answer=\"correct\">We hang out with our friends at the park.</button><button data-answer=\"wrong\">We hang out at our friends at the park.</button><button data-answer=\"wrong\">We hang out our friends at the park.</button></div><div class=\"chatty-feedback empty\" aria-live=\"polite\"></div>"
+    },
+    {
+      "graphic": "🔑",
+      "title": "The Key",
+      "label": "Mastery",
+      "content": "<div class=\"summary-card\"><strong>🎓 You now hold the key</strong><ul><li><strong>Clothes:</strong> sweatshirt · shirt · T-shirt · jeans · skirt · trainers · boots · socks.</li><li><strong>Personality:</strong> energetic · sporty · sociable · shy · creative · organised · patient.</li><li><strong>Collocations:</strong> play football / chess / the guitar · do karate / judo / homework · go swimming / shopping / running.</li><li><strong>Verb phrases:</strong> hang out with = relaxed free time · get on with = a good relationship · meet up · chat to.</li><li><strong>A file is three lines:</strong> what they wear, what they are like, what you do together.</li></ul></div><div class=\"chatty-hint\"><strong>Level Up:</strong> tonight, describe one real friend out loud in three sentences — clothes, personality, and one thing you do together. Do not say the name. If your family guesses in three tries, your file works.</div><div class=\"chatty-hint\"><strong>Write it down (WB pages 11, 12):</strong> write your own friend file — six lines, no name. Use two clothes words, two personality adjectives, and one verb phrase with <em>with</em>.<textarea class=\"write-task\" id=\"friend-write\" placeholder=\"My friend wears a _____ and _____. He/She is _____ and _____. We play _____, and we hang out with _____ at the _____.\"></textarea></div>"
+    }
+  ]
+}

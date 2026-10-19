@@ -1,0 +1,8 @@
+$meta
+  title = THE APPLICATIONS — a PrAis role
+  description = One function of the NET intake, as its own generator: the application board — the count, the minutes, the weekly target of twelve, and a library of what each company actually asked, so the next application starts from a filled-in form instead of a blank one. Exports CSV. PrAis · NET.
+  tags = prais, net, intake, applications, jobs, student, education, role
+  header
+    mode = minimal
+
+kv = {import:kv-plugin}

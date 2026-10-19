@@ -1,0 +1,8 @@
+$meta
+  title = THE PRESENCE — a PrAis role
+  description = One function of the NET intake, as its own generator: five fronts — LinkedIn, Facebook, TikTok, WhatsApp, Zalo — what each one is FOR and what to set on it, a rhythm instead of a burst, and the one line that keeps it honest: do not invent an audience. PrAis · NET.
+  tags = prais, net, intake, presence, social, linkedin, facebook, tiktok, whatsapp, student, role
+  header
+    mode = minimal
+
+kv = {import:kv-plugin}

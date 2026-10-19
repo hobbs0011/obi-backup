@@ -1,0 +1,1201 @@
+<!-- ============================================================================
+     THE UMBRELLA — src/generators/umbrella-brand/index.html
+     GENERATED — do not hand-edit. Built by src/generators/role-kit/build.js from:
+       1  src/generators/role-kit/kit.js      the family kit: theme · store · record · import/export · shell
+       2  src/generators/role-kit/method.js   the tape's tables: the promises · the 44 sounds · the bank · the CV rows
+       3  src/generators/umbrella-brand/src/panel.js   this role's own logic
+
+     THE PASTE RECIPE — two files, nothing else:
+       1.  main.pjs    → paste into the new generator's main.pjs
+       2.  index.html  → paste into the new generator's index.html
+     Nothing is fetched at runtime and the page opens offline. The record lives in
+     this browser (kv with the kv-plugin, localStorage without it) and never in
+     the public source. The deep link is ?student=<name>.
+     ============================================================================ -->
+<div id="okRoot"></div>
+
+<script>
+/* ==================== 1 · THE ROLE KIT — the family ==================== */
+/* ============================================================================
+   THE ROLE KIT — src/generators/role-kit/kit.js           (v1 · 2026-09-22)
+
+   WHY THIS FILE EXISTS
+   On the evening of the 23rd of September the tutor recorded a lesson and then
+   said what he wanted, in his own words:
+
+      "so we'll build it all into one app so that it remembers, right? …
+       you obviously have to do the capture, because robots…"
+
+   and
+
+      "You know what a pipeline is? It's like a to-do list, right?
+       And then we won't forget about that."
+
+   The station answered with ONE app (`src/intake.js`, the desk). This kit is the
+   other half of that answer: a FAMILY of small generators — one per function the
+   lesson produced (the CV, the LinkedIn, the headshot, the portfolio intake, the
+   44 phonemes, the weekly recorded presentation, the applications, the interview
+   drill, the umbrella, the presence, the credit, the idea lists) — so a function
+   can be handed to the next student, or to the next tutor, without carrying the
+   whole station.
+
+   WHAT IT IS
+   The ~450 lines every one of those generators would otherwise write again:
+   the house theme, the record store, the import/export that lets a record move
+   between any two of them, the fail-closed field reader, and the page furniture
+   (the header, the record picker, the import/export bar).
+
+   THE ONE RULE THE WHOLE FAMILY OBEYS
+   A record written by ANY of these generators can be read by the station's
+   `/intake`, and a record exported by the station's `/intake export` can be read
+   by ANY of them. Same shape (`intake/1` records), same verbatim inbox, same
+   fail-closed fields. That is what makes the family reusable instead of twelve
+   silos.
+
+   HOW IT IS USED (the build recipe)
+   The kit is INLINED into each role's `index.html` — the whole file is pasted in
+   where the builder puts it, so every role is one paste of two files
+   (`main.pjs` + `index.html`), has no
+   runtime dependency, and opens offline. `src/generators/README.md` carries the
+   builder line. `src/generators/role-kit/test.html` is this kit's own harness.
+
+   STORAGE
+   `root.kv.intake` when the perchance kv-plugin is present (durable, private,
+   per origin — the real case), falling back to localStorage so the kit can be
+   opened, driven and tested as a plain page outside perchance. That is THE SAME
+   FOLDER the station's `/intake` keeps its records in, so opened inside the
+   station a role is holding the desk's own records, and opened in a generator of
+   its own it is holding that origin's — one store per origin, shared by every
+   role there.
+
+   NOTHING HERE INVENTED A STUDENT. No name, no degree, no score, no search lives
+   in this file or in any role's source. A record is made by a human, lives in
+   that browser, and leaves only when a human exports it.
+   ========================================================================== */
+(function () {
+  "use strict";
+
+  var V = "intake/1";
+  var LSP = "ok:rec:", LSL = "ok:last";
+
+  /* ---------------------------------------------------------------- theme -- */
+  var CSS = [
+    "body{text-align:left;margin:0;background:#0f0f1a;color:#e9e6f2;",
+      "font:15px/1.55 system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}",
+    ":root{--void:#0f0f1a;--panel:#151524;--panel2:#1b1b2e;--line:rgba(168,85,247,.22);",
+      "--purple:#a855f7;--gold:#e8c565;--ink:#e9e6f2;--muted:#8b94ad;--ok:#50dc82;",
+      "--warn:#e6b43c;--bad:#e0473f;--cyan:#5ed5eb;",
+      "--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}",
+    ".ok-wrap{max-width:1140px;margin:0 auto;padding:14px 16px 70px}",
+    ".ok-head{display:flex;flex-wrap:wrap;align-items:center;gap:10px;",
+      "border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:16px}",
+    ".ok-mark{width:34px;height:34px;flex:0 0 auto;color:var(--gold)}",
+    ".ok-title{font-size:19px;font-weight:700;letter-spacing:.2px}",
+    ".ok-title small{font-weight:400;font-size:12px;color:var(--muted);display:block;letter-spacing:.6px}",
+    ".ok-spacer{flex:1 1 auto}",
+    ".ok-bar{display:flex;flex-wrap:wrap;gap:6px;align-items:center}",
+    ".ok-select,.ok-input,.ok-textarea{background:#0c0c16;color:var(--ink);border:1px solid var(--line);",
+      "border-radius:8px;padding:7px 9px;font:inherit;font-size:13.5px;min-width:0}",
+    ".ok-textarea{width:100%;min-height:110px;font-family:var(--mono);font-size:12.5px;line-height:1.5}",
+    ".ok-input{width:100%}",
+    ".ok-select:focus,.ok-input:focus,.ok-textarea:focus{outline:none;border-color:var(--purple);",
+      "box-shadow:0 0 0 2px rgba(168,85,247,.16)}",
+    "::placeholder{color:#464d68;font-style:italic;opacity:1}",
+    ".ok-btn{background:linear-gradient(180deg,rgba(168,85,247,.28),rgba(168,85,247,.14));",
+      "color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:7px 12px;",
+      "font:inherit;font-size:13px;cursor:pointer}",
+    ".ok-btn:hover{border-color:var(--purple)}",
+    ".ok-btn.gold{background:linear-gradient(180deg,rgba(232,197,101,.3),rgba(232,197,101,.12));border-color:rgba(232,197,101,.4)}",
+    ".ok-btn.ghost{background:transparent}",
+    ".ok-btn:disabled{opacity:.45;cursor:not-allowed}",
+    ".ok-card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);",
+      "border-radius:12px;padding:14px 16px;margin:0 0 14px}",
+    ".ok-card h2{margin:0 0 10px;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}",
+    ".ok-card h3{margin:14px 0 6px;font-size:12.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)}",
+    ".ok-row{display:flex;flex-wrap:wrap;gap:6px;align-items:baseline;padding:6px 0;",
+      "border-top:1px solid rgba(168,85,247,.13)}",
+    ".ok-row:first-of-type{border-top:0}",
+    ".ok-row>b{flex:0 0 168px;font-size:12px;letter-spacing:.7px;text-transform:uppercase;color:var(--muted);font-weight:600}",
+    ".ok-row>.ok-v{flex:1 1 260px;min-width:0;word-break:break-word}",
+    ".ok-note{font-size:12px;color:var(--muted);margin-top:2px}",
+    ".ok-note.bad{color:var(--bad)}",
+    ".ok-note.warn{color:var(--warn)}",
+    ".ok-tag{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.6px;",
+      "border:1px solid var(--line);border-radius:999px;padding:1px 8px;color:var(--muted)}",
+    ".ok-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px}",
+    ".ok-list{margin:0;padding-left:18px}.ok-list li{margin-bottom:3px}",
+    ".ok-mono{font-family:var(--mono);font-size:12.5px}",
+    ".ok-blank{display:inline-block;min-width:45%;border-bottom:1px dotted #8b94ad;color:#8b94ad;font-style:italic}",
+    ".ok-foot{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:8px;margin-top:4px}",
+    ".ok-toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:#1b1b2e;",
+      "border:1px solid var(--purple);border-radius:9px;padding:9px 14px;font-size:13px;z-index:99;",
+      "box-shadow:0 8px 26px rgba(0,0,0,.5)}",
+    ".ok-empty{border:1px dashed var(--line);border-radius:10px;padding:14px;color:var(--muted)}",
+    ".ok-check{display:flex;gap:8px;align-items:flex-start;padding:4px 0}",
+    ".ok-check input{margin-top:3px;flex:0 0 auto}",
+    ".ok-sec{border-top:1px solid var(--line);margin-top:12px;padding-top:10px}",
+    "table.ok-t{width:100%;border-collapse:collapse;font-size:13px}",
+    "table.ok-t th{text-align:left;font-size:11px;letter-spacing:1px;text-transform:uppercase;",
+      "color:var(--muted);border-bottom:1px solid var(--line);padding:6px 6px;font-weight:600}",
+    "table.ok-t td{border-bottom:1px solid rgba(168,85,247,.13);padding:6px 6px;vertical-align:top}",
+    "table.ok-t td.n{font-family:var(--mono)}",
+    "@media print{.ok-head,.ok-bar,.ok-btn,.ok-toast{display:none!important}",
+      "body{background:#fff;color:#000}.ok-card{border-color:#bbb;background:#fff}}",
+    "@media(max-width:640px){.ok-row>b{flex:0 0 100%}.ok-wrap{padding:10px 11px 60px}}"
+  ].join("");
+
+  function ensureCSS() {
+    try {
+      if (document.getElementById("ok-css")) return;
+      var s = document.createElement("style");
+      s.id = "ok-css"; s.textContent = CSS;
+      (document.head || document.documentElement).appendChild(s);
+    } catch (e) {}
+  }
+
+  /* --------------------------------------------------------------- basics -- */
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function lines(v) {
+    return String(v == null ? "" : v).split(/\n|\u00b7|\|/).map(function (s) { return s.trim(); }).filter(Boolean);
+  }
+  function slug(s) {
+    return String(s || "record").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "record";
+  }
+  function nowISO() { return new Date().toISOString(); }
+  function day(iso) { return String(iso || "").slice(0, 10); }
+  function strip(html) {
+    var d = document.createElement("div"); d.innerHTML = html; return (d.textContent || "").trim();
+  }
+  function toast(msg) {
+    try {
+      var t = document.createElement("div");
+      t.className = "ok-toast"; t.textContent = msg;
+      document.body.appendChild(t);
+      setTimeout(function () { try { t.remove(); } catch (e) {} }, 2600);
+    } catch (e) {}
+  }
+  function download(filename, text, mime) {
+    try {
+      var blob = new Blob([text], { type: mime || "text/html" });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement("a");
+      a.href = url; a.download = filename;
+      document.body.appendChild(a); a.click();
+      setTimeout(function () { try { URL.revokeObjectURL(url); a.remove(); } catch (e) {} }, 2500);
+      return true;
+    } catch (e) { return false; }
+  }
+  function copy(text, label) {
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text);
+        toast((label || "copied") + " — on the clipboard");
+        return true;
+      }
+    } catch (e) {}
+    toast("this browser refused the clipboard — select and copy by hand");
+    return false;
+  }
+
+  /* ---------------------------------------------------------------- store -- */
+  /* THE SAME FOLDER THE STATION USES. `root.kv.intake` is where `/intake` keeps
+     its records, so in the station's own origin a role reads and writes THE
+     SAME records the desk does — open THE CV from the station and it is holding
+     the record the desk just made. In a role's own generator the folder is that
+     origin's `intake`, which is still one store shared by every role opened
+     there, so a record is imported once and every role sees it. */
+  function folder() {
+    try {
+      if (typeof root !== "undefined" && root && root.kv && root.kv.intake) return root.kv.intake;
+      if (typeof root !== "undefined" && root && root.kv && root.kv.records) return root.kv.records;
+    } catch (e) {}
+    return null;
+  }
+  function durable() { return !!folder(); }
+  function lsGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function lsSet(k, v) { try { localStorage.setItem(k, v); return true; } catch (e) { return false; } }
+  function lsDel(k) { try { localStorage.removeItem(k); return true; } catch (e) { return false; } }
+
+  async function ids() {
+    var f = folder();
+    if (f) {
+      try {
+        var ks = await f.keys();
+        return (ks || []).filter(function (k) { return String(k).indexOf("__") !== 0; }).sort();
+      } catch (e) { return []; }
+    }
+    var out = [];
+    try {
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i);
+        if (k && k.indexOf(LSP) === 0) out.push(k.slice(LSP.length));
+      }
+    } catch (e) {}
+    return out.sort();
+  }
+  async function get(id) {
+    var f = folder();
+    if (f) { try { return await f.get(id); } catch (e) { return null; } }
+    try { var t = lsGet(LSP + id); return t ? JSON.parse(t) : null; } catch (e) { return null; }
+  }
+  async function save(rec) {
+    if (!rec || !rec.id) return false;
+    rec.v = V; rec.updated = nowISO();
+    var f = folder();
+    if (f) { try { await f.set(rec.id, rec); return true; } catch (e) { return false; } }
+    return lsSet(LSP + rec.id, JSON.stringify(rec));
+  }
+  async function forget(id) {
+    var f = folder();
+    if (f) { try { await f.delete(id); return true; } catch (e) { return false; } }
+    return lsDel(LSP + id);
+  }
+  async function list() {
+    var ks = await ids(), out = [];
+    for (var i = 0; i < ks.length; i++) { var r = await get(ks[i]); if (r) out.push(r); }
+    return out;
+  }
+  async function lastId() {
+    var f = folder();
+    if (f) { try { return await f.get("__last"); } catch (e) { return null; } }
+    return lsGet(LSL);
+  }
+  async function setLast(id) {
+    var f = folder();
+    if (f) { try { await f.set("__last", id); } catch (e) {} return; }
+    lsSet(LSL, id);
+  }
+
+  /* --------------------------------------------------------------- record -- */
+  function blank(id, name, extra) {
+    var rec = {
+      v: V, id: id, name: name || id, spelling: "", role: "student",
+      tutor: "the tutor", evidenceSet: [], note: "",
+      fields: [], owed: {}, inbox: [], log: [], at: nowISO()
+    };
+    if (extra) for (var k in extra) rec[k] = extra[k];
+    return rec;
+  }
+  /* FAIL CLOSED (L41). A row the machine GUESSED (state:"unresolved") is not a
+     supplied row: it never prints, never headlines, never fills a blank. */
+  function field(rec, k) {
+    if (!rec || !rec.fields) return null;
+    for (var i = 0; i < rec.fields.length; i++) {
+      var f = rec.fields[i];
+      if (f && f.k === k) {
+        if (f.value == null || !String(f.value).trim()) return null;
+        if (f.state === "unresolved") return null;
+        return f;
+      }
+    }
+    return null;
+  }
+  function raw(rec, k) {
+    if (!rec || !rec.fields) return null;
+    for (var i = 0; i < rec.fields.length; i++) if (rec.fields[i] && rec.fields[i].k === k) return rec.fields[i];
+    return null;
+  }
+  function val(rec, k) { var f = field(rec, k); return f ? String(f.value) : ""; }
+  function setField(rec, k, label, value, ev, state) {
+    rec.fields = rec.fields || [];
+    var f = raw(rec, k);
+    var changed = false;
+    if (!f) { f = { k: k, label: label || k, value: "", ev: "", state: "stated" }; rec.fields.push(f); changed = true; }
+    var nv = value == null ? "" : String(value);
+    if (String(f.value || "") !== nv) changed = true;
+    if (ev && f.ev !== ev) changed = true;
+    f.label = label || f.label || k;
+    f.value = nv;
+    f.ev = ev || f.ev || "";
+    f.state = state || (nv ? "stated" : (f.state === "unresolved" ? "unresolved" : "stated"));
+    if (changed) logLine(rec, "set " + k + (nv ? "" : " (cleared)"));
+    return changed;
+  }
+  function logLine(rec, what) {
+    rec.log = rec.log || [];
+    rec.log.push({ at: nowISO(), what: String(what) });
+    if (rec.log.length > 300) rec.log = rec.log.slice(-300);
+  }
+  /* L38 RAW_FIRST_DERIVE — the thing that arrived is kept VERBATIM, forever. */
+  function inbox(rec, item, label, value, kind) {
+    rec.inbox = rec.inbox || [];
+    var entry = {
+      at: nowISO(), kind: kind || (/(^|\s)(https?:\/\/|www\.)/i.test(String(value)) ? "link" : "text"),
+      label: label || String(value).slice(0, 48), value: String(value), item: item || "portfolio"
+    };
+    rec.inbox.push(entry);
+    logLine(rec, "received into " + entry.item + ": " + entry.label);
+    return entry;
+  }
+  function inboxOf(rec, item) {
+    return (rec.inbox || []).filter(function (x) { return x.item === item; });
+  }
+  /* the family contract: whatever a human types is captured VERBATIM first. */
+  async function soul(text, from) {
+    var t = String(text == null ? "" : text);
+    if (!t.trim()) return false;
+    var entry = { at: nowISO(), from: from || "a role generator", text: t };
+    var f = null;
+    try { if (typeof root !== "undefined" && root && root.kv && root.kv.soul) f = root.kv.soul; } catch (e) {}
+    if (f) { try { await f.set("soul-" + Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 7), entry); return true; } catch (e) {} }
+    try {
+      var all = JSON.parse(lsGet("ok:soul") || "[]");
+      all.push(entry); if (all.length > 500) all = all.slice(-500);
+      return lsSet("ok:soul", JSON.stringify(all));
+    } catch (e) { return false; }
+  }
+
+  /* --------------------------------------------------------------- import -- */
+  /* ONE reader for every shape a record can arrive in: the station's
+     `/intake export <name>` (one record), `/intake export all` (an array), a
+     raw `{"quan":{…}}` map, or `{"records":[…]}`. */
+  var KNOWN_KEYS = { v: 1, id: 1, name: 1, spelling: 1, role: 1, tutor: 1, evidenceSet: 1,
+    note: 1, fields: 1, owed: 1, inbox: 1, log: 1, at: 1, updated: 1 };
+  function normalize(text) {
+    var j = text;
+    if (typeof text === "string") {
+      var t = text.trim();
+      if (!t) return { err: "nothing to read — the box was empty" };
+      try { j = JSON.parse(t); } catch (e) { return { err: "that is not JSON (" + String(e.message || e).slice(0, 70) + ")" }; }
+    }
+    var out = [];
+    if (Array.isArray(j)) out = j.slice();
+    else if (j && typeof j === "object") {
+      if (j.v && j.id) out = [j];
+      else if (Array.isArray(j.records)) out = j.records.slice();
+      else if (Array.isArray(j.students)) out = j.students.slice();
+      else {
+        Object.keys(j).forEach(function (k) {
+          var v = j[k];
+          if (v && typeof v === "object" && (v.id || v.name || v.fields)) { if (!v.id) v.id = k; out.push(v); }
+        });
+      }
+    }
+    var good = out.filter(function (r) { return r && typeof r === "object" && (r.name || r.id); });
+    if (!good.length) return { err: "no record in that JSON — it needs at least a name" };
+    return { records: good };
+  }
+  async function importText(text) {
+    var n = normalize(text);
+    if (n.err) return n;
+    var added = 0, replaced = 0, names = [];
+    for (var i = 0; i < n.records.length; i++) {
+      var r = n.records[i];
+      r.id = slug(r.id || r.name);
+      var prev = await get(r.id);
+      var existed = !!prev;
+      var rec = existed ? prev : blank(r.id, r.name || r.id);
+      /* the arriving file wins, but nothing already in this browser is thrown
+         away silently: fields and inbox entries merge, the newer copy leads. */
+      rec.name = r.name || rec.name;
+      if (r.spelling) rec.spelling = r.spelling;
+      if (r.note) rec.note = r.note;
+      if (r.tutor) rec.tutor = r.tutor;
+      if (r.evidenceSet) rec.evidenceSet = r.evidenceSet;
+      var byK = {}; (rec.fields || []).forEach(function (f) { byK[f.k] = f; });
+      (r.fields || []).forEach(function (f) {
+        if (!f || !f.k) return;
+        if (byK[f.k] && String(byK[f.k].value || "").trim() && !String(f.value || "").trim()) return;
+        byK[f.k] = { k: f.k, label: f.label || f.k, value: f.value == null ? "" : String(f.value), ev: f.ev || "", state: f.state || "stated" };
+      });
+      rec.fields = Object.keys(byK).map(function (k) { return byK[k]; });
+      if (r.owed) rec.owed = Object.assign({}, rec.owed || {}, r.owed);
+      var seen = {};
+      (rec.inbox || []).forEach(function (x) { seen[String(x.at) + "|" + String(x.label)] = 1; });
+      (r.inbox || []).forEach(function (x) {
+        if (!x) return;
+        var key = String(x.at) + "|" + String(x.label);
+        if (seen[key]) return;
+        seen[key] = 1; rec.inbox.push(x);
+      });
+      if (r.log) rec.log = (rec.log || []).concat(r.log).slice(-300);
+      /* EVERYTHING ELSE THE ROLES KEEP. Each role may store its own working
+         state on the record (the phonics marks, the application board, the
+         presentation beats, the LinkedIn build…). A record that lost those the
+         moment it was imported into another role would not be portable, so the
+         unknown keys ride along: arrays are unioned, objects merged, and a
+         scalar the arriving file states wins (it is the newer copy). */
+      Object.keys(r).forEach(function (k) {
+        if (KNOWN_KEYS[k]) return;
+        var a = rec[k], b = r[k];
+        if (a == null) { rec[k] = b; return; }
+        if (Array.isArray(a) && Array.isArray(b)) {
+          var seen2 = {}; var merged = [];
+          a.concat(b).forEach(function (x) {
+            var key = JSON.stringify(x);
+            if (seen2[key]) return;
+            seen2[key] = 1; merged.push(x);
+          });
+          rec[k] = merged;
+          return;
+        }
+        if (a && b && typeof a === "object" && typeof b === "object") { rec[k] = Object.assign({}, a, b); return; }
+        rec[k] = b;
+      });
+      await save(rec);
+      if (existed) replaced++; else added++;
+      names.push(rec.name);
+    }
+    return { added: added, replaced: replaced, names: names };
+  }
+  function exportText(recs) {
+    var arr = Array.isArray(recs) ? recs : [recs];
+    return JSON.stringify(arr.length === 1 ? arr[0] : arr, null, 1);
+  }
+
+  /* ----------------------------------------------------------------- print -- */
+  /* one standalone sheet. Same idiom as the station's print room: an .html with
+     its own @page rule — no PDF writer, and it says so. */
+  function printSheet(title, body, opts) {
+    opts = opts || {};
+    return "<!doctype html><html><head><meta charset=\"utf-8\"><title>" + esc(title) + "</title><style>"
+      + "@page{size:A4;margin:" + (opts.landscape ? "12mm 12mm" : "16mm 15mm") + "}"
+      + "*{box-sizing:border-box}body{margin:0;font:11.5pt/1.5 Georgia,'Times New Roman',serif;color:#15171c;background:#fff;text-align:left}"
+      + "header{border-bottom:2px solid #15171c;padding-bottom:8px;margin-bottom:14px}"
+      + "h1{margin:0;font-size:21pt;letter-spacing:.4px}"
+      + ".hl{margin-top:3px;font-size:11.5pt;color:#333}"
+      + ".ct{margin-top:2px;font-size:9.5pt;color:#555}"
+      + "section{margin:12px 0}"
+      + "h2{margin:0 0 4px;font-size:9.5pt;letter-spacing:1.6px;text-transform:uppercase;color:#7a5a12;border-bottom:1px solid #ddd;padding-bottom:2px}"
+      + "p{margin:0 0 6px}ul{margin:0;padding-left:16px}li{margin-bottom:3px}"
+      + "table{width:100%;border-collapse:collapse;font-size:10.5pt}"
+      + "th{text-align:left;font-size:8.5pt;letter-spacing:1.2px;text-transform:uppercase;color:#666;border-bottom:1px solid #ccc;padding:5px 4px}"
+      + "td{border-bottom:1px solid #e5e5e5;padding:5px 4px;vertical-align:top}"
+      + ".rule{border-bottom:1px dotted #999;color:#999;font-style:italic;display:inline-block;min-width:45%}"
+      + "footer{margin-top:18px;padding-top:8px;border-top:1px solid #ddd;font-size:8.5pt;color:#666}"
+      + "footer.warn{color:#8a1f14;border-top:1px solid #c9a0a0}"
+      + "@media print{a{color:inherit;text-decoration:none}}"
+      + "</style></head><body>" + body + "</body></html>";
+  }
+
+  /* --------------------------------------------------------------- render -- */
+  function row(label, value, note, cls) {
+    return '<div class="ok-row"><b>' + esc(label) + '</b><span class="ok-v">' + (value == null ? "" : value)
+      + (note ? '<div class="ok-note ' + (cls || "") + '">' + note + "</div>" : "") + "</span></div>";
+  }
+  function note(text, cls) { return '<div class="ok-note ' + (cls || "") + '">' + text + "</div>"; }
+  function chip(text, color) {
+    return '<span class="ok-tag" style="color:' + (color || "var(--muted)") + '">' + esc(text) + "</span>";
+  }
+  function blankRule(text) { return '<span class="ok-blank">' + esc(text) + "</span>"; }
+  function card(head, body, foot) {
+    return '<div class="ok-card">' + (head ? "<h2>" + head + "</h2>" : "") + body
+      + (foot ? '<div class="ok-foot">' + foot + "</div>" : "") + "</div>";
+  }
+  /* named `ul`, not `list`: the store owns `list()` — an export key can only be
+     used once, and a duplicate here once silently replaced the store with an
+     html builder. */
+  function ul(items) {
+    return items && items.length ? '<ul class="ok-list">' + items.map(function (x) { return "<li>" + x + "</li>"; }).join("") + "</ul>" : "";
+  }
+  function mark(size) {
+    size = size || 34;
+    return '<svg class="ok-mark" viewBox="0 0 32 32" width="' + size + '" height="' + size + '" fill="none"'
+      + ' stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+      + '<path d="M16 3.5 28 10v12L16 28.5 4 22V10z"/><path d="M16 3.5v25M4 10l12 6 12-6"/>'
+      + '<path d="M16 16 4 22M16 16l12 6"/></svg>';
+  }
+
+  /* ----------------------------------------------------------------- shell -- */
+  /* The furniture every role shares: the mark, the role's name, and the two
+     controls that make the family reusable — WHO (the record picker) and the
+     import/export that moves a record between any two roles and the station. */
+  function shell(opts) {
+    ensureCSS();
+    opts = opts || {};
+    var wrap = document.getElementById("okRoot");
+    if (!wrap) {
+      wrap = document.createElement("div");
+      wrap.id = "okRoot";
+      document.body.appendChild(wrap);
+    }
+    wrap.className = "ok-wrap";
+    wrap.innerHTML =
+      '<div class="ok-head">' + mark()
+        + '<div class="ok-title">' + esc(opts.name || "A role") + "<small>" + esc(opts.what || "PrAis · NET · one function, reusable") + "</small></div>"
+        + '<div class="ok-spacer"></div>'
+        + '<div class="ok-bar">'
+        +   '<select class="ok-select" id="okWho" title="whose record this is"></select>'
+        +   '<button class="ok-btn ghost" id="okNewBtn" title="open a new record">+ student</button>'
+        +   '<button class="ok-btn ghost" id="okImpBtn" title="read a record exported by the station or by any role">import</button>'
+        +   '<button class="ok-btn ghost" id="okExpBtn" title="write this record to a file">export</button>'
+        + '</div>'
+        + '<input type="file" id="okFile" accept=".json,application/json,text/plain" style="display:none">'
+      + "</div>"
+      + '<div id="okPanel"></div>'
+      + '<div id="okIO" hidden></div>';
+
+    var who = document.getElementById("okWho");
+    var panel = document.getElementById("okPanel");
+    var io = document.getElementById("okIO");
+    var state = { rec: null, id: null };
+
+    function showIO(html) { io.hidden = false; io.innerHTML = html; }
+    function hideIO() { io.hidden = true; io.innerHTML = ""; }
+
+    async function fillPicker(selectId) {
+      var rs = await list();
+      var html = rs.map(function (r) {
+        return '<option value="' + esc(r.id) + '">' + esc(r.name) + (r.spelling ? " \u00b7 " + esc(r.spelling) : "") + "</option>";
+      }).join("");
+      if (!rs.length) html = '<option value="">\u2014 no record in this browser \u2014</option>';
+      html += '<option value="__new">+ a new student\u2026</option>';
+      who.innerHTML = html;
+      var want = selectId || state.id || (rs[0] ? rs[0].id : "");
+      who.value = (want && rs.some(function (r) { return r.id === want; })) ? want : (rs[0] ? rs[0].id : "");
+      return rs;
+    }
+
+    async function load(id, o2) {
+      o2 = o2 || {};
+      state.id = id;
+      state.rec = id ? await get(id) : null;
+      if (state.rec) await setLast(id);
+      /* the picker must SHOW the record the panel is about: a control that
+         names one student while the page describes another is exactly the kind
+         of quiet wrongness this family cannot have. */
+      try { who.value = state.rec ? id : ""; } catch (e) {}
+      if (opts.onLoad) opts.onLoad(state.rec, state);
+      if (!o2.quiet) render();
+      return state.rec;
+    }
+
+    function render() {
+      var r = state.rec;
+      if (!r) {
+        panel.innerHTML = card("no record yet",
+          '<div class="ok-empty">This tool reads and writes <b>one record per student</b>, kept in <b>this browser</b>'
+          + (durable() ? " (kv \u2014 durable, private, per origin)" : " (localStorage \u2014 the perchance kv-plugin is not loaded here)")
+          + ". Open one, or read a record the station exported.<br><br>"
+          + '<button class="ok-btn gold" id="okFirstNew">+ open the first record</button> '
+          + '<button class="ok-btn" id="okFirstImp">import a record (JSON)</button>'
+          + '<div class="ok-note" style="margin-top:8px">In the station: <span class="ok-mono">/intake export all</span> writes a file any of these roles can read.</div></div>',
+          "Nothing about a student ships in this source. A record is made by a human, lives in this browser, and leaves only when a human exports it.");
+        wirePanel();
+        return;
+      }
+      var body = opts.panel ? opts.panel(r, helpers) : "";
+      var head = opts.head ? opts.head(r) : "";
+      panel.innerHTML = (head || "") + body;
+      wirePanel();
+      if (opts.after) opts.after(r, panel, helpers);
+    }
+
+    /* the helpers a role's panel() is handed */
+    var helpers = {
+      rec: function () { return state.rec; },
+      id: function () { return state.id; },
+      save: async function () { var ok = await save(state.rec); render(); return ok; },
+      set: async function (k, label, value, ev) { setField(state.rec, k, label, value, ev); return await save(state.rec); },
+      render: render,
+      fill: function () { return fillPicker(state.id); },
+      load: load,
+      io: showIO, ioHide: hideIO, toast: toast,
+      on: function (act, fn) { acts[act] = fn; }
+    };
+    var acts = {};
+
+    function wirePanel() {
+      var nb = document.getElementById("okFirstNew");
+      if (nb) nb.onclick = function () { onNew(); };
+      var ib = document.getElementById("okFirstImp");
+      if (ib) ib.onclick = function () { onImport(); };
+      Array.prototype.forEach.call(panel.querySelectorAll("[data-ok-act]"), function (el) {
+        el.onclick = function () {
+          var fn = acts[el.getAttribute("data-ok-act")] || (opts.actions && opts.actions[el.getAttribute("data-ok-act")]);
+          if (fn) fn(el, state.rec, helpers);
+        };
+      });
+      Array.prototype.forEach.call(panel.querySelectorAll("[data-ok-copy],[data-copy]"), function (el) {
+        el.onclick = function () {
+          copy(el.getAttribute("data-ok-copy") || el.getAttribute("data-copy"),
+               el.getAttribute("data-ok-copy-label") || el.getAttribute("data-copy-label") || "copied");
+        };
+      });
+    }
+
+    function onNew() {
+      showIO('<div class="ok-card"><h2>a new record</h2>'
+        + '<div class="ok-row"><b>name</b><span class="ok-v"><input class="ok-input" id="okNewName" placeholder="the student\'s name, as they spell it"></span></div>'
+        + '<div class="ok-row"><b>spelled out</b><span class="ok-v"><input class="ok-input" id="okNewSpell" placeholder="Q-U-A-N (optional \u2014 how it was spelled out loud)"></span></div>'
+        + '<div style="margin-top:8px" class="ok-bar"><button class="ok-btn gold" id="okNewGo">open it</button>'
+        + '<button class="ok-btn ghost" id="okNewCancel">cancel</button></div>'
+        + '<div class="ok-note">The record starts EMPTY and every row on it is marked not-supplied. This tool will not invent one.</div></div>');
+      document.getElementById("okNewCancel").onclick = hideIO;
+      document.getElementById("okNewGo").onclick = async function () {
+        var name = (document.getElementById("okNewName").value || "").trim();
+        if (!name) { toast("a record needs a name"); return; }
+        var id = slug(name);
+        if (await get(id)) { toast("a record for " + name + " is already on file"); await fillPicker(id); await load(id); hideIO(); return; }
+        var rec = blank(id, name, { spelling: (document.getElementById("okNewSpell").value || "").trim() });
+        logLine(rec, "record opened");
+        await save(rec);
+        hideIO();
+        await fillPicker(id);
+        await load(id);
+        toast("opened " + name);
+      };
+    }
+
+    function onImport() {
+      showIO('<div class="ok-card"><h2>read a record</h2>'
+        + '<div class="ok-note">Paste the JSON from <span class="ok-mono">/intake export all</span> (or from any role\'s export), or choose the file. '
+        + 'A record already on file is <b>merged</b>, never overwritten silently.</div>'
+        + '<div style="height:8px"></div>'
+        + '<textarea class="ok-textarea" id="okImpText" placeholder="a single record object, or an array of them"></textarea>'
+        + '<div style="margin-top:8px" class="ok-bar"><button class="ok-btn gold" id="okImpGo">read it</button>'
+        + '<button class="ok-btn" id="okImpFile">choose a file\u2026</button>'
+        + '<button class="ok-btn ghost" id="okImpCancel">cancel</button></div>'
+        + '<div id="okImpOut"></div></div>');
+      document.getElementById("okImpCancel").onclick = hideIO;
+      document.getElementById("okImpFile").onclick = function () { document.getElementById("okFile").click(); };
+      document.getElementById("okImpGo").onclick = async function () {
+        var res = await importText(document.getElementById("okImpText").value || "");
+        var out = document.getElementById("okImpOut");
+        if (res.err) { out.innerHTML = note("nothing was read: " + esc(res.err), "bad"); return; }
+        out.innerHTML = note("read " + res.added + " new \u00b7 " + res.replaced + " merged \u2014 " + esc(res.names.join(", ")), "");
+        await fillPicker(state.id || (res.names[0] ? slug(res.names[0]) : null));
+        await load(who.value);
+        hideIO(); toast("imported " + res.names.length + " record(s)");
+      };
+    }
+
+    document.getElementById("okFile").onchange = async function (ev) {
+      var f = ev.target.files && ev.target.files[0];
+      if (!f) return;
+      var txt = await f.text();
+      var res = await importText(txt);
+      if (res.err) { toast("nothing was read: " + res.err); return; }
+      await fillPicker(state.id || (res.names[0] ? slug(res.names[0]) : null));
+      await load(who.value);
+      hideIO(); toast("read " + res.names.length + " record(s) from " + f.name);
+      ev.target.value = "";
+    };
+
+    document.getElementById("okNewBtn").onclick = onNew;
+    document.getElementById("okImpBtn").onclick = onImport;
+    document.getElementById("okExpBtn").onclick = async function () {
+      if (!state.rec) { toast("no record to export"); return; }
+      download(slug(state.rec.name) + "-record.json", exportText(state.rec), "application/json");
+      toast("exported " + state.rec.name + "'s record");
+    };
+    who.onchange = async function () {
+      if (who.value === "__new") { onNew(); return; }
+      hideIO();
+      await load(who.value);
+    };
+
+    /* boot: `?student=quan` (the family's deep link) wins, then the last one
+       used in this browser, then the only one there is. */
+    (async function boot() {
+      var q = null;
+      /* the deep link: `?student=<name>`, `#<name>`, or a host that has already
+         decided (the family desk inside the station sets ObiKitStudent, because
+         a srcdoc frame has no search string to read). */
+      try { q = window.ObiKitStudent || null; } catch (e) {}
+      if (!q) { try { q = new URLSearchParams(location.search).get("student"); } catch (e) {} }
+      if (!q) { try { q = (location.hash || "").replace(/^#/, ""); } catch (e) {} }
+      var rs = await fillPicker(q ? slug(q) : null);
+      var want = q ? slug(q) : null;
+      if (want && !rs.some(function (r) { return r.id === want; })) {
+        if (!rs.length) toast("no record for \u201c" + want + "\u201d in this browser \u2014 open one or import");
+        want = rs.length ? rs[0].id : null;
+      }
+      if (!want) want = (await lastId()) || (rs[0] ? rs[0].id : null);
+      await load(want);
+    })();
+
+    return { state: state, helpers: helpers, refresh: fillPicker, panel: panel };
+  }
+
+  window.ObiKit = {
+    V: V,
+    /* theme + basics */
+    ensureCSS: ensureCSS, esc: esc, lines: lines, slug: slug, day: day, strip: strip,
+    toast: toast, download: download, copy: copy, printSheet: printSheet,
+    /* store */
+    get: get, save: save, forget: forget, ids: ids, list: list, durable: durable,
+    /* record */
+    blank: blank, field: field, raw: raw, val: val, setField: setField, inbox: inbox,
+    inboxOf: inboxOf, logLine: logLine, soul: soul,
+    /* import/export */
+    importText: importText, normalize: normalize, exportText: exportText,
+    /* html */
+    row: row, note: note, chip: chip, blankRule: blankRule, card: card, ul: ul, mark: mark,
+    /* page */
+    shell: shell
+  };
+})();
+
+</script>
+
+<script>
+/* ==================== 2 · THE METHOD — the tape's tables ==================== */
+/* ============================================================================
+   THE METHOD — src/generators/role-kit/method.js            (v1 · 2026-09-22)
+
+   THE TAPE'S OWN TABLES, shared by every role in the family: the catalogue of
+   what the lesson promised, the 44-sound inventory, the collisions this market
+   actually collides on, the interview bank, and the rows a CV is made of.
+
+   NONE OF IT IS A STUDENT. Not a name, not a degree, not a score, not a search.
+   These are the instruments the tutor asked for, transcribed from the recordings
+   of the 23rd; a record is what a human fills them with, and it lives in that
+   browser (see kit.js).
+
+   THE AUTHORITY. The station's `src/intake.js` holds the same tables — ITEMS,
+   PHONEMES, MINIMAL_PAIRS, BANK, CV_FIELDS. This file is the family's copy of
+   them so a role does not have to fetch the station. THEY ARE THE SAME TABLES:
+   a change to one is a change to both, and `src/README.md` records that debt.
+   The quotes the `ev` fields carry are the recordings' own words, kept verbatim.
+   ========================================================================== */
+(function () {
+  "use strict";
+
+  /* 1 · THE CATALOGUE — every promise the tutor made on the 23rd, in his own
+     words. The roles use these for the evidence behind a row, and for the
+     steps a function runs in. */
+  var ITEMS = [
+    { id: "cv", title: "The CV", who: "station", ev: "rec 3 — 'You don't have a CV yet?'; rec 4 — the degree line",
+      what: "A one-page CV built from what the student actually has: schooling, work, tools, languages, links, one headshot.",
+      made: "the student's own rows + the headshot + what they send",
+      steps: ["collect the schooling row", "collect the work / project rows", "collect the links", "choose the headshot",
+              "write it in their own words", "print it (A4) and re-read it aloud"],
+      gate: "a degree name that has been CONFIRMED — never the machine's guess" },
+
+    { id: "linkedin", title: "The LinkedIn", who: "station", ev: "rec 1 — 'getting his CV and LinkedIn set up'; rec 3 — the 600-connection target",
+      what: "The profile: headline, about, experience, education, skills, and the connection build the tutor quoted (600).",
+      made: "the same intake as the CV + a professional photo",
+      steps: ["headline (from the CV headline)", "photo", "about (their own words)", "education", "skills",
+              "turn on 'open to work' with the roles they actually want", "connection build"],
+      gate: "the CV's confirmed rows" },
+
+    { id: "headshot", title: "The headshot", who: "student", ev: "rec 3 — the wardrobe, decided on mic",
+      what: "One clean photo for the CV and the LinkedIn. Plain background, chest up, neutral or lightly smiling, natural light.",
+      made: "a phone, a wall, a shirt that has been ironed",
+      steps: ["decide the outfit on camera", "shoot 20", "pick 1", "crop to passport-ish framing"],
+      gate: "" },
+
+    { id: "portfolio", title: "The portfolio intake", who: "student", ev: "rec 1 — 'send me over everything you have'; rec 2 — 'just try to send everything'",
+      what: "Everything they have ever made, sent once, into one place — the tutor's own line: if it is not sent it 'just gains dust and just sits there'.",
+      made: "what already exists on their phone and in the class group",
+      steps: ["send the magazine", "send the links", "send the socials", "send the CV if one exists",
+              "the station files each one against the item it can serve"],
+      gate: "" },
+
+    { id: "phonics", title: "The 44-phoneme work", who: "station", ev: "rec 3 — 'we get to use that conversation we've just had to test your 44 phonics'; rec 4 — phonics into the homework",
+      what: "The oral instrument: the 44 sounds of English, read aloud, recorded, transcribed, and marked. It is a SPEAKING test — the tutor refused to have them read.",
+      made: "their own voice, a recording, and the inventory in this file",
+      steps: ["sit the diagnostic (the 44 sounds)", "record the set", "transcribe it", "mark the sounds that slipped",
+              "drill only those, ten minutes a day", "re-sit the same set in a week"],
+      gate: "" },
+
+    { id: "present", title: "The weekly recorded presentation", who: "student", ev: "rec 3 — 'record it for video 15-20 minutes … a few times a week'",
+      what: "A 15–20 minute spoken presentation on a subject of their choice, recorded on video, a few times a week, about an hour a week in total — 'spread out' so it 'builds up like a snowball'.",
+      made: "a phone, a topic, and the reading sheet this desk prints",
+      steps: ["pick the subject", "plan 5 beats", "record 15–20 min", "send it", "it gets transcribed and read",
+              "one correction per run — never five"],
+      gate: "" },
+
+    { id: "apps", title: "The applications", who: "student", ev: "rec 1 — '12'; rec 4 — 'one of the 12 … just around 30'",
+      what: "The live search, with its real arithmetic. The volume is the point; the desk keeps the count, the role, the date and what each one asked.",
+      made: "their own search (the roles they actually want) and ~30 minutes per application",
+      steps: ["name the target role and the boards", "log each application as it goes out (date · company · role · what it asked)",
+              "hold the weekly count", "re-use what repeats instead of retyping it"],
+      gate: "" },
+
+    { id: "interview", title: "The interview drill", who: "station", ev: "rec 1 — 'that's something that we can practice as interviews'; rec 4 — the questions actually asked",
+      what: "The bank of questions this market really asks, in the order a real interview runs, with the student's own answers rehearsed out loud until they are boring to say.",
+      made: "the bank + the student's own material + a camera or a call",
+      steps: ["run the bank cold, recorded", "mark the three that broke", "write the answers with the tutor",
+              "run it again on a call (Zoom is the real mode)", "hold it to the point where it is boring"],
+      gate: "" },
+
+    { id: "umbrella", title: "The umbrella brand", who: "station", ev: "rec 4 — 'you can brand yourself under the umbrella and have like sub-…'",
+      what: "One name that everything hangs under, with the work as sub-brands beneath it — the tutor's own structure, shown from his own website: 'if you just stick with one, then you can only apply to one sort of thing'.",
+      made: "the student's name, their pieces, and one holding line",
+      steps: ["name the umbrella", "list the sub-pieces", "one line each", "one page that carries them",
+              "the links go on the CV and the LinkedIn"],
+      gate: "the portfolio intake (you cannot brand what has not been sent)" },
+
+    { id: "presence", title: "The presence build", who: "student", ev: "rec 4 — Facebook, TikTok, WhatsApp, and 'we can automate that stuff'",
+      what: "The public face a recruiter can find: a professionalised Facebook (business in this market runs there), TikTok as traffic, WhatsApp as the global number, and the profile photo used for business.",
+      made: "the accounts they already have",
+      steps: ["clean the profile photo and the name", "one line of work in the bio", "pin the best three pieces",
+              "list the target recruiters", "post on a rhythm, not in bursts"],
+      gate: "" },
+
+    { id: "work", title: "A nameable credit on a real product", who: "station", ev: "rec 4 — the tutor's own game, and 'you could say you helped consult and design for…'",
+      what: "Real work on a shipped product, credited in the CV in the words the tutor used ('helped consult and design for …'). Work that exists is worth more than a certificate that does not.",
+      made: "the sovereign's own product, and the student's hands on it",
+      steps: ["scope one piece they can genuinely own", "do it", "credit it in the CV and the LinkedIn",
+              "be able to talk about it for five minutes in an interview"],
+      gate: "the sovereign's word on what may be credited" },
+
+    { id: "pipeline", title: "The pipeline (the owed list)", who: "station", ev: "rec 2 — 'a pipeline … like a to-do list … then we won't forget about that'",
+      what: "Every promise, its owner, its evidence and its state — held in one place so nothing is forgotten between lessons.",
+      made: "the recordings, and this desk",
+      steps: ["every promise becomes an item", "every item gets an owner", "material moves the item", "nothing is closed by memory alone"],
+      gate: "" },
+
+    { id: "app", title: "ONE APP THAT REMEMBERS", who: "station", ev: "rec 4 — the specification, in the tutor's own words",
+      what: "The thing the tutor asked for by name: the captures happen by hand, and the machine keeps everything — every student, every track, the CVs, the phonics, the count, the questions, the week.",
+      made: "everything above, in the station",
+      steps: ["the record", "the pipeline", "the capture lane", "the week's plan", "the material the sovereign sends"],
+      gate: "" }
+  ];
+  var BY_ID = {};
+  ITEMS.forEach(function (it) { BY_ID[it.id] = it; });
+
+  /* 2 · THE 44 SOUNDS (24 consonants · 20 vowels). The tutor said "your 44
+     phonics" and refused the reading test: this is a SPEAKING test. Each row is
+     a sound, a spelling, and words to say aloud. */
+  var PHONEMES = [
+    ["/b/", "b", "bat · big · job"],
+    ["/d/", "d", "dog · red · ladder"],
+    ["/f/", "f, ph", "fan · phone · laugh"],
+    ["/g/", "g", "go · bag · bigger"],
+    ["/h/", "h", "hat · behind"],
+    ["/j/", "j, ge", "jam · bridge · age"],
+    ["/k/", "c, k, ck", "cat · keep · back"],
+    ["/l/", "l, ll", "lip · bell · full"],
+    ["/m/", "m, mb", "man · summer · comb"],
+    ["/n/", "n, kn", "net · dinner · knee"],
+    ["/p/", "p", "pen · happy · stop"],
+    ["/r/", "r, wr", "red · carry · write"],
+    ["/s/", "s, ss, c", "sun · miss · city"],
+    ["/t/", "t, tt", "top · better · that"],
+    ["/v/", "v", "van · river · have"],
+    ["/w/", "w, wh", "wet · away · when"],
+    ["/y/", "y", "yes · beyond"],
+    ["/z/", "z, s", "zoo · buzz · is"],
+    ["/ch/", "ch, tch", "chip · church · watch"],
+    ["/sh/", "sh, ti", "ship · nation · wash"],
+    ["/th/ (voiceless)", "th", "thin · bath · method"],
+    ["/th/ (voiced)", "th", "this · mother · breathe"],
+    ["/ng/", "ng, n", "sing · singer · bank"],
+    ["/zh/", "s, si", "measure · vision"],
+    ["short a /æ/", "a", "cat · map · hand"],
+    ["short e /e/", "e, ea", "bed · head · bread"],
+    ["short i /ɪ/", "i, y", "sit · gym · village"],
+    ["short o /ɒ/", "o, a", "hot · want · wash"],
+    ["short u /ʌ/", "u, o", "cup · son · money"],
+    ["long ee /iː/", "ee, ea, e", "see · eat · me · field"],
+    ["long a /eɪ/", "a_e, ai, ay", "cake · rain · day"],
+    ["long i /aɪ/", "i_e, igh, y", "bike · high · my"],
+    ["long o /əʊ/", "o_e, oa, ow", "home · road · know"],
+    ["long oo /uː/", "oo, u_e", "food · blue · June"],
+    ["yoo /juː/", "u, ew", "use · few · music"],
+    ["ow /aʊ/", "ou, ow", "out · now · house"],
+    ["oi /ɔɪ/", "oi, oy", "coin · boy · point"],
+    ["ar /ɑː/", "ar, a", "car · father · start"],
+    ["or /ɔː/", "or, au, aw", "for · saw · talk"],
+    ["er /ɜː/", "er, ir, ur, or", "her · bird · turn · word"],
+    ["air /eə/", "air, are, ear", "hair · care · bear"],
+    ["ear /ɪə/", "ear, eer, ere", "ear · cheer · here"],
+    ["ure /ʊə/", "ure, our", "sure · tour"],
+    ["schwa /ə/", "a, e, o, er (weak)", "about · problem · doctor — the weak vowel in every unstressed syllable"]
+  ];
+
+  /* the pairs this market's learners actually collide on — say both, in one
+     breath, ten times; the mouth learns the difference faster than the ear. */
+  var MINIMAL_PAIRS = [
+    ["th /θ/ vs s /s/", "think / sink · three / see · mouth / mouse"],
+    ["th /ð/ vs z /z/", "they / zay · breathe / breeze"],
+    ["v /v/ vs w /w/", "vest / west · vine / wine"],
+    ["l /l/ vs r /r/", "light / right · play / pray"],
+    ["final -s /s/ vs /z/", "cats / dogs · picks / pigs"],
+    ["-ed /t/ vs /d/ vs /ɪd/", "walked / played / wanted"],
+    ["short i /ɪ/ vs long ee /iː/", "sit / seat · live / leave · ship / sheep"],
+    ["short a /æ/ vs long a /eɪ/", "man / mane · hat / hate · bat / bait"],
+    ["n /n/ vs ng /ŋ/", "sin / sing · ran / rang · thin / thing"],
+    ["j /dʒ/ vs y /j/", "jail / Yale · jeep / yeep"]
+  ];
+
+  /* 3 · THE INTERVIEW BANK — what this market actually asks. The first group is
+     not invented: those were asked of a student, and the tutor repeated them out
+     loud as the real thing. */
+  var BANK = [
+    ["THE ONES ACTUALLY ASKED OF HIM", [
+      "What is your blood type?",
+      "Are you married yet? Why not?",
+      "What was your college score — and can you show it?",
+      "Is this an international company or a Vietnamese company you are applying to?"
+    ]],
+    ["OPENERS", [
+      "Tell me about yourself.",
+      "Why did you apply to this company?",
+      "What do you know about what we do?",
+      "Why should we choose you over another candidate?"
+    ]],
+    ["THE WORK", [
+      "Walk me through something you built, start to finish.",
+      "What did you do when something went wrong?",
+      "Which part of that work was yours alone?",
+      "What are you still learning, and how are you learning it?"
+    ]],
+    ["THE MONEY & THE TERMS", [
+      "What salary do you expect?",
+      "When could you start?",
+      "Are you able to work remotely, and in which hours?",
+      "Do you have any questions for us?"
+    ]],
+    ["THE ONES THAT TELL YOU IT WENT WELL", [
+      "Can you send us your portfolio?",
+      "Would you be free for a second interview this week?",
+      "What would you need from us to start well?"
+    ]]
+  ];
+
+  /* 4 · THE CV'S ROWS — the order a one-page CV runs in, with the hint the
+     student is asked for. `degree` carries the family's hardest rule: the name
+     ON the certificate, never the machine's guess. */
+  var CV_FIELDS = [
+    ["headline", "Headline", "one line: what they are, and what they want"],
+    ["phone", "Phone", "the number they will answer"],
+    ["email", "Email", ""],
+    ["city", "City", "where they are, and whether they can work remotely"],
+    ["links", "Links", "portfolio · LinkedIn · anything they made (one per line)"],
+    ["summary", "Summary", "2–3 lines, in their own words"],
+    ["school", "School", ""],
+    ["degree", "Degree", "the name ON the certificate — never the machine's guess"],
+    ["dates", "Dates", "from → to"],
+    ["gpa", "Result / GPA", "only if they want it shown"],
+    ["experience", "Experience", "role · place · what they actually did (one per line)"],
+    ["skills", "Skills", "the tools they really use (one per line)"],
+    ["languages", "Languages", "Vietnamese · English — with the level"],
+    ["photo", "Headshot", "the file or the URL"]
+  ];
+
+  /* 5 · FILING — which promise does a piece of arriving material serve? */
+  var MATCH = [
+    ["cv", ["cv", "c.v", "resume", "curriculum"]],
+    ["linkedin", ["linkedin", "linked in", "li profile"]],
+    ["headshot", ["headshot", "selfie", "photo", "picture", "portrait", "passport photo"]],
+    ["phonics", ["phonics", "phoneme", "sound", "pronunciation", "accent", "minimal pair"]],
+    ["present", ["presentation", "recorded video", "the recording", "speech"]],
+    ["apps", ["application", "applied", "apply", "job", "vacanc", "company", "hired"]],
+    ["interview", ["interview", "zoom call", "question", "blood type", "married"]],
+    ["umbrella", ["umbrella", "brand", "logo", "business card", "my site", "website"]],
+    ["presence", ["facebook", "tiktok", "whatsapp", "instagram", "social", "profile photo"]],
+    ["work", ["roblox", "game", "3d", "model", "consult", "train 67", "unreal", "blender"]],
+    ["portfolio", ["portfolio", "magazine", "project", "camera", "drawing", "design", "poster", "video edit"]]
+  ];
+  function matchItem(text) {
+    var t = " " + String(text || "").toLowerCase() + " ";
+    var best = "portfolio", bestN = 0;
+    MATCH.forEach(function (row) {
+      var n = 0;
+      row[1].forEach(function (k) { if (t.indexOf(k) >= 0) n++; });
+      if (n > bestN) { bestN = n; best = row[0]; }
+    });
+    return best;
+  }
+
+  /* 6 · THE STATES an item can be in. An item moves when MATERIAL ARRIVES —
+     never because anyone remembered that it probably had. */
+  var STATES = {
+    not_started: { label: "NOT STARTED", c: "#8b94ad" },
+    waiting: { label: "WAITING ON THEM", c: "#e6b43c" },
+    received: { label: "MATERIAL IN", c: "#5ed5eb" },
+    building: { label: "BEING BUILT", c: "#a855f7" },
+    done: { label: "DONE", c: "#50dc82" },
+    blocked: { label: "BLOCKED", c: "#e0473f" }
+  };
+
+  window.ObiMethod = {
+    ITEMS: ITEMS, BY_ID: BY_ID, PHONEMES: PHONEMES, MINIMAL_PAIRS: MINIMAL_PAIRS,
+    BANK: BANK, CV_FIELDS: CV_FIELDS, MATCH: MATCH, matchItem: matchItem, STATES: STATES
+  };
+})();
+
+</script>
+
+<script>
+/* ==================== 3 · THE ROLE: THE UMBRELLA ==================== */
+/* ============================================================================
+   THE UMBRELLA — src/generators/umbrella-brand/src/panel.js
+
+   The tape, and the tutor showing his own hand as the worked example:
+
+      "I'll show you my website that I set up for myself… you can brand yourself
+       under the umbrella and have like sub-… and that expands your…"
+      "if you just stick with one, then you can only apply to one sort of thing"
+
+   One holding name, everything they have made beneath it, one line each — and a
+   single page that carries them, so the links can go on the CV and the LinkedIn.
+
+   THE GATE IS THE PORTFOLIO. You cannot brand what has not been sent: the pieces
+   on this page are read from the record's inbox and nowhere else. A student with
+   an empty inbox gets an empty umbrella list and is told why.
+   ========================================================================== */
+(function () {
+  "use strict";
+  var K = window.ObiKit, M = window.ObiMethod;
+  if (!K || !M) return;
+  var esc = K.esc;
+
+  function UM(rec) {
+    if (!rec.umbrellaData || typeof rec.umbrellaData !== "object") rec.umbrellaData = { pieces: {}, piecesOrder: [] };
+    var u = rec.umbrellaData;
+    u.pieces = u.pieces || {}; u.piecesOrder = u.piecesOrder || [];
+    return u;
+  }
+  function pieceKey(x) { return K.slug(String(x.label || x.value).slice(0, 40)) + "-" + String(x.at).slice(11, 19); }
+  /* the pieces are the inbox, nothing else. This is the gate, enforced in code. */
+  function pieces(rec) {
+    var u = UM(rec);
+    var got = (rec.inbox || []).filter(function (x) { return x.item === "portfolio" || x.item === "work" || x.item === "umbrella"; });
+    return got.map(function (x) {
+      var key = pieceKey(x);
+      var custom = u.pieces[key] || {};
+      return { key: key, entry: x, name: custom.name || String(x.label || "").slice(0, 60),
+        line: custom.line || "", shown: custom.shown !== false, link: K.lines(x.value).filter(function (l) { return /^https?:\/\//i.test(l); })[0] || "" };
+    });
+  }
+  function pageHtml(rec) {
+    var name = K.val(rec, "umbrella") || rec.name;
+    var line = K.val(rec, "umbrella_line") || "";
+    var ps = pieces(rec).filter(function (p) { return p.shown; });
+    var cards = ps.map(function (p) {
+      return '<a class="p" href="' + esc(p.link || "#") + '" target="_blank" rel="noopener noreferrer">'
+        + "<b>" + esc(p.name) + "</b>" + (p.line ? "<span>" + esc(p.line) + "</span>" : "") + "</a>";
+    }).join("");
+    return "<!doctype html><html><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+      + "<title>" + esc(name) + "</title><style>"
+      + "*{box-sizing:border-box}body{margin:0;background:#0f0f1a;color:#e9e6f2;text-align:center;"
+      + "font:16px/1.6 system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;padding:48px 18px 60px}"
+      + "h1{font-size:30px;margin:0;letter-spacing:.3px}"
+      + ".l{color:#e8c565;font-size:14px;letter-spacing:1.6px;text-transform:uppercase;margin-top:8px}"
+      + ".d{max-width:46ch;margin:16px auto 30px;color:#8b94ad;font-size:14.5px}"
+      + ".p{display:block;max-width:520px;margin:10px auto;padding:16px 18px;text-align:left;text-decoration:none;"
+      + "color:#e9e6f2;background:linear-gradient(180deg,#151524,#1b1b2e);border:1px solid rgba(168,85,247,.25);border-radius:12px}"
+      + ".p:hover{border-color:#a855f7}.p b{display:block;font-size:16px}.p span{color:#8b94ad;font-size:13.5px}"
+      + ".f{margin-top:34px;color:#6a7290;font-size:12px}"
+      + "</style></head><body><h1>" + esc(name) + "</h1>"
+      + (line ? '<div class="l">' + esc(line) + "</div>" : "")
+      + '<div class="d">Everything I have made, in one place.</div>'
+      + (cards || '<div class="d">Nothing has been sent yet.</div>')
+      + '<div class="f">' + esc(rec.name || "") + "</div></body></html>";
+  }
+
+  K.shell({
+    name: "THE UMBRELLA",
+    what: "rec 4 \u2014 one holding name, the work beneath it, and one page that carries them",
+    panel: function (rec, h) {
+      var u = UM(rec);
+      var item = M.BY_ID.umbrella;
+      var ps = pieces(rec);
+      var umb = K.val(rec, "umbrella");
+      var line = K.val(rec, "umbrella_line");
+      var inboxN = (rec.inbox || []).filter(function (x) { return x.item === "portfolio"; }).length;
+
+      var head = K.card("the promise this answers",
+        K.row("from the tape", "\u201c" + esc(item.ev) + "\u201d")
+        + K.row("why it matters", "\u201cif you just stick with one, then you can only apply to one sort of thing\u201d",
+                "the tutor showed it from his own website: one holding name, every service beneath it")
+        + K.row("the gate", item.gate ? esc(item.gate) : "\u2014",
+                "enforced here in code: the pieces are read from the portfolio inbox, so an empty inbox cannot produce an umbrella")
+        + K.row("pieces on file", ps.length + (inboxN ? " \u00b7 from " + inboxN + " portfolio entr(y/ies)" : ""),
+                ps.length ? "" : "send something first \u2014 THE PORTFOLIO is the door"));
+
+      var nameCard = K.card("the holding name",
+        K.row("the umbrella", umb ? esc(umb) : K.blankRule("not named yet"),
+              "one name that can hold design AND video AND consulting \u2014 a name that says one thing cannot hold three")
+        + '<div class="ok-bar" style="margin-top:8px">'
+        + '<input class="ok-input" style="flex:1 1 220px" id="umName" placeholder="the umbrella \u2014 e.g. their own name, or a studio name" value="' + esc(umb) + '">'
+        + '<input class="ok-input" style="flex:1 1 260px" id="umLine" placeholder="the holding line \u2014 what the whole thing is for, in one line" value="' + esc(line) + '">'
+        + '<button class="ok-btn gold" data-act="setname">set it</button></div>'
+        + K.note("Their own name is a legitimate answer, and often the best one: it can hold anything and it cannot be wrong.", ""));
+
+      var piecesCard = K.card("the pieces \u2014 everything actually sent",
+        ps.length
+          ? ps.map(function (p) {
+              return '<div class="ok-row"><b>' + esc(String(p.entry.at).slice(0, 10)) + '</b><span class="ok-v">'
+                + '<input class="ok-input" style="margin-bottom:5px" data-pname="' + esc(p.key) + '" value="' + esc(p.name) + '" placeholder="what to call it">'
+                + '<input class="ok-input" data-pline="' + esc(p.key) + '" value="' + esc(p.line) + '" placeholder="one line \u2014 what it is, and what it shows">'
+                + '<div class="ok-note">verbatim from the inbox \u00b7 ' + esc(String(p.entry.value).slice(0, 160)) + "</div>"
+                + '<div class="ok-bar" style="margin-top:5px"><label class="ok-check"><input type="checkbox" data-pshow="' + esc(p.key) + '"' + (p.shown ? " checked" : "") + "><span>on the page</span></label>"
+                + (p.link ? '<button class="ok-btn ghost" data-copy="' + esc(p.link) + '" data-copy-label="the link">copy the link</button>' : K.chip("no link in the entry", "var(--warn)"))
+                + "</div></span></div>";
+            }).join("")
+          : K.note("Nothing sent yet, so there is nothing to put under the umbrella. This is the gate doing its job, not an error.", "warn"));
+
+      var pageCard = K.card("the one page that carries them",
+        K.row("the page", ps.filter(function (p) { return p.shown; }).length + " piece(s) on it",
+              "one self-contained .html \u2014 no build step, opens offline, and the links on the CV and the LinkedIn point at it")
+        + '<div class="ok-bar" style="margin-top:8px"><button class="ok-btn gold" data-act="open">open the page</button>'
+        + '<button class="ok-btn" data-act="dl">download the .html</button>'
+        + '<button class="ok-btn ghost" data-act="copyhtml">copy the .html</button></div>'
+        + K.note("It says \u2018Everything I have made, in one place\u2019 and lists the pieces. Nothing it does not hold appears on it.", ""));
+
+      return head + nameCard + piecesCard + pageCard;
+    },
+    after: function (rec, panel, h) {
+      var u = UM(rec);
+      /* the page is built from the record, so the record is synced out of the
+         DOM first: a piece renamed and then exported in one movement keeps the
+         new name. */
+      function grab() {
+        Array.prototype.forEach.call(panel.querySelectorAll("[data-pname],[data-pline],[data-pshow]"), function (el) {
+          var key = el.getAttribute("data-pname") || el.getAttribute("data-pline") || el.getAttribute("data-pshow");
+          u.pieces[key] = u.pieces[key] || {};
+          if (el.hasAttribute("data-pname")) u.pieces[key].name = el.value;
+          else if (el.hasAttribute("data-pline")) u.pieces[key].line = el.value;
+          else u.pieces[key].shown = el.checked;
+        });
+      }
+      function bind(attr, field) {
+        Array.prototype.forEach.call(panel.querySelectorAll("[" + attr + "]"), function (inp) {
+          inp.onchange = async function () {
+            var key = inp.getAttribute(attr);
+            u.pieces[key] = u.pieces[key] || {};
+            u.pieces[key][field] = inp.value;
+            await K.save(rec);
+          };
+        });
+      }
+      bind("data-pname", "name"); bind("data-pline", "line");
+      Array.prototype.forEach.call(panel.querySelectorAll("[data-pshow]"), function (cb) {
+        cb.onchange = async function () {
+          var key = cb.getAttribute("data-pshow");
+          u.pieces[key] = u.pieces[key] || {};
+          u.pieces[key].shown = cb.checked;
+          await K.save(rec);
+        };
+      });
+      Array.prototype.forEach.call(panel.querySelectorAll("[data-act]"), function (btn) {
+        btn.onclick = async function () {
+          var act = btn.getAttribute("data-act");
+          if (act === "setname") {
+            var nv = ((panel.querySelector("#umName") || {}).value || "").trim();
+            var lv = ((panel.querySelector("#umLine") || {}).value || "").trim();
+            grab();
+            K.setField(rec, "umbrella", "Umbrella", nv, "supplied in THE UMBRELLA");
+            K.setField(rec, "umbrella_line", "Holding line", lv, "supplied in THE UMBRELLA");
+            await K.save(rec); h.render(); K.toast("the umbrella is on the record"); return;
+          }
+          grab();
+          await K.save(rec);
+          if (act === "open") {
+            try { window.open(URL.createObjectURL(new Blob([pageHtml(rec)], { type: "text/html" })), "_blank"); }
+            catch (e) { K.toast("the browser blocked the tab \u2014 download it instead"); }
+            return;
+          }
+          if (act === "dl") { K.download(K.slug(K.val(rec, "umbrella") || rec.name) + "-page.html", pageHtml(rec)); return; }
+          if (act === "copyhtml") { K.copy(pageHtml(rec), "the page's html"); return; }
+        };
+      });
+    }
+  });
+
+  window.ObiRole = { slug: "umbrella-brand", name: "THE UMBRELLA",
+    pieces: function (rec) { return pieces(rec).map(function (p) { return { name: p.name, line: p.line, link: p.link }; }); },
+    page: pageHtml };
+})();
+
+</script>

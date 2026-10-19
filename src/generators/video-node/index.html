@@ -1,0 +1,437 @@
+<!-- VIDEO NODE (role: video) — the eye. The shell only: every id below is wired in
+     src/app.js. Six files live beside this one — app.js, pulse.js, reel.js,
+     story.js, drop.js and styles.css (in src/) and this file's main.pjs +
+     cgn-node.js. See README.md in this folder.
+
+     FOUR DOORS: video · pictures · links · the prompt. Then the conductor turns
+     the whole drop into a blueprint and an audit.
+
+     WHY IT EXISTS: the editor's chat attachments cap out around 20 MB, so the
+     sovereign's venue footage could not be handed over. This node never uploads:
+     the browser reads the file from disk with the File API, so the size of the
+     file is the browser's business, not the chat's. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="src/styles.css">
+
+<div id="app" class="net-shell">
+  <div class="glow-blob blob-1"></div>
+  <div class="glow-blob blob-2"></div>
+  <div class="glow-blob blob-3"></div>
+
+  <div id="topbar">
+    <div class="logo"><span class="grad">PrAis</span> <span class="divider">/</span> <span class="obi">VIDEO</span></div>
+    <div class="sub">the eye · role: video · stills, shorts, the vibe in words</div>
+    <div class="spacer"></div>
+    <div id="statsEl" class="tabmeta"></div>
+    <button class="tbtn" id="voiceBtn" title="Read things out loud">🔊 <span id="voiceLbl">Voice on</span></button>
+    <button class="tbtn" id="memoryBtn" title="Soul DNA — every file and every word, captured verbatim">◈ Memory</button>
+  </div>
+
+  <div id="memoryPanel" class="hidden">
+    <div style="font-weight:700; font-size:15px">Soul DNA · files and words captured verbatim (L37)</div>
+    <div class="hint" style="margin:4px 0 8px">The source file is described and recorded <b>before</b> anything is extracted or sent to a model, never edited, and synced into the whole organism over CGN.</div>
+    <div id="memStats" class="mem-stats"></div>
+    <div id="memList"></div>
+  </div>
+
+  <div class="sb-wrap">
+
+    <section class="sb-col sb-left">
+      <div class="sb-card">
+        <div class="sb-h">🎬 Drops 1 &amp; 2 — video and pictures</div>
+        <div id="drop" tabindex="0" role="button" aria-label="Choose or drop videos or images">
+          <div class="big">Drop <b>as many videos as you like</b> — or pictures — here, or click</div>
+          <div class="sm">Read <b>locally</b> by this page, one at a time, however large. Nothing is uploaded, so there is no 20&nbsp;MB cap: the chat's attachment limit does not apply in here. mp4 · mov · webm · mkv (whatever the browser can decode) — or jpg · png · webp for a reel. Several of both at once is fine: the videos join the queue and are swept one after another, the pictures go straight into the reel.</div>
+        </div>
+        <input id="fileInput" type="file" accept="video/*" multiple class="hidden">
+        <input id="imgInput" type="file" accept="image/*" multiple class="hidden">
+        <div id="probeBox" class="probe"></div>
+        <div class="sb-btns">
+          <button class="tbtn" id="refreshBtn" title="Re-read the file's metadata">↻ Re-probe</button>
+          <button class="tbtn" id="addImagesBtn" title="Add pictures straight into the reel">🖼 Add pictures</button>
+          <button class="tbtn danger" id="clearBtn" hidden>✕ Clear</button>
+        </div>
+      </div>
+
+      <div class="sb-card">
+        <div class="sb-h">
+          <span>◆ Drops 3 &amp; 4 — the links, and the words</span>
+          <span class="spacer"></span>
+          <span id="linksMeta" class="tabmeta"></span>
+        </div>
+        <div class="hint" style="margin:0 0 8px">Where they already are, and what the job is. Give it <b>every address you have for them</b> — their site, their socials, their listing, their booking page — one per line. Each is <b>fetched live and read in code</b> (no model), then cross-checked, and that is where the missing links turn up: a channel their own site never links, a phone number that disagrees between their site and their listing, a channel this industry needs that was found nowhere. A page that will not load is recorded <b>unread</b> — never counted as absent.</div>
+        <div class="sb-row"><textarea id="linksInput" class="sb-in" rows="4" placeholder="canon.mailala.pages.dev&#10;instagram.com/mailala&#10;maps.app.goo.gl/xxxx&#10;wa.me/84768701106"></textarea></div>
+        <div class="sb-btns">
+          <button class="tbtn primary" id="readLinksBtn">🔍 Read every link</button>
+          <button class="tbtn" id="linkAuditBtn">⇄ Cross-check them</button>
+        </div>
+        <div id="pagesBox" class="pages"></div>
+        <div id="linkAuditBox" class="auditbox"></div>
+
+        <label class="sb-lbl">The prompt — the sovereign's own words</label>
+        <div class="sb-row"><textarea id="promptInput" class="sb-in" rows="3" placeholder="what this is, in your own words — e.g. Mailala is a Jamaican hostel and rum bar on Pham Ngu Lao; make the page that gets a traveller to walk in tonight"></textarea></div>
+        <div class="sb-row" style="flex-direction:row; gap:6px">
+          <input id="bizNameInput" class="sb-in" placeholder="the name">
+          <input id="bizIndustryInput" class="sb-in" placeholder="the industry, as they would say it">
+        </div>
+        <div class="sb-row"><input id="jobInput" class="sb-in" placeholder="the job of the prototype — e.g. get a booking for tonight"></div>
+      </div>
+
+      <div class="sb-card">
+        <div class="sb-h">
+          <span>✧ The conductor — research → blueprint → audit</span>
+          <span class="spacer"></span>
+          <span id="condMeta" class="tabmeta"></span>
+        </div>
+        <div class="hint" style="margin:0 0 8px">One pass: read every link → <b>research</b> (what was read, and the model's knowledge of the industry, kept strictly apart and labelled) → the <b>blueprint</b> for the first prototype → the <b>orders</b> for whatever is missing, addressed to the video · image · copy hands → <b>the audit</b> → <b>the gate</b>. <b>Perfect the content</b> then runs those three hands for real — the image hand makes each still, the video hand cuts the footage and <b>renders</b> the film, the copy hand (the register) writes the words — and everything is re-audited afterwards, so an order only reads PASS when a hand actually made it. The copy audit is the register's own law checked <b>in code</b>: no number the offering does not state, and no register example reused — a line that breaks it is <b>withheld and named</b> rather than shipped. The gate is the last word: a <b>FAIL blocks execution</b>, and a remaining hole is named rather than waved through.</div>
+        <div class="sb-btns">
+          <button class="tbtn primary" id="assembleBtn">✧ Assemble the blueprint</button>
+          <button class="tbtn" id="researchBtn">◇ Research</button>
+          <button class="tbtn" id="ordersBtn">✦ Perfect the content — video · image · copy</button>
+          <button class="tbtn" id="auditBtn">▣ Audit everything</button>
+          <button class="tbtn" id="gateBtn">✓ The gate — may this be executed?</button>
+          <button class="tbtn" id="docBtn">⧉ The blueprint doc</button>
+          <button class="tbtn" id="shipBtn">→ Send to the Site Builder</button>
+          <button class="tbtn danger" id="condCancelBtn" hidden>■ Stop</button>
+        </div>
+        <div class="bar" id="condBarWrap" hidden><i id="condBar"></i></div>
+        <div id="condStatus" class="hint" style="text-align:left"></div>
+        <div id="researchBox" class="doc"></div>
+        <div id="blueprintBox" class="doc"></div>
+        <div id="ordersBox" class="orders"></div>
+        <div id="auditBox" class="auditbox"></div>
+        <div id="gateBox" class="gatebox"></div>
+        <div id="madeBox" class="made"></div>
+      </div>
+
+      <div class="sb-card">
+        <div class="sb-h">
+          <span>◇ The queue — many videos, one shot</span>
+          <span class="spacer"></span>
+          <span id="queueMeta" class="tabmeta"></span>
+        </div>
+        <div class="hint" style="margin:0 0 8px">Drop a whole folder's worth in. Each video is walked <b>one at a time</b> through the same pipeline — stills → <b>the pulse</b> → the sheet → the eye → the clips — and the run below does all of it in one pass. <b>Nothing claims to know when something interesting happens until it has measured it</b>: motion (frame-to-frame change, on a small canvas) and, when the file is small enough to read whole, loudness. The clips are cut from the <b>measured peaks</b>, and the eye names the moments it can actually see, in seconds, off the timecodes printed on the sheet.</div>
+        <div id="queueList" class="q-list"></div>
+        <div class="chipgrid">
+          <div class="cgrp"><span class="clbl">stills a video</span>
+            <div class="chiprow" data-batch="perVideo">
+              <button class="chip" data-val="6">6</button>
+              <button class="chip on" data-val="12">12</button>
+              <button class="chip" data-val="20">20</button>
+              <button class="chip" data-val="30">30</button>
+            </div>
+          </div>
+          <div class="cgrp"><span class="clbl">+ stills at the peaks</span>
+            <div class="chiprow" data-batch="peaks">
+              <button class="chip" data-val="0">none</button>
+              <button class="chip" data-val="2">2</button>
+              <button class="chip on" data-val="4">4</button>
+              <button class="chip" data-val="8">8</button>
+            </div>
+          </div>
+          <div class="cgrp"><span class="clbl">clips a video</span>
+            <div class="chiprow" data-batch="clips">
+              <button class="chip" data-val="0">none</button>
+              <button class="chip" data-val="2">2</button>
+              <button class="chip on" data-val="3">3</button>
+              <button class="chip" data-val="5">5</button>
+            </div>
+          </div>
+          <div class="cgrp"><span class="clbl">clip length</span>
+            <div class="chiprow" data-batch="clipLen">
+              <button class="chip" data-val="3">3s</button>
+              <button class="chip on" data-val="5">5s</button>
+              <button class="chip" data-val="8">8s</button>
+            </div>
+          </div>
+          <div class="cgrp"><span class="clbl">loudness</span>
+            <div class="chiprow" data-batch="audio">
+              <button class="chip on" data-val="auto">listen when it fits</button>
+              <button class="chip" data-val="off">motion only</button>
+            </div>
+          </div>
+          <div class="cgrp"><span class="clbl">pictures into the reel</span>
+            <div class="chiprow" data-batch="reel">
+              <button class="chip" data-val="off">nothing</button>
+              <button class="chip on" data-val="8">the best 8</button>
+              <button class="chip" data-val="all">all of them</button>
+            </div>
+          </div>
+          <div class="cgrp"><span class="clbl">and then</span>
+            <div class="chiprow" data-batch="sell">
+              <button class="chip" data-val="off">stop at the clips</button>
+              <button class="chip on" data-val="story">write the story → render</button>
+            </div>
+          </div>
+        </div>
+        <div class="sb-btns">
+          <button class="tbtn primary" id="batchBtn">✦ Run the whole thing</button>
+          <button class="tbtn danger" id="batchCancelBtn" hidden>■ Stop</button>
+          <button class="tbtn" id="batchZipBtn">⬇ Everything, zipped</button>
+        </div>
+        <div class="bar" id="batchBarWrap" hidden><i id="batchBar"></i></div>
+        <div id="batchStatus" class="hint" style="text-align:left; margin-top:8px"></div>
+      </div>
+
+      <div class="sb-card">
+        <div class="sb-h">🎞 Pull stills</div>
+        <label class="sb-lbl">How many stills</label>
+        <div class="chips" id="countChips">
+          <button class="chip" data-n="6">6</button>
+          <button class="chip on" data-n="12">12</button>
+          <button class="chip" data-n="20">20</button>
+          <button class="chip" data-n="40">40</button>
+        </div>
+        <label class="sb-lbl">Longest edge</label>
+        <div class="chips" id="widthChips">
+          <button class="chip" data-w="640">640</button>
+          <button class="chip on" data-w="960">960</button>
+          <button class="chip" data-w="1280">1280</button>
+          <button class="chip" data-w="1920">1920</button>
+        </div>
+        <div class="sb-btns">
+          <button class="tbtn primary" id="framesBtn">✦ Grab the stills</button>
+          <button class="tbtn" id="sheetBtn">▦ Contact sheet</button>
+          <button class="tbtn" id="zipBtn" hidden>⬇ Download all</button>
+        </div>
+        <div class="hint" style="margin-top:8px">Stills are pulled evenly across the whole file and drawn at full quality (JPEG 0.95). The sheet is the grid composite — the same thing the desktop <code>combine_maxquality.js</code> does, but in the browser and out of the video.</div>
+      </div>
+
+      <div class="sb-card">
+        <div class="sb-h">📱 Cut shorts</div>
+        <div class="sb-row">
+          <label class="sb-lbl" style="margin:0">How many shorts</label>
+          <div class="chips" id="shortChips">
+            <button class="chip" data-s="1">1</button>
+            <button class="chip on" data-s="3">3</button>
+            <button class="chip" data-s="5">5</button>
+          </div>
+        </div>
+        <div class="sb-row">
+          <label class="sb-lbl" style="margin:0">Length (seconds)</label>
+          <input id="shortLen" class="sb-in" type="number" min="3" max="60" step="1" value="15">
+        </div>
+        <label class="sb-lbl">Frame</label>
+        <div class="chips" id="cropChips">
+          <button class="chip on" data-crop="9:16">9:16 vertical</button>
+          <button class="chip" data-crop="source">as shot</button>
+        </div>
+        <div class="sb-btns">
+          <button class="tbtn primary" id="shortsBtn">✦ Cut the shorts</button>
+          <button class="tbtn danger" id="cancelBtn" hidden>■ Stop</button>
+        </div>
+        <div class="hint" style="margin-top:8px">A short records in <b>real time</b> (3 × 15s ≈ 45s) because the browser can only capture what is playing — the page stays responsive, but leave the tab in front. Sound is captured from the file itself; if the browser refuses to play unmuted the clip is written <b>silent</b> and the log says so. <br><b>When the file has been measured</b> (the queue run does this, or <code>/pulse</code>), the clips are cut from the <b>busiest windows the numbers found</b> — not from even spacing — and every clip prints the motion and loudness it was chosen on.</div>
+      </div>
+
+      <div class="sb-card">
+        <div class="sb-h">🎬 The reel — pictures into video</div>
+        <div class="hint" style="margin:0 0 8px">The other direction: a <b>list of pictures becomes one video</b>. Composed on this canvas, encoded by this browser (H.264 + AAC in an MP4, or VP9 + Opus in a WebM), written as a single file with motion, crossfades, a caption and a sound bed. Nothing is uploaded, and no library is fetched — only the encoder the browser already has.</div>
+
+        <div class="sb-row" style="gap:6px">
+          <button class="tbtn" id="shotsFromStillsBtn">⊕ the stills</button>
+          <button class="tbtn" id="shotsFromFilesBtn">🖼 pictures</button>
+          <button class="tbtn" id="shotsShuffleBtn" title="Reorder at random">⇄ shuffle</button>
+          <button class="tbtn danger" id="shotsClearBtn">✕ clear</button>
+        </div>
+        <div id="shotList" class="shot-list"></div>
+        <div id="reelReadout" class="readout"></div>
+
+        <div class="chipgrid">
+          <div class="cgrp"><span class="clbl">frame</span>
+            <div class="chiprow" data-set="aspect">
+              <button class="chip on" data-val="9:16">9:16</button>
+              <button class="chip" data-val="4:5">4:5</button>
+              <button class="chip" data-val="1:1">1:1</button>
+              <button class="chip" data-val="16:9">16:9</button>
+            </div>
+          </div>
+          <div class="cgrp"><span class="clbl">seconds a picture</span>
+            <div class="chiprow" data-set="per">
+              <button class="chip" data-val="1.5">1.5</button>
+              <button class="chip" data-val="2">2</button>
+              <button class="chip on" data-val="2.6">2.6</button>
+              <button class="chip" data-val="3.5">3.5</button>
+              <button class="chip" data-val="5">5</button>
+            </div>
+          </div>
+          <div class="cgrp"><span class="clbl">crossfade</span>
+            <div class="chiprow" data-set="trans">
+              <button class="chip" data-val="0">cut</button>
+              <button class="chip" data-val="0.25">0.25</button>
+              <button class="chip on" data-val="0.5">0.5</button>
+              <button class="chip" data-val="0.9">0.9</button>
+            </div>
+          </div>
+          <div class="cgrp"><span class="clbl">motion</span>
+            <div class="chiprow" data-set="motion">
+              <button class="chip on" data-val="auto">auto</button>
+              <button class="chip" data-val="in">zoom in</button>
+              <button class="chip" data-val="out">zoom out</button>
+              <button class="chip" data-val="pan-r">pan →</button>
+              <button class="chip" data-val="pan-l">pan ←</button>
+              <button class="chip" data-val="none">still</button>
+            </div>
+          </div>
+          <div class="cgrp"><span class="clbl">fit</span>
+            <div class="chiprow" data-set="fit">
+              <button class="chip on" data-val="cover">fill the frame</button>
+              <button class="chip" data-val="contain">whole picture</button>
+            </div>
+          </div>
+          <div class="cgrp"><span class="clbl">size</span>
+            <div class="chiprow" data-set="res">
+              <button class="chip" data-val="720">720</button>
+              <button class="chip on" data-val="1080">1080</button>
+            </div>
+          </div>
+          <div class="cgrp"><span class="clbl">fps</span>
+            <div class="chiprow" data-set="fps">
+              <button class="chip" data-val="24">24</button>
+              <button class="chip on" data-val="30">30</button>
+            </div>
+          </div>
+          <div class="cgrp"><span class="clbl">finish</span>
+            <div class="chiprow" data-set="extra">
+              <button class="chip on" data-val="vignette">vignette</button>
+              <button class="chip on" data-val="bar">progress bar</button>
+              <button class="chip" data-val="cards">title + end card</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="sb-row"><input id="capInput" class="sb-in" placeholder="caption burned into the reel, e.g. Mailala · 175/16 Pham Ngu Lao"></div>
+        <div class="sb-row" style="flex-direction:row; gap:6px; margin-top:6px">
+          <input id="titleInput" class="sb-in" placeholder="title card (the story fills this)">
+          <input id="markInput" class="sb-in" placeholder="corner mark, e.g. LOVE UP · BIG UP">
+        </div>
+        <div class="sb-row" style="flex-direction:row; gap:6px">
+          <input id="bedInput" type="file" accept="audio/*" class="hidden">
+          <button class="tbtn" id="bedBtn">♪ sound bed</button>
+          <span id="bedName" class="hint" style="flex:1; text-align:left; margin:0">no bed — the reel will be silent</span>
+          <button class="tbtn" id="bedClearBtn" hidden>✕</button>
+        </div>
+
+        <div class="sb-btns">
+          <button class="tbtn" id="reelPreviewBtn">▶ Preview</button>
+          <button class="tbtn primary" id="reelBtn">✦ Render the reel</button>
+          <button class="tbtn danger" id="reelCancelBtn" hidden>■ Stop</button>
+        </div>
+        <div id="reelProgWrap" class="bar" hidden><i id="reelProgBar"></i></div>
+        <div id="reelStatus" class="hint" style="margin-top:8px; text-align:left"></div>
+      </div>
+
+      <div class="sb-card">
+        <div class="sb-h">🎙 The story — the marketing register, told over the pictures</div>
+        <div class="hint" style="margin:0 0 8px">No slideshow sells anything. This is the node's sales hand: it <b>looks up what the venue actually offers</b> (a page, read live), reads it through the house <b>marketing register</b> (<code>src/brand.js</code> → MARKET · GOSPEL 444 — the pillars, the 60% rule, the bilingual law), and writes the reel as one <b>story</b>: the hook, the enemy, the place, the proof, the offer, the call. Every line is burned into the picture it belongs to. Nothing is invented that the offering does not say.</div>
+        <div class="story-src">
+          <input id="lookupInput" class="sb-in" placeholder="the venue's page — e.g. canon.mailala.pages.dev (read live, never edited)">
+          <button class="tbtn" id="lookupBtn">🔍 look up the offering</button>
+        </div>
+        <div class="sb-row" style="margin-top:8px"><input id="goalInput" class="sb-in" placeholder="the job of this reel (optional) — e.g. get a hostel booking for tonight"></div>
+        <div class="sb-btns" style="margin-top:8px">
+          <button class="tbtn primary" id="storyBtn">✎ Write the story</button>
+          <button class="tbtn" id="storyApplyBtn" hidden>⇩ Dress the reel</button>
+          <button class="tbtn" id="storyCopyBtn" hidden>⧉ Copy</button>
+        </div>
+        <div id="offerBox" class="offer-box"></div>
+        <div id="storyBody" class="story"></div>
+        <div id="storyStatus" class="hint" style="margin-top:8px; text-align:left"></div>
+      </div>
+
+      <div class="sb-card">
+        <div class="sb-h">🧾 The log</div>
+        <div id="logBody" class="sb-log"></div>
+      </div>
+
+      <div class="sb-card">
+        <div class="sb-h">⌘ Command</div>
+        <div class="sb-row" style="flex-direction:row; gap:8px">
+          <input id="cmdInput" class="sb-in" placeholder="/assemble · /links <url…> · /prompt <words> · /sweep · /pulse · /audit · /ship · /help">
+          <button class="tbtn" id="cmdBtn">Run</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="sb-col sb-right">
+      <div class="sb-card sb-grow">
+        <div class="sb-h">
+          <span>🖥 The stage</span>
+          <div class="chips stage-tabs" style="margin-left:8px">
+            <button class="chip on" data-stage="source">the source</button>
+            <button class="chip" data-stage="reel">the reel</button>
+          </div>
+          <span class="spacer"></span>
+          <span id="stageMeta" class="tabmeta"></span>
+        </div>
+        <div id="stageWrap">
+          <div id="stage" class="vid-stage">
+            <div class="sb-empty">No file yet. Drop one above — it is read from your disk and never uploaded.</div>
+          </div>
+        </div>
+        <div id="reelStage" class="reel-stage" hidden>
+          <canvas id="reelCanvas" width="1080" height="1920"></canvas>
+          <div class="sb-btns" style="margin:0">
+            <button class="tbtn" id="reelDlBtn" hidden>⬇ Download the reel</button>
+            <button class="tbtn" id="reelPosterBtn">▣ Save a poster frame</button>
+            <span id="reelStageMeta" class="tabmeta" style="align-self:center"></span>
+          </div>
+          <video id="reelVideo" controls playsinline preload="metadata" hidden></video>
+        </div>
+      </div>
+
+      <div class="sb-card">
+        <div class="sb-h">
+          <span>🗂 Stills</span>
+          <span class="spacer"></span>
+          <span id="frameMeta" class="tabmeta"></span>
+        </div>
+        <div id="frameList" class="fr-grid"></div>
+        <div id="sheetWrap" hidden style="margin-top:10px">
+          <div class="hint" style="margin-bottom:6px">The contact sheet — one image holding the whole vibe.</div>
+          <img id="sheetImg" class="sheet-prev" alt="contact sheet of the video">
+        </div>
+      </div>
+
+      <div class="sb-card">
+        <div class="sb-h">
+          <span>📱 Shorts</span>
+          <span class="spacer"></span>
+          <span id="shortMeta" class="tabmeta"></span>
+        </div>
+        <div id="shortList" class="sb-files"></div>
+      </div>
+
+      <div class="sb-card">
+        <div class="sb-h">
+          <span>◎ The vibe, in words</span>
+          <span class="spacer"></span>
+          <span id="vibeMeta" class="tabmeta"></span>
+        </div>
+        <div class="sb-btns" style="margin:0 0 8px">
+          <button class="tbtn primary" id="vibeBtn">◎ Read the vibe</button>
+          <button class="tbtn" id="handBtn" hidden>→ Copy the brief for the Site Builder</button>
+        </div>
+        <div id="vibeBody" class="vibe"></div>
+        <div class="hint" style="margin-top:8px">The contact sheet is shown to the vision model — one image, the whole file's look — and it comes back as <b>vibe words</b>, an <b>art direction</b>, a <b>palette</b> and a <b>one-page brief</b>. The brief goes to the Site Builder (<code>?brief=</code>).</div>
+      </div>
+
+      <div class="sb-card">
+        <div class="sb-h">◈ The library</div>
+        <div class="hint" style="margin:0 0 8px">Filed in this browser (kv <b>videos</b>) — the file's name and size, what was pulled, the vibe. The footage itself is never stored and never uploaded.</div>
+        <div id="libBody" class="sb-files"></div>
+      </div>
+    </section>
+
+  </div>
+
+  <div id="toastEl"></div>
+</div>
+
+<script src="src/pulse.js"></script>
+<script src="src/reel.js"></script>
+<script src="src/story.js"></script>
+<script src="src/drop.js"></script>
+<script src="src/app.js"></script>
+<script src="src/cgn-node.js"></script>

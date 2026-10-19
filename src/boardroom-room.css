@@ -1,0 +1,64 @@
+/* THE BOARDROOM ROOM — first official app (src/boardroom-room.css).
+   The table: seven seats around an oval, the question at the center. Runs on
+   the station's own card language (.rise/.chips/.hint) plus these room pieces. */
+.rm-wrap{ max-width:1060px; margin:0 auto; padding:18px 16px 40px; text-align:left; }
+.rm-head .rm-title{ font-family:Orbitron,Rajdhani,Inter,sans-serif; font-weight:800; font-size:22px; letter-spacing:.04em; }
+.rm-record{ margin-top:8px; font-family:"JetBrains Mono",monospace; font-size:12px; opacity:.85;
+  border:1px solid rgba(232,197,101,.28); border-radius:10px; padding:8px 12px; background:rgba(232,197,101,.05); }
+.rm-starters{ display:flex; gap:8px; margin:12px 0 4px; flex-wrap:wrap; }
+.rm-table{ position:relative; min-height:420px; margin:14px 0 6px;
+  border:1px solid rgba(232,197,101,.22); border-radius:24px;
+  background:radial-gradient(ellipse at 50% 46%, rgba(168,85,247,.10), rgba(232,197,101,.05) 55%, transparent 75%); }
+.rm-center{ position:absolute; left:50%; top:46%; transform:translate(-50%,-50%);
+  width:min(46%,380px); text-align:center; border:1px solid rgba(232,197,101,.35);
+  border-radius:16px; padding:14px 16px; background:rgba(15,15,26,.72); }
+.rm-topic{ font-weight:700; font-size:15px; }
+.rm-sub{ margin-top:4px; font-size:12px; opacity:.7; }
+.rm-seat{ position:absolute; transform:translate(-50%,-50%); width:172px;
+  border:1px solid rgba(139,148,173,.4); border-radius:12px; padding:8px 10px;
+  background:rgba(15,15,26,.88); transition:border-color .3s, box-shadow .3s; }
+.rm-seat.speaking{ border-color:#e8c565; box-shadow:0 0 18px rgba(232,197,101,.45); }
+.rm-seat .rm-dot{ display:inline-block; width:8px; height:8px; border-radius:50%;
+  background:#5a6274; margin-right:6px; vertical-align:1px; }
+.rm-seat.speaking .rm-dot{ background:#4cd97b; animation:blink 1.2s infinite; }
+.rm-seat.vacant{ border-style:dashed; opacity:.55; }
+.rm-seat.vacant .rm-dot{ background:#3a3f4d; }
+.rm-seat.held{ border-color:#e8c565; box-shadow:0 0 18px rgba(232,197,101,.45); }
+.rm-seat.held .rm-dot{ background:#e8c565; }
+.rm-who b{ font-size:13px; } .rm-who span{ display:block; font-size:11px; opacity:.65; }
+.rm-ask{ margin-top:6px; font-size:11px; padding:2px 10px; border-radius:20px;
+  border:1px solid rgba(139,148,173,.5); background:transparent; color:inherit; cursor:pointer; }
+.rm-ask:hover{ border-color:#e8c565; }
+.rm-log{ display:flex; flex-direction:column; gap:10px; margin:14px 0; max-height:52vh;
+  overflow-y:auto; padding:4px 2px; }
+.rm-turn{ border:1px solid rgba(139,148,173,.28); border-radius:12px; padding:9px 12px;
+  background:rgba(255,255,255,.025); }
+.rm-turn.sov{ border-color:rgba(168,85,247,.5); background:rgba(168,85,247,.07); }
+.rm-turn.streaming{ border-color:rgba(232,197,101,.55); }
+.rm-spk{ font-weight:700; font-size:13px; margin-bottom:3px; }
+.rm-spk span{ font-weight:400; font-size:11px; opacity:.6; margin-left:6px; }
+.rm-txt{ font-size:14px; line-height:1.55; white-space:pre-wrap; }
+.rm-caret{ display:inline-block; width:8px; height:14px; margin-left:3px; vertical-align:-2px;
+  background:#e8c565; animation:blink 1s infinite; }
+.rm-composer textarea{ width:100%; box-sizing:border-box; border-radius:12px; padding:10px 12px;
+  background:rgba(255,255,255,.04); color:inherit; border:1px solid rgba(139,148,173,.4);
+  font:inherit; font-size:14px; resize:vertical; }
+.rm-controls{ display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
+.rm-btn{ font:inherit; font-size:13px; font-weight:600; padding:8px 16px; border-radius:10px;
+  border:1px solid rgba(139,148,173,.5); background:rgba(255,255,255,.04); color:inherit; cursor:pointer; }
+.rm-btn:hover:not([disabled]){ border-color:#e8c565; }
+.rm-btn[disabled]{ opacity:.4; cursor:default; }
+.rm-btn.primary{ border-color:#e8c565; background:rgba(232,197,101,.12); }
+.rm-btn.danger.armed{ border-color:#ff5a5a; background:rgba(255,90,90,.14); }
+.rm-btn.ghost{ opacity:.75; font-weight:400; }
+.rm-status{ margin-top:10px; font-size:12px; opacity:.7; font-family:"JetBrains Mono",monospace; }
+.rm-arch{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; padding:8px 4px;
+  border-bottom:1px dashed rgba(139,148,173,.3); font-size:13px; }
+.rm-arch-t{ font-weight:700; flex:1 1 220px; }
+@media (max-width:760px){
+  .rm-table{ min-height:0; display:grid; grid-template-columns:1fr 1fr; gap:8px; padding:10px;
+    background:rgba(232,197,101,.04); }
+  .rm-center{ position:static; transform:none; width:auto; grid-column:1 / -1; }
+  .rm-seat{ position:static; transform:none; width:auto; }
+}
+@keyframes blink{ 0%,80%,100%{opacity:.25} 40%{opacity:1} }

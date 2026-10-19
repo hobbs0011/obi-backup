@@ -1,0 +1,32 @@
+{
+  "note": "ONE published rate, and it is real: 600,000 VND per hour for 1-on-1 tuition, as NET has billed it. This file deliberately does not carry a tier ladder, a discount matrix or an exchange-rate conversion, because none of those has been published by the coach and inventing them on a website is how a business starts lying to its own customers.",
+  "rate": { "vndPerHour": 600000, "basis": "1-on-1, in-home, per hour", "currency": "VND" },
+  "free": [
+    { "title": "The 30-minute diagnostic", "detail": "Free, at your home if you are in the zone. A conversation, a reading of where you are, and one immediate win before you decide anything." }
+  ],
+  "included": [
+    "The full diagnostic conversation and a written reading of your level",
+    "A plan built around your week — the 45/15, not an evening class",
+    "All materials chosen for you, including the 10-5-5-3 breakdown of each hour",
+    "Daily accountability on the 45/15 ratio, tracked as a streak",
+    "The AI-PET spaced-repetition schedule (1 · 3 · 7 · 14 · 30 days) on your struggle points",
+    "Progress reviews: what improved, what did not, in numbers"
+  ],
+  "guarantee": {
+    "title": "The 100% Confidence Guarantee",
+    "body": "We do not promise perfect grammar in 30 days. We promise that a student who follows the 45/15 protocol will completely lose the fear of opening their mouth to speak English.",
+    "terms": "Take the first month. If there is no massive, measurable surge in speaking velocity and confidence, the tuition is refunded in full. The student risks nothing.",
+    "source": "GOSPEL 444 · G444.011 — the doctrine NET teaches by. Quoted as written."
+  },
+  "quoted": [
+    { "title": "Blocks and prepayment", "detail": "Quoted by the coach. There is a published hourly rate; block pricing is a decision the coach makes with you, not a number this website invents." },
+    { "title": "Group and family rates", "detail": "Two learners or more are quoted on the diagnostic, in person. The calculator below shows the group reduction the coach has indicated, clearly marked as pending confirmation." },
+    { "title": "Corporate and school contracts", "detail": "Priced per engagement after a scoping call. Includes team hours, private sessions and reporting." },
+    { "title": "Travel outside the zone", "detail": "Lakeview City, District 2 and the surrounding districts are the home zone. Outside it, travel is agreed in the quote." }
+  ],
+  "notes": [
+    "No registration fee, no materials fee, no platform subscription. You pay for hours.",
+    "There is no app to install and no account to create — not for you, and not for your child.",
+    "A missed session with less than 12 hours' notice may be charged; the coach confirms this in writing before you start."
+  ]
+}

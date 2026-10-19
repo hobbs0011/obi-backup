@@ -1,0 +1,127 @@
+{
+  "topic": "Science · Unit 1: Life cycles of flowering plants — Project (SP_Grade 5) · Grade 5 · 5P1 + 5P2 (periods 3–4 and 5–6, Wed 23/09/2026)",
+  "title": "Flower Power Academy",
+  "logo": "🌱",
+  "subtitle": "Every flower is a factory with a plan 🌸",
+  "cta": "🚀 Start Growing",
+  "features": [
+    {
+      "icon": "🌱",
+      "title": "Seed to Sprout",
+      "desc": "Germination — what a seed needs before anything green can happen."
+    },
+    {
+      "icon": "🐝",
+      "title": "How the Pollen Travels",
+      "desc": "Pollination, nectar and the one job a bee does without knowing it."
+    },
+    {
+      "icon": "🎮",
+      "title": "Three Games",
+      "desc": "Scramble the words, match each part to its job, sort the life cycle in order."
+    },
+    {
+      "icon": "✂️",
+      "title": "Build the Model",
+      "desc": "Cut, fold and assemble the life cycle — the project, in your own hands."
+    }
+  ],
+  "coins": {
+    "start": 0,
+    "correct": 10,
+    "wrong": 0
+  },
+  "method": {
+    "structure": "10-5-5-3",
+    "phase": "Vocab → Life Cycle → Game → Project (periods 5–6 of the unit-1 science session)",
+    "games": [
+      {
+        "name": "Plant Word Scramble",
+        "type": "competition",
+        "why": "retrieval speed — the parts of the plant must come out of the mouth, not off the page"
+      },
+      {
+        "name": "Part & Job Match",
+        "type": "collaboration",
+        "why": "social proof — a pair has to agree on what each part is FOR, which is the difference between naming and knowing"
+      },
+      {
+        "name": "Order the Life Cycle",
+        "type": "creation",
+        "why": "ownership — the learner builds the sequence themselves, which is the same act as the cut-and-fold project"
+      }
+    ],
+    "voice": [
+      "Say it LOUD. Say it WRONG. But SAY IT.",
+      "The word a student learns while winning a game will still be in their mouth ten years from now."
+    ]
+  },
+  "rooms": [
+    {
+      "graphic": "🏠",
+      "title": "The Entrance",
+      "label": "Warm-Up",
+      "content": "<p>Two periods, one garden 🌱 A plant cannot walk, cannot talk, and cannot hide — so it has a <strong>plan</strong>, and the plan is called a <strong>life cycle</strong>. Today you learn the words for every step of it, then you build the cycle with your own hands.</p><ul><li>Eight words — the parts of a plant and the things that happen to them</li><li>The order of the cycle: seed → sprout → flower → fruit → seed</li><li>Why a flower bothers to be bright and full of nectar</li><li>The project: cut, fold, assemble, and say it in order</li></ul>"
+    },
+    {
+      "graphic": "🖥️",
+      "title": "The School Garden",
+      "label": "Scene",
+      "content": "<div class=\"dialogue-block\"><span class=\"speaker\">Mai:</span> Look — the bean seed I planted last week has a tiny green shoot coming out 🌱</div><div class=\"dialogue-block\"><span class=\"speaker\">Nam:</span> That is a <em>sprout</em>, right? The first thing that comes out of the seed.</div><div class=\"dialogue-block\"><span class=\"speaker\">Mai:</span> Yes. And the whole thing — the seed waking up and starting to grow — is called <em>germination</em>.</div><div class=\"dialogue-block\"><span class=\"speaker\">Nam:</span> So it needs water and warmth? Because the one I left dry is still just a hard seed.</div><div class=\"dialogue-block\"><span class=\"speaker\">Mai:</span> Water, warmth and air. Take away one of them and nothing happens.</div><div class=\"dialogue-block\"><span class=\"speaker\">Nam:</span> And then it grows a <em>flower</em>. Then the bees come. Then there is a <em>fruit</em> with new seeds inside it.</div><div class=\"chatty-clue\">🤔 Reality check: the seed is not dead and the fruit is not the end. A seed is a <strong>plant waiting</strong>, and the fruit is a <strong>seed carrier</strong>. The cycle only looks like a line — it is a circle that starts again.</div>"
+    },
+    {
+      "graphic": "📱",
+      "title": "The Group Chat",
+      "label": "Text Scene",
+      "content": "<div class=\"dialogue-block\"><span class=\"speaker\">Nam:</span> ok so why r flowers so bright. just to look nice?? 🌸</div><div class=\"dialogue-block\"><span class=\"speaker\">Mai:</span> no lol. the colour and the smell are advertising. theyre saying COME HERE to the bees</div><div class=\"dialogue-block\"><span class=\"speaker\">Nam:</span> and the nectar?</div><div class=\"dialogue-block\"><span class=\"speaker\">Mai:</span> thats the payment. bee gets nectar, flower gets <em>pollination</em> — the bee carries <em>pollen</em> from one flower to the next</div><div class=\"dialogue-block\"><span class=\"speaker\">Nam:</span> so the bee is basically a delivery driver that doesnt know it 😂</div><div class=\"dialogue-block\"><span class=\"speaker\">Mai:</span> exactly that. no delivery, no seeds. no seeds, no new plants. thats why pollination matters</div><div class=\"chatty-hint\"><strong>Text Clues:</strong> in a life-cycle question, look for which stage the sentence is <em>about</em> — <em>germination</em> and <em>sprout</em> belong to the beginning, <em>pollination</em> and <em>nectar</em> belong to the flower, and <em>seed</em> closes the circle.</div>"
+    },
+    {
+      "graphic": "📚",
+      "title": "The Words",
+      "label": "Learn",
+      "content": "<div class=\"vocab-list\"><div class=\"vocab-item\"><strong>1. seed:</strong> <span>the hard little case that holds a baby plant and its food — the beginning of the cycle.</span></div><div class=\"vocab-item\"><strong>2. germination:</strong> <span>the seed waking up and starting to grow. It needs water, warmth and air.</span></div><div class=\"vocab-item\"><strong>3. sprout:</strong> <span>the first tiny green shoot that pushes out of the seed. The sign that germination worked.</span></div><div class=\"vocab-item\"><strong>4. stem:</strong> <span>the part that holds the plant up and carries water from the roots to the leaves.</span></div><div class=\"vocab-item\"><strong>5. flower:</strong> <span>the bright part of the plant — its job is to make seeds, and colour is how it calls the insects.</span></div><div class=\"vocab-item\"><strong>6. pollen:</strong> <span>the fine yellow dust a flower makes. Move it to another flower and seeds can begin.</span></div><div class=\"vocab-item\"><strong>7. pollination:</strong> <span>pollen travelling from one flower to another — by a bee, a butterfly, the wind, or a hand.</span></div><div class=\"vocab-item\"><strong>8. fruit:</strong> <span>the part that grows around the seeds and protects them until they are ready to travel.</span></div></div>"
+    },
+    {
+      "graphic": "🔄",
+      "title": "The Life Cycle",
+      "label": "Reading",
+      "content": "<div class=\"reading\"><strong>1. Seed.</strong> A hard case with a baby plant and a small store of food inside. It can wait a long time — months, sometimes years.<br><br><strong>2. Germination.</strong> Water, warmth and air arrive. The seed cracks and a root goes down, then a shoot goes up.<br><br><strong>3. Sprout and plant.</strong> Green leaves open and start making food from sunlight. The stem grows taller.<br><br><strong>4. Flower.</strong> The plant grows petals, colour and nectar. This is the plant's way of calling an insect.<br><br><strong>5. Pollination.</strong> A bee lands for the nectar and walks through the pollen. It flies to the next flower, and the pollen goes with it.<br><br><strong>6. Fruit and seed.</strong> The flower changes into a fruit, and inside the fruit there are new seeds. The fruit falls, or an animal carries it away — and the cycle starts again.</div><div class=\"chatty-clue\">🤔 Reality check: every stage exists to make the <strong>next seed</strong>. The flower is not decoration and the fruit is not a prize — they are the two parts of the plant's transport system.</div>"
+    },
+    {
+      "graphic": "✂️",
+      "title": "The Project",
+      "label": "Project",
+      "content": "<div class=\"reading\"><strong>Build the life cycle (SP_Grade 5).</strong><br><br><strong>1. Cut</strong> the six stage cards out along the lines.<br><strong>2. Fold</strong> each card on the middle line so the picture faces out.<br><strong>3. Assemble</strong> the cards into a circle — seed, germination, sprout, flower, pollination, fruit and seed — and glue the last one back to the first.<br><strong>4. Write</strong> one short sentence on the back of each card: <em>\"This is ______. It happens after ______.\"</em><br><strong>5. Say</strong> your cycle out loud to your partner, from the seed all the way round.</div><div class=\"chatty-hint\"><strong>Pro Tip:</strong> if you can say the cycle out loud without looking at the cards, you have finished the project — the paper is only there to get the order into your head.</div>"
+    },
+    {
+      "graphic": "🔤",
+      "title": "Game 1 — Plant Scramble",
+      "label": "Game 1",
+      "content": "<p>How to win: the letters are shuffled. Click them in the right order to rebuild the word, then read what it means. Eight words — and the last one closes the circle.</p><div class=\"game\" data-game=\"scramble\" data-title=\"🔤 Plant Scramble\" data-items=\"seed=the hard case with a baby plant inside;sprout=the first tiny green shoot;stem=the part that holds the plant up;flower=the bright part that makes seeds;pollen=the fine yellow dust;nectar=the sweet drink that pays the bee;fruit=it grows around the seeds and protects them;germination=the seed waking up and starting to grow\"></div>"
+    },
+    {
+      "graphic": "🔗",
+      "title": "Game 2 — Part & Job",
+      "label": "Game 2",
+      "content": "<p>How to win: click the part of the plant on the left, then its job on the right. Wrong pairs shake and let go — guess boldly.</p><div class=\"game\" data-game=\"match\" data-title=\"🔗 Part &amp; Job\" data-items=\"seed=holds the baby plant and its food;sprout=shows that germination has worked;stem=holds the plant up and carries water;flower=calls the insects with colour and nectar;fruit=protects the seeds until they travel\"></div>"
+    },
+    {
+      "graphic": "📦",
+      "title": "Game 3 — Order the Cycle",
+      "label": "Game 3",
+      "content": "<div class=\"chatty-hint\"><strong>One word per station:</strong> BEGINNING · MIDDLE · END — put each piece of the cycle in the part it belongs to.</div><div class=\"game\" data-game=\"sort\" data-title=\"📦 Beginning, Middle or End\" data-groups=\"BEGINNING: a hard seed, water enters the seed, warmth and air, a tiny root goes down | MIDDLE: a green shoot appears, leaves open to the sun, the stem grows taller, a bud opens into a flower | END: a bee carries pollen, the flower changes into a fruit, new seeds inside the fruit, the fruit falls to the ground\"></div>"
+    },
+    {
+      "graphic": "🎯",
+      "title": "The Test",
+      "label": "Test",
+      "content": "<div class=\"chatty-choices\" data-correct-feedback=\"🎉 Yes — germination. The seed waking up and starting to grow.\" data-wrong-feedback=\"❌ Pollination belongs to the flower, not to the seed. You are looking for the word for a seed starting to grow.\"><div><strong>Scenario:</strong> You plant a bean seed, water it, and three days later a tiny root and shoot appear. What is this stage called?</div><button data-answer=\"correct\">germination</button><button data-answer=\"wrong\">pollination</button><button data-answer=\"wrong\">fruiting</button></div><div class=\"chatty-choices\" data-correct-feedback=\"🎉 Correct — pollen is the dust, pollination is the journey.\" data-wrong-feedback=\"❌ Read carefully: the question asks what the bee CARRIES on its body — the fine dust itself.\"><div><strong>Scenario:</strong> A bee lands on a flower for nectar, and when it flies away there is yellow dust stuck to its legs. What is that dust called?</div><button data-answer=\"wrong\">nectar</button><button data-answer=\"correct\">pollen</button><button data-answer=\"wrong\">a sprout</button></div><div class=\"chatty-choices\" data-correct-feedback=\"🎉 Yes — the seed. It is the one stage that both starts and finishes the cycle.\" data-wrong-feedback=\"❌ A cycle repeats. Which stage could come before the plant AND come out of the fruit at the end?\"><div><strong>Scenario:</strong> Which stage of the life cycle comes both before the young plant and out of the fruit at the end?</div><button data-answer=\"wrong\">the flower</button><button data-answer=\"wrong\">the stem</button><button data-answer=\"correct\">the seed</button></div><div class=\"chatty-feedback empty\" aria-live=\"polite\"></div>"
+    },
+    {
+      "graphic": "🔑",
+      "title": "The Key",
+      "label": "Mastery",
+      "content": "<div class=\"summary-card\"><strong>🌸 You can now walk the whole life cycle out loud</strong><ul><li><strong>Six stations, one circle:</strong> seed → germination → sprout → flower → pollination → fruit &amp; seed.</li><li><strong>A seed needs three things:</strong> water, warmth and air. Take away one and germination never starts.</li><li><strong>The flower is advertising:</strong> colour and nectar are how it calls an insect — and pollination is the payment.</li><li><strong>Pollen travels, seeds are made:</strong> no pollination means no seeds, and no seeds means no new plants.</li><li><strong>The fruit is a carrier, not an ending:</strong> it protects the seeds until they can travel — and then the cycle begins again.</li></ul></div><div class=\"chatty-hint\"><strong>Level Up:</strong> find one flowering plant at home or on the way home tonight. Say the cycle out loud for that plant, in order, in front of somebody: <em>seed, germination, sprout, flower, pollination, fruit and seed.</em> Then tell them which stage it is in right now.</div><div class=\"chatty-hint\"><strong>Write it down:</strong> pick one stage and explain what the plant is doing during it — two full sentences, using the stage's own word.<textarea class=\"write-task\" id=\"flower-write\" placeholder=\"My plant is at the _____ stage. It is _______. This stage matters because _______.\"></textarea></div>"
+    }
+  ]
+}

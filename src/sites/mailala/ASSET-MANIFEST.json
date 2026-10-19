@@ -1,0 +1,2732 @@
+{
+  "generated": "2026-09-28T10:13:22.840Z",
+  "authority": {
+    "chain": "Sov100 (sovereign · agent100 in the field) → the mastermind (architect, who bridges) → Obi (this station, which executes)",
+    "sovereign": "Sov100 / agent100",
+    "architect": "the mastermind",
+    "station": "Obi"
+  },
+  "method": "Every digest is SHA-256 (WebCrypto) over the file's exact bytes, or over its exact text where the asset is in-document. Hosted assets were fetched and hashed separately from their local counterparts, then compared — so 'the hosted copy is the original' is a measurement here, not an assumption. Nothing is hand-typed: re-run the register pass (execute_js: hash the tree, then write this file) — or read it back with /relay, which rebuilds this same census in the browser, file by file, and names anything that has moved — or read it back with /relay, which rebuilds this same census in the browser, file by file, and names anything that has moved — or read it back with /relay, which rebuilds this same census in the browser, file by file, and names anything that has moved and it states the tree as it is.",
+  "totals": {
+    "assets": 45,
+    "pageFacing": 26,
+    "photographs": 9,
+    "videos": 4,
+    "fonts": 10,
+    "bytesOfPhotographs": 1923108,
+    "estateFiles": 343,
+    "estateBytes": 20579828,
+    "treeDigest": "9acbc758fbe4666419580d69ead5e7b90ea59859e2d3c2b0eaa150525c35bcdd",
+    "verifiableInPage": 29,
+    "estateExcluded": [
+      "src/sites/mailala/ASSET-MANIFEST.md",
+      "src/sites/mailala/ASSET-MANIFEST.json"
+    ]
+  },
+  "assets": [
+    {
+      "id": "M-01",
+      "label": "rooftop-night",
+      "kind": "photograph",
+      "slot": "the hero · og:image · preload · the rooftop panel (4 slots)",
+      "alt": "The rooftop at Mailala at night — fairy lights above the counter, potted plants along the bar",
+      "bytes": 209857,
+      "sha256": "d758a7945683b1a5098961bfe4cecd41144c251ed0793f6f1246268161e18f19",
+      "local": "src/sites/mailala/material/6134195124376899530_121.jpg",
+      "url": "https://user.uploads.dev/file/1f050d9e3a2afcfd4adf67c7e348a224.jpg",
+      "fetchable": true,
+      "dynamic": false,
+      "proven": "hosted copy byte-identical to the shipped original (verified 2026-09-25)",
+      "note": "the sovereign's own photograph; the id in the filename is the provenance",
+      "rehashed": "2026-09-28T10:13:22.840Z"
+    },
+    {
+      "id": "M-02",
+      "label": "bar-interior",
+      "kind": "photograph",
+      "slot": "the our-spirit panel",
+      "alt": "Inside the bar at Mailala at night — fairy lights strung above the counter and a mural on the wall",
+      "bytes": 197069,
+      "sha256": "65b0a5ff7e86bc81c3fe0a967f2e18795d20e7a1a9964e1c7c889621caf96700",
+      "local": "src/sites/mailala/material/6134195124376899528_121.jpg",
+      "url": "https://user.uploads.dev/file/7c599abd02e6fcf92fd706ee440b457d.jpg",
+      "fetchable": true,
+      "dynamic": false,
+      "proven": "hosted copy byte-identical to the shipped original (verified 2026-09-25)",
+      "note": "the sovereign's own photograph; the id in the filename is the provenance",
+      "rehashed": "2026-09-28T10:13:22.840Z"
+    },
+    {
+      "id": "M-03",
+      "label": "menu-board",
+      "kind": "photograph",
+      "slot": "the kitchen signature + the menu poster (2 slots)",
+      "alt": "The Mailala menu board, hand-painted: a palm-tree mascot in sunglasses, a plate of jerk chicken with rice and peas and plantains, and the house's own line — Good Vibes. Big Flavors. Full Belly. Till Late!",
+      "bytes": 291269,
+      "sha256": "9599414bcd54ce88e1eefd70f2532e21bdc604b4bd58d7110ac5eff02e2f46e0",
+      "local": "src/sites/mailala/material/6150204477533786111_121.jpg",
+      "url": "https://user.uploads.dev/file/f10419589c8113b97d4a48ae263db72a.jpg",
+      "fetchable": true,
+      "dynamic": false,
+      "proven": "hosted copy byte-identical to the shipped original (verified 2026-09-25)",
+      "note": "the sovereign's own photograph; the id in the filename is the provenance",
+      "rehashed": "2026-09-28T10:13:22.840Z"
+    },
+    {
+      "id": "M-04",
+      "label": "marley-wall",
+      "kind": "photograph",
+      "slot": "the rooftop gallery",
+      "alt": "Guests at a table beneath the wall painting of Bob Marley & The Wailers, lit by the room's coloured lights",
+      "bytes": 165773,
+      "sha256": "dc3ba6f6c5579426b76f4ecaf6fbe71cb0593be378bfb262377a737adc315ba2",
+      "local": "src/sites/mailala/material/6134195124376899531_121.jpg",
+      "url": "https://user.uploads.dev/file/2d4d72888f789429517f1679730cc067.jpg",
+      "fetchable": true,
+      "dynamic": false,
+      "proven": "hosted copy byte-identical to the shipped original (verified 2026-09-25)",
+      "note": "the sovereign's own photograph; the id in the filename is the provenance",
+      "rehashed": "2026-09-28T10:13:22.840Z"
+    },
+    {
+      "id": "M-05",
+      "label": "band-mural",
+      "kind": "photograph",
+      "slot": "the rooftop gallery",
+      "alt": "The hand-painted picture of a band playing — pianist, bassist and drummer — on the yellow wall at Mailala",
+      "bytes": 169384,
+      "sha256": "09cc37e48f356988b19933d2796d1176a115baf26e0dc0561697fbfdb3eb7259",
+      "local": "src/sites/mailala/material/6150204477533786119_121.jpg",
+      "url": "https://user.uploads.dev/file/e8e7af459b9bc160670d3e910bf5cf09.jpg",
+      "fetchable": true,
+      "dynamic": false,
+      "proven": "hosted copy byte-identical to the shipped original (verified 2026-09-25)",
+      "note": "the sovereign's own photograph; the id in the filename is the provenance",
+      "rehashed": "2026-09-28T10:13:22.840Z"
+    },
+    {
+      "id": "M-06",
+      "label": "catering-sign",
+      "kind": "photograph",
+      "slot": "the rooftop gallery",
+      "alt": "The Jamaican Catering sign on the yellow wall — a green pot, a red hand and a palm tree",
+      "bytes": 200876,
+      "sha256": "d7bba08a96783f873d9d7e1bd22658d431a1a0cb356f6ff39264ad2290928fe8",
+      "local": "src/sites/mailala/material/6150204477533786110_121.jpg",
+      "url": "https://user.uploads.dev/file/880d30dc3f5d42f4587ded1c3541dad4.jpg",
+      "fetchable": true,
+      "dynamic": false,
+      "proven": "hosted copy byte-identical to the shipped original (verified 2026-09-25)",
+      "note": "the sovereign's own photograph; the id in the filename is the provenance",
+      "rehashed": "2026-09-28T10:13:22.840Z"
+    },
+    {
+      "id": "M-07",
+      "label": "fan-guest",
+      "kind": "photograph",
+      "slot": "the rooftop gallery",
+      "alt": "A guest in the bar holding a folding fan, in front of the hand-painted reggae mural with fairy lights above",
+      "bytes": 238395,
+      "sha256": "5afd0acbc365ab3952cce06a80e3219a45df40b7e046e829488b6667b3662fc0",
+      "local": "src/sites/mailala/material/6150204477533786109_121.jpg",
+      "url": "https://user.uploads.dev/file/39c59cf17556bee1ef3a6f06fc2fb7f2.jpg",
+      "fetchable": true,
+      "dynamic": false,
+      "proven": "hosted copy byte-identical to the shipped original (verified 2026-09-25)",
+      "note": "the sovereign's own photograph; the id in the filename is the provenance",
+      "rehashed": "2026-09-28T10:13:22.840Z"
+    },
+    {
+      "id": "M-08",
+      "label": "drug-sign-night",
+      "kind": "photograph",
+      "slot": "the drug-free panel",
+      "alt": "The glowing wall sign at night reading Drug Use Is Strictly Prohibited In The Restroom, with Roots Rock Reggae Bar Saigon along the bottom",
+      "bytes": 281715,
+      "sha256": "59ca5acb89ba37afe97b475070ea88bbf1a8f3c4033e9ef22d5c66cfac21f8f4",
+      "local": "src/sites/mailala/material/6150204477533786107_121.jpg",
+      "url": "https://user.uploads.dev/file/08714813e4b88da142cceb572954ec98.jpg",
+      "fetchable": true,
+      "dynamic": false,
+      "proven": "hosted copy byte-identical to the shipped original (verified 2026-09-25)",
+      "note": "the sovereign's own photograph; the id in the filename is the provenance",
+      "rehashed": "2026-09-28T10:13:22.840Z"
+    },
+    {
+      "id": "M-09",
+      "label": "drug-poster",
+      "kind": "photograph",
+      "slot": "the drug-free panel",
+      "alt": "The Say No To Drugs poster in green, yellow and red — a skull and crossbones, Your Future is Bright, Keep it Right",
+      "bytes": 168770,
+      "sha256": "196a2307b747fcb2e33f4ab8137578001bcc8a347b4791c16f68c36ae6000366",
+      "local": "src/sites/mailala/material/6150204477533786120_121.jpg",
+      "url": "https://user.uploads.dev/file/19b9e769e4df8687d1a1107f48ed7665.jpg",
+      "fetchable": true,
+      "dynamic": false,
+      "proven": "hosted copy byte-identical to the shipped original (verified 2026-09-25)",
+      "note": "the sovereign's own photograph; the id in the filename is the provenance",
+      "rehashed": "2026-09-28T10:13:22.840Z"
+    },
+    {
+      "id": "V-01",
+      "label": "the 60 s walkthrough (the story's source)",
+      "kind": "video",
+      "slot": "none — evidence for STORY.md, nothing plays on the page",
+      "bytes": 5488923,
+      "sha256": "ab6ac28d324ec963cc3ec2c987788af088cab63b83b6781c7e8aad4045962a43",
+      "local": "scratch/message-attachments/6170059324904186583.mp4",
+      "url": "https://user.uploads.dev/file/587c56d82502e9beeb4e49a38d84e22e.mp4",
+      "fetchable": true,
+      "dynamic": false,
+      "ephemeralLocal": true,
+      "proven": "hosted copy byte-identical to the local source (verified 2026-09-25)",
+      "note": "the source of STORY.md's beats; not embedded · the hosted copy was uploaded with a short retention flag: re-upload (or move into src/) to make it durable",
+      "verifyNote": "hashed in the page from its hosted copy (the local copy is in scratch/, not served on this origin)",
+      "rehashed": "2026-09-28T10:13:22.840Z"
+    },
+    {
+      "id": "V-02",
+      "label": "the reel (29.9 s, 720p)",
+      "kind": "video",
+      "slot": "none — evidence for STORY.md, nothing plays on the page",
+      "bytes": 14078315,
+      "sha256": "9b020e9297dbb7871a5620c0d7761f9153ab76368f7c6dd454efdda963c8bb88",
+      "local": "scratch/mailala-reel-720.mp4",
+      "url": "https://user.uploads.dev/file/f4edc203f3be250775b1c5100f431533.mp4",
+      "fetchable": true,
+      "dynamic": false,
+      "ephemeralLocal": true,
+      "proven": "hosted copy byte-identical to the local source (verified 2026-09-25)",
+      "note": "the closing line's source; not embedded · the hosted copy was uploaded with a short retention flag: re-upload (or move into src/) to make it durable",
+      "verifyNote": "hashed in the page from its hosted copy (the local copy is in scratch/, not served on this origin)",
+      "rehashed": "2026-09-28T10:13:22.840Z"
+    },
+    {
+      "id": "V-03",
+      "label": "the correspondence recording (the sovereign's own words)",
+      "kind": "video",
+      "slot": "none — evidence for STORY.md, nothing plays on the page",
+      "bytes": 2879033,
+      "sha256": "aeff9f17c254267024845c70ef83b6e3360ed499f14263968b22b12d21c91d79",
+      "local": "scratch/message-attachments/6170059324904186580.mp4",
+      "url": null,
+      "fetchable": false,
+      "dynamic": false,
+      "ephemeralLocal": true,
+      "proven": "no hosted copy exists",
+      "note": "the source of the offer-funnel quotes in STORY.md; not uploaded, not embedded",
+      "verifyNote": "lives in scratch/ — hashed from the workspace bytes, but scratch/ is the session's own space and is not served on this origin, so it cannot be re-hashed in the page",
+      "rehashed": "2026-09-28T10:13:22.840Z"
+    },
+    {
+      "id": "V-04",
+      "label": "the third recording — NOT Mailala material",
+      "kind": "video",
+      "slot": "none — evidence for STORY.md, nothing plays on the page",
+      "bytes": 5274590,
+      "sha256": "b4dc29b5b04873fe5031fe6fb348ea0e87c6decd3a073f61d628da86e4fb6da3",
+      "local": "scratch/message-attachments/6167854056766185808.mp4",
+      "url": null,
+      "fetchable": false,
+      "dynamic": false,
+      "ephemeralLocal": true,
+      "proven": "no hosted copy exists",
+      "note": "identified during the story measurement and excluded; it is not used or claimed anywhere",
+      "verifyNote": "lives in scratch/ — hashed from the workspace bytes, but scratch/ is the session's own space and is not served on this origin, so it cannot be re-hashed in the page",
+      "rehashed": "2026-09-28T10:13:22.840Z"
+    },
+    {
+      "id": "F-01",
+      "label": "the font CSS (DM Serif Display + Inter)",
+      "kind": "font",
+      "slot": "the page's only type, linked",
+      "bytes": 10778,
+      "sha256": "082e035b5456c1a5bcfbe78dbf3a7b5e9725104f6623fc3cd0bf3e6e73eeaa87",
+      "local": null,
+      "url": "https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap",
+      "fetchable": true,
+      "dynamic": true,
+      "note": "user-agent-dependent: these digests pin ONE fetched snapshot, not a contract — drift here is not a defect"
+    },
+    {
+      "id": "F-02",
+      "label": "WOFF2 face 1 of 9",
+      "kind": "font",
+      "slot": "streamed by the linked CSS only",
+      "bytes": 10804,
+      "sha256": "3af47815d6183efcee27a5717970acfe31153365e9b842e62d30c04e86c0613a",
+      "local": null,
+      "url": "https://fonts.gstatic.com/s/dmserifdisplay/v17/-nFnOHM81r4j6k0gjAW3mujVU2B2G_5x0ujy.woff2",
+      "fetchable": true,
+      "dynamic": true,
+      "note": "Google's subsetting varies by user agent — snapshot digest; the page ships no font bytes"
+    },
+    {
+      "id": "F-03",
+      "label": "WOFF2 face 2 of 9",
+      "kind": "font",
+      "slot": "streamed by the linked CSS only",
+      "bytes": 24744,
+      "sha256": "fdf61e20fd2c0108e0ea28da4daca0035205b4b7fc031a3974b865b704de160a",
+      "local": null,
+      "url": "https://fonts.gstatic.com/s/dmserifdisplay/v17/-nFnOHM81r4j6k0gjAW3mujVU2B2G_Bx0g.woff2",
+      "fetchable": true,
+      "dynamic": true,
+      "note": "Google's subsetting varies by user agent — snapshot digest; the page ships no font bytes"
+    },
+    {
+      "id": "F-04",
+      "label": "WOFF2 face 3 of 9",
+      "kind": "font",
+      "slot": "streamed by the linked CSS only",
+      "bytes": 25960,
+      "sha256": "ca157063339ac4ad418f214f3abfed119b0798ab4d377386ce5c9e5a7a435ebd",
+      "local": null,
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7SUc.woff2",
+      "fetchable": true,
+      "dynamic": true,
+      "note": "Google's subsetting varies by user agent — snapshot digest; the page ships no font bytes"
+    },
+    {
+      "id": "F-05",
+      "label": "WOFF2 face 4 of 9",
+      "kind": "font",
+      "slot": "streamed by the linked CSS only",
+      "bytes": 18748,
+      "sha256": "71d5ee93cc1e9f1d520a3a8b66456de18c7879d8df09d57fcd2eaff75fef0075",
+      "local": null,
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7SUc.woff2",
+      "fetchable": true,
+      "dynamic": true,
+      "note": "Google's subsetting varies by user agent — snapshot digest; the page ships no font bytes"
+    },
+    {
+      "id": "F-06",
+      "label": "WOFF2 face 5 of 9",
+      "kind": "font",
+      "slot": "streamed by the linked CSS only",
+      "bytes": 11232,
+      "sha256": "6e9e020a25f9b56d418f2c085b1d3c09725a4da23fe693a5b463064606732190",
+      "local": null,
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7SUc.woff2",
+      "fetchable": true,
+      "dynamic": true,
+      "note": "Google's subsetting varies by user agent — snapshot digest; the page ships no font bytes"
+    },
+    {
+      "id": "F-07",
+      "label": "WOFF2 face 6 of 9",
+      "kind": "font",
+      "slot": "streamed by the linked CSS only",
+      "bytes": 18996,
+      "sha256": "1be3448e292fbf05ffe176fe1e43f135013d50b1e7d324ad1a558f623d3bb6f6",
+      "local": null,
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7SUc.woff2",
+      "fetchable": true,
+      "dynamic": true,
+      "note": "Google's subsetting varies by user agent — snapshot digest; the page ships no font bytes"
+    },
+    {
+      "id": "F-08",
+      "label": "WOFF2 face 7 of 9",
+      "kind": "font",
+      "slot": "streamed by the linked CSS only",
+      "bytes": 10252,
+      "sha256": "5c66f9e07e90c6d4ac4922cc68d60de26c17b1858e677fb5e603fce3952b3ff2",
+      "local": null,
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7SUc.woff2",
+      "fetchable": true,
+      "dynamic": true,
+      "note": "Google's subsetting varies by user agent — snapshot digest; the page ships no font bytes"
+    },
+    {
+      "id": "F-09",
+      "label": "WOFF2 face 8 of 9",
+      "kind": "font",
+      "slot": "streamed by the linked CSS only",
+      "bytes": 85068,
+      "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956",
+      "local": null,
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7SUc.woff2",
+      "fetchable": true,
+      "dynamic": true,
+      "note": "Google's subsetting varies by user agent — snapshot digest; the page ships no font bytes"
+    },
+    {
+      "id": "F-10",
+      "label": "WOFF2 face 9 of 9",
+      "kind": "font",
+      "slot": "streamed by the linked CSS only",
+      "bytes": 48256,
+      "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62",
+      "local": null,
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+      "fetchable": true,
+      "dynamic": true,
+      "note": "Google's subsetting varies by user agent — snapshot digest; the page ships no font bytes"
+    },
+    {
+      "id": "MP-01",
+      "label": "the Google Maps embed (keyless)",
+      "kind": "map",
+      "slot": "#find",
+      "bytes": 4269,
+      "sha256": "999d872bf3dcba2680ccb1c415e00dec1cd4f3b46193fb9b2260eb08ee6355d6",
+      "local": null,
+      "url": "https://maps.google.com/maps?q=175%2F16%20Pham%20Ngu%20Lao%2C%20District%201%2C%20Ho%20Chi%20Minh%20City&z=16&output=embed",
+      "fetchable": true,
+      "dynamic": true,
+      "note": "a live remote document: the digest pins the snapshot we fetched, not a promise about Google. Fallback if it blocks: the address text and the Directions button still work"
+    },
+    {
+      "id": "MK-01",
+      "label": "the mark / favicon (inline SVG data-URL)",
+      "kind": "mark",
+      "slot": "<link rel=\"icon\">",
+      "bytes": 236,
+      "sha256": "394148528c5f380eedb2b590300cb43fe41383f07cb59f07414a24dc2028b681",
+      "local": "src/sites/mailala/index.html",
+      "url": null,
+      "fetchable": false,
+      "dynamic": false,
+      "inDocument": true,
+      "note": "in-document: the digest is of the 236 B of SVG itself; the full data-URL text hashes to c433a8d7254b (281 B). Not fetchable as a payload, so /assets verify skips it with that reason",
+      "howHashed": "in-document: the digest is over the asset's own block inside the page, not over the page file — a future register pass must SKIP this row (it is flagged inDocument)"
+    },
+    {
+      "id": "SD-01",
+      "label": "the Hotel JSON-LD block",
+      "kind": "schema",
+      "slot": "the head's structured data",
+      "bytes": 1229,
+      "sha256": "658c7e1889d381be71c9b59efc7c9bf3eb5ad842ccf126433b3f96bf7de2ecea",
+      "local": "src/sites/mailala/index.html",
+      "url": null,
+      "fetchable": false,
+      "dynamic": false,
+      "inDocument": true,
+      "note": "in-document: the digest is of the 1,227-char JSON-LD block, not of the whole page",
+      "howHashed": "in-document: the digest is over the asset's own block inside the page, not over the page file — a future register pass must SKIP this row (it is flagged inDocument)"
+    },
+    {
+      "id": "DOC-01",
+      "label": "the build (the page itself)",
+      "kind": "document",
+      "slot": "src/sites/mailala/index.html",
+      "bytes": 50132,
+      "sha256": "d7ff3493ce8855ced654d0ef02a46b8003098454d8d96251e4b7c99a32514474",
+      "local": "src/sites/mailala/index.html",
+      "url": null,
+      "fetchable": true,
+      "dynamic": false,
+      "note": "the ship — this is what deploy means",
+      "rehashed": "2026-09-28T10:13:22.840Z"
+    },
+    {
+      "id": "DOC-02",
+      "label": "SOUL.md — the sovereign's words, verbatim",
+      "kind": "document",
+      "slot": "src/sites/mailala/SOUL.md",
+      "bytes": 13283,
+      "sha256": "6809a89cab8217104703bac29c0e16cb2bea91d1245192c0d74d35f13beec617",
+      "local": "src/sites/mailala/SOUL.md",
+      "url": null,
+      "fetchable": true,
+      "dynamic": false,
+      "note": "the intent; never edited",
+      "rehashed": "2026-09-28T10:13:22.840Z"
+    },
+    {
+      "id": "DOC-03",
+      "label": "STORY.md — the story told from the footage",
+      "kind": "document",
+      "slot": "src/sites/mailala/STORY.md",
+      "bytes": 6339,
+      "sha256": "244a51b25e157691a1643d2e61c29a5cfd22772addffd4fb1a7a270462947411",
+      "local": "src/sites/mailala/STORY.md",
+      "url": null,
+      "fetchable": true,
+      "dynamic": false,
+      "note": "the story, with timecodes and the honest gaps",
+      "rehashed": "2026-09-28T10:13:22.840Z"
+    },
+    {
+      "id": "DOC-04",
+      "label": "BLUEPRINT.md — the copy and running order",
+      "kind": "document",
+      "slot": "src/sites/mailala/BLUEPRINT.md",
+      "bytes": 11764,
+      "sha256": "95a880dc5d0e41e5ab4c2b419e6cf2a995411874150bc621780c8ebe2b5a37cf",
+      "local": "src/sites/mailala/BLUEPRINT.md",
+      "url": null,
+      "fetchable": true,
+      "dynamic": false,
+      "note": "final copy; §7 records the dark turn",
+      "rehashed": "2026-09-28T10:13:22.840Z"
+    },
+    {
+      "id": "DOC-05",
+      "label": "ARCHITECT-BLUEPRINT.md — the architecture",
+      "kind": "document",
+      "slot": "src/sites/mailala/ARCHITECT-BLUEPRINT.md",
+      "bytes": 24659,
+      "sha256": "251ca1e861ea7f0dcd736d5c33f269801cacc9a19c2af9944f3cbae6ebeec1a5",
+      "local": "src/sites/mailala/ARCHITECT-BLUEPRINT.md",
+      "url": null,
+      "fetchable": true,
+      "dynamic": false,
+      "note": "the layers; §4b is this register",
+      "rehashed": "2026-09-28T10:13:22.840Z"
+    },
+    {
+      "id": "DOC-06",
+      "label": "HANDOFF.md — the wing's handover",
+      "kind": "document",
+      "slot": "src/sites/mailala/HANDOFF.md",
+      "bytes": 7807,
+      "sha256": "c119e68017ae0b2ee3afc3f6764dfba27492a8ff0255ea68f7171ed1c2476e4b",
+      "local": "src/sites/mailala/HANDOFF.md",
+      "url": null,
+      "fetchable": true,
+      "dynamic": false,
+      "note": "provenance from the Video wing",
+      "rehashed": "2026-09-28T10:13:22.840Z"
+    },
+    {
+      "id": "DOC-07",
+      "label": "src/sites/README.md — the sites shelf",
+      "kind": "document",
+      "slot": "src/sites/README.md",
+      "bytes": 6963,
+      "sha256": "6d01cc9f4b53bece8dcac9c49bf15bdd010edd69e75361c7ef12c747e152421a",
+      "local": "src/sites/README.md",
+      "url": null,
+      "fetchable": true,
+      "dynamic": false,
+      "note": "the shelf's own index",
+      "rehashed": "2026-09-28T10:13:22.840Z"
+    },
+    {
+      "id": "PH-01",
+      "label": "the station's perchance panel — main.pjs",
+      "kind": "document",
+      "slot": "main.pjs",
+      "bytes": 1855,
+      "sha256": "85c65cd45ef11354dbf377aae8ddb548e98e2c9933de467dea76397068ade0aa",
+      "local": "main.pjs",
+      "url": null,
+      "fetchable": false,
+      "dynamic": false,
+      "note": "not on this origin: served by the platform API (see src/forge.js selfSource)",
+      "rehashed": "2026-09-28T10:13:22.840Z"
+    },
+    {
+      "id": "PH-02",
+      "label": "the station's perchance panel — index.html",
+      "kind": "document",
+      "slot": "index.html",
+      "bytes": 43171,
+      "sha256": "af7071eaaf3f7457d3d46372dad089abba4e675b86e6a2e2d605702c8025e810",
+      "local": "index.html",
+      "url": null,
+      "fetchable": false,
+      "dynamic": false,
+      "note": "same",
+      "rehashed": "2026-09-28T10:13:22.840Z"
+    },
+    {
+      "id": "EV-01",
+      "label": "the venue's own page, as captured (the claims register's evidence)",
+      "kind": "evidence",
+      "slot": "not shipped — the measurement behind §2",
+      "bytes": 70835,
+      "sha256": "13360cf9a83cd9b192f37163f9ab86aff87941efe9f9e6c2d028867df8d1e8c5",
+      "local": "scratch/mailala-live.html",
+      "url": null,
+      "fetchable": false,
+      "dynamic": false,
+      "ephemeralLocal": true,
+      "note": "live at canon.mailala.pages.dev (HTTP 200, 70,441 B when measured); this is our captured copy and the digest is of OUR copy",
+      "verifyNote": "lives in scratch/ — hashed from the workspace bytes, but scratch/ is the session's own space and is not served on this origin, so it cannot be re-hashed in the page",
+      "rehashed": "2026-09-28T10:13:22.840Z"
+    },
+    {
+      "id": "W-01",
+      "label": "walkthrough-sheet.jpg",
+      "kind": "working",
+      "slot": "ephemeral",
+      "bytes": 81893,
+      "sha256": "ded4caa4aa8fa2827b1dc29189a519ad1a299493b188a6bb39fcce2b0e3f4fab",
+      "local": "scratch/mailala-story/walkthrough-sheet.jpg",
+      "url": null,
+      "fetchable": false,
+      "dynamic": false,
+      "ephemeralLocal": true,
+      "note": "the 12-tile contact sheet the story was measured from",
+      "verifyNote": "lives in scratch/ — hashed from the workspace bytes, but scratch/ is the session's own space and is not served on this origin, so it cannot be re-hashed in the page",
+      "rehashed": "2026-09-28T10:13:22.840Z"
+    },
+    {
+      "id": "W-02",
+      "label": "reel-sheet.jpg",
+      "kind": "working",
+      "slot": "ephemeral",
+      "bytes": 265859,
+      "sha256": "378034c6584b9c4794fe864f67cf961f6ca437f718bfd948da36aaf94ad8851c",
+      "local": "scratch/mailala-story/reel-sheet.jpg",
+      "url": null,
+      "fetchable": false,
+      "dynamic": false,
+      "ephemeralLocal": true,
+      "note": "the 16-tile reel contact sheet",
+      "verifyNote": "lives in scratch/ — hashed from the workspace bytes, but scratch/ is the session's own space and is not served on this origin, so it cannot be re-hashed in the page",
+      "rehashed": "2026-09-28T10:13:22.840Z"
+    },
+    {
+      "id": "W-03",
+      "label": "hero-composite.jpg",
+      "kind": "working",
+      "slot": "ephemeral",
+      "bytes": 438198,
+      "sha256": "be0a7b5ffbd9b2992116463df24eaa0fa773e47fd9dfc822e46344659569b2a4",
+      "local": "scratch/mailala-assets/hero-composite.jpg",
+      "url": null,
+      "fetchable": false,
+      "dynamic": false,
+      "ephemeralLocal": true,
+      "note": "an earlier composite, not in the final build",
+      "verifyNote": "lives in scratch/ — hashed from the workspace bytes, but scratch/ is the session's own space and is not served on this origin, so it cannot be re-hashed in the page",
+      "rehashed": "2026-09-28T10:13:22.840Z"
+    },
+    {
+      "id": "W-04",
+      "label": "rooftop-collage.jpg",
+      "kind": "working",
+      "slot": "ephemeral",
+      "bytes": 125373,
+      "sha256": "a58fe086ea9cc9dd9910c651dc06cb22e53b44ba13e95ffa0a23d8135cdd74ec",
+      "local": "scratch/mailala-assets/rooftop-collage.jpg",
+      "url": null,
+      "fetchable": false,
+      "dynamic": false,
+      "ephemeralLocal": true,
+      "note": "an earlier collage, not in the final build",
+      "verifyNote": "lives in scratch/ — hashed from the workspace bytes, but scratch/ is the session's own space and is not served on this origin, so it cannot be re-hashed in the page",
+      "rehashed": "2026-09-28T10:13:22.840Z"
+    },
+    {
+      "id": "W-05",
+      "label": "room-female-6.jpg",
+      "kind": "working",
+      "slot": "ephemeral",
+      "bytes": 229066,
+      "sha256": "cc4c215d33911ac74e9f887404ddf05d93de90c36055cc4952e95c33c79aa53b",
+      "local": "scratch/mailala-assets/room-female-6.jpg",
+      "url": null,
+      "fetchable": false,
+      "dynamic": false,
+      "ephemeralLocal": true,
+      "note": "a room composite, not in the final build",
+      "verifyNote": "lives in scratch/ — hashed from the workspace bytes, but scratch/ is the session's own space and is not served on this origin, so it cannot be re-hashed in the page",
+      "rehashed": "2026-09-28T10:13:22.840Z"
+    },
+    {
+      "id": "W-06",
+      "label": "room-mixed-4.jpg",
+      "kind": "working",
+      "slot": "ephemeral",
+      "bytes": 281835,
+      "sha256": "277fc7d80913e35a6b3685ff577ef361b717cc3888626346a82cf06112ea5d3a",
+      "local": "scratch/mailala-assets/room-mixed-4.jpg",
+      "url": null,
+      "fetchable": false,
+      "dynamic": false,
+      "ephemeralLocal": true,
+      "note": "a room composite, not in the final build",
+      "verifyNote": "lives in scratch/ — hashed from the workspace bytes, but scratch/ is the session's own space and is not served on this origin, so it cannot be re-hashed in the page",
+      "rehashed": "2026-09-28T10:13:22.840Z"
+    },
+    {
+      "id": "W-07",
+      "label": "room-private.jpg",
+      "kind": "working",
+      "slot": "ephemeral",
+      "bytes": 191033,
+      "sha256": "a7a929ade2cf84db79056f078f1deaf68bce4b7b8a608e5cd1d96269f515de4e",
+      "local": "scratch/mailala-assets/room-private.jpg",
+      "url": null,
+      "fetchable": false,
+      "dynamic": false,
+      "ephemeralLocal": true,
+      "note": "a room composite, not in the final build",
+      "verifyNote": "lives in scratch/ — hashed from the workspace bytes, but scratch/ is the session's own space and is not served on this origin, so it cannot be re-hashed in the page",
+      "rehashed": "2026-09-28T10:13:22.840Z"
+    },
+    {
+      "id": "W-08",
+      "label": "vibe-grid.jpg",
+      "kind": "working",
+      "slot": "ephemeral",
+      "bytes": 137451,
+      "sha256": "29b38587f4777bb87f36f830a8e1d92a32ba71aad0ccb23627731241c419d367",
+      "local": "scratch/mailala-assets/vibe-grid.jpg",
+      "url": null,
+      "fetchable": false,
+      "dynamic": false,
+      "ephemeralLocal": true,
+      "note": "an earlier grid, not in the final build",
+      "verifyNote": "lives in scratch/ — hashed from the workspace bytes, but scratch/ is the session's own space and is not served on this origin, so it cannot be re-hashed in the page",
+      "rehashed": "2026-09-28T10:13:22.840Z"
+    },
+    {
+      "id": "W-09",
+      "label": "dark-hero.jpg",
+      "kind": "working",
+      "slot": "ephemeral",
+      "bytes": 111419,
+      "sha256": "491cf2431d022ee15143524d24cf1c45f3fd4d3e3890068914301f0eae9b54bc",
+      "local": "scratch/mailala-story/dark-hero.jpg",
+      "url": null,
+      "fetchable": false,
+      "dynamic": false,
+      "ephemeralLocal": true,
+      "note": "a dark-mode render checked during the build",
+      "verifyNote": "lives in scratch/ — hashed from the workspace bytes, but scratch/ is the session's own space and is not served on this origin, so it cannot be re-hashed in the page",
+      "rehashed": "2026-09-28T10:13:22.840Z"
+    }
+  ],
+  "estate": {
+    "count": 343,
+    "bytes": 20579828,
+    "treeDigestSha256": "9acbc758fbe4666419580d69ead5e7b90ea59859e2d3c2b0eaa150525c35bcdd",
+    "files": [
+      {
+        "path": "src/AGENT99-OS.md",
+        "bytes": 18664,
+        "sha256": "54f1fecdd2fa61fff777397675de60e34e6ef70c3b859f7f7a869e807dc841fc"
+      },
+      {
+        "path": "src/COSTS.md",
+        "bytes": 8810,
+        "sha256": "5ca0b2d04c95f10033b0db728af89e2de6dd320b0a2b6dfed67c8fd8fc77bc95"
+      },
+      {
+        "path": "src/HANDOFF.md",
+        "bytes": 155356,
+        "sha256": "23cad0f7eb5eb953e1ec834ce786b0486ac37be2ce5f48fab3b27e8ac62bca30"
+      },
+      {
+        "path": "src/LESSON-STANDARD.md",
+        "bytes": 45485,
+        "sha256": "1cca8442d7597a18435a727257f2e78b6720a6714965ecd270de008fd323cef0"
+      },
+      {
+        "path": "src/MASTERMIND-SYNC-2026-09-23.md",
+        "bytes": 19249,
+        "sha256": "8cd74a48ebb9ad1b8c605f1258e09373e86319809d9fcb03a4b7fe3122b31a25"
+      },
+      {
+        "path": "src/PHOENIXCOMMAND-BLUEPRINT.md",
+        "bytes": 23364,
+        "sha256": "30a51fb7895ac39e5599853d09bdcaec177cce99f7d4b6372212291e8d57eeea"
+      },
+      {
+        "path": "src/PROPOSED-CANON.md",
+        "bytes": 8795,
+        "sha256": "90795d1483c2bcef74ae0c145679ec942840e6c403bcd32bf7b8d1bafad7a642"
+      },
+      {
+        "path": "src/ProposedG999.md",
+        "bytes": 49764,
+        "sha256": "73dc76f323a34fd248404d3d32f469de4c509709c39a3197fe49e270ad44c3b8"
+      },
+      {
+        "path": "src/README.md",
+        "bytes": 188477,
+        "sha256": "cec9242fde06f17d31a10a7d01aaab677e792274c956deffaa61f0032ca2d093"
+      },
+      {
+        "path": "src/REPO.md",
+        "bytes": 9153,
+        "sha256": "5064b9a4242b5201f47ee8b1f91e056e0c067453632e0f4e4ce95cb615e88f43"
+      },
+      {
+        "path": "src/SESSIONS/handoff-from-mastermind.md",
+        "bytes": 33196,
+        "sha256": "6fd262a721e5052b4956485e1a7582c141a78ec977cbec2350d65501586177e5"
+      },
+      {
+        "path": "src/SOUL-VERBATIM-PORTALS-MAGIC-CHAT.md",
+        "bytes": 13943,
+        "sha256": "9a8a532dc6c9fbfb396b89489e0678e295816fd6bf457e3e0d3e187c8ec347eb"
+      },
+      {
+        "path": "src/SPEC.md",
+        "bytes": 20421,
+        "sha256": "e4f6ba8d6a01be0773033a0b3da04f00dc9aaf31ed8d343167cbeef1ce0bd13f"
+      },
+      {
+        "path": "src/STUDENT-EVALUATOR-ECOSYSTEM.md",
+        "bytes": 28561,
+        "sha256": "fdd85028359f9c84dd42586074fd409d6d8ce7c3106c3d9ef6ebceb5147b6f29"
+      },
+      {
+        "path": "src/STUDENT-PORTAL-PIPELINE.md",
+        "bytes": 14614,
+        "sha256": "75d3309974a45dee9b3b325b27ddddfa091602b95a0eed5bf6543235335d7e04"
+      },
+      {
+        "path": "src/VAULT-RECOVERY.md",
+        "bytes": 4467,
+        "sha256": "6a9ca901ec0207dd0c166eb5b177af90a305fd736e3ed25303c8c1f362505e7c"
+      },
+      {
+        "path": "src/app.js",
+        "bytes": 623985,
+        "sha256": "1e3d670f1e6936d293874857e7bb9ef7cee714ffd914fc0dbfb4a71d6580b35f"
+      },
+      {
+        "path": "src/audio-split.js",
+        "bytes": 25255,
+        "sha256": "03a64ab16899d908cc2a137c36d59cbfc0223c55f13efb5db9ecd07c68aa3679"
+      },
+      {
+        "path": "src/background.js",
+        "bytes": 17118,
+        "sha256": "9f83d2c65b57d2c40439e3d1f209c9652f1e70337f8b2571528fc5a046c9086e"
+      },
+      {
+        "path": "src/brain.js",
+        "bytes": 27091,
+        "sha256": "71713cf620c70b81ba8534ad49da078b3ebf9a2a5a0389c6a3062566c4f10590"
+      },
+      {
+        "path": "src/brand.js",
+        "bytes": 292098,
+        "sha256": "66946da5ced08f2fb560f3610666bf901c27a8126f8fc57de04727ec2399f36b"
+      },
+      {
+        "path": "src/brand/assets/apex-anatomy.webp",
+        "bytes": 175574,
+        "sha256": "d036e14058d50e7f3b113dec84439630f4205b8b7b5ddae045c17cec6da042b2"
+      },
+      {
+        "path": "src/brand/assets/apex-app.png",
+        "bytes": 140179,
+        "sha256": "7d36c2bf74c48e6879d0b6567934573c7445b0821644f1ee4b2095196a1e7305"
+      },
+      {
+        "path": "src/brand/assets/apex-ink.webp",
+        "bytes": 166054,
+        "sha256": "094a63e1c0f734d406c8636bcd2ece651a81cd42456698311c111109db92a726"
+      },
+      {
+        "path": "src/brand/assets/apex-net.webp",
+        "bytes": 87384,
+        "sha256": "515ffc2e4ce9bb0533a01b9924102258dfbdc3cc91bf057a367e00b8d063d799"
+      },
+      {
+        "path": "src/brand/assets/apex.webp",
+        "bytes": 188830,
+        "sha256": "ef9f475d7e92168d38915e8048b85d0453f6c3de77163f34d5d5d425e80b0e83"
+      },
+      {
+        "path": "src/brand/assets/art-choose.webp",
+        "bytes": 100732,
+        "sha256": "6dae17e3680e43fff87f2ffd71842a297dd3887bd157ff51d299e52b4ee83669"
+      },
+      {
+        "path": "src/brand/assets/art-command.webp",
+        "bytes": 248046,
+        "sha256": "4584cbf07711c1bb507049dbfc25a1f7c24d7c6858ed6aedfb747c5fed0ccef4"
+      },
+      {
+        "path": "src/brand/assets/art-duo.webp",
+        "bytes": 265640,
+        "sha256": "f5a2b19f3f888c5dbc35777ffddbaf63e14f344b507519106fdf41431c2e8a95"
+      },
+      {
+        "path": "src/brand/assets/art-emblem.webp",
+        "bytes": 281626,
+        "sha256": "743594f519f1191d7499b96c50163fef4f064888c1105b102f21716688826229"
+      },
+      {
+        "path": "src/brand/assets/art-tigerkid.webp",
+        "bytes": 88576,
+        "sha256": "54235e04217eaa872076f0aa86e47fdde0bf2b8bff9bf45fd3c081636070ddf9"
+      },
+      {
+        "path": "src/brand/assets/art-university.webp",
+        "bytes": 292632,
+        "sha256": "a32772b10461c0eef69c8519fccdd3ab52e63b3dabd089cd68a22608118263a4"
+      },
+      {
+        "path": "src/brand/assets/atom.webp",
+        "bytes": 134774,
+        "sha256": "0b908703cfb96d77f5d43e43f525eb123c7401fade9b0bda5b02f6c52533f90b"
+      },
+      {
+        "path": "src/brand/assets/bookshelf.webp",
+        "bytes": 66342,
+        "sha256": "380e82af3130d3a4bb0a59ee9214cb84b914e8f35f03cc067abb41c0f0e2d2b0"
+      },
+      {
+        "path": "src/brand/assets/brain.webp",
+        "bytes": 24422,
+        "sha256": "5584d945b4ad80af203eb041b39494e2cb9a5ba77a07cad76d5cc0ba3196d06c"
+      },
+      {
+        "path": "src/brand/assets/brain2.webp",
+        "bytes": 47182,
+        "sha256": "6ee72ef921818a12c91d35bbaeeb3397113873f374cba228d075bef60da348d8"
+      },
+      {
+        "path": "src/brand/assets/cdx-acquisition.webp",
+        "bytes": 152484,
+        "sha256": "6fdb50a646bdf3349ecbbd9834e9213e80e18a68cf5fc1bf7eff6641cc9ded11"
+      },
+      {
+        "path": "src/brand/assets/cdx-advantage.webp",
+        "bytes": 175020,
+        "sha256": "aa6354b4018313b92464a9e400605fafce2f80c508425ed3d31f072b44d82135"
+      },
+      {
+        "path": "src/brand/assets/cdx-aipet.webp",
+        "bytes": 123972,
+        "sha256": "a690d755ecf211330c7f6c56c577654c1bc3120233e26e89cc33670a53e1fb49"
+      },
+      {
+        "path": "src/brand/assets/cdx-diagnosis.webp",
+        "bytes": 174168,
+        "sha256": "013abb42350ee6d7301cab85e480626d9e874606484a7dcf1937ab66f799a46d"
+      },
+      {
+        "path": "src/brand/assets/cdx-ecosystem.webp",
+        "bytes": 160330,
+        "sha256": "cde206d25e2f57e2024df41791f948f2e740a92e57840f2f1d477f6776c53bde"
+      },
+      {
+        "path": "src/brand/assets/cdx-guarantee.webp",
+        "bytes": 173308,
+        "sha256": "91bd73ac3b3142970b1f2e5fbbddc8f31255c1c5e6b673263aa3df19feaf9fd6"
+      },
+      {
+        "path": "src/brand/assets/cdx-immutable.webp",
+        "bytes": 193602,
+        "sha256": "0b3aa6ba2673f72287bbc005ce355d5842733765ed4c86b63f8f33e3f4be452d"
+      },
+      {
+        "path": "src/brand/assets/cdx-matrix.webp",
+        "bytes": 143944,
+        "sha256": "6420509fbd78afbd8e204b82a23a3e2d67d8ace9f9e4b8b230b42f942d09d3c0"
+      },
+      {
+        "path": "src/brand/assets/cdx-retention.webp",
+        "bytes": 113016,
+        "sha256": "7e8ea01c8825fcf982b5da3882ebee929609321600a682e57c22595b5eb2687a"
+      },
+      {
+        "path": "src/brand/assets/cdx-shift.webp",
+        "bytes": 155116,
+        "sha256": "d100cafbe7f2a544c27d2cf81d59313072f7ba3c883dea3edeb7008858ac5e7d"
+      },
+      {
+        "path": "src/brand/assets/cdx-ultimate.webp",
+        "bytes": 115958,
+        "sha256": "30e133fa307337a4f8e3e643922423b7f70e4c9a57afba241d00c36a31c396e1"
+      },
+      {
+        "path": "src/brand/assets/cdx-wake.webp",
+        "bytes": 188504,
+        "sha256": "aadb34d771f69a5ad1396dbba8b17425d70099ab9b316e4312500fbb2109498f"
+      },
+      {
+        "path": "src/brand/assets/chip.webp",
+        "bytes": 26244,
+        "sha256": "74b14cd11b4d638df861751a27e68c7a0eb2df00ab351bede5dc33484b93018c"
+      },
+      {
+        "path": "src/brand/assets/confidence.webp",
+        "bytes": 68198,
+        "sha256": "c5e1dcdbfa006813c9927f314b6bc1ad56dd63acd1de96ca8751ee5665677892"
+      },
+      {
+        "path": "src/brand/assets/cub.webp",
+        "bytes": 26180,
+        "sha256": "f3c43d112cffbd065a2bf5c8ad5bb2dc305414cd492b8bedf6a05ce78c225d31"
+      },
+      {
+        "path": "src/brand/assets/dial45.webp",
+        "bytes": 79034,
+        "sha256": "9158f349fe15942949511bc80220ac97dd458fd32c22b200bd3bf63166e4f6ed"
+      },
+      {
+        "path": "src/brand/assets/edge.webp",
+        "bytes": 72242,
+        "sha256": "0d77d7b998bdcde6fc5bfca2832ddadb0ee7dbc5805fbb7b681425ba6e8150cc"
+      },
+      {
+        "path": "src/brand/assets/elephant.webp",
+        "bytes": 87392,
+        "sha256": "baa9c3412bd8cb8c1d4a854c7acee76a961bee090711130e181514276b57c2d4"
+      },
+      {
+        "path": "src/brand/assets/flow.webp",
+        "bytes": 16426,
+        "sha256": "37001eca230e41334b1894c0fa8e56c142326af8c6922f4f1319af470150ced0"
+      },
+      {
+        "path": "src/brand/assets/gauge.webp",
+        "bytes": 66140,
+        "sha256": "c95eaa570bbf097ec945e0498576a7f969cd8238da2aa35ff8db5383d8e1d463"
+      },
+      {
+        "path": "src/brand/assets/gears-dna.webp",
+        "bytes": 33694,
+        "sha256": "16ba7e63f494aed67ce44f32b47bbf7e992832e0c167c51bbcce9812dbd3d99f"
+      },
+      {
+        "path": "src/brand/assets/gears.webp",
+        "bytes": 72626,
+        "sha256": "3ffbf0e7520082c28f8e1b1e0b66939764aeabe956e5276b9932290906e1bd99"
+      },
+      {
+        "path": "src/brand/assets/globe.webp",
+        "bytes": 29452,
+        "sha256": "254f4c7b4ed7e4fe2f35c4a5080eb1bf820e361f61692858baa61520c13d98e6"
+      },
+      {
+        "path": "src/brand/assets/head-jigsaw.webp",
+        "bytes": 29520,
+        "sha256": "f94c3ee0b57ea201704a37d0e953d0715dd12f877b5edaa1daaa415f7435e3ed"
+      },
+      {
+        "path": "src/brand/assets/head-ui.webp",
+        "bytes": 9436,
+        "sha256": "299c76d0a7429a5456de6ff8cbf9f8921913c8b683bb4ec174ca2215b8c3947d"
+      },
+      {
+        "path": "src/brand/assets/head.webp",
+        "bytes": 18908,
+        "sha256": "683b20432173910f5687021d391e861db6b5cbc3422b88738d86e4f0c068facf"
+      },
+      {
+        "path": "src/brand/assets/infinity.webp",
+        "bytes": 76608,
+        "sha256": "aa6acdad2ce747598928a2abe3f1138e83e4b2b2f07763c7973856309dc3ce30"
+      },
+      {
+        "path": "src/brand/assets/laptop.webp",
+        "bytes": 73606,
+        "sha256": "a2de6b752926cf201046562927ec8e7303018f4f45cb376bca13fb7631dc9730"
+      },
+      {
+        "path": "src/brand/assets/mkt-60-delay.webp",
+        "bytes": 64294,
+        "sha256": "f7eccadfda47a59b91939157a7677d5bf036ac8920005e319e25fe14d6726202"
+      },
+      {
+        "path": "src/brand/assets/mkt-60-input.webp",
+        "bytes": 71302,
+        "sha256": "0c1feb1e8f542aac87021789c90352638d4a510e058386e314b7488836285595"
+      },
+      {
+        "path": "src/brand/assets/mkt-aipet.webp",
+        "bytes": 47458,
+        "sha256": "f28790fbfb64ae6d5bd3cc4749664ade1e10b7f674901751adbc530625c97e0c"
+      },
+      {
+        "path": "src/brand/assets/mkt-hour.webp",
+        "bytes": 35882,
+        "sha256": "ea91c48e3ef60eeaa453771e4bdb8085ce676531fa422132d2b7d604ee4eb929"
+      },
+      {
+        "path": "src/brand/assets/mkt-mouse2tiger.webp",
+        "bytes": 101700,
+        "sha256": "a77fc587f871756062599c0eac141d63069731c16a0b63f6c4348181caed2399"
+      },
+      {
+        "path": "src/brand/assets/mkt-permission.webp",
+        "bytes": 59766,
+        "sha256": "d71511ca9f3b7d5900a91935a29dbd6d54e087d242eed65e5cb192555fcd02f0"
+      },
+      {
+        "path": "src/brand/assets/mkt-pillars.webp",
+        "bytes": 51148,
+        "sha256": "ad8dc7a088d6d913f232a099de38c70fbdefdc18ec8afbdf2c42a5f59ff08c05"
+      },
+      {
+        "path": "src/brand/assets/mkt2-adpipeline.webp",
+        "bytes": 140012,
+        "sha256": "2acc9d2d99cc96c10febf1a7b583fd92f29d7f22a3cfb3a3e12226479dbabe6d"
+      },
+      {
+        "path": "src/brand/assets/mkt2-architecture.webp",
+        "bytes": 119746,
+        "sha256": "815a3211231ffbcea2a29ae82acfb59af81b8961c692710075caf22ecadfef96"
+      },
+      {
+        "path": "src/brand/assets/mkt2-biology.webp",
+        "bytes": 92170,
+        "sha256": "f2cd3de71250195848730b4acd39715cc284cde827c35f85e88632dcc436c342"
+      },
+      {
+        "path": "src/brand/assets/mkt2-failure.webp",
+        "bytes": 125100,
+        "sha256": "2858470ece30b474ea07284933be0f658ae99e75a20c38040da9133f1722274f"
+      },
+      {
+        "path": "src/brand/assets/mouse-cage.webp",
+        "bytes": 53690,
+        "sha256": "ccbf89c4b3e43aaac2e7407e3fb1c7413220a324b98d60915b7079b3dca9d249"
+      },
+      {
+        "path": "src/brand/assets/mouse-chained.webp",
+        "bytes": 14518,
+        "sha256": "129f2d796f3abb038da9a58c6f4ebdf29a9072529b6351977b1b671b7a1281c4"
+      },
+      {
+        "path": "src/brand/assets/mouse.webp",
+        "bytes": 91056,
+        "sha256": "d45f32ce100e47908350de9017ad8f5e35e7a748439a1ff1729e28329f0766e8"
+      },
+      {
+        "path": "src/brand/assets/mouse2.webp",
+        "bytes": 28188,
+        "sha256": "45132caf098a02437bc019d79992143510d508bfdb5b608ac3935cce72032e28"
+      },
+      {
+        "path": "src/brand/assets/phoenix.webp",
+        "bytes": 96230,
+        "sha256": "cfdfb1df4332030d3e48152bd6536d58b3df3089a785b997635db232108c4950"
+      },
+      {
+        "path": "src/brand/assets/phone.webp",
+        "bytes": 70460,
+        "sha256": "066b68bbf28df309f73b2c77245da75b38f74da1009ecd5f58958ce9ebde96f6"
+      },
+      {
+        "path": "src/brand/assets/phone2.webp",
+        "bytes": 36878,
+        "sha256": "5dcf571f3ac02cb8ffb8e79fab06ed2bedfb7a98933c6841ed1f57e63b8a2ad6"
+      },
+      {
+        "path": "src/brand/assets/phx-cover.webp",
+        "bytes": 119204,
+        "sha256": "4bde5a4f39cf06f10af4cf968d6453d574070a74a6b2a0e2a4a1d94cf71ae0e1"
+      },
+      {
+        "path": "src/brand/assets/phx-lakeview.webp",
+        "bytes": 159532,
+        "sha256": "9dfa140fd6ffd2ea5c6313efb1f99a20adc0745fb24f9f71777a535c6e185ebf"
+      },
+      {
+        "path": "src/brand/assets/phx-pipeline.webp",
+        "bytes": 115608,
+        "sha256": "e2e0247143bbe898f8910bdc8933ae0a006efe67dd81f69a9ae6d23796823e86"
+      },
+      {
+        "path": "src/brand/assets/phx-stack.webp",
+        "bytes": 154840,
+        "sha256": "76ce4309d5141d5eff9b94e1f31bc3f4379a8a89f4a23547f7560e8b0844c8c6"
+      },
+      {
+        "path": "src/brand/assets/pyramid.webp",
+        "bytes": 44806,
+        "sha256": "e8f0711e04a42eba740738e3b81d0623a9fd4641fcb46f2a35acacdf39ed8e28"
+      },
+      {
+        "path": "src/brand/assets/roar.webp",
+        "bytes": 84490,
+        "sha256": "b06274254840a6cc9dd5fc5bfc80d810572a4b5e13de8a837129e07d89f52ac3"
+      },
+      {
+        "path": "src/brand/assets/run305.webp",
+        "bytes": 93536,
+        "sha256": "83324a912878b8b399d2c0c0e6561e4b720a42d788b0f6fec02de64df2dcf9a5"
+      },
+      {
+        "path": "src/brand/assets/shield.webp",
+        "bytes": 79418,
+        "sha256": "d26fa236f08748652694c8f54f24e4a688e739093f963a81a1634b45ce0417f4"
+      },
+      {
+        "path": "src/brand/assets/soc-60delay.webp",
+        "bytes": 91570,
+        "sha256": "a2f0bf915755341f7ddf31029181f0d03660135d1e382dc2882c586e564832b2"
+      },
+      {
+        "path": "src/brand/assets/soc-60input.webp",
+        "bytes": 99408,
+        "sha256": "2b14acd9aa18622b89aba593bcd4ea94ba502e47305c4d2c4beb2265ba998b3d"
+      },
+      {
+        "path": "src/brand/assets/soc-adpipeline.webp",
+        "bytes": 133828,
+        "sha256": "c76b40227695cd226013bd230ee7948ca18fc083de6764153618701450160718"
+      },
+      {
+        "path": "src/brand/assets/soc-biological.webp",
+        "bytes": 89324,
+        "sha256": "3873b3be24e5a887f09356351c93bd51434c88633b0b41d06a36f27afe4aaf3b"
+      },
+      {
+        "path": "src/brand/assets/soc-blueprint.webp",
+        "bytes": 232128,
+        "sha256": "a2e22ba2ac59bdf1bc392f3d5151183ca8bda82742536035eb7637d2e01780a1"
+      },
+      {
+        "path": "src/brand/assets/soc-chains.webp",
+        "bytes": 223226,
+        "sha256": "0823e9f1cb3e2b3dffa6ac2a35a31744e8e327806ed8208e075fb1eae5dd4505"
+      },
+      {
+        "path": "src/brand/assets/soc-differentiators.webp",
+        "bytes": 95610,
+        "sha256": "181616090d49866a08a716b01070bf4050833c178b6258ae318e5ae258cb986e"
+      },
+      {
+        "path": "src/brand/assets/soc-failure.webp",
+        "bytes": 124024,
+        "sha256": "905caafa86013853b12d837b4edbcdacb376eb037f68c0c2edcc2e1e169001bb"
+      },
+      {
+        "path": "src/brand/assets/soc-fluency.webp",
+        "bytes": 117634,
+        "sha256": "367edcc2d415b9d80cb4616a508c35042ba18d950bd5ff7df260901ba7f47b3c"
+      },
+      {
+        "path": "src/brand/assets/soc-leaks.webp",
+        "bytes": 68800,
+        "sha256": "5bdd24976101863d9a14766da66c92e1b330a30271bc2fa3b0695d73eef7c8a1"
+      },
+      {
+        "path": "src/brand/assets/soc-permission.webp",
+        "bytes": 86856,
+        "sha256": "5a35cb15bfc51b025a16cacb533513dcfe7a99fcf7ca52557459700e4816c145"
+      },
+      {
+        "path": "src/brand/assets/soc-reality.webp",
+        "bytes": 158016,
+        "sha256": "eb58332c7dab920b7eed0688228fad40fd073990b6f62f8974ee1e219fe8720c"
+      },
+      {
+        "path": "src/brand/assets/soc-rising.webp",
+        "bytes": 222554,
+        "sha256": "9d4e9441d1fef772a9af13b0adea36ff4e8e669bf5e4f38a8e73d1818d1880ae"
+      },
+      {
+        "path": "src/brand/assets/soc-summer.webp",
+        "bytes": 179820,
+        "sha256": "3422325f20d113734e40477ec1872bc74dd508f8d8b772d2c08a35782b30244d"
+      },
+      {
+        "path": "src/brand/assets/soc-transform.webp",
+        "bytes": 202868,
+        "sha256": "ad6c4984b7337cf379bb8413990995c735f57d3caa73a5a9d341dc25ce021621"
+      },
+      {
+        "path": "src/brand/assets/soc-trap.webp",
+        "bytes": 190132,
+        "sha256": "8bd0430d36c4230177a1c3e5dbface66c69e3f035584fa3bd1c1fff50444a8fe"
+      },
+      {
+        "path": "src/brand/assets/stp-404.webp",
+        "bytes": 113148,
+        "sha256": "5c3361387a8c284411efef3c933f0885364848eae78274f2ce9b2d70b58dcc10"
+      },
+      {
+        "path": "src/brand/assets/stp-close.webp",
+        "bytes": 131496,
+        "sha256": "fe459d12feae21e7d8fdde8f0fde2a6ed1f6d3c1e6037437bf00c851f57718e2"
+      },
+      {
+        "path": "src/brand/assets/stp-engine.webp",
+        "bytes": 150848,
+        "sha256": "ab34340b2caf2ddb6fd0ff17e5a551a9dcd8874692a1c824173f4991b46cb088"
+      },
+      {
+        "path": "src/brand/assets/stp-override.webp",
+        "bytes": 89802,
+        "sha256": "da69bb83aa1ef86a36aa2ef49bdb51f30c91d0bf4bc064ad75f23320361a0935"
+      },
+      {
+        "path": "src/brand/assets/stp-scale.webp",
+        "bytes": 96294,
+        "sha256": "53c848f67bc83a104f5fca03c4ffcb27e3684ab81e506bf97671b4d48767988b"
+      },
+      {
+        "path": "src/brand/assets/tep-audit.webp",
+        "bytes": 114818,
+        "sha256": "264a0c70dde6706d5926ec82cdedc2970e1abc675b1a9748cb1635d3faf23443"
+      },
+      {
+        "path": "src/brand/assets/tep-lazy.webp",
+        "bytes": 92916,
+        "sha256": "2e8671dec442e4b09a6bb045656aa3b1b559f155f9cd91b3ec11359a5cd4210b"
+      },
+      {
+        "path": "src/brand/assets/tep-math.webp",
+        "bytes": 94280,
+        "sha256": "187851172de14216092c5a6e70d3ec4eaa9879d3a96fe470ce4b037ed5c258fe"
+      },
+      {
+        "path": "src/brand/assets/tge-bucket.webp",
+        "bytes": 104974,
+        "sha256": "54049724fa70d889fae21220701a6fa2f266b9ba662bc1726d0f24e2e7e221f5"
+      },
+      {
+        "path": "src/brand/assets/tge-hud.webp",
+        "bytes": 81612,
+        "sha256": "3aa5d78a4bba6f1acac5a52d9e068e6f6c685fefc88bf7dc8c29e16d526b82f8"
+      },
+      {
+        "path": "src/brand/assets/tge-rule8.webp",
+        "bytes": 130776,
+        "sha256": "7b7f547d10adfc5453fa75dd5ddbf2f6fb2e3316373608d26c6b424535ff621f"
+      },
+      {
+        "path": "src/brand/assets/tiger-energy.webp",
+        "bytes": 45988,
+        "sha256": "a3860be6e8b0f6042c08126af2bc336b03c2fad7cf96e0ebf0e7056093604e87"
+      },
+      {
+        "path": "src/brand/assets/tiger-spectral.webp",
+        "bytes": 42618,
+        "sha256": "9ed0b4bb44ae8d23ae2d1508552c462759376b2bc3e47ee21f6b4f510e73d727"
+      },
+      {
+        "path": "src/brand/assets/tiger.webp",
+        "bytes": 109132,
+        "sha256": "78c076b0c545f8e7a8571da05a04f9399c658e554fb272cf45be3f72eaea7619"
+      },
+      {
+        "path": "src/brand/assets/tiger2.webp",
+        "bytes": 62816,
+        "sha256": "e1e0a3cc1471cc692a2d37fa653752cee768975ba8ee64f45a1e223d4c2fec64"
+      },
+      {
+        "path": "src/brand/assets/tigerbg.webp",
+        "bytes": 226556,
+        "sha256": "0761d86e7621bbd4ae30c2d3348ecc3bc46ccf8b4121df0292c6b7bc9f1047f7"
+      },
+      {
+        "path": "src/brand/assets/venn.webp",
+        "bytes": 74604,
+        "sha256": "b71120a13ff66fd0a797b68b545d6998266f1586ed3fc3e61c1cc36e0bbcbb95"
+      },
+      {
+        "path": "src/brand/assets/wave-loud.webp",
+        "bytes": 17500,
+        "sha256": "16b75b4d05b80596eaba4a6f279fe03576a923e4bf517975b1f519eeed7bf712"
+      },
+      {
+        "path": "src/canon/GOSPEL-999.md",
+        "bytes": 97379,
+        "sha256": "1ab2b8a6146429ae6aa0c7a11b59c714a57803901713c8edc369695375ec43b3"
+      },
+      {
+        "path": "src/canon/LEGIONNAIRE-FIELD-GUIDE.md",
+        "bytes": 76255,
+        "sha256": "50592248d517a59d960c228f6f9d16af048361b29333b9896a076fce5b802596"
+      },
+      {
+        "path": "src/canon/NET-PET-AI-SECRETS-MANIFEST.md",
+        "bytes": 3645,
+        "sha256": "778e8c283d36c553894a89df12498802f052cb22677318a52316ff5d42b75c72"
+      },
+      {
+        "path": "src/canon/SECRET-SAUCE.md",
+        "bytes": 10855,
+        "sha256": "0336d74912567c89c31705d1e346e312c8bfdc0db4eb544396e532a572b58245"
+      },
+      {
+        "path": "src/cgn-node.js",
+        "bytes": 7115,
+        "sha256": "b3acb90f71c1aac5cac2bad205c967298746520919de7645185d69bd382b16c0"
+      },
+      {
+        "path": "src/cgn.js",
+        "bytes": 14879,
+        "sha256": "3b4eee57c20e3176e1d64f91e4ea843c3318870374a86df31d8076e1678ba1f4"
+      },
+      {
+        "path": "src/clients.js",
+        "bytes": 15979,
+        "sha256": "5ed86a8f77ba3aa535bf913debc19c3c3076adb82656e69e407e4b0ea7c68c19"
+      },
+      {
+        "path": "src/cloudflare/README.md",
+        "bytes": 10954,
+        "sha256": "b4083b66ddd9cfe2e3fcc9686b60942e578b5b77b3e8deaee4837e7c35c13abc"
+      },
+      {
+        "path": "src/cloudflare/build.mjs",
+        "bytes": 4661,
+        "sha256": "99afb02ec31f526506b56acf3e793a53398355f46c210137dd6c938df837286d"
+      },
+      {
+        "path": "src/cloudflare/dev.vars.example",
+        "bytes": 1254,
+        "sha256": "069837bbfb7043519065b2eaaf80a688e710d2633e3ed32f993b0c5dba65bb67"
+      },
+      {
+        "path": "src/cloudflare/package.json",
+        "bytes": 484,
+        "sha256": "cfa5a5b1ac0db264cd73ad0e13b11b8676047cebc4487c810c474a2fb31978b2"
+      },
+      {
+        "path": "src/cloudflare/public/ob1-patch.js",
+        "bytes": 1482,
+        "sha256": "4881a9c0a244defe10817e85161e71e02c17dc66a36e294e9dc839cb5c7528c5"
+      },
+      {
+        "path": "src/cloudflare/public/ob1-shim.js",
+        "bytes": 13901,
+        "sha256": "03b890ce60064e2d2824dbccddfcb8c524b6446618cf2c1c3a7d6017788656b5"
+      },
+      {
+        "path": "src/cloudflare/store-do.js",
+        "bytes": 6851,
+        "sha256": "81c0dfa6c545ecb62a7c28f7f2052c0b2695e052d3f47dc854b416b7a2b1fb99"
+      },
+      {
+        "path": "src/cloudflare/tunnel-do.js",
+        "bytes": 17542,
+        "sha256": "f3afb2808ed4adaeec09183f037447042fba21fdde65246b5713ea91629e7b9f"
+      },
+      {
+        "path": "src/cloudflare/worker.js",
+        "bytes": 13864,
+        "sha256": "490cfb34d8168510d488e31f9db9cbc9a07dca5a6da1399ccb863c375174c884"
+      },
+      {
+        "path": "src/cloudflare/wrangler.toml",
+        "bytes": 2054,
+        "sha256": "3007a5a616fff3158c438e213dbdc2c194fe99179716409393f967133668dc0d"
+      },
+      {
+        "path": "src/constellation.js",
+        "bytes": 33257,
+        "sha256": "1c4c247db2175719b5bcd25096ece2ebfecaa0d3ddb18c539dec2c850518cd29"
+      },
+      {
+        "path": "src/curriculum.js",
+        "bytes": 77098,
+        "sha256": "e5e07c4d9946ab644000d0a094a3f94400806aff08cf044b03c0a8639f685913"
+      },
+      {
+        "path": "src/curriculum/README.md",
+        "bytes": 6399,
+        "sha256": "669979f84d9249feaa332242c16cc1a00cbfc8a4f5f4e0575f2ef7fca085596a"
+      },
+      {
+        "path": "src/curriculum/index.json",
+        "bytes": 4427,
+        "sha256": "ec761ee58e4b0d29eccce199bb44625be0cdd8f58b2a0c05d3818edb1f2a6f7f"
+      },
+      {
+        "path": "src/curriculum/materials.json",
+        "bytes": 3844,
+        "sha256": "539dfcaa8672527ea1e261d7673ddd02a83e14a287e79f8235ffa5693eb7bdeb"
+      },
+      {
+        "path": "src/curriculum/pa.g1.json",
+        "bytes": 30607,
+        "sha256": "25b474b3ebb575f1166978f835f6104cf4869239b0c5730b45c15f919f92dd1f"
+      },
+      {
+        "path": "src/curriculum/pa.g2.json",
+        "bytes": 38239,
+        "sha256": "ce575c6847b4c450e9fc8277c02f687c7fe50e29799c23771add216ab8800475"
+      },
+      {
+        "path": "src/curriculum/pa.g3.json",
+        "bytes": 36046,
+        "sha256": "bfed56313fcd937582c2df5f2d0cad746a44e28d6314565f297a6aa1f8053a90"
+      },
+      {
+        "path": "src/curriculum/pa.g4.json",
+        "bytes": 34316,
+        "sha256": "8ac085b536b30e58fb8113d7ec53745b619d8a12d322d9d3e442c81814ef77a0"
+      },
+      {
+        "path": "src/curriculum/pa.g5.json",
+        "bytes": 37067,
+        "sha256": "55ac7e3f951519828022d6c53da8672b3fecc3f6321183a407f4e8ba2925d1c3"
+      },
+      {
+        "path": "src/curriculum/pa.g6.json",
+        "bytes": 308508,
+        "sha256": "71ce89e7a3d6e1bf83cf41e67d95d395733b530e21aacd983808f94550f65997"
+      },
+      {
+        "path": "src/curriculum/pa.g7.json",
+        "bytes": 323550,
+        "sha256": "5200725db9e06fd1d750b8a2aed9c4151e736e165f2e527a462ede821ab1dbab"
+      },
+      {
+        "path": "src/curriculum/pa.g8.json",
+        "bytes": 321723,
+        "sha256": "f4d1512f62a89e993cc62884fa8f2f6ebcdece037898d647cc7017c87a52a876"
+      },
+      {
+        "path": "src/curriculum/pa.g9.json",
+        "bytes": 371263,
+        "sha256": "9eea11356c557524646826d846011a3d8a1693fd73dfc60f51ecd65af21a5078"
+      },
+      {
+        "path": "src/divisions.js",
+        "bytes": 49517,
+        "sha256": "60b30151f5be1c89e5ae9e63f73e58e1e71fc195e2b045a87ce031dfe3239c24"
+      },
+      {
+        "path": "src/ecosystem.js",
+        "bytes": 22898,
+        "sha256": "dde2f4bb6d02aac59b4ba058302c5aabe93ffd200a009c2107e6cc3cca5f6d94"
+      },
+      {
+        "path": "src/family.js",
+        "bytes": 12294,
+        "sha256": "f6e2395a5c8520b728f97329c0e303ee93e80dcb538f27b31a7d0c034f487a5c"
+      },
+      {
+        "path": "src/forge.js",
+        "bytes": 55316,
+        "sha256": "ab160e3961d69624dd8f69469efda185ec16abb4afa123621f4c6fcf5f871fcd"
+      },
+      {
+        "path": "src/freephoenix.js",
+        "bytes": 50928,
+        "sha256": "f5d8170b4d571013cdc5b8404338b62951b936a980ce0793cebca1b829bdfc00"
+      },
+      {
+        "path": "src/freewire.js",
+        "bytes": 31205,
+        "sha256": "dfb645a6e967902deb604468155cfdf0fa621204afe30cc6058bf8ec1aa6ab3a"
+      },
+      {
+        "path": "src/generators/README.md",
+        "bytes": 13674,
+        "sha256": "c1c68208a83bef2f3a147b0b8865ce9d6c9abf1c728287605b8143b2fdf37630"
+      },
+      {
+        "path": "src/generators/application-board/README.md",
+        "bytes": 2313,
+        "sha256": "0a550e757c223d784887322040fb955cc6936b043c94c364c901884d4a792f4d"
+      },
+      {
+        "path": "src/generators/application-board/index.html",
+        "bytes": 63164,
+        "sha256": "c9fd96ae430fedf1dfb6c8f0fe481c9d14d583379a9ff686ffbf41ca97d44e3a"
+      },
+      {
+        "path": "src/generators/application-board/main.pjs",
+        "bytes": 481,
+        "sha256": "e058e8cf75bcbbbab4b634a7eaabe9f27ff380cca308e3de844a9e0cd5c3b007"
+      },
+      {
+        "path": "src/generators/application-board/src/panel.js",
+        "bytes": 8088,
+        "sha256": "90b1f0522abf481d04c2108adf42d46448ad187bdc9d1bca4ea24a5fe125a6ce"
+      },
+      {
+        "path": "src/generators/cv-forge/README.md",
+        "bytes": 2432,
+        "sha256": "f9b3cba04e0ffe57c77927fb69d61933da4b8fec58e90401fbdb9e0ae0c6fba8"
+      },
+      {
+        "path": "src/generators/cv-forge/index.html",
+        "bytes": 65977,
+        "sha256": "ecae19a106dcd68b2c9d04978c0e53e6f7e8e554e4ee69218ee20da4eab444c0"
+      },
+      {
+        "path": "src/generators/cv-forge/main.pjs",
+        "bytes": 502,
+        "sha256": "4c766fbbaa67a6cbe80c40157a3d7160d9f520f5d2bacdfb31169286a4ae9caa"
+      },
+      {
+        "path": "src/generators/cv-forge/src/panel.js",
+        "bytes": 10939,
+        "sha256": "5ec1bd0474b8d6e67c8977ca1470ed5a8f591db180e9cb3df9673c4e6122b3b1"
+      },
+      {
+        "path": "src/generators/ear/README.md",
+        "bytes": 2586,
+        "sha256": "b2d2ae73a7f4c725fd891af612ea5157f4c7f9d3b0c884f5182796ffffab0c0f"
+      },
+      {
+        "path": "src/generators/ear/main.pjs",
+        "bytes": 650,
+        "sha256": "7b8809f0abaa82c52b82e301c36bba41c0555f3c95166f4f5eb4650dbebc6292"
+      },
+      {
+        "path": "src/generators/headshot-brief/README.md",
+        "bytes": 2247,
+        "sha256": "8d2c81db70139ec4d918dcdde26ca7f3b517a98b172ccea9ba85478188757160"
+      },
+      {
+        "path": "src/generators/headshot-brief/index.html",
+        "bytes": 63046,
+        "sha256": "e77ca9dd162238adcced6a59e4b542009e098278e076aa03864ce27e0931c7ee"
+      },
+      {
+        "path": "src/generators/headshot-brief/main.pjs",
+        "bytes": 485,
+        "sha256": "be6717997e6072fa8e2c35659f116fda77159028abffd2577e3f4d2a4ff752f2"
+      },
+      {
+        "path": "src/generators/headshot-brief/src/panel.js",
+        "bytes": 7984,
+        "sha256": "abbffd2a5573faac34f4caa9ed1a92b37e1c30b36f2b0de56e00851916e4f34d"
+      },
+      {
+        "path": "src/generators/idea-lists/README.md",
+        "bytes": 2460,
+        "sha256": "5870f3f439185f0f0b03d5258dcce5ba60bb4101be3ed9ccd1cf47617761f9df"
+      },
+      {
+        "path": "src/generators/idea-lists/index.html",
+        "bytes": 66746,
+        "sha256": "11467192704d518a7f7b836fcdfd1fb9e21da8fe2d6f95ab3c33079afafc5c24"
+      },
+      {
+        "path": "src/generators/idea-lists/main.pjs",
+        "bytes": 620,
+        "sha256": "04eb6f77a23470be350615ccb472c41a39fae053fcd8cf8a303be27c2ce23720"
+      },
+      {
+        "path": "src/generators/idea-lists/src/panel.js",
+        "bytes": 11698,
+        "sha256": "1c9600d9db91faaba9c58a4e4a43da2982d0e3062734ae4e25e629d1856ff824"
+      },
+      {
+        "path": "src/generators/interview-drill/README.md",
+        "bytes": 2333,
+        "sha256": "879ed50ca87a7a971ae3a2180501fdaabab885de03cadd0196cef1000000baf9"
+      },
+      {
+        "path": "src/generators/interview-drill/index.html",
+        "bytes": 63660,
+        "sha256": "70de5dbb122b7cc6332b193711434ab101488bdc5983f68b9f9637fef1000e8f"
+      },
+      {
+        "path": "src/generators/interview-drill/main.pjs",
+        "bytes": 487,
+        "sha256": "b512d3bd5931ce80a48b78d8169c401bd7912854765a12d8c61b7c0f86a2b436"
+      },
+      {
+        "path": "src/generators/interview-drill/src/panel.js",
+        "bytes": 8594,
+        "sha256": "12ca075d72e178e3ad1a9ceb87751c8b71a7d341cccfd4660d3798fd60a5fed6"
+      },
+      {
+        "path": "src/generators/linkedin-forge/README.md",
+        "bytes": 2343,
+        "sha256": "303d0c353742f12a56d0484c546a09d27419fc660d833cf4f5cb65393080bf85"
+      },
+      {
+        "path": "src/generators/linkedin-forge/index.html",
+        "bytes": 69304,
+        "sha256": "282bd42b1e4494a5e4f64c300456091e83ab9bffab6647adbeb1e952e64f3b01"
+      },
+      {
+        "path": "src/generators/linkedin-forge/main.pjs",
+        "bytes": 476,
+        "sha256": "c80ae9a187ec9b7de1516c09734138ccc747c47f22a83b4f17296bfc5246dc94"
+      },
+      {
+        "path": "src/generators/linkedin-forge/src/panel.js",
+        "bytes": 14242,
+        "sha256": "77aaaaf28187eef81a00c239cd063c4e06367d73ba6f0f4bb4a7eb4713db5b84"
+      },
+      {
+        "path": "src/generators/phonics-44/README.md",
+        "bytes": 2276,
+        "sha256": "b9728b0fa6c9d63f27bc2a119951023ce71cfb3c0f185a0f19fd9c1111c5c629"
+      },
+      {
+        "path": "src/generators/phonics-44/index.html",
+        "bytes": 66806,
+        "sha256": "2182efa6eb3c145ba135f3f7feb9739e2d80b89291a76f3dc9130ed8f45af0cd"
+      },
+      {
+        "path": "src/generators/phonics-44/main.pjs",
+        "bytes": 443,
+        "sha256": "4871265c745e1b2c34b1ef3a075718e88b7523ca6a6c25c77096fa73e7b9234e"
+      },
+      {
+        "path": "src/generators/phonics-44/src/panel.js",
+        "bytes": 11764,
+        "sha256": "cdd064c88fd399d929e695c098266d7a8eb7e930a599f5e364da48294e3b80cc"
+      },
+      {
+        "path": "src/generators/portfolio-intake/README.md",
+        "bytes": 2384,
+        "sha256": "0bd8a400ee9d4f0199e773defaa2bc471ca62269e41ee9a83411791a3c83874e"
+      },
+      {
+        "path": "src/generators/portfolio-intake/index.html",
+        "bytes": 65192,
+        "sha256": "04f9a2832fbe7bc0979065e9b20be43ce79fd0a4ac07ca6cfa6693796ca4cba8"
+      },
+      {
+        "path": "src/generators/portfolio-intake/main.pjs",
+        "bytes": 477,
+        "sha256": "841cb0b42a4b936a8494cf2411b1161f304b5f9f284e497d6faaf84991df4a36"
+      },
+      {
+        "path": "src/generators/portfolio-intake/src/panel.js",
+        "bytes": 10124,
+        "sha256": "2f838daf2e7b5ca94e08e2d2ae2008dd49406320cae486a98c7c812778799b57"
+      },
+      {
+        "path": "src/generators/practice/README.md",
+        "bytes": 2274,
+        "sha256": "6c3ce51d6e1629bdf2a6fda3f0978dd9d0b87830e0eeed32763d37425167d544"
+      },
+      {
+        "path": "src/generators/practice/main.pjs",
+        "bytes": 684,
+        "sha256": "b05b1e2f2b1aeebf00fe8830a1b6e6703484096bb18c02b0e598327dfa3a7310"
+      },
+      {
+        "path": "src/generators/presence-plan/README.md",
+        "bytes": 2372,
+        "sha256": "72155b940e844960c89158de17850cec2767d4e4117c51b17726f598010d3298"
+      },
+      {
+        "path": "src/generators/presence-plan/index.html",
+        "bytes": 62372,
+        "sha256": "39738bf4b8ebbfd9bd653f8bf3ca50aeb8997dd3f6dd2d6d9c3741ae4f491723"
+      },
+      {
+        "path": "src/generators/presence-plan/main.pjs",
+        "bytes": 484,
+        "sha256": "6be62e766855faf4ddee9aeba5edf26caa611138fe4d81948cab65dc30e50240"
+      },
+      {
+        "path": "src/generators/presence-plan/src/panel.js",
+        "bytes": 7312,
+        "sha256": "0b07a3f667cef4c94a43969e5ff8665f8f3d4775a4b4472c2a83aed0cd71a7d3"
+      },
+      {
+        "path": "src/generators/presentation-coach/README.md",
+        "bytes": 2322,
+        "sha256": "8948b006adcb113f9c27da5f2028530a217a65efaa4395c0f2ddd9a72c9f84c0"
+      },
+      {
+        "path": "src/generators/presentation-coach/index.html",
+        "bytes": 69100,
+        "sha256": "bdf5b1d5710681bd7ed381244b272ddcd4ce7566284bb540911ad7698ae29e78"
+      },
+      {
+        "path": "src/generators/presentation-coach/main.pjs",
+        "bytes": 504,
+        "sha256": "1bd3512d7416a692870b3a9e577fcd0d95d27e0cee2f6e699f3d6b29bd9ece41"
+      },
+      {
+        "path": "src/generators/presentation-coach/src/panel.js",
+        "bytes": 14008,
+        "sha256": "41a5d73be4ae91d8c67becfe335ab2e9c631e9c16e73167f774d38e0fe2fb2f1"
+      },
+      {
+        "path": "src/generators/role-kit/build.js",
+        "bytes": 4682,
+        "sha256": "30c13a3b646d91e3ef3ce36c9c728e62c890029e035587bcce44bb9d11a07b5b"
+      },
+      {
+        "path": "src/generators/role-kit/kit.js",
+        "bytes": 36535,
+        "sha256": "dc65cce55f6dcb36e637e9c793330696e4ff14082ac5053b50502a5bcc18aea4"
+      },
+      {
+        "path": "src/generators/role-kit/method.js",
+        "bytes": 17160,
+        "sha256": "1ecce81f6c47653b0e8c6661c163cce61cc22996586bb9100e0e729dcfb674f2"
+      },
+      {
+        "path": "src/generators/role-kit/test-actions.js",
+        "bytes": 16114,
+        "sha256": "f2e8101ed8f44db4befa64962a57768e2ce8385be21b766ad398ba4b2403e38b"
+      },
+      {
+        "path": "src/generators/role-kit/test-roles.html",
+        "bytes": 264,
+        "sha256": "254a2fcf00638fc4ca4f478626e1e5f7e8335c16bc9c4b93aa2816e58102cbea"
+      },
+      {
+        "path": "src/generators/role-kit/test-roles.js",
+        "bytes": 10451,
+        "sha256": "53385788c423dd4459e50b20808714b7fbabebefac7db31b206cab040b19b746"
+      },
+      {
+        "path": "src/generators/role-kit/test.html",
+        "bytes": 6392,
+        "sha256": "f0806e69b472d97de42b29614bae5e96cede1fceed9692e8d81afa23753bd9c4"
+      },
+      {
+        "path": "src/generators/site-builder/README.md",
+        "bytes": 9964,
+        "sha256": "31b57b6bd5e9e4362a3cc8c3b9d5188a471cec1bae81421198bfca2000d9120e"
+      },
+      {
+        "path": "src/generators/site-builder/RESEARCH-LANDING-PAGES.md",
+        "bytes": 7838,
+        "sha256": "534a54916dffe302e49280f01bac299f923a046f9961e77b2305e6aed58c6f04"
+      },
+      {
+        "path": "src/generators/site-builder/examples/README.md",
+        "bytes": 6174,
+        "sha256": "1a2b1660c4bbac40e7385b7f5ccd71ba67468da0145e2953a5bce4e28caf88b9"
+      },
+      {
+        "path": "src/generators/site-builder/examples/michael-hobbs-cv/index.html",
+        "bytes": 9065,
+        "sha256": "de5adbfa50828b6945c1d89cc6b481d38653af3371b605aa7784a651553cb294"
+      },
+      {
+        "path": "src/generators/site-builder/examples/michael-hobbs-cv/linkedin-blueprint.md",
+        "bytes": 6099,
+        "sha256": "f8567f67b8d5b11520c6a54070de029a0de984c0da3a3e5a5b1ac99c6aa16923"
+      },
+      {
+        "path": "src/generators/site-builder/examples/michael-hobbs-cv/style.css",
+        "bytes": 16542,
+        "sha256": "cabd09998fd720e82ba712a714928ec94801a5fcf2abf548d71fba87c84b55ee"
+      },
+      {
+        "path": "src/generators/site-builder/examples/portfolio-template-green/index.html",
+        "bytes": 14472,
+        "sha256": "438b5ffbeb8f2de05735dd86e2116e8ed288aaf574d68ee050b228404b363cba"
+      },
+      {
+        "path": "src/generators/site-builder/examples/portfolio-template-violet/index.html",
+        "bytes": 13154,
+        "sha256": "114df4a222409de72dc8690927bd94120f1b578b29a8237c932a586a7648001d"
+      },
+      {
+        "path": "src/generators/site-builder/index.html",
+        "bytes": 7837,
+        "sha256": "9a39203c503186f8f0c85fbaee6a5450d6826c8db53fac1df80035db647901f8"
+      },
+      {
+        "path": "src/generators/site-builder/main.pjs",
+        "bytes": 1158,
+        "sha256": "22afc415b96add536bdce657f0aeb39450528926e2b07ea7a6f4956a2882e0cb"
+      },
+      {
+        "path": "src/generators/site-builder/src/app.js",
+        "bytes": 52894,
+        "sha256": "8c3cb47d9ae8c42e4de0eaba259290fbbdc67b491966d8917b3bb1d56430c5b8"
+      },
+      {
+        "path": "src/generators/site-builder/src/cgn-node.js",
+        "bytes": 7171,
+        "sha256": "4dab27364cd01acfc0fa04a7259aad31b22b88b794b466c8a665ea9aab740ce8"
+      },
+      {
+        "path": "src/generators/site-builder/src/styles.css",
+        "bytes": 11181,
+        "sha256": "169dbd6352523b3d3af129607ec7ee708f0351d74b66936e526f340077e32332"
+      },
+      {
+        "path": "src/generators/student-portal/README.md",
+        "bytes": 3854,
+        "sha256": "a0f86dbb367a779c22d3cd18bce1071a82eaa3c9b36829af2e111cb4a43c76ff"
+      },
+      {
+        "path": "src/generators/student-portal/index.html",
+        "bytes": 2968,
+        "sha256": "685f9ac8c69d267eadd74cab23c37094d3f4da64e325e469b5a3783b62a05490"
+      },
+      {
+        "path": "src/generators/student-portal/main.pjs",
+        "bytes": 603,
+        "sha256": "16b7374ff32dcbdd2d0a60bdb040bd8d9ad850ea38f3be5638b56d8d3638f993"
+      },
+      {
+        "path": "src/generators/umbrella-brand/README.md",
+        "bytes": 2337,
+        "sha256": "5cd89c52cb640e1c02644e1f13a2797681482ad69e4806b1ae8465e31999b1c5"
+      },
+      {
+        "path": "src/generators/umbrella-brand/index.html",
+        "bytes": 66131,
+        "sha256": "35d5713389c6651bcfb3be32aeb9c55de5598a1bebf4ce899aba12fd9f6efbca"
+      },
+      {
+        "path": "src/generators/umbrella-brand/main.pjs",
+        "bytes": 518,
+        "sha256": "832539b55bb55d9183628e46806eba25dbc8e0805674ffea16c18a7bbb9885ce"
+      },
+      {
+        "path": "src/generators/umbrella-brand/src/panel.js",
+        "bytes": 11069,
+        "sha256": "b60aa8e9444f704a5848898c5ac31625aa87b3c4de4af50077d64bee67cdaa48"
+      },
+      {
+        "path": "src/generators/video-node/README.md",
+        "bytes": 21206,
+        "sha256": "2c991237b141aedbdfffd04a745a8a37c77e5db3adcc3b32e439aba869195f57"
+      },
+      {
+        "path": "src/generators/video-node/index.html",
+        "bytes": 26350,
+        "sha256": "3091934421fad9ac96b453c681ea8a3b1e1f65b5be5d23ff8fb8c76d1b917d5d"
+      },
+      {
+        "path": "src/generators/video-node/main.pjs",
+        "bytes": 2616,
+        "sha256": "c14cfbc029aa8c5877fece68a929f7c62c484df7f00ceddc5ff2ae2500154673"
+      },
+      {
+        "path": "src/generators/video-node/src/app.js",
+        "bytes": 199877,
+        "sha256": "7a701ea980d86adb1cb4e893b9da750814280cd03e6ec26d3ee0184e20c20007"
+      },
+      {
+        "path": "src/generators/video-node/src/cgn-node.js",
+        "bytes": 7171,
+        "sha256": "257af4e930bd8223ad92f51471ecf71395dc98b9fbc10188f0914f91b2a2d538"
+      },
+      {
+        "path": "src/generators/video-node/src/drop.js",
+        "bytes": 55402,
+        "sha256": "dbbf5ceb8af85d593fddfc88aa2e9600666653d2a5ba86f541109ded2fddd905"
+      },
+      {
+        "path": "src/generators/video-node/src/pulse.js",
+        "bytes": 18499,
+        "sha256": "1c12af3b39a91a14a84649388e1048e582c257a3329e83f32f76744657ee77f3"
+      },
+      {
+        "path": "src/generators/video-node/src/reel.js",
+        "bytes": 34441,
+        "sha256": "6f9f401867bdba737bba97cdaae79f803920b0a45e532eec4319453fa9b5bae1"
+      },
+      {
+        "path": "src/generators/video-node/src/story.js",
+        "bytes": 27089,
+        "sha256": "d029104079d98bc4c2c40b98d5df95d12a7b250916aa64febb7da769a9107876"
+      },
+      {
+        "path": "src/generators/video-node/src/styles.css",
+        "bytes": 27670,
+        "sha256": "2e4aa85a62455c7f4b95350bbd5246de1a75afa3c96640d6e30863189838f5fe"
+      },
+      {
+        "path": "src/generators/watchtower/README.md",
+        "bytes": 2398,
+        "sha256": "29bbe0b8aa4cc0bb976cdceae1161ffbf6ab30168855ff8013df4283de3184e5"
+      },
+      {
+        "path": "src/generators/watchtower/main.pjs",
+        "bytes": 630,
+        "sha256": "1cc2377142ea28bac2885a1cf52f2e5b04e030d813cbd9075a911b1d244adf0f"
+      },
+      {
+        "path": "src/generators/work-credit/README.md",
+        "bytes": 2472,
+        "sha256": "b9c421bc9b51abf9d80f5d53ee4b643e3dd14239c080e33959fbbddccfe5f167"
+      },
+      {
+        "path": "src/generators/work-credit/index.html",
+        "bytes": 63838,
+        "sha256": "799d33f5799ae7070f6dc7b1b772a320ed31d150e94a07f02db6d065132272f6"
+      },
+      {
+        "path": "src/generators/work-credit/main.pjs",
+        "bytes": 511,
+        "sha256": "cb6a87c4377414f4bfec72cdd8f24e8eae2ac3201d99a544af8534e1089da8cd"
+      },
+      {
+        "path": "src/generators/work-credit/src/panel.js",
+        "bytes": 8786,
+        "sha256": "a584988bca394b1fde6524b74577963cb6e19458d05e304eb9c843ecd4577a01"
+      },
+      {
+        "path": "src/gitcanon.js",
+        "bytes": 33223,
+        "sha256": "0c8aa3f895a52a7d0ab3d00d285d1494ed48bfcfd7f33f2126a07c62f4b1efb2"
+      },
+      {
+        "path": "src/ilog.js",
+        "bytes": 50748,
+        "sha256": "1eec9d2d2b1dd13d81b5faaafaa396b7b56ea34ce78c135eb0df832568a630c4"
+      },
+      {
+        "path": "src/image-node/README.md",
+        "bytes": 2520,
+        "sha256": "998182ff00e3ca399118220b3a7333dc36e1ab20abf185ced556101715d900fd"
+      },
+      {
+        "path": "src/image-node/index.html",
+        "bytes": 1561,
+        "sha256": "4b6c5b4f126d42ac6b908bc8d532f9fb7f0020cf1c958e14a70749a6819c6b8a"
+      },
+      {
+        "path": "src/image-node/main.pjs",
+        "bytes": 603,
+        "sha256": "ad2cb0e2770d8d0307ab69151c953bde8882c00da22f452aa89082df671b9dd7"
+      },
+      {
+        "path": "src/image-node/src/app.js",
+        "bytes": 8916,
+        "sha256": "12bfc26b644a5021ccf9792101f767b943538b576e4bed5256bf8d88f0eb0cf1"
+      },
+      {
+        "path": "src/image-node/src/cgn-node.js",
+        "bytes": 7114,
+        "sha256": "70451178afeedc6f61caf783faa61e78d2fbe7dbc68aae4fda340cbef8cc6237"
+      },
+      {
+        "path": "src/image-node/src/styles.css",
+        "bytes": 4078,
+        "sha256": "952c075206f925b617274c50a42f3248709f2eb3e813a3f547a18f7eb0e80bd9"
+      },
+      {
+        "path": "src/intake.js",
+        "bytes": 88869,
+        "sha256": "d0c2adb35731a60a072c4d374370ac2fdbb61ebb2fb08e819c5f019f2a0de473"
+      },
+      {
+        "path": "src/lesson-forge.js",
+        "bytes": 26686,
+        "sha256": "a153ee5b403e52b6af7abbb6d227886bda926d89055fdc4713bfa2d7febcac59"
+      },
+      {
+        "path": "src/lessons.js",
+        "bytes": 114314,
+        "sha256": "afbfb2ba3a85b8ef50f8e0288be8e990bdd02c197e87fefdc20c307bcdc745d8"
+      },
+      {
+        "path": "src/lessons/reference/NET-CLASSROOM-MANAGER.html",
+        "bytes": 79588,
+        "sha256": "823b326f378e9bbe34a0f9e9713c3e853e63e8f0f2834923143920f8674674bd"
+      },
+      {
+        "path": "src/lessons/reference/NET-Highschool-Careers.html",
+        "bytes": 14825,
+        "sha256": "9e0f424c03c7189e9ea3c926473c554f7a959edfda152dfb98e54123b34b9d19"
+      },
+      {
+        "path": "src/lessons/reference/NET-Sarcasm-Academy.html",
+        "bytes": 23693,
+        "sha256": "e1ed37b1c901298a0fec234328e878ab03c6b7eb71c9f910e64cd350a8ef3464"
+      },
+      {
+        "path": "src/lessons/specs/after-school-club-academy.spec.json",
+        "bytes": 19257,
+        "sha256": "fb3ca5061175dd22bf75b92a6d1b5bd345f6b74b69bc1bc17983598aa2ca9868"
+      },
+      {
+        "path": "src/lessons/specs/closeup-a1-u2-vocabulary.spec.json",
+        "bytes": 18291,
+        "sha256": "367ee594e974b7ae4d35a7e45d1413fa0c69cf19eaaebe89b266a24e1923946b"
+      },
+      {
+        "path": "src/lessons/specs/flower-power-academy.spec.json",
+        "bytes": 14297,
+        "sha256": "893ce6eb1e9cb0e8ead8f65ac560a2b1c8b5e6ec8feda404f46f489684b6e443"
+      },
+      {
+        "path": "src/lessons/specs/look4-function1-directions.spec.json",
+        "bytes": 17112,
+        "sha256": "c3f043969922e12714e7dfdb94c1ddc8e43fde7543a4b49005399cbadd0cdd44"
+      },
+      {
+        "path": "src/lessons/specs/materials-lab-academy.spec.json",
+        "bytes": 14483,
+        "sha256": "639932e2265e554a662c7ea3ee235c16e87f8d0644b7c05b860497fdb588f5c0"
+      },
+      {
+        "path": "src/lessons/specs/world-music-academy.spec.json",
+        "bytes": 19132,
+        "sha256": "7a788ed7f6ca8edaf4193bc04714136a077034bad9a692bf1b5ec2050eb5710d"
+      },
+      {
+        "path": "src/market.js",
+        "bytes": 27493,
+        "sha256": "f8469042fcba88b8d086e1b65d5777fc47d3a816a2f4446adebfd0e52dd30608"
+      },
+      {
+        "path": "src/marketing/INGEST-LOG.md",
+        "bytes": 18579,
+        "sha256": "9d25d9c6c214555dbf01ce7b9f13cca0cec066cf7a561aa28a3a78d037b2e491"
+      },
+      {
+        "path": "src/marketing/MANIFEST.json",
+        "bytes": 55286,
+        "sha256": "5d1ed394d2315a9ed5e075946b7d8451dbaea868c29c35ea280cb7bb6a0cddef"
+      },
+      {
+        "path": "src/marketing/OPEN-SOURCE-PLAY.md",
+        "bytes": 9843,
+        "sha256": "d2077443212687380f96e85be9c1e8048adaf2ba21b8cd992a249110d8ce0edc"
+      },
+      {
+        "path": "src/marketing/README.md",
+        "bytes": 8238,
+        "sha256": "6d5c54a25a0e51d74ed1d911d8e23fa4c066cb7b4d3d7bbd58af816bbfa60aa0"
+      },
+      {
+        "path": "src/marketing/awesome-perchance.md",
+        "bytes": 8422,
+        "sha256": "c73edb568653193dbcc671bb379ce81f9ef50eae98041ed21a3fd14c62ddae9f"
+      },
+      {
+        "path": "src/master-link.json",
+        "bytes": 3323,
+        "sha256": "1edc6f8ec337e9ea9f38cdce6b38a32f11baeb4c605102e16d0c769a699217db"
+      },
+      {
+        "path": "src/masterlink.js",
+        "bytes": 27460,
+        "sha256": "e39bed8cf35013c23008b77c957da75149212607f806c7b4f7774ecd57e8336c"
+      },
+      {
+        "path": "src/offer-desk/README.md",
+        "bytes": 23755,
+        "sha256": "102b717994f72fcda8de57b292a7cf112082c794359d7d3b3273f0c7898e3113"
+      },
+      {
+        "path": "src/offer-desk/index.html",
+        "bytes": 10020,
+        "sha256": "885211c5e070cb0d9f9f8f0f3022e68f35282719266b71cd33a85d403f84fc14"
+      },
+      {
+        "path": "src/offer-desk/src/bundle.js",
+        "bytes": 9252,
+        "sha256": "d98fc3658a01f6229c1581465f1cb8faf5445dba36c31d5a23d0c86f4e94e675"
+      },
+      {
+        "path": "src/offer-desk/src/desk.js",
+        "bytes": 57463,
+        "sha256": "a877500f495ebd88bf474ac20bcd798965508e0c08ee5643289616b9d01a02d9"
+      },
+      {
+        "path": "src/offer-desk/src/pulse.js",
+        "bytes": 19789,
+        "sha256": "0a2b03dd2d48ef4fd92b598499fef43b26e0f3f01fa303c2ba91f4354fbbfe58"
+      },
+      {
+        "path": "src/offer-desk/src/reel.js",
+        "bytes": 35474,
+        "sha256": "7b8e9991f20c60a458c3caa79d34218a0c04c7a7be6b42c20ac4716f95547f8a"
+      },
+      {
+        "path": "src/offer-desk/src/styles.css",
+        "bytes": 12193,
+        "sha256": "8fabeff5581827745c5909b5f69a880a671ed0f0267e241c1a0ea7a1f1ca0beb"
+      },
+      {
+        "path": "src/offer-desk/src/trades.js",
+        "bytes": 35307,
+        "sha256": "3ad6a1bb8b5e69a795c2255079feb0805a0479c36854566d3e6a78a6b58d209a"
+      },
+      {
+        "path": "src/offers.js",
+        "bytes": 40934,
+        "sha256": "0f8b137fe91a7bf966ac952f9368dd93053d3ef2fb165ff9e4917eec148f1ec0"
+      },
+      {
+        "path": "src/pheromone.js",
+        "bytes": 12000,
+        "sha256": "dcb21400f889c3d50eb2953c3bc24ecc1806771102ce42515ba62142e6c0d1b2"
+      },
+      {
+        "path": "src/playbooks.js",
+        "bytes": 18647,
+        "sha256": "3ecf016d775ac55a66c799d67d53705edbf14de936ae490cb0a96117d723797d"
+      },
+      {
+        "path": "src/relay.js",
+        "bytes": 40340,
+        "sha256": "ea7d84605de2d3cbe2832adaed93e444f75715f2a766ece81073ddc358ad33a5"
+      },
+      {
+        "path": "src/review.js",
+        "bytes": 40678,
+        "sha256": "e234c705eb42afb451e73a973eeb13c3f5b56f7cae4dfe73c75294d3abd3bcb8"
+      },
+      {
+        "path": "src/rubric.js",
+        "bytes": 70546,
+        "sha256": "87444045a454c0aa3e185cb5989c1844b2fc3ba1cb9f93c91829993bf905f866"
+      },
+      {
+        "path": "src/savewatch.js",
+        "bytes": 14535,
+        "sha256": "a048be9ec2c7f673e81552568c18fd12de3285a0928408d57f3e1ca5323516a5"
+      },
+      {
+        "path": "src/scout.js",
+        "bytes": 42021,
+        "sha256": "6818b74dd74453891572691570aa4fb3667f179aff80845ec9aca7727cb1583f"
+      },
+      {
+        "path": "src/scs.js",
+        "bytes": 83231,
+        "sha256": "585477410fcab4129b31e150bfde2a7268c016d840ed3c775ef1ac96329c716d"
+      },
+      {
+        "path": "src/secretsauce.js",
+        "bytes": 24556,
+        "sha256": "f05645405a7aa447f81754c1eac8fff6ccec3efbf80393854e91589bd3ac1bf8"
+      },
+      {
+        "path": "src/sites/README.md",
+        "bytes": 6963,
+        "sha256": "6d01cc9f4b53bece8dcac9c49bf15bdd010edd69e75361c7ef12c747e152421a"
+      },
+      {
+        "path": "src/sites/mailala/ARCHITECT-BLUEPRINT.md",
+        "bytes": 24659,
+        "sha256": "251ca1e861ea7f0dcd736d5c33f269801cacc9a19c2af9944f3cbae6ebeec1a5"
+      },
+      {
+        "path": "src/sites/mailala/BLUEPRINT.md",
+        "bytes": 11764,
+        "sha256": "95a880dc5d0e41e5ab4c2b419e6cf2a995411874150bc621780c8ebe2b5a37cf"
+      },
+      {
+        "path": "src/sites/mailala/HANDOFF.md",
+        "bytes": 7807,
+        "sha256": "c119e68017ae0b2ee3afc3f6764dfba27492a8ff0255ea68f7171ed1c2476e4b"
+      },
+      {
+        "path": "src/sites/mailala/SOUL.md",
+        "bytes": 13283,
+        "sha256": "6809a89cab8217104703bac29c0e16cb2bea91d1245192c0d74d35f13beec617"
+      },
+      {
+        "path": "src/sites/mailala/STORY.md",
+        "bytes": 6339,
+        "sha256": "244a51b25e157691a1643d2e61c29a5cfd22772addffd4fb1a7a270462947411"
+      },
+      {
+        "path": "src/sites/mailala/index.html",
+        "bytes": 50132,
+        "sha256": "d7ff3493ce8855ced654d0ef02a46b8003098454d8d96251e4b7c99a32514474"
+      },
+      {
+        "path": "src/sites/mailala/material/6134195124376899528_121.jpg",
+        "bytes": 197069,
+        "sha256": "65b0a5ff7e86bc81c3fe0a967f2e18795d20e7a1a9964e1c7c889621caf96700"
+      },
+      {
+        "path": "src/sites/mailala/material/6134195124376899530_121.jpg",
+        "bytes": 209857,
+        "sha256": "d758a7945683b1a5098961bfe4cecd41144c251ed0793f6f1246268161e18f19"
+      },
+      {
+        "path": "src/sites/mailala/material/6134195124376899531_121.jpg",
+        "bytes": 165773,
+        "sha256": "dc3ba6f6c5579426b76f4ecaf6fbe71cb0593be378bfb262377a737adc315ba2"
+      },
+      {
+        "path": "src/sites/mailala/material/6150204477533786107_121.jpg",
+        "bytes": 281715,
+        "sha256": "59ca5acb89ba37afe97b475070ea88bbf1a8f3c4033e9ef22d5c66cfac21f8f4"
+      },
+      {
+        "path": "src/sites/mailala/material/6150204477533786109_121.jpg",
+        "bytes": 238395,
+        "sha256": "5afd0acbc365ab3952cce06a80e3219a45df40b7e046e829488b6667b3662fc0"
+      },
+      {
+        "path": "src/sites/mailala/material/6150204477533786110_121.jpg",
+        "bytes": 200876,
+        "sha256": "d7bba08a96783f873d9d7e1bd22658d431a1a0cb356f6ff39264ad2290928fe8"
+      },
+      {
+        "path": "src/sites/mailala/material/6150204477533786111_121.jpg",
+        "bytes": 291269,
+        "sha256": "9599414bcd54ce88e1eefd70f2532e21bdc604b4bd58d7110ac5eff02e2f46e0"
+      },
+      {
+        "path": "src/sites/mailala/material/6150204477533786119_121.jpg",
+        "bytes": 169384,
+        "sha256": "09cc37e48f356988b19933d2796d1176a115baf26e0dc0561697fbfdb3eb7259"
+      },
+      {
+        "path": "src/sites/mailala/material/6150204477533786120_121.jpg",
+        "bytes": 168770,
+        "sha256": "196a2307b747fcb2e33f4ab8137578001bcc8a347b4791c16f68c36ae6000366"
+      },
+      {
+        "path": "src/sites/naturalenglishtraining/404.html",
+        "bytes": 4463,
+        "sha256": "cbae81796bf7c4cdd7e779b951bec2050169e45650e9a269d9f6d9195c7cbe27"
+      },
+      {
+        "path": "src/sites/naturalenglishtraining/README.md",
+        "bytes": 11360,
+        "sha256": "e83a27d76f464667d62ea880b4b0d04851b236dd02453f612dc66d70e152003e"
+      },
+      {
+        "path": "src/sites/naturalenglishtraining/about.html",
+        "bytes": 11796,
+        "sha256": "800ece01e55e488b76f12465a44db345bf025aaab1e7ca5383228d64de7b8f29"
+      },
+      {
+        "path": "src/sites/naturalenglishtraining/assets/api.js",
+        "bytes": 6111,
+        "sha256": "b6e11fd9a06b725fe4f9b892a818f418f21b84e725d4cb4d8f40053efa07a6f5"
+      },
+      {
+        "path": "src/sites/naturalenglishtraining/assets/booking.js",
+        "bytes": 26522,
+        "sha256": "8e8788df03c887becf85b4f5100c72dda5105cfd3364698907221954129ee08c"
+      },
+      {
+        "path": "src/sites/naturalenglishtraining/assets/data/faq.json",
+        "bytes": 6188,
+        "sha256": "8ec4e6965de46d92037364fe4b3da9beb1a2c6092c5fdf23bb7b3844114b02ac"
+      },
+      {
+        "path": "src/sites/naturalenglishtraining/assets/data/pricing.json",
+        "bytes": 2786,
+        "sha256": "7d85d9c98313bb1ceb5d700c0929d22cc44fc5e4968565d89a9d9905edda29e6"
+      },
+      {
+        "path": "src/sites/naturalenglishtraining/assets/data/programs.json",
+        "bytes": 8863,
+        "sha256": "cdf7d205c8966b54638e7c75ddfefdd40333d76c9cf0f998c1283627e8ce979d"
+      },
+      {
+        "path": "src/sites/naturalenglishtraining/assets/net.css",
+        "bytes": 22947,
+        "sha256": "3359f33c24a4eff587515d53f62d47203c6348cdc736d5c162807bec40fe36c3"
+      },
+      {
+        "path": "src/sites/naturalenglishtraining/assets/net.js",
+        "bytes": 22562,
+        "sha256": "91e3bcc1652b9a1a5da02e3f1aa4997fd4cade0e59b799d8779dcc327cfa3e42"
+      },
+      {
+        "path": "src/sites/naturalenglishtraining/assets/placement.js",
+        "bytes": 43903,
+        "sha256": "7dd27079ebe69cbf9b99e3cacf329296cad6052ee835b85bc41d6812cc3637d1"
+      },
+      {
+        "path": "src/sites/naturalenglishtraining/backend/README.md",
+        "bytes": 4724,
+        "sha256": "735d055789c15e79b006ec70077bd827ee77a9ca5aed73b384a0c71be9a066a1"
+      },
+      {
+        "path": "src/sites/naturalenglishtraining/backend/worker.js",
+        "bytes": 15113,
+        "sha256": "4186891fb3b907acb59631bbe553570748903c53fd626bc87ae46aa64a78f8da"
+      },
+      {
+        "path": "src/sites/naturalenglishtraining/backend/wrangler.toml",
+        "bytes": 1168,
+        "sha256": "2346c0215a6fca71da4507d2153b48fa2f00fdf2e59d3c35a015cbca1728efac"
+      },
+      {
+        "path": "src/sites/naturalenglishtraining/book.html",
+        "bytes": 8144,
+        "sha256": "5d7379b3216c67bb4a89f92aeb2c45409e7077fbd807e88cf5fbd3c24d8688d3"
+      },
+      {
+        "path": "src/sites/naturalenglishtraining/faq.html",
+        "bytes": 6213,
+        "sha256": "9572f2abbe5b9fe0e4b550bebaa95881f0b3321fdcd41882e7c11d0d17cc6e08"
+      },
+      {
+        "path": "src/sites/naturalenglishtraining/index.html",
+        "bytes": 21867,
+        "sha256": "e46e46915047bb0c581832497b14a2532872904049fcfe083f2b3fd0041b24d6"
+      },
+      {
+        "path": "src/sites/naturalenglishtraining/legal.html",
+        "bytes": 12309,
+        "sha256": "3e0284ce99096bfc5da1b754f9ce0140ec111fcd8465d7035fb31bb1c79253fb"
+      },
+      {
+        "path": "src/sites/naturalenglishtraining/method.html",
+        "bytes": 19794,
+        "sha256": "c8ca9e05dbff5a1e61bbaf9799f13ad528e659bb2bacdbf57de8c107abcc8ad6"
+      },
+      {
+        "path": "src/sites/naturalenglishtraining/parents.html",
+        "bytes": 11548,
+        "sha256": "9d66a7007ae8a33559e484c7a5969940c6e62e17f1471230086fb6505e178b33"
+      },
+      {
+        "path": "src/sites/naturalenglishtraining/placement.html",
+        "bytes": 9226,
+        "sha256": "d5a11231f06faf62b0f267d052df79aca1d6aee369566610295a673552f014c0"
+      },
+      {
+        "path": "src/sites/naturalenglishtraining/pricing.html",
+        "bytes": 12927,
+        "sha256": "9a1c2c12a0dadc7f438f2aa9272e4817300fa7722c6c7de0baa253897baf7b9d"
+      },
+      {
+        "path": "src/sites/naturalenglishtraining/programs.html",
+        "bytes": 11993,
+        "sha256": "c047c7d6be8c6a95c3b4d5543bd0eaee8e29a5e76cab4e26ba79646b7407ee8c"
+      },
+      {
+        "path": "src/sites/naturalenglishtraining/results.html",
+        "bytes": 13185,
+        "sha256": "1e97826731079dd92987433625c5fb101c2b05c988b308e5c0a847644c133e9e"
+      },
+      {
+        "path": "src/sites/naturalenglishtraining/robots.txt",
+        "bytes": 334,
+        "sha256": "aa48d5ce5aca82bdbd9fd294953cbd56f56c16d1c2da7ec5cd5bdf22b6d24c2a"
+      },
+      {
+        "path": "src/sites/naturalenglishtraining/sitemap.xml",
+        "bytes": 1625,
+        "sha256": "95fd44dc5c9cdb3f48f6fe3b28712163f825fe4c300a2e6190fd667cf18bf0ba"
+      },
+      {
+        "path": "src/sites/naturalenglishtraining/teachers.html",
+        "bytes": 7714,
+        "sha256": "215d5cb58056a9508e8fec6a2e7de01eea5ddf43808a430f1396b00925e930b6"
+      },
+      {
+        "path": "src/styles.css",
+        "bytes": 49435,
+        "sha256": "403ddded186826e58a9aed09dc08a14c141348efdb24e7400062e33f841441f0"
+      },
+      {
+        "path": "src/summary.js",
+        "bytes": 18415,
+        "sha256": "9bf3025b9b226b6619ea67c3882f97c05ee2df32d7ba42198d6638031e26959f"
+      },
+      {
+        "path": "src/tools/register-pass.mjs",
+        "bytes": 29582,
+        "sha256": "d0cb9cce7a53a951622666cb1a155a0dc08b5e3c423438155febe842393c254a"
+      },
+      {
+        "path": "src/transcribe.js",
+        "bytes": 84421,
+        "sha256": "c8897bed0e71ff1b7e551092c221bc1ef66831acc3416b7e047b6e0b1fd12a3e"
+      },
+      {
+        "path": "src/vault.js",
+        "bytes": 84177,
+        "sha256": "4e9eb1e5fa866063dba66414235efefc473fa3dbce586681331c90e78633de4d"
+      }
+    ],
+    "byTopLevel": {
+      "src/AGENT99-OS.md": {
+        "files": 1,
+        "bytes": 18664
+      },
+      "src/COSTS.md": {
+        "files": 1,
+        "bytes": 8810
+      },
+      "src/HANDOFF.md": {
+        "files": 1,
+        "bytes": 155356
+      },
+      "src/LESSON-STANDARD.md": {
+        "files": 1,
+        "bytes": 45485
+      },
+      "src/MASTERMIND-SYNC-2026-09-23.md": {
+        "files": 1,
+        "bytes": 19249
+      },
+      "src/PHOENIXCOMMAND-BLUEPRINT.md": {
+        "files": 1,
+        "bytes": 23364
+      },
+      "src/PROPOSED-CANON.md": {
+        "files": 1,
+        "bytes": 8795
+      },
+      "src/ProposedG999.md": {
+        "files": 1,
+        "bytes": 49764
+      },
+      "src/README.md": {
+        "files": 1,
+        "bytes": 188477
+      },
+      "src/REPO.md": {
+        "files": 1,
+        "bytes": 9153
+      },
+      "src/SESSIONS/**": {
+        "files": 1,
+        "bytes": 33196
+      },
+      "src/SOUL-VERBATIM-PORTALS-MAGIC-CHAT.md": {
+        "files": 1,
+        "bytes": 13943
+      },
+      "src/SPEC.md": {
+        "files": 1,
+        "bytes": 20421
+      },
+      "src/STUDENT-EVALUATOR-ECOSYSTEM.md": {
+        "files": 1,
+        "bytes": 28561
+      },
+      "src/STUDENT-PORTAL-PIPELINE.md": {
+        "files": 1,
+        "bytes": 14614
+      },
+      "src/VAULT-RECOVERY.md": {
+        "files": 1,
+        "bytes": 4467
+      },
+      "src/app.js": {
+        "files": 1,
+        "bytes": 623985
+      },
+      "src/audio-split.js": {
+        "files": 1,
+        "bytes": 25255
+      },
+      "src/background.js": {
+        "files": 1,
+        "bytes": 17118
+      },
+      "src/brain.js": {
+        "files": 1,
+        "bytes": 27091
+      },
+      "src/brand.js": {
+        "files": 1,
+        "bytes": 292098
+      },
+      "src/brand/**": {
+        "files": 103,
+        "bytes": 11210129
+      },
+      "src/canon/**": {
+        "files": 4,
+        "bytes": 188134
+      },
+      "src/cgn-node.js": {
+        "files": 1,
+        "bytes": 7115
+      },
+      "src/cgn.js": {
+        "files": 1,
+        "bytes": 14879
+      },
+      "src/clients.js": {
+        "files": 1,
+        "bytes": 15979
+      },
+      "src/cloudflare/**": {
+        "files": 10,
+        "bytes": 73047
+      },
+      "src/constellation.js": {
+        "files": 1,
+        "bytes": 33257
+      },
+      "src/curriculum.js": {
+        "files": 1,
+        "bytes": 77098
+      },
+      "src/curriculum/**": {
+        "files": 12,
+        "bytes": 1515989
+      },
+      "src/divisions.js": {
+        "files": 1,
+        "bytes": 49517
+      },
+      "src/ecosystem.js": {
+        "files": 1,
+        "bytes": 22898
+      },
+      "src/family.js": {
+        "files": 1,
+        "bytes": 12294
+      },
+      "src/forge.js": {
+        "files": 1,
+        "bytes": 55316
+      },
+      "src/freephoenix.js": {
+        "files": 1,
+        "bytes": 50928
+      },
+      "src/freewire.js": {
+        "files": 1,
+        "bytes": 31205
+      },
+      "src/generators/**": {
+        "files": 88,
+        "bytes": 1650012
+      },
+      "src/gitcanon.js": {
+        "files": 1,
+        "bytes": 33223
+      },
+      "src/ilog.js": {
+        "files": 1,
+        "bytes": 50748
+      },
+      "src/image-node/**": {
+        "files": 6,
+        "bytes": 24792
+      },
+      "src/intake.js": {
+        "files": 1,
+        "bytes": 88869
+      },
+      "src/lesson-forge.js": {
+        "files": 1,
+        "bytes": 26686
+      },
+      "src/lessons.js": {
+        "files": 1,
+        "bytes": 114314
+      },
+      "src/lessons/**": {
+        "files": 9,
+        "bytes": 220678
+      },
+      "src/market.js": {
+        "files": 1,
+        "bytes": 27493
+      },
+      "src/marketing/**": {
+        "files": 5,
+        "bytes": 100368
+      },
+      "src/master-link.json": {
+        "files": 1,
+        "bytes": 3323
+      },
+      "src/masterlink.js": {
+        "files": 1,
+        "bytes": 27460
+      },
+      "src/offer-desk/**": {
+        "files": 8,
+        "bytes": 203253
+      },
+      "src/offers.js": {
+        "files": 1,
+        "bytes": 40934
+      },
+      "src/pheromone.js": {
+        "files": 1,
+        "bytes": 12000
+      },
+      "src/playbooks.js": {
+        "files": 1,
+        "bytes": 18647
+      },
+      "src/relay.js": {
+        "files": 1,
+        "bytes": 40340
+      },
+      "src/review.js": {
+        "files": 1,
+        "bytes": 40678
+      },
+      "src/rubric.js": {
+        "files": 1,
+        "bytes": 70546
+      },
+      "src/savewatch.js": {
+        "files": 1,
+        "bytes": 14535
+      },
+      "src/scout.js": {
+        "files": 1,
+        "bytes": 42021
+      },
+      "src/scs.js": {
+        "files": 1,
+        "bytes": 83231
+      },
+      "src/secretsauce.js": {
+        "files": 1,
+        "bytes": 24556
+      },
+      "src/sites/**": {
+        "files": 43,
+        "bytes": 2369440
+      },
+      "src/styles.css": {
+        "files": 1,
+        "bytes": 49435
+      },
+      "src/summary.js": {
+        "files": 1,
+        "bytes": 18415
+      },
+      "src/tools/**": {
+        "files": 1,
+        "bytes": 29582
+      },
+      "src/transcribe.js": {
+        "files": 1,
+        "bytes": 84421
+      },
+      "src/vault.js": {
+        "files": 1,
+        "bytes": 84177
+      }
+    },
+    "excludes": [
+      "src/sites/mailala/ASSET-MANIFEST.md",
+      "src/sites/mailala/ASSET-MANIFEST.json",
+      "src/sites/mailala/SYNC-PACKET.md",
+      "src/sites/mailala/SYNC-PACKET.json"
+    ],
+    "why": "a self-describing document cannot be enumerated inside itself: the register pair and the sync packet are the delivery documents, so the census leaves out all four and says so, instead of going stale the moment either is written"
+  },
+  "unhashed": [
+    {
+      "what": "wa.me/84768701106, instagram.com/reggae_bar_saigon, facebook.com/…/61580002783059, hostelworld.com/hostels/p/324399",
+      "why": "live, login-walled pages that render on the client — referenced links, not payloads of ours; there is nothing of ours to pin"
+    },
+    {
+      "what": "mailala.com",
+      "why": "does not resolve at all (SERVFAIL, no A record, measured twice) — there are no bytes to hash"
+    },
+    {
+      "what": "mailala.mrmichaelhobbs123.workers.dev",
+      "why": "the deploy target does not exist yet — no Cloudflare credential in this browser, so nothing has been published and nothing is hashed as if it were"
+    },
+    {
+      "what": "the map's tiles and the font bytes as the browser receives them",
+      "why": "user-agent-dependent/live — the register pins the snapshots it fetched and says so, rather than pretending they are stable"
+    }
+  ],
+  "excluded": [
+    {
+      "file": "src/sites/mailala/ASSET-MANIFEST.json",
+      "why": "a file cannot contain its own digest; this entry is the declaration of that one gap"
+    }
+  ],
+  "self": {
+    "md": {
+      "path": "src/sites/mailala/ASSET-MANIFEST.md",
+      "sha256": "1ecd1ca52b09045811f10f7ee3dbe3e8ad1cca2a87895a0b9ca201b3d1160730",
+      "bytes": 20533
+    },
+    "json": {
+      "path": "src/sites/mailala/ASSET-MANIFEST.json",
+      "sha256": null,
+      "why": "a file cannot contain its own digest — the one declared gap in this register"
+    }
+  },
+  "fontIds": "F-01 the CSS · F-02…F-10 the nine WOFF2 faces, in the order the linked CSS lists them",
+  "revision": {
+    "at": "2026-09-28T10:13:22.840Z",
+    "of": "2026-09-28",
+    "why": "MECHANICAL, measured by the pass: 343 → 343 files, 20,579,453 → 20,579,828 B, tree a962262fc21795b7 → 9acbc758fbe46664 · nothing added · CHANGED src/app.js · nothing removed · 0 asset row(s) re-hashed, 34 unchanged. RATIONALE (the caller's own words): 2026-09-28 — THE FULL REINCARNATION, and the one defect it exposed: the canon's own STAGES table (src/scs.js · GOSPEL-999 §SYSTEM I) names Stage 6's command `/phoenixFORTIFY`, but only `/phoenixengineer` was routed — the station printed a command that answered 'Unknown command', so the loop could not be sealed through the name the station itself advertises. `/phoenixFORTIFY` and `/fortify` now reach ENGINEER. No audit, verdict or gate was changed: the loop was run through the station's own commands and measured — RISE/SCOUT/MARCH/SCHOLAR/SUPPLY/ENGINEER/DEATH all REAL, the seal IMPRESSED on Incarnate-5-Cycle, and the S2Pipeline still prints its GAP with every missing artifact named (6-AI TRUTH unbuilt, DO-SQLITE not the canon's stone fort, COMITATENSES never launched, DNA without blueprints)."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "obi-cloudflare",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "OB-1 / Student Summary Generator, self-hosted on Cloudflare Workers + Durable Objects",
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "node build.mjs && wrangler dev",
+    "deploy": "node build.mjs && wrangler deploy",
+    "secret:stt": "wrangler secret put DEEPGRAM_API_KEY",
+    "logs": "wrangler tail"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

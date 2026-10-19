@@ -1,0 +1,9 @@
+$meta
+  title = THE LISTS — a PrAis role
+  description = One function of the NET intake, as its own generator: the one role that calls a model — "we can generate some ideas… a couple of lists of like a hundred like names". Options to choose from (job titles, companies, presentation subjects, headlines, studio names, drill sentences, interview questions), kept verbatim on the record, with built-in seed lists when no model is loaded. PrAis · NET.
+  tags = prais, net, intake, ideas, lists, ai, student, education, role
+  header
+    mode = minimal
+
+kv = {import:kv-plugin}
+generateText = {import:ai-text-plugin}

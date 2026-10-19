@@ -1,0 +1,8 @@
+$meta
+  title = THE CV — a PrAis role
+  description = One function of the NET intake, as its own generator: a print-ready A4 CV built from what the student actually has. A row nobody supplied prints as a ruled line and is named in the footer — never a guessed degree. Reads and writes one record per student, in the browser, and reads the station's /intake export. PrAis · NET.
+  tags = prais, net, intake, cv, resume, student, education, role
+  header
+    mode = minimal
+
+kv = {import:kv-plugin}

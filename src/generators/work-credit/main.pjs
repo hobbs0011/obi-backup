@@ -1,0 +1,8 @@
+$meta
+  title = THE CREDIT — a PrAis role
+  description = One function of the NET intake, as its own generator: real, shipped work on a real product, scoped small enough to finish, credited in plain words in the tutor's own form, plus the five-minute answer the student must be able to give without notes. Gated on the sovereign's word for what may be credited. PrAis · NET.
+  tags = prais, net, intake, credit, experience, work, student, education, role
+  header
+    mode = minimal
+
+kv = {import:kv-plugin}

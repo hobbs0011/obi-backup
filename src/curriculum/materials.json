@@ -1,0 +1,73 @@
+{
+ "source": "the sovereign's workbook «00. Expat's Content_SY 2026-2027» — the 'Template & Materials' tab",
+ "note": "the templates and links the school issues per programme, as the sheet has them. The LOGIN that sat beside row 1 is deliberately NOT here: it lives in the sovereign's browser only (/keys ngl primary). The workbooks are NOT carried in the generator's file tree either (they are multi-hundred-KB binaries, and a file tree is for the code that runs) — they are hosted, see 'workbooks' below. The primary one is a REDACTED copy of the sovereign's workbook (the login cell replaced); the parsed copies the station actually reads are src/curriculum/pa.g1.json … pa.g9.json.",
+ "rows": [
+  {
+   "n": 1,
+   "what": "LOOK course book",
+   "scope": "grade 1-5",
+   "link": "https://learn.eltngl.com/",
+   "note": "National Geographic Learning e-learning platform — the primary Look course. The login is in this browser only: /keys ngl primary <account> <password>."
+  },
+  {
+   "n": 3,
+   "what": "Global Success",
+   "scope": "grade 1-5",
+   "link": "https://gs.hoclieu.vn/",
+   "note": "the Vietnamese state programme — 'VT', not the sovereign's to teach."
+  },
+  {
+   "n": 4,
+   "what": "SCIENCE_MATERIALS",
+   "scope": "grade 1-5",
+   "note": "Cambridge Primary Science (Workbook), grade 1-5 — the sheet points at a Drive PDF. The learner's books the sovereign sent: grades 4 and 5, 2nd edition 2021 (see ebooks.science)."
+  },
+  {
+   "n": 5,
+   "what": "CAMBRIDGE YLE_MATERIALS",
+   "scope": "grade 1-5",
+   "note": "Cambridge Practice Tests — Starters / Movers / Flyers (Cambridge YLE SY25-26). These are the Cambridge rows the primary pacing guides carry."
+  },
+  {
+   "n": 6,
+   "what": "LESSON PLAN_TEMPLATES",
+   "note": "Lesson Plan Template.docx — in the school's Drive (a Drive folder listing is not readable from here; pick the file with /lesson desk or drop it in)."
+  },
+  {
+   "n": 7,
+   "what": "PPT_TEMPLATES",
+   "note": "Powerpoint template.pptx — in the school's Drive."
+  }
+ ],
+ "ebooks": {
+  "science": {
+   "4": "https://ebook4yle.com/publisher/cambridge/cambridge-primary-science-4-learners-book-2nd-edition-2021.html",
+   "5": "https://ebook4yle.com/publisher/cambridge/cambridge-primary-science-5-learners-book-2nd-edition-2021.html"
+  },
+  "closeUp": {
+   "6": "https://learn.eltngl.com/ — New Close Up A1+ (Student Book + Workbook), opened with the stored login"
+  },
+  "look": {
+   "1-5": "https://learn.eltngl.com/ — Look 1-5 (Student Book + Workbook), opened with the stored primary login"
+  }
+ },
+ "drive": {
+  "secondaryMaterialsFolder": "https://drive.google.com/drive/folders/1YHzsYx4Mbq0wPP3vIT5PcD0xhyDjGMwW",
+  "primaryWorkbook": "https://docs.google.com/spreadsheets/d/1hg9B6srsNdb-8OTCaXeJiIaNg7HIXB32-YFWtoZlAXw/edit?gid=778794261",
+  "secondaryPacingGuide": "https://drive.google.com/file/d/1VQ_UGvCrGbKQWVe9m9qKTrfnAur9cmfJ/view",
+  "note": "Google Drive folder listings cannot be read from a generator (the folder URL returns a sign-in page, not a file list) — a Drive FILE can be fetched, and the workbook did come through: that is how the primary guides got here. Drop a folder's files in one by one, or give a direct file link."
+ },
+ "workbooks": {
+  "primary": {
+   "label": "Ecogreen · grades 1-5 — accounts, materials and the pacing guides (REDACTED copy)",
+   "url": "https://user.uploads.dev/file/0df037034ab1e6836d5420880c8e3821.xlsx",
+   "grades": "1-5"
+  },
+  "secondary": {
+   "label": "secondary · grades 6-9 — the Close-up / Science pacing guide",
+   "url": "https://user.uploads.dev/file/1039f2155746afa226383537d16fc710.xlsx",
+   "grades": "6-9"
+  },
+  "note": "hosted, not shipped: a generator's src/ is for the code it runs. Everything the station reads is the parsed copy beside it. Re-parse a newer workbook with /curriculum import."
+ }
+}

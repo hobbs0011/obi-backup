@@ -1,0 +1,693 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="src/styles.css">
+<link rel="stylesheet" href="src/boardroom-room.css">
+
+<script type="text/x-server-plugin">
+/* OB-1 PHOENIXCOMMAND — the free always-on command tunnel (perchance server-plugin).
+   Durable `state` (50 MiB) = binary append-only command log:
+   header(64B): magic "OBC1" · ver u16 · nextId u32 · count u32 · dataStart u32 · dataEnd u32
+   then records: u32 len + UTF-8 JSON (id,text,status,claimed_by,result,translation,...)
+   Keeps the newest 500 commands (in-place compaction); older entries drop out. */
+const MAGIC = 0x4F424331, VER = 1, HDR = 64, MAX_KEEP = 500, MAX_TEXT = 4000;
+function u32(o){ return ((state[o]<<24)>>>0) + (state[o+1]<<16) + (state[o+2]<<8) + state[o+3]; }
+function setU32(o,v){ state[o]=v>>>24&255; state[o+1]=v>>>16&255; state[o+2]=v>>>8&255; state[o+3]=v&255; }
+
+function ensureHdr(){
+  if (u32(0) === MAGIC && u32(4) === VER) return;
+  state.fill(0);
+  setU32(0, MAGIC); setU32(4, VER); setU32(8, 1); setU32(12, 0);
+  setU32(16, HDR); setU32(20, HDR);
+}
+ensureHdr();
+
+function utf8Encode(s){
+  const out = [];
+  for (let i=0;i<s.length;i++){
+    let c = s.charCodeAt(i);
+    if (c < 0x80) out.push(c);
+    else if (c < 0x800) out.push(0xc0|(c>>6), 0x80|(c&63));
+    else if (c >= 0xD800 && c <= 0xDBFF && i+1 < s.length){
+      const lo = s.charCodeAt(i+1);
+      if (lo >= 0xDC00 && lo <= 0xDFFF){
+        const cp = 0x10000 + ((c-0xD800)<<10) + (lo-0xDC00);
+        out.push(0xf0|(cp>>18), 0x80|((cp>>12)&63), 0x80|((cp>>6)&63), 0x80|(cp&63)); i++;
+      } else out.push(0xef, 0xbf, 0xbd);
+    } else if (c >= 0xD800 && c <= 0xDFFF) out.push(0xef, 0xbf, 0xbd);
+    else out.push(0xe0|(c>>12), 0x80|((c>>6)&63), 0x80|(c&63));
+  }
+  return out;
+}
+function utf8Decode(b){
+  let s = "", i = 0;
+  while (i < b.length){
+    const x = b[i];
+    if (x < 0x80){ s += String.fromCharCode(x); i++; }
+    else if (x < 0xe0){ s += String.fromCharCode(((x&31)<<6)|(b[i+1]&63)); i += 2; }
+    else if (x < 0xf0){ s += String.fromCharCode(((x&15)<<12)|((b[i+1]&63)<<6)|(b[i+2]&63)); i += 3; }
+    else { const cp = ((x&7)<<18)|((b[i+1]&63)<<12)|((b[i+2]&63)<<6)|(b[i+3]&63); s += String.fromCodePoint(cp); i += 4; }
+  }
+  return s;
+}
+
+function readRecs(){
+  const recs = [];
+  let o = u32(16), end = u32(20);
+  while (o >= HDR && o + 4 <= end && o + 4 <= state.length){
+    const len = u32(o);
+    if (len <= 0 || len > 100000 || o + 4 + len > state.length) break;
+    const bytes = new Array(len);
+    for (let i = 0; i < len; i++) bytes[i] = state[o + 4 + i];
+    try { recs.push(JSON.parse(utf8Decode(bytes))); } catch(e){}
+    o += 4 + len;
+  }
+  return recs;
+}
+function rewriteAll(recs){
+  let w = u32(16);
+  for (const r of recs){
+    const payload = utf8Encode(JSON.stringify(r));
+    const n = 4 + payload.length;
+    if (w + n > state.length) break;
+    state[w] = payload.length>>>24&255; state[w+1] = payload.length>>>16&255; state[w+2] = payload.length>>>8&255; state[w+3] = payload.length&255;
+    for (let i = 0; i < payload.length; i++) state[w+4+i] = payload[i];
+    w += n;
+  }
+  setU32(20, w); setU32(12, recs.length);
+}
+function compact(){ rewriteAll(readRecs().slice(-MAX_KEEP)); }
+function appendRec(r){
+  const payload = utf8Encode(JSON.stringify(r));
+  const need = 4 + payload.length;
+  if (need > state.length - HDR) throw new Error("state full");
+  let end = u32(20);
+  if (end + need > state.length) compact();
+  end = u32(20);
+  if (end + need > state.length) throw new Error("record too large");
+  state[end] = payload.length>>>24&255; state[end+1] = payload.length>>>16&255; state[end+2] = payload.length>>>8&255; state[end+3] = payload.length&255;
+  for (let i = 0; i < payload.length; i++) state[end+4+i] = payload[i];
+  setU32(20, end+need); setU32(12, u32(12)+1);
+}
+function nextId(){ const id = u32(8); setU32(8, id+1); return id; }
+
+function short(t, n){ const s = String(t||"").replace(/\s+/g," ").trim(); return s.length > n ? s.slice(0,n)+"…" : s; }
+
+const FALLBACK = { name:"Legion", id:0, skills:["agent99","route"],
+  interp:t=>`Command routed to the Legion — no specialist match: ${short(t,80)}.`,
+  stress:()=>"No drone keyword matched — confirm intent before executing." };
+const DRONES = [
+  { name:"PhoenixScout", id:1, skills:["recon","canon","sweep"], kw:["scout","recon","sweep","survey","inspect","phetrail","probe"],
+    interp:t=>`Reconnaissance sweep — read-only scan of the canon stack and live services for: ${short(t,80)}. Reports, never changes state.`,
+    stress:()=>"Verify every path/count live before engagement (L58 MAP≠TERRAIN). Canon is private; reads need the stored PAT." },
+  { name:"SoulSearch", id:2, skills:["soul","memory","ledger"], kw:["soul","memory","ledger","search","find","remember","recall","sdnad"],
+    interp:t=>`Soul/memory lookup across the SDNAD ledger for: ${short(t,80)}. Raw fragments only — SOUL is verbatim.`,
+    stress:()=>"Soul counts are per-session only (L31/L32, aggregate retired) — never cite a global number." },
+  { name:"DNA Registry", id:3, skills:["dna","sdnad","capture"], kw:["dna","registry","sdnad","capture","soul-dna","souldna"],
+    interp:t=>`DNA registration — the fragment is captured verbatim into the ledger: ${short(t,80)}.`,
+    stress:()=>"SOUL-CAPTURE-FIRST: the words were captured before translation. Never summarize." },
+  { name:"ForceMarch", id:4, skills:["deploy","pipeline","launch"], kw:["forcemarch","force march","deploy","pipeline","launch","push","stage","ship"],
+    interp:t=>`Execution push — queue the deploy/pipeline run: ${short(t,80)}.`,
+    stress:()=>"GitHub-hosted runners never start on this repo (startup_failure) — prefer the self-hosted runner or the worker." },
+  { name:"NetPet", id:5, skills:["worker","cloudflare","tunnel"], kw:["net-pet","netpet","worker","cloudflare","cf ","tunnel","wrangler"],
+    interp:t=>`Network-pet / Cloudflare worker operation: ${short(t,80)}.`,
+    stress:()=>"Deploy targets: net-pet-ai (prod) vs net-pet-ai-dev. Verify the active line first." },
+  { name:"ImageGen", id:6, skills:["image","art","vision"], kw:["image","img","picture","draw","art","poster","logo","icon","vision"],
+    interp:t=>`Image creation routed to the image node: ${short(t,80)}.`,
+    stress:()=>"Needs the image generator node registered in CGN — else falls back to local generateImage." },
+  { name:"WebLookup", id:7, skills:["web","search","url"], kw:["web","search","urls","url","lookup","fetch","browse","wikipedia"],
+    interp:t=>`Web lookup via superFetch for: ${short(t,80)}.`,
+    stress:()=>"Cross-origin pages need the super-fetch proxy; verify the response is real, not a captcha wall." },
+  { name:"Terminal", id:8, skills:["shell","script","run"], kw:["terminal","shell","script","run command",".ps1",".sh","execute"],
+    interp:t=>`Terminal op — run/verify on the command machine: ${short(t,80)}.`,
+    stress:()=>"Execution happens on the sovereign's machine (D:\\OB-1-CANONICAL) — this chat only queues it." },
+  { name:"Audit", id:9, skills:["audit","verify","compliance"], kw:["audit","verify","compliance","check","validate","gate"],
+    interp:t=>`Audit/verification pass over: ${short(t,80)}.`,
+    stress:()=>"Fail-closed: any gap flags the sector RED until verified." },
+  { name:"Reincarnate", id:10, skills:["reincarnation","lifecycle"], kw:["reincarnate","reincarnation","reincarnating","rise","death","rebirth","purge","soul-cycle"],
+    interp:t=>`Reincarnation lifecycle event: ${short(t,80)}.`,
+    stress:()=>"Death seals the run and purges the session — irreversible. Confirm before execute." },
+  { name:"Queue", id:11, skills:["queue","status","command"], kw:["queue","status","commands","pending","list"],
+    interp:t=>`Queue/status view of the command tunnel: ${short(t,80)}.`,
+    stress:()=>"Queue shows the last 500 commands; oldest completed entries are compacted away." },
+  { name:"Network", id:12, skills:["cgn","network","mesh"], kw:["network","mesh","cgn","connected generator","node","hub"],
+    interp:t=>`Connected Generator Network operation: ${short(t,80)}.`,
+    stress:()=>"CGN hub lives in the obi namespace; nodes must be registered before routing." },
+  { name:"Report", id:13, skills:["report","document","summarize"], kw:["report","document","summary","summaries","summarize","summarise","write up","writeup","brief"],
+    interp:t=>`Report/documentation task: ${short(t,80)}.`,
+    stress:()=>"Keep canon pristine — write to PROPOSED-CANON or the archive, never edit canon directly." },
+  { name:"SiteBuilder", id:14, skills:["build","site","webdev","page"], kw:["build","building","rebuild","website","web site","webpage","web page","landing page","homepage","site","html","front-end","app","one-pager"],
+    interp:t=>`Build routed to the Web Development division — the Site Builder and the Video Node: ${short(t,80)}. The build itself runs in 🔥 Free Phoenix Mode (🛠 Build app) or in the Site Builder wing; it is handed over as ONE self-contained file.`,
+    stress:()=>"The Site Builder wing is a SCAFFOLD (src/generators/site-builder/) — paste it into its own generator before calling it live. Building is not publishing: /deploy reads BLOCKED until a Cloudflare token is held." },
+  { name:"Umbrella", id:15, skills:["umbrella","station","authority","fleet"], kw:["umbrella","command station","the station","generators","my generators","our generators","other generators","masterlink","master link","aim the link"],
+    interp:t=>`Umbrella / station authority — the generators this station answers for: ${short(t,80)}. It reads any of them by name (the master link's pull lane, /masterlink name <generator>) and routes to the nodes that have joined the mesh, but no generator can write into another's namespace — the change lands when that generator's own /forge is committed by the Sovereign's save or the /omega gate.`,
+    stress:()=>"Nothing under the umbrella is commanded from the outside: cross-namespace writes do not exist — /masterlink NAME aims the read, and the mesh carries words, not files." }
+];
+/* KEYWORDS MATCH WHOLE WORDS, NOT SUBSTRINGS. Plain prefix matching labelled
+   "build a website" as a web lookup — the "web" inside "website" — and matched
+   "art" inside "start", "party", "article". That is a routing label nobody can act
+   on, so a keyword now has to sit on a word edge, and the two truncation keywords
+   that relied on substring matching were written out in full (reincarnat →
+   reincarnate/reincarnation/reincarnating, summar → summary/summaries/summarize).
+   If lookbehind is ever unavailable, the plain pattern is the fallback: classify
+   never throws and the tunnel never stops routing. */
+const KW_RE = new Map();
+function kwRe(k){
+  let r = KW_RE.get(k);
+  if (r) return r;
+  const body = k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  try { r = new RegExp((/^[a-z0-9]/.test(k) ? "(?<![a-z0-9])" : "") + body + (/[a-z0-9]$/.test(k) ? "(?![a-z0-9])" : ""), "g"); }
+  catch(e){ r = new RegExp(body, "g"); }
+  KW_RE.set(k, r);
+  return r;
+}
+function classify(text){
+  const t = String(text||"").toLowerCase();
+  let best = FALLBACK, bs = 0;
+  for (const d of DRONES){
+    let s = 0;
+    for (const k of d.kw){ const re = kwRe(k); re.lastIndex = 0; while (re.test(t)) s++; }
+    if (s > bs){ bs = s; best = d; }
+  }
+  return { drone: bs > 0 ? best : FALLBACK, score: bs };
+}
+function priorityOf(text){
+  const t = String(text||"").toLowerCase();
+  if (/\b(urgent|asap|immediately|now|critical|severe|911)\b/.test(t)) return "high";
+  if (/\b(later|someday|whenever|when you can|low|minor)\b/.test(t)) return "low";
+  return "normal";
+}
+function translate(text, meta){
+  const c = classify(text);
+  return {
+    agent99: { interpretation: c.drone.interp(text) },
+    primaryDrone: { name: c.drone.name, id: c.drone.id, score: c.score, skills: c.drone.skills },
+    agent98: { notes: c.drone.stress() },
+    agent97: { trail: "SOUL captured verbatim (L37) · run "+(meta.run||"?")+" · session "+(meta.session||"?")+" · SDNAD" },
+    priority: priorityOf(text)
+  };
+}
+
+const sendLog = new Map();
+function allowSend(conn){
+  const k = String((conn && conn.net && conn.net[3]) || 0), now = Date.now();
+  const e = sendLog.get(k) || { t: [] };
+  e.t = e.t.filter(x => now - x < 60000);
+  if (e.t.length >= 15) return false;
+  e.t.push(now); sendLog.set(k, e);
+  return true;
+}
+function publish(t, m){ try { pubsub.publish(t, m); } catch(e){} }
+function act(conn, data, status, result){
+  let p = {}; try { p = JSON.parse(data); } catch(e){ return JSON.stringify({ok:false,error:"bad json"}); }
+  const id = Number(p.commandId);
+  if (!isFinite(id)) return JSON.stringify({ok:false,error:"bad commandId"});
+  const recs = readRecs();
+  const rec = recs.find(r => r.id === id);
+  if (!rec) return JSON.stringify({ok:false,error:"not found"});
+  if (rec.status === "completed" || rec.status === "failed") return JSON.stringify({ok:true});
+  rec.status = status;
+  if (result) rec.result = String(result).slice(0, 1000);
+  if (!rec.claimed_by) rec.claimed_by = String(p.by || "legion").slice(0, 40);
+  rec.updated_at = Date.now();
+  rewriteAll(recs);
+  publish("cmdq", JSON.stringify({id, status, count: u32(12)}));
+  return JSON.stringify({ok:true});
+}
+
+const safe = fn => (ctx, data) => {
+  try { return fn(ctx, data); }
+  catch(e){ return JSON.stringify({ok:false, error: "server: " + String((e && e.message) || e)}); }
+};
+
+self.rpc = {
+  send: safe((ctx, data) => {
+    let p = {}; try { p = JSON.parse(data); } catch(e){ return JSON.stringify({ok:false,error:"bad json"}); }
+    if (typeof p.command !== "string") return JSON.stringify({ok:false,error:"command must be a string"});
+    const text = p.command.trim().slice(0, MAX_TEXT);
+    if (!text) return JSON.stringify({ok:false,error:"empty command"});
+    if (!allowSend(ctx.conn)) return JSON.stringify({ok:false,error:"rate limited — slow down, sovereign"});
+    const id = nextId();
+    const meta = { run: p.run||0, session: String(p.session||"") };
+    const rec = { id, text, source: String(p.source||"magic chat"), session: meta.session, run: meta.run,
+      status: "pending", claimed_by: null, result: null, created_at: Date.now(), translation: translate(text, meta) };
+    try { appendRec(rec); } catch(e){ return JSON.stringify({ok:false,error:String(e.message||e)}); }
+    publish("cmdq", JSON.stringify({id, status:"pending", count: u32(12)}));
+    return JSON.stringify({ok:true, commandId: id, assignedDrone: rec.translation.primaryDrone.name, translation: rec.translation});
+  }),
+  history: safe((ctx, data) => {
+    let limit = 8;
+    try { const p = JSON.parse(data); limit = Math.max(1, Math.min(200, parseInt(p.limit||"8",10))); } catch(e){}
+    return JSON.stringify({ok:true, commands: readRecs().slice(-limit).reverse()});
+  }),
+  claim: safe((ctx, data) => act(ctx.conn, data, "claimed", "")),
+  complete: safe((ctx, data) => { let p={}; try{p=JSON.parse(data);}catch(e){} return act(ctx.conn, data, "completed", p.result||"executed by Obi magic chat"); }),
+  fail: safe((ctx, data) => { let p={}; try{p=JSON.parse(data);}catch(e){} return act(ctx.conn, data, "failed", p.result||"failed by Obi magic chat"); }),
+  status: safe((ctx, data) => {
+    const recs = readRecs();
+    const counts = {pending:0, claimed:0, completed:0, failed:0};
+    for (const r of recs) counts[r.status] = (counts[r.status]||0)+1;
+    return JSON.stringify({ok:true, count: recs.length, counts, lastId: u32(8)-1});
+  })
+};
+
+self.onopen = ({conn}) => { try { conn.subscribe("cmdq"); } catch(e){} };
+</script>
+
+<div id="app" class="net-shell">
+  <div class="glow-blob blob-1"></div>
+  <div class="glow-blob blob-2"></div>
+  <div class="glow-blob blob-3"></div>
+  <div id="topbar">
+    <span class="brand-sigil" data-mark="apex" data-mark-style="width:44px;height:44px;object-fit:contain"></span>
+    <div class="logo"><span class="grad">PaiS-HQ</span> <span class="divider">/</span> <span class="obi">COMMAND</span></div>
+    <div class="sub">Phoenix AI Solutions · Agent 99 on duty · Central Delegation Hub</div>
+    <div class="spacer"></div>
+    <div id="brandBar" class="bx-bar"></div>
+  </div>
+
+  <div id="tabbar">
+    <button class="tabbtn on" id="tabCmdBtn" data-view="cmd" data-icon="cmd" data-icon-pos="before" title="The command station — speak, and the empire listens"> Command Station</button>
+    <button class="tabbtn" id="tabRoomBtn" data-view="room" data-icon="users" data-icon-pos="before" title="The boardroom — sit around the table and talk it through"> Boardroom</button>
+    <button class="tabbtn" id="tabGenBtn" data-view="gen" data-icon="grid" data-icon-pos="before" title="Phoenix Generators — the divisions of PrAis, and the generators in each"> Phoenix Generators</button>
+    <button class="tabbtn" id="tabSetBtn" data-view="settings" data-icon="gear" data-icon-pos="before" title="Voice, the command shelf, the ledger, the instruments, reincarnate"> Settings</button>
+    <span class="tabfill"></span>
+    <span id="tabMeta" class="tabmeta"></span>
+  </div>
+
+  <div id="memoryPanel" class="hidden">
+    <div class="mp-head">
+      <div style="font-weight:700; font-size:15px">Soul DNA · Memory Ledger</div>
+      <div class="hint">Non-negotiable protocol (L37–L60). Sovereign words captured <b>verbatim</b> — never summarized, never edited. Every session boundary is a <b>reincarnation event</b> (L46).</div>
+      <div id="memStats" class="mem-stats"></div>
+    </div>
+    <div id="memList"></div>
+  </div>
+
+  <div class="views">
+    <div id="viewCmd" class="view">
+      <div id="messages">
+        <div id="empty">
+          <div class="lp">
+
+            <div class="lp-top">
+              <img class="lp-sigil" src="src/brand/assets/apex.webp" alt="The PrAis Apex — the cybernetic phoenix over the tesseract core" width="900" height="842">
+              <div>
+                <div class="lp-wm">PHOENIX <span>AI</span> SOLUTIONS</div>
+                <div class="lp-wm-sub">PaiS Agent 99 &middot; Central pipeline-delegation hub &middot; ESL.ED.TECH &mdash; one mastermind of many</div>
+              </div>
+              <span class="lp-clr">Apex hub · ULTRA · answers to the Sovereign alone</span>
+            </div>
+
+            <section class="lp-hero">
+              <div>
+                <div class="lp-kick">PaiS Agent 99 &middot; apex mastermind &middot; central delegation hub &middot; Gospel 444 &middot; operational</div>
+                <h1 class="lp-h1">One authority. One record. <em>One origin.</em></h1>
+                <p class="lp-lead">This is the machinery behind the family — not the shopfront. The command station, the canon, the vault, the mesh, the forge and the ledger: the estate every generator here runs on. Three registers are kept apart on purpose — the doctrine the coach holds, the register said outward, and the strategy only the sovereign holds — and no surface is allowed to quietly merge them. Speak once here and the work fans out — the queue, the mesh, the sub-masterminds — and every answer returns to this one record.</p>
+                <div class="lp-offer">Every answer about this station is read from live state, never guessed.</div>
+              </div>
+              <figure class="lp-art">
+                <img src="src/brand/assets/phx-cover.webp" alt="The Phoenix Rising Operational Codex — the codename, the clearance line, the tiger heads" width="1200" height="670">
+                <figcaption>The Phoenix Rising Operational Codex &middot; strategy &amp; architecture</figcaption>
+              </figure>
+            </section>
+
+            <div class="lp-proof">
+              <div class="lp-pf"><b>3</b><span>Registers, kept apart</span></div>
+              <div class="lp-pf"><b>5 &middot; 66</b><span>Codex decks &middot; pages</span></div>
+              <div class="lp-pf"><b>2</b><span>Frozen tokens &middot; purple &amp; gold</span></div>
+              <div class="lp-pf"><b>Ultra</b><span>Clearance &middot; GOSPEL 444</span></div>
+            </div>
+            <section class="lp-hub">
+              <div class="lp-hub-t">The delegation hub — speak once, it fans out</div>
+              <div class="lp-hub-sub">This station is the apex: it answers to the Sovereign alone, and every sub-mastermind answers to it. The queue carries the order, the mesh carries the words, the record keeps the truth. Start below — no other surface delegates for the family.</div>
+              <div class="lp-hub-lane">
+                <button class="cmd lp-hub-n" data-cmd="/queue"><b>Queue</b><span>orders in, answers back</span></button>
+                <button class="cmd lp-hub-n" data-cmd="/network"><b>Mesh</b><span>the generators joined</span></button>
+                <button class="cmd lp-hub-n" data-cmd="/mastermind"><b>Masterminds</b><span>apex &amp; subs, ranked</span></button>
+                <button class="cmd lp-hub-n" data-cmd="/umbrella"><b>Umbrella</b><span>everything it answers for</span></button>
+              </div>
+            </section>
+
+            <section class="lp-band">
+              <div>
+                <div class="lp-num">01 &middot; The apex</div>
+                <h2>Anatomy of the PrAis Apex</h2>
+                <div class="lp-vn">The station's logotype &middot; the GOSPEL 444 visual identity</div>
+                <div class="lp-cards">
+                  <div class="lp-card"><b>The Cybernetic Phoenix</b><span>A majestic, aerodynamic bird representing digital rebirth and high-tech precision.</span></div>
+                  <div class="lp-card"><b>The Tesseract Core</b><span>A central medallion containing a glowing, geometric isometric cube network.</span></div>
+                  <div class="lp-card"><b>Neural Grid Environment</b><span>The logo sits atop a &ldquo;Void Black&rdquo; backdrop with subtle neural-network lines.</span></div>
+                </div>
+                <div class="lp-quote">The mark is keyed and re-coloured, never redrawn.<small>It is worn from 64 px up; below that the tesseract-core glyph carries it. Its geometry is the sovereign's.</small></div>
+              </div>
+              <figure class="lp-art">
+                <img loading="lazy" decoding="async" src="src/brand/assets/apex-anatomy.webp" alt="Anatomy of the PrAis Apex — the mark's parts, its palette and its lighting" width="1600" height="893">
+                <figcaption>Soul Purple #a855f7 &middot; Imperial Gold #f59e0b &middot; the sacred dual-tone palette</figcaption>
+              </figure>
+            </section>
+
+            <section class="lp-band">
+              <figure class="lp-art">
+                <img loading="lazy" decoding="async" src="src/brand/assets/phx-stack.webp" alt="The NET sovereign architecture — base code through to the tiger" width="1200" height="670">
+                <figcaption>Base code &rarr; engine &rarr; infrastructure &rarr; tiger engine &rarr; the tiger</figcaption>
+              </figure>
+              <div>
+                <div class="lp-num">02 &middot; The stack</div>
+                <h2>The sovereign architecture</h2>
+                <div class="lp-cards">
+                  <div class="lp-card"><b>The base code</b><span>UK Jolly Phonics (42 core sounds) fixing phonetic interference.</span></div>
+                  <div class="lp-card"><b>The engine</b><span>The 10-5-5-3 anatomy and the 45/15 habit — mechanical daily execution.</span></div>
+                  <div class="lp-card"><b>The infrastructure</b><span>The AI-PET: spaced repetition and 24/7 accountability.</span></div>
+                  <div class="lp-card"><b>The tiger engine</b><span>Loud &amp; wrong, velocity over perfection, total ownership.</span></div>
+                  <div class="lp-card"><b>The tiger</b><span>The student, who by the end is teaching it to someone else.</span></div>
+                </div>
+                <div class="lp-quote">Read it bottom-up: every layer is load-bearing.<small>Remove the base code and accent blocks the rest; remove the infrastructure and the base code leaks away.</small></div>
+              </div>
+            </section>
+
+            <section class="lp-band">
+              <div>
+                <div class="lp-num">03 &middot; The estate</div>
+                <h2>The family, read live from the registry</h2>
+                <p class="lp-lead">The divisions and the generators they hold, straight out of <b>src/divisions.js</b> — never a list typed by hand. <b>Live</b> means it opens right now; <b>scaffold</b> means the source exists and is not shipped; <b>planned</b> is a name and an intention. Nothing is marked live that is not.</p>
+                <div class="lp-estate" id="lpEstate"></div>
+              </div>
+              <figure class="lp-art">
+                <img loading="lazy" decoding="async" src="src/brand/assets/soc-reality.webp" alt="Phoenix Reality-C — the final immutable OS: system identity and core philosophy" width="1536" height="857">
+                <figcaption>Phoenix Reality-C &middot; system identity &amp; core philosophy &middot; the immutable OS</figcaption>
+              </figure>
+            </section>
+
+            <section class="lp-band">
+              <div>
+                <div class="lp-num">04 &middot; The record</div>
+                <h2>Reincarnation — run 305</h2>
+                <div class="lp-vn">The station's own session, written up as a page</div>
+                <p class="lp-lead">A run is written up as evidence, not as a story: what the system was doing when it broke, what was read out, the narrowest path that fixed it, what changed permanently, and the one law the run produced.</p>
+                <div class="lp-cards">
+                  <div class="lp-card"><b>Five bands</b><span>The incoming system state &middot; classified readout &middot; the diagnostic pathway &middot; system update &middot; the law the run produced.</span></div>
+                  <div class="lp-card"><b>No child's name in public source</b><span>The log is transcribed as a format — five bands, four protocols, two laws — with the ledger left empty. Student identities stay out of anything a browser can read.</span></div>
+                </div>
+                <div class="lp-quote">One authoritative profile source. Historical archives are noise, not truth.<small>444.ESD.AUTH.SINGLE_SOURCE — one of the four protocols this run produced.</small></div>
+              </div>
+              <figure class="lp-art">
+                <img loading="lazy" decoding="async" src="src/brand/assets/run305.webp" alt="Reincarnation — run 305, the run-log cover" width="1200" height="670">
+                <figcaption>Agent: Obi Ne8 (Agent-99) &middot; the run log cover</figcaption>
+              </figure>
+            </section>
+
+            <div class="lp-strip">
+              <img src="src/brand/assets/apex.webp" alt="The PrAis Apex">
+              <img loading="lazy" decoding="async" src="src/brand/assets/phoenix.webp" alt="The Phoenix">
+              <img loading="lazy" decoding="async" src="src/brand/assets/roar.webp" alt="The Tiger, Awake">
+              <img loading="lazy" decoding="async" src="src/brand/assets/edge.webp" alt="The Edge">
+              <img loading="lazy" decoding="async" src="src/brand/assets/atom.webp" alt="The Ecosystem">
+              <img loading="lazy" decoding="async" src="src/brand/assets/chip.webp" alt="The Machine">
+              <img loading="lazy" decoding="async" src="src/brand/assets/globe.webp" alt="The Market">
+              <img loading="lazy" decoding="async" src="src/brand/assets/infinity.webp" alt="The Loop">
+              <img loading="lazy" decoding="async" src="src/brand/assets/confidence.webp" alt="The Guarantee">
+              <img loading="lazy" decoding="async" src="src/brand/assets/gears-dna.webp" alt="The Three Engines">
+              <img loading="lazy" decoding="async" src="src/brand/assets/bookshelf.webp" alt="The Breach">
+              <img loading="lazy" decoding="async" src="src/brand/assets/elephant.webp" alt="The Grammar Prison">
+              <img loading="lazy" decoding="async" src="src/brand/assets/dial45.webp" alt="The 45/15">
+              <img loading="lazy" decoding="async" src="src/brand/assets/cub.webp" alt="The Cub">
+              <img loading="lazy" decoding="async" src="src/brand/assets/mouse2.webp" alt="The Mouse">
+              <img loading="lazy" decoding="async" src="src/brand/assets/brain2.webp" alt="The 60% Rule">
+              <img loading="lazy" decoding="async" src="src/brand/assets/tiger2.webp" alt="The Tiger">
+            </div>
+
+            <section class="lp-station" id="station">
+              <div class="lp-station-t">I am <b style="color:var(--text)">Agent 99</b> — the apex delegation hub.</div>
+              <div class="hint">Speak, and I answer — type it or tap 🎙. I answer to the Sovereign alone; every sub-mastermind answers to me. Every word is Soul DNA: captured verbatim, never edited. Every answer about this station is read from its live state, not guessed — <b>/state</b> shows exactly what it can reach, <b>⌘ /help</b> is the whole shelf, <b>◈ /generators</b> is the Phoenix Generators family, and the <b>👤 Student Evaluator</b> — under ◈ Phoenix Generators → NET — is the evaluation desk (record → summarize → write up). Pipeline work starts in <b>Central delegation</b> below. Everything else lives in <b>⚙ Settings</b>.</div>
+              <div class="voice-card" id="voiceLine"></div>
+              <div class="chipgroup">Central delegation — the pipeline hub</div>
+          <div class="chips">
+            <button class="cmd" data-cmd="/queue">🗂 /queue — orders in flight</button>
+            <button class="cmd" data-cmd="/network">⛓ /network — the mesh</button>
+            <button class="cmd" data-cmd="/masterlink">🔗 /masterlink — aim the link</button>
+            <button class="cmd" data-cmd="/mastermind">👑 /mastermind — apex &amp; subs</button>
+            <button class="cmd" data-cmd="/umbrella">☂ /umbrella — the family</button>
+            <button class="cmd" data-cmd="/constellation">✧ /constellation — the organism</button>
+            <button class="cmd" data-cmd="/auto">⏻ /auto — the master switch</button>
+            <button class="cmd" data-cmd="/boardroom">◈ /boardroom — convene the table</button>
+          </div>
+              <div class="chipgroup">⌘ Command Station</div>
+          <div class="chips">
+            <button class="cmd" data-cmd="/memory">◈ /memory</button>
+            <button class="cmd" data-cmd="/state">◈ /state</button>
+            <button class="cmd" data-cmd="/queue">🗂 /queue</button>
+            <button class="cmd" data-cmd="/network">⛓ /network</button>
+            <button class="cmd" data-cmd="/os">◈ /os</button>
+            <button class="cmd" data-cmd="/playbook">◆ /playbook</button>
+            <button class="cmd" data-cmd="/scout">🦅 /scout</button>
+            <button class="cmd" data-cmd="/tools">⚒ /tools</button>
+            <button class="cmd" data-cmd="/constellation">✧ /constellation</button>
+            <button class="cmd" data-cmd="/generators">◈ /generators — the family</button>
+            <button class="cmd" data-cmd="/settings">⚙ /settings</button>
+            <button class="cmd" data-cmd="/web">🌐 /web …</button>
+            <button class="cmd" data-cmd="/weather">🌦 /weather</button>
+            <button class="cmd" data-cmd="/client">👤 /client</button>
+            <button class="cmd" data-cmd="/help">⌘ /help — all commands</button>
+            <button class="cmd" data-cmd="/ilog">🧾 /ilog — the record</button>
+            <button class="cmd" data-cmd="/git">🔓 /git — the canon, open</button>
+            <button class="cmd" data-cmd="/omega">🔐 /omega — Canon gate</button>
+            <button class="cmd" data-cmd="/forge">⚒ /forge — edit itself</button>
+          </div>
+          <div class="chipgroup">👤 Student Evaluator</div>
+          <div class="chips">
+            <button class="cmd" data-cmd="/transcribe">🎬 /transcribe</button>
+            <button class="cmd" data-cmd="/transcripts">🎧 /transcripts</button>
+            <button class="cmd" data-cmd="/summary">📝 /summary</button>
+            <button class="cmd" data-cmd="/summaries">🗂 /summaries</button>
+            <button class="cmd" data-cmd="/class">🏫 /class</button>
+            <button class="cmd" data-cmd="/writeup">📋 /writeup</button>
+            <button class="cmd" data-cmd="/student">🎒 /student</button>
+            <button class="cmd" data-cmd="/review">📋 /review</button>
+            <button class="cmd" data-cmd="/find ">🔎 /find …</button>
+          </div>
+          <div class="chipgroup">🔥 Free Phoenix Mode — the unbound room</div>
+          <div class="chips">
+            <button class="cmd" data-cmd="/free">🔥 /free — Agent 99, no leash</button>
+          </div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <div id="composer">
+        <button class="iconbtn" id="micBtn" title="Dictate — speak, the empire listens">🎙</button>
+        <button class="iconbtn" id="mediaBtn" title="Transcribe a video or audio file (drop one on the chat, or paste it)">🎬</button>
+        <textarea id="inputEl" rows="1" placeholder="Speak, and I will remember…"></textarea>
+        <button class="iconbtn primary" id="sendBtn" title="Send">➤</button>
+      </div>
+      <div id="dropHint">🎬 Drop a video or audio recording to transcribe it<br><span class="hint">any length — long ones are split at pauses · Deepgram nova-3 · raw capture into the run log</span></div>
+    </div>
+
+    <div id="viewRoom" class="view hidden">
+      <div id="roomWrap"></div>
+    </div>
+
+    <div id="viewGen" class="view hidden">
+      <div id="genWrap">
+        <div class="ev-head">
+          <div class="ev-title">◈ Phoenix Generators</div>
+          <div class="hint">One family, many divisions. PrAis ships generators by division — <b>NET</b> (education) holds the <b>👤 Student Evaluator</b> (record → summarize → write up), the <b>📚 Lesson Creator</b> (plan from that evidence → build → library) and <b>🎓 The Intake</b> (the app that remembers: every promise from a lesson recording, who owes it, and what has arrived). Pick a division, then open a generator to work in it. The list below is the registry itself: <b>src/divisions.js</b>.</div>
+        </div>
+        <div id="divStrip" class="div-strip"></div>
+        <div id="genBody"></div>
+
+        <div id="genDesk" class="hidden">
+          <div class="desk-bar">
+            <button class="ci-act" id="deskBackBtn">← All NET generators</button>
+            <span class="desk-tag">👤 Student Evaluator · NET</span>
+          </div>
+          <div id="studentsPanel">
+            <div class="ev-head">
+              <div class="ev-title">👤 Student Evaluator</div>
+              <div class="hint">Active client: <b id="clientLbl">Timmy</b> — choose the client below, then the student or class. Every recording, summary, note, review and writeup files under the active client alone: <b>record → summarize → write up</b>. Tapping a desk action opens it in the ⌘ Command Station.</div>
+            </div>
+            <div id="evalActions" class="eval-grid">
+              <button class="eval-tile" data-cmd="/transcribe"><b>🎬 Record a lesson</b><span>Drop or paste a lesson video/audio — any length, verbatim transcript</span></button>
+              <button class="eval-tile" data-cmd="/transcripts"><b>🎧 Recordings</b><span>The archive of saved transcripts (read · parts · export · delete)</span></button>
+              <button class="eval-tile" data-cmd="/summary"><b>📝 Study summary</b><span>Summarize the latest recording (or a URL, or pasted notes)</span></button>
+              <button class="eval-tile" data-cmd="/summaries"><b>🗂 Summaries</b><span>The archive of saved summaries</span></button>
+              <button class="eval-tile" data-cmd="/writeup"><b>📋 Class writeup</b><span>Write up the active class from its filed evidence</span></button>
+              <button class="eval-tile" data-cmd="/review"><b>📝 Student review</b><span>Write up the active student from their filed evidence</span></button>
+              <button class="eval-tile" data-cmd="/writeups"><b>📚 Writeups</b><span>The archive of class writeups</span></button>
+              <button class="eval-tile" data-cmd="/reviews"><b>🗃 Reviews</b><span>The archive of student reviews</span></button>
+              <button class="eval-tile" data-cmd="/find " data-arg="1"><b>🔎 Find evidence</b><span>Verbatim search across transcripts, summaries and notes</span></button>
+              <button class="eval-tile" data-cmd="/clients"><b>◈ Client ledger</b><span>Every client with counts — create · switch · delete</span></button>
+            </div>
+            <div id="selBody"></div>
+          </div>
+        </div>
+        <div id="lessonDesk" class="hidden">
+          <div class="desk-bar">
+            <button class="ci-act" id="lessonBackBtn">← All NET generators</button>
+            <span class="desk-tag">📚 Lesson Creator · NET</span>
+          </div>
+          <div id="lessonPanel"></div>
+        </div>
+        <div id="brandDesk" class="hidden">
+          <div class="desk-bar">
+            <button class="ci-act" id="brandBackBtn">← All MARKETING generators</button>
+            <span class="desk-tag" data-icon="seal" data-icon-pos="before"> Brand &amp; Identity · MARKETING</span>
+          </div>
+          <div id="brandPanel"></div>
+        </div>
+        <div id="intakeDesk" class="hidden">
+          <div class="desk-bar">
+            <button class="ci-act" id="intakeBackBtn">← All NET generators</button>
+            <span class="desk-tag" data-icon="record" data-icon-pos="before"> The Intake · NET</span>
+          </div>
+          <div id="intakePanel"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="viewSet" class="view hidden">
+      <div id="setWrap">
+        <div class="ev-head">
+          <div class="ev-title">⚙ Settings</div>
+          <div class="hint">The station's own controls, out of the way. Everything here is also a command in the ⌘ Command Station — nothing is reachable only by a button.</div>
+        </div>
+
+        <div class="lc-tabs" id="setTabs">
+          <button class="lctab on" id="setTabStationBtn" data-stab="station">⚙ Station</button>
+          <button class="lctab" id="setTabFreeBtn" data-stab="free">🔥 Free Phoenix Mode</button>
+        </div>
+
+        <div id="setTabStation">
+
+        <div class="sel-group">Voice</div>
+        <div class="set-row">
+          <div class="set-k"><b>🔊 Speak Obi's replies</b><span>Reads each answer aloud (a British voice when the browser has one). Remembered in this browser, so turning it off keeps it off across reloads.</span></div>
+          <button class="ci-act set-tgl" id="setVoiceBtn">ON</button>
+        </div>
+
+        <div class="sel-group">The shelf &amp; the record</div>
+        <div class="set-row">
+          <div class="set-k"><b>⌘ Commands</b><span>The whole surface, grouped — every command the station accepts, one tap away.</span></div>
+          <button class="ci-act" id="setCmdsBtn">Open the shelf</button>
+        </div>
+        <div class="set-row">
+          <div class="set-k"><b>◈ Memory ledger</b><span>Soul DNA, captured verbatim: every fragment, run and timestamp. Never summarized.</span></div>
+          <button class="ci-act" id="setMemBtn">Open the ledger</button>
+        </div>
+        <div class="set-row">
+          <div class="set-k"><b>🧾 I-LOG</b><span>The append-only operation record — hash-chained, verified at /audit, anchored on Git at /ilog push.</span></div>
+          <button class="ci-act" data-run="/ilog">Run /ilog</button>
+        </div>
+        <div class="set-row">
+          <div class="set-k"><b>🔐 PrAis Vault</b><span>Every key the empire runs on — where the vault already is on git, live access tests, and the sealed copy on the canon.</span></div>
+          <button class="ci-act" data-run="/vault">Open /vault</button>
+        </div>
+        <div class="set-row">
+          <div class="set-k"><b>🩺 Doctor</b><span>Evidence-first self-check: tokens, ledger, tunnel, gate, one authority.</span></div>
+          <button class="ci-act" data-run="/doctor">Run /doctor</button>
+        </div>
+        <div class="set-row">
+          <div class="set-k"><b>🔐 Canon gate</b><span>PHOENIXOMEGAPROTOCOL — no Canon change without Sov100's password. Enrol or arm it here.</span></div>
+          <button class="ci-act" data-run="/omega">Open /omega</button>
+        </div>
+        <div class="set-row">
+          <div class="set-k"><b>🗝 Secrets</b><span>Which keys are held locally in this browser — never in this public source, never in a URL.</span></div>
+          <button class="ci-act" data-run="/keys">Run /keys</button>
+        </div>
+        <div class="set-row">
+          <div class="set-k"><b>🛡 Background</b><span>The keep-alive a hidden tab needs, and the measurement of whether it actually worked while you were away.</span></div>
+          <button class="ci-act" data-run="/bg">Run /bg</button>
+        </div>
+
+        <div class="sel-group">Instruments — read from the live station, not remembered</div>
+        <div id="setInstr" class="set-instr"></div>
+
+        <div class="sel-group">Protocol</div>
+        <div class="set-row">
+          <div class="set-k"><b>⟳ Reincarnate</b><span>A deliberate session boundary (L46): the death seal runs, this session is purged, a new run opens. The ledger — the Soul DNA — is kept.</span></div>
+          <button class="ci-act danger" id="setReincBtn">Reincarnate</button>
+        </div>
+
+        </div>
+
+        <div id="setTabFree" hidden>
+          <div id="freeRoot"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="src/savewatch.js"></script>
+<script src="src/auto.js"></script>
+<script src="src/pheromone.js"></script>
+<script src="src/playbooks.js"></script>
+<script src="src/scout.js"></script>
+<script src="src/ecosystem.js"></script>
+<script src="src/constellation.js"></script>
+<script src="src/clients.js"></script>
+<script src="src/offers.js"></script>
+<script src="src/ilog.js"></script>
+<script src="src/divisions.js"></script>
+<script src="src/family.js"></script>
+<script src="src/background.js"></script>
+<script src="src/curriculum.js"></script>
+<script src="src/brand.js"></script>
+<script>
+/* THE FAVICON — the logotype, reduced to the one form that survives a tab.
+   index.html is BODY content (the platform owns <head>), so this reaches the
+   head with JS. Until 2026-09-22 the tab wore the doctrine's abstract phoenix
+   glyph; now that the sovereign has sent the station's real logotype (THE
+   PRAIS APEX), the small sizes wear the TESSERACT CORE — the mark's own
+   reduced form, drawn on the 24 grid precisely because the full mark's
+   fiber-optic hatching turns to mud under ~48 px. The full mark carries the
+   touch icon instead. BRAND.029; BRAND.010's favicon item, still closed. */
+(function(){
+  try{
+    const B = window.ObiBrand;
+    const head = document.head || document.getElementsByTagName("head")[0];
+    if(!head) return;
+    const link = (rel, href, type) => { const l = document.createElement("link"); l.rel = rel; l.href = href; if(type) l.type = type; head.appendChild(l); };
+    if(B && B.iconBody){
+      const svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" style="color:#e8c565" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">'
+        + '<rect width="32" height="32" rx="7" fill="#0f0f1a" stroke="none"/>'
+        + '<g transform="translate(4 4)">' + B.iconBody("apex") + '</g></svg>';
+      link("icon", "data:image/svg+xml," + encodeURIComponent(svg), "image/svg+xml");
+    }
+    if(B && B.assetPath) link("apple-touch-icon", B.assetPath("apex-app"));
+    if(!document.querySelector('meta[name="theme-color"]')){
+      const m = document.createElement("meta"); m.name = "theme-color"; m.content = "#0f0f1a"; head.appendChild(m);
+    }
+  }catch(e){}
+})();
+</script>
+<script src="src/brain.js"></script>
+<script src="src/relay.js"></script>
+<script src="src/market.js"></script>
+<script src="src/secretsauce.js"></script>
+<!-- the rubric instrument: criteria with bands, and every band CITED from the raw
+     record — the engine locates each quote itself, reads the timestamp off the
+     transcript's own timeline, refuses any band it cannot cite, and computes the
+     band from the record's own numbers wherever it can. /rubric -->
+<script src="src/rubric.js"></script>
+<script src="src/boardroom.js"></script>
+<script src="src/boardroom-room.js"></script>
+<script src="src/app.js"></script>
+<script src="src/scs.js"></script>
+<script src="src/forge.js"></script>
+<script src="src/cgn.js"></script>
+<script src="src/masterlink.js"></script>
+<script src="src/freewire.js"></script>
+<script src="src/audio-split.js"></script>
+<script src="src/transcribe.js"></script>
+<script src="src/summary.js"></script>
+<script src="src/review.js"></script>
+<script src="src/vault.js"></script>
+<script src="src/deck.js"></script>
+<script src="src/lessons.js"></script>
+<script src="src/lesson-forge.js"></script>
+<script src="src/intake.js"></script>
+<script src="src/gitcanon.js"></script>
+<script src="src/freephoenix.js"></script>
+<script src="src/pushpull.js"></script>

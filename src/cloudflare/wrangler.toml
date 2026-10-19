@@ -1,0 +1,47 @@
+# OB-1 on Cloudflare — one Worker, two Durable Objects, static assets. No R2, no KV namespace,
+# no DNS to set up, no third-party service. Deploy:  npx wrangler deploy
+#
+# Secrets are NOT here (this file is public). Set them with:
+#   npx wrangler secret put DEEPGRAM_API_KEY     # transcription (api.deepgram.com)
+#   npx wrangler secret put LLM_API_KEY          # only if you use LLM_BASE_URL below
+
+name = "obi-student-summary"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+run_worker_first = true          # the Worker is the entry point; it delegates static files to ASSETS
+
+[ai]
+binding = "AI"                   # Workers AI: text + FLUX images out of the box, no API key needed
+
+[durable_objects]
+bindings = [
+  { name = "TUNNEL", class_name = "TunnelDO" },   # the command tunnel (was the perchance server-plugin)
+  { name = "STORE",  class_name = "StoreDO" }     # uploads + editable files (CGN hubs)
+]
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["TunnelDO", "StoreDO"]
+
+[vars]
+OBI_NAME = "obi-cf"              # becomes window.generatorName in the page
+# OBI_ACCESS_KEY = "a-long-random-string"   # uncomment to make the deployment private (404s
+                                            # without the key; visit /?k=THEKEY once to set the cookie)
+
+# ---------------------------------------------------------------------------------------------
+# OPTIONAL — point text/image at any OpenAI-compatible endpoint instead of Workers AI.
+# Uncomment and set the matching secret. This is how you go "completely unrestricted": put in an
+# uncensored / self-hosted model and nothing between you and it edits your prompts.
+# ---------------------------------------------------------------------------------------------
+# [vars]
+# OBI_NAME      = "obi-cf"
+# LLM_BASE_URL  = "https://api.openai.com/v1"
+# LLM_MODEL     = "gpt-4o-mini"
+# OBI_MAX_TOKENS = "1024"
+# IMAGE_BASE_URL = "https://api.openai.com/v1"
+# IMAGE_MODEL    = "gpt-image-1"

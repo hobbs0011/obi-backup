@@ -1,0 +1,11 @@
+$meta
+  title = PrAis Site Builder — the build division
+  description = The Web Development division's generator (role: site). A brief goes in; a real website comes out — self-contained HTML, previewed live in a sandboxed frame and downloadable, wearable in the sovereign's frozen brand or in a client's own colours. Every brief is Soul DNA, captured verbatim (SDNAD) before the model is called, and synced to the whole organism over the Connected Generator Network. It stands on the machinery the empire already runs — src/cloudflare/ (one Worker, two Durable Objects, an asserting build), the PrAis storefront on Cloudflare Pages, Timmy's Portal on a Cloudflare Worker, and the one authority repo — and it tells the truth about the two paths it cannot take itself: publishing is the sovereign's account, and a write to the authority is the station's gate.
+  tags = website, site builder, web development, landing page, html, deploy, cloudflare, github, pr-ais, obi, cgn, sdnad
+  header
+    mode = minimal
+
+generateText = {import:ai-text-plugin}
+superFetch = {import:super-fetch-plugin}
+uploadPlugin = {import:upload-plugin}
+kv = {import:kv-plugin}

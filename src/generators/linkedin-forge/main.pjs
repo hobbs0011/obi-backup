@@ -1,0 +1,8 @@
+$meta
+  title = THE LINKEDIN — a PrAis role
+  description = One function of the NET intake, as its own generator: the LinkedIn profile composed from the same record the CV is built from, plus the connection build the tutor quoted (600). Reads and writes one record per student, in the browser, and reads the station's /intake export. PrAis · NET.
+  tags = prais, net, intake, linkedin, profile, student, education, role
+  header
+    mode = minimal
+
+kv = {import:kv-plugin}

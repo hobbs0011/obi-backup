@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0f0f1a">
+<title>Programmes — ages 1 to 70 | Natural English Training</title>
+<meta name="description" content="Eight NET programmes: Early Years, Primary, Secondary, IELTS, Business English, the 2026 English + AI track, the Summer Intensive and one-to-one for any age. Taught from the pacing guides the schools actually use.">
+<link rel="canonical" href="https://naturalenglishtraining.dev/programs.html">
+<meta name="net-api" content="">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Programmes | Natural English Training">
+<meta property="og:description" content="From early years to boardroom. One-to-one, in-home and online, ages 1–70.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%230f0f1a'/%3E%3Cpath d='M16 5c2.2 3.4 2 6.1-.4 8.6 2.6-.8 4.3-2.4 5.3-4.6 1.2 3 .5 5.7-1.7 7.8 2.2-.2 3.9-1.2 5.1-3-.3 3.3-1.8 5.7-4.4 7.2 1.7.7 3.5.8 5.3.4-1.6 3-4.3 4.7-7.6 4.7l-.8 4.2h-3l-.8-4.2c-3.3 0-6-1.7-7.6-4.7 1.8.4 3.6.3 5.3-.4-2.6-1.5-4.1-3.9-4.4-7.2 1.2 1.8 2.9 2.8 5.1 3-2.2-2.1-2.9-4.8-1.7-7.8 1 2.2 2.7 3.8 5.3 4.6C14 11.1 13.8 8.4 16 5Z' fill='%23f59e0b'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@500;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/net.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","name":"NET programmes","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Early Years (ages 1–5)"},
+{"@type":"ListItem","position":2,"name":"Primary (grades 1–5)"},
+{"@type":"ListItem","position":3,"name":"Secondary (grades 6–9)"},
+{"@type":"ListItem","position":4,"name":"IELTS"},
+{"@type":"ListItem","position":5,"name":"Business English & Corporate"},
+{"@type":"ListItem","position":6,"name":"The 2026 Advantage — English + AI"},
+{"@type":"ListItem","position":7,"name":"Summer Intensive"},
+{"@type":"ListItem","position":8,"name":"One-to-One, any age"}]}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="spectrum"></div>
+<nav class="nav" aria-label="Primary">
+  <div class="wrap bar">
+    <a class="brand" href="index.html"><span class="sig" data-sig="phoenix"></span><span class="wm">NET<small>Natural English Training</small></span></a>
+    <button class="burger" id="netBurger" aria-expanded="false" aria-controls="netLinks">MENU</button>
+    <div class="navlinks" id="netLinks">
+      <a href="method.html">Method</a>
+      <a href="programs.html">Programmes</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="placement.html">Placement test</a>
+      <a href="results.html">Results</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+      <a class="cta" href="book.html">Book free diagnostic</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <p class="kick">Programmes</p>
+          <h1>One student, one plan.<br>From age one to seventy.</h1>
+          <p class="lede">Eight tracks, one method underneath them all. Pick the closest to your situation — the free diagnostic will tell you whether it is the right one, and will say so if it is not.</p>
+          <div class="btnrow">
+            <a class="btn btn-primary" href="book.html">Book the free 30-minute diagnostic</a>
+            <a class="btn btn-ghost" href="placement.html">Measure the level first</a>
+          </div>
+        </div>
+        <div class="hud">
+          <div class="hudbar"><span>At a glance</span><span class="pill">8 tracks</span></div>
+          <div class="flag"><span class="fi" data-sig="dial"></span><div><b>1-on-1 by default</b><span class="small muted">Small groups up to four when a family or a team asks for it.</span></div></div>
+          <div class="flag"><span class="fi" data-sig="brain"></span><div><b>Taught from the school's own guides</b><span class="small muted">Look · Global Success · Close-up A1+ → B1+ · Cambridge Science.</span></div></div>
+          <div class="flag"><span class="fi" data-sig="tiger"></span><div><b>In-home, at your office, or online</b><span class="small muted">Lakeview City, District 2 and surrounding districts; online anywhere.</span></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="spectrum"></div>
+  </header>
+
+  <section class="tight panelish">
+    <div class="wrap">
+      <p class="kick">Filter</p>
+      <div class="chips" id="filterChips"></div>
+      <p class="hint" id="filterNote">Showing all eight programmes.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="grid g2" id="progList" style="gap:22px"></div>
+      <p class="hint" id="progErr" hidden></p>
+    </div>
+  </section>
+
+  <section class="plum">
+    <div class="wrap">
+      <p class="kick">Underneath every programme</p>
+      <h2>The curriculum the schools actually run.</h2>
+      <p class="lede mx" style="max-width:74ch">NET teaches from the same pacing guides the classrooms do, so a private hour reinforces the school week instead of competing with it. That is a design decision, and it is the reason a student's report card and their speaking both move.</p>
+      <div class="tablewrap mt3">
+        <table class="matrix">
+          <caption>School-year mapping — the books and the level each stage runs at</caption>
+          <thead><tr><th>Stage</th><th>Level</th><th>Books in play</th><th>What the private hour adds</th></tr></thead>
+          <tbody>
+            <tr><td>Grades 1–2</td><td>Pre-A1 → A1</td><td>Look · Global Success · Cambridge Primary Science</td><td>Ear-training, phonics (42 core sounds), naming, and the habit of answering out loud</td></tr>
+            <tr><td>Grades 3–5</td><td>A1 → A2</td><td>Look 3–5 · Global Success · Science 3–5</td><td>Reading aloud with comprehension; Science vocabulary so the science lesson stops being a language problem</td></tr>
+            <tr><td>Grade 6</td><td>Close-up A1+</td><td>Close-up A1+ · Global Success · Science · Cambridge</td><td>Output on top of the syllabus: opinion, register, and the first two-minute monologue</td></tr>
+            <tr><td>Grade 7</td><td>New Close-up A2</td><td>New Close-up A2 · Global Success · Science</td><td>Speed and fluency drills; the postponing phrases are named and removed</td></tr>
+            <tr><td>Grade 8</td><td>New Close Up B1</td><td>New Close Up B1 · Global Success · Science</td><td>Argument in writing and in speech; how to hold a position under interruption</td></tr>
+            <tr><td>Grade 9</td><td>New Close Up B1+</td><td>New Close Up B1+ · Global Success · Science</td><td>Exam-grade writing rebuilt from the band descriptors; presenting without a script</td></tr>
+            <tr><td>Grade 11–12</td><td>B2 → C1</td><td>IELTS materials + the student's own target</td><td>A dated band plan, timed speaking, and weekly full-speed listening</td></tr>
+            <tr><td>Adult</td><td>A1 → C2</td><td>Chosen per student — usually no textbook at all</td><td>Meetings, negotiation, presenting, and the delivery work (volume, pace, eye contact)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="hint">Scope note, in the school's own terms: on the secondary guides NET teaches Close-up and Science, and Global Success is the Vietnamese-teacher track — so a private hour serves the exam rather than duplicating the classroom. Nothing here is guessed; the mapping is read off the pacing guides themselves.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap narrow center">
+      <h2>Not sure which one fits?</h2>
+      <p class="lede">That is what the free diagnostic is for. Thirty minutes, in your home, no obligation, and a straight answer — including a straight no if NET is not the right fit.</p>
+      <div class="btnrow center mt2">
+        <a class="btn btn-primary" href="book.html">Book the free diagnostic</a>
+        <a class="btn btn-ghost" href="pricing.html">See the pricing</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site" id="netFooter"></footer>
+<script src="assets/net.js"></script>
+<script src="assets/api.js"></script>
+<script>
+(function () {
+  var list = document.getElementById("progList");
+  var chips = document.getElementById("filterChips");
+  var note = document.getElementById("filterNote");
+  var ALL = "all", current = ALL;
+
+  function card(p) {
+    return '<article class="hud" id="' + p.id + '">' +
+      '<div class="hudbar"><span>' + NET.esc(p.ages) + "</span><span class=\"mono\">" + NET.esc(p.cadence) + "</span></div>" +
+      "<h3 style=\"font-size:1.35rem\">" + NET.esc(p.name) + "</h3>" +
+      '<p class="vn">' + NET.esc(p.vn) + "</p>" +
+      '<p class="muted" style="margin-top:10px">' + NET.esc(p.blurb) + "</p>" +
+      '<div class="grid" style="grid-template-columns:1fr 1fr;gap:14px;margin-top:14px">' +
+        '<div><div class="card-kick">Format</div><p class="small mb0">' + NET.esc(p.format) + "</p></div>" +
+        '<div><div class="card-kick">Materials</div><p class="small mb0">' + NET.esc(p.books) + "</p></div>" +
+      "</div>" +
+      '<p class="card-kick" style="margin-top:18px">What the student actually does</p>' +
+      '<ul class="small" style="padding-left:18px">' + p.does.map(function (d) { return "<li>" + NET.esc(d) + "</li>"; }).join("") + "</ul>" +
+      '<div class="note gold" style="margin-top:14px"><b>Where it lands.</b> ' + NET.esc(p.outcome) + "</div>" +
+      '<div class="btnrow" style="margin-top:16px">' +
+        '<a class="btn btn-primary btn-sm" href="book.html?goal=' + encodeURIComponent(p.name) + '">Book the free diagnostic</a>' +
+        '<a class="btn btn-ghost btn-sm" href="pricing.html">What it costs</a>' +
+      "</div></article>";
+  }
+
+  function render() {
+    NET.load("programs").then(function (d) {
+      var rows = d.programmes.filter(function (p) { return current === ALL || current === p.id; });
+      list.innerHTML = rows.map(card).join("");
+      note.textContent = current === ALL ? "Showing all " + d.programmes.length + " programmes." : "Showing 1 programme. Tap “All” to see the rest.";
+      chips.querySelectorAll("button").forEach(function (b) {
+        var on = b.dataset.k === current;
+        b.style.borderColor = on ? "#f59e0b" : "";
+        b.style.color = on ? "#fff" : "";
+        b.style.background = on ? "rgba(245,158,11,.14)" : "";
+      });
+    }).catch(function (e) {
+      var n = document.getElementById("progErr");
+      n.hidden = false;
+      n.textContent = "The programme list could not be read from assets/data/programs.json — " + e.message + ". The page refuses to show a programme it cannot load.";
+    });
+  }
+
+  NET.load("programs").then(function (d) {
+    var opts = [{ k: ALL, t: "All " + d.programmes.length }].concat(d.programmes.map(function (p) { return { k: p.id, t: p.name }; }));
+    chips.innerHTML = opts.map(function (o) { return '<button type="button" class="chip" data-k="' + o.k + '" style="cursor:pointer;min-height:40px;padding:8px 14px">' + NET.esc(o.t) + "</button>"; }).join("");
+    chips.addEventListener("click", function (e) {
+      var b = e.target.closest("button"); if (!b) return;
+      current = b.dataset.k; render();
+    });
+    render();
+    if (location.hash) {
+      var t = document.querySelector(location.hash);
+      if (t) setTimeout(function () { t.scrollIntoView({ behavior: "smooth", block: "start" }); }, 250);
+    }
+  });
+})();
+</script>
+</body>
+</html>

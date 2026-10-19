@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<meta charset="utf-8">
+<title>the role kit — harness</title>
+<style>body{background:#0f0f1a}#okOut{max-width:1140px;margin:0 auto;color:#e9e6f2;font:13px/1.5 system-ui,sans-serif;padding:0 16px 40px}</style>
+<div id="mount"></div>
+<div id="okOut"></div>
+<script src="kit.js"></script>
+<script>
+/* ============================================================================
+   THE ROLE KIT'S OWN HARNESS (src/generators/role-kit/test.html)
+
+   Opens the kit as a plain page — no perchance engine, no kv-plugin — and
+   exercises every part of it: the store (localStorage fallback), the fail-closed
+   field reader, the record shape, the import readers, the shell furniture and
+   the print sheet. If this page renders and the CHECKS block at the bottom is
+   all PASS, the kit works and every role built on it inherits that.
+
+   Open it:      https://<your-generator>.perchance.org/... (src path) OR
+                 copy this file beside kit.js in your own generator's src/.
+   ========================================================================== */
+(async function () {
+  var K = window.ObiKit, out = document.getElementById("okOut");
+  var results = [];
+  function check(name, ok, detail) { results.push({ name: name, ok: !!ok, detail: detail || "" }); }
+
+  /* ---- 1 · the record shape + the store ---------------------------------- */
+  var id = "harness-student";
+  await K.forget(id);
+  var rec = K.blank(id, "Harness Student", { spelling: "H-A-R-N-E-S-S" });
+  check("blank() makes an intake/1 record", rec.v === "intake/1" && rec.id === id, rec.v);
+  check("blank() ships no student data", !(rec.fields || []).length && !(rec.inbox || []).length);
+  check("durable() reports the store honestly", typeof K.durable() === "boolean", K.durable() ? "kv" : "localStorage");
+
+  K.setField(rec, "headline", "Headline", "Learning the kit");
+  K.setField(rec, "degree", "Degree", "Ravi design", "the machine guessed this", "unresolved");
+  await K.save(rec);
+  var back = await K.get(id);
+  check("save/get round-trips through the store", !!back && back.id === id);
+
+  /* ---- 2 · FAIL CLOSED ---------------------------------------------------- */
+  check("a stated field reads", K.field(back, "headline") && K.val(back, "headline") === "Learning the kit");
+  check("an UNRESOLVED field does NOT read (L41)", K.field(back, "degree") === null, "guessed: " + (K.raw(back, "degree") || {}).value);
+  check("a missing field reads null", K.field(back, "phone") === null);
+
+  /* ---- 3 · import: every shape a record can arrive in --------------------- */
+  var one = JSON.stringify({ v: "intake/1", id: "x", name: "One Only", fields: [{ k: "headline", label: "Headline", value: "single object" }] });
+  var many = JSON.stringify([{ id: "a", name: "A" }, { id: "b", name: "B" }]);
+  var map = JSON.stringify({ quan: { name: "Quan", fields: [] }, quang: { name: "Quang", fields: [] } });
+  var wrap = JSON.stringify({ records: [{ id: "w", name: "Wrapped" }] });
+  var n1 = K.normalize(one), n2 = K.normalize(many), n3 = K.normalize(map), n4 = K.normalize(wrap);
+  check("normalize() reads ONE record", n1.records && n1.records.length === 1);
+  check("normalize() reads an ARRAY (the station's export all)", n2.records && n2.records.length === 2);
+  check("normalize() reads a NAME→RECORD map", n3.records && n3.records.length === 2, (n3.records || []).map(function (r) { return r.id; }).join(","));
+  check("normalize() reads {records:[…]}", n4.records && n4.records.length === 1);
+  check("normalize() refuses junk with a reason", !!(K.normalize("not json").err) && !!(K.normalize("{}").err));
+  var imp = await K.importText(many);
+  check("importText() writes what it read", imp.added === 2 && (await K.ids()).length >= 3, "added " + imp.added);
+  var imp2 = await K.importText(many);
+  check("importText() MERGES rather than duplicating", imp2.replaced === 2 && imp2.added === 0);
+
+  /* ---- 4 · the kit's own helpers ----------------------------------------- */
+  check("lines() splits on newline, · and |", K.lines("a\nb \u00b7 c | d").length === 4);
+  check("esc() escapes html", K.esc('<img src=x onerror=1>').indexOf("<") === -1);
+  check("slug() makes a safe id", K.slug("Quang Nguy\u1ec5n!!") === "quang-nguy-n", K.slug("Quang Nguy\u1ec5n!!"));
+  var sheet = K.printSheet("T", "<header><h1>x</h1></header><footer>y</footer>");
+  check("printSheet() is a standalone A4 document", sheet.indexOf("@page{size:A4") > 0 && sheet.indexOf("<!doctype html>") === 0);
+
+  /* ---- 5 · the shell — the furniture every role shares -------------------- */
+  var sh = K.shell({
+    name: "THE HARNESS", what: "the kit's own test — not a role",
+    panel: function (r, h) {
+      return K.card("a card", K.row("name", K.esc(r.name))
+        + K.row("spelling", K.esc(r.spelling))
+        + K.row("headline", K.esc(K.val(r, "headline")))
+        + K.row("degree", K.field(r, "degree") ? K.esc(K.val(r, "degree")) : K.blankRule("not supplied \u2014 and a guessed one would not print either"))
+        + K.row("chips", K.chip("STATED", "var(--ok)") + " " + K.chip("UNRESOLVED", "var(--bad)")),
+        "the footer")
+        + K.card("the records on file", K.ul(["the picker above lists them, and one can be imported from the station", "?student=&lt;name&gt; opens straight onto a record \u2014 the family's deep link"]))
+        + K.card("the checks", results.map(function (r) {
+            return '<div class="ok-check"><span style="color:' + (r.ok ? "var(--ok)" : "var(--bad)") + '">' + (r.ok ? "\u2713" : "\u2717") + "</span>"
+              + "<span>" + K.esc(r.name) + (r.detail ? ' <span class="ok-mono" style="color:var(--muted)">' + K.esc(r.detail) + "</span>" : "") + "</span></div>";
+          }).join("") + K.note(results.filter(function (r) { return !r.ok; }).length ? "SOME CHECKS FAILED" : "ALL PASS"),
+          results.length + " check(s)");
+    }
+  });
+  check("shell() mounted the header + the picker", !!document.getElementById("okWho") && !!document.getElementById("okPanel"));
+  await sh.refresh(id);
+  await sh.helpers.load(id);
+
+  var failed = results.filter(function (r) { return !r.ok; });
+  window.__kitHarness = { results: results, failed: failed.length, pass: results.length - failed.length };
+  out.textContent = (failed.length ? "FAIL " : "PASS ") + (results.length - failed.length) + "/" + results.length;
+})();
+</script>
+</html>

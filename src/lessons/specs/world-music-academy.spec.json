@@ -1,0 +1,99 @@
+{
+  "topic": "Look 4 · Unit 2: Move to the Music! — Lesson 5 (Song) & Lesson 7 (Video) · SB 22, 24 · WB 19 · Grade 4 (periods 8–9)",
+  "title": "World Music Academy",
+  "logo": "🎻",
+  "subtitle": "Play it loudly, play it softly — but never play it wrong 🎶",
+  "cta": "🚀 Start the Concert",
+  "features": [
+    { "icon": "🎵", "title": "A Song You Can Sing", "desc": "Adverbs are hiding in the lyrics. Find them once and the rule is yours." },
+    { "icon": "📺", "title": "A Video, Six Countries", "desc": "Vietnam to India — six instruments, and how each one is actually played." },
+    { "icon": "🎮", "title": "Three Games", "desc": "Scramble the words, match country to instrument, sort adverb from adjective." },
+    { "icon": "🔑", "title": "One Rule That Lasts", "desc": "adjective + ly = adverb. It answers one question: how? Play it and keep it." }
+  ],
+  "coins": { "start": 0, "correct": 10, "wrong": 0 },
+  "method": {
+    "structure": "10-5-5-3",
+    "phase": "Vocab → Game → Review (the lesson is the clickable core of the unit-2 session)",
+    "games": [
+      { "name": "Word Scramble", "type": "competition", "why": "production under a clock — the hint is the meaning, so the word is retrieved, not copied" },
+      { "name": "Country & Instrument Match", "type": "collaboration", "why": "paired recall — country and instrument are stored as one chunk, which is how the video teaches them" },
+      { "name": "Adverb or Adjective Sort", "type": "creation", "why": "metacognitive sorting — the learner has to name the question each word answers, which is the rule itself" }
+    ],
+    "voice": ["Say it LOUD. Say it WRONG. But SAY IT.", "The word a student learns while winning a game will still be in their mouth ten years from now."]
+  },
+  "storyline": "Linh and Nam talk after the school concert, then in the group chat about the instruments from the Unit 2 video. The lesson runs in two periods: the song first, the video second, with the games and the test closing it.",
+  "rooms": [
+    {
+      "graphic": "🏠",
+      "title": "The Entrance",
+      "label": "Warm-Up",
+      "content": "<p>Two periods, one concert 🎶 Period 8 is the <strong>song</strong>; period 9 is the <strong>video</strong>. By the end you can say <strong>how</strong> something is done — and you will know six instruments by the country they come from.</p><ul><li>Eight words: four adverbs and four music words</li><li>The rule that turns <em>loud</em> into <em>loudly</em></li><li>A song you sing and a video you watch — with the adverbs hiding inside them</li><li>Six countries, six traditional instruments, and one adverb you will act out</li></ul>"
+    },
+    {
+      "graphic": "🖥️",
+      "title": "The School Concert",
+      "label": "Scene",
+      "content": "<div class=\"dialogue-block\"><span class=\"speaker\">Linh:</span> Did you hear Mai play the violin last night? She played so beautifully 🎻</div><div class=\"dialogue-block\"><span class=\"speaker\">Nam:</span> I did! And the drums behind her — Tuan banged them loudly. I could feel it in my chair.</div><div class=\"dialogue-block\"><span class=\"speaker\">Linh:</span> He was supposed to play softly in the second part. He didn't.</div><div class=\"dialogue-block\"><span class=\"speaker\">Nam:</span> He was too excited. He hit the drums with one stick and then he dropped it 😄</div><div class=\"dialogue-block\"><span class=\"speaker\">Linh:</span> Nobody minded. Everybody clapped quickly — like they wanted more.</div><div class=\"chatty-clue\">🤔 Reality check: <em>beautifully</em>, <em>loudly</em>, <em>softly</em>, <em>quickly</em> — none of them name a thing. They all answer one question: <strong>how</strong> did it happen?</div>"
+    },
+    {
+      "graphic": "📱",
+      "title": "The Group Chat",
+      "label": "Text Scene",
+      "content": "<div class=\"dialogue-block\"><span class=\"speaker\">Nam:</span> guys the video in class today — that long wooden pipe 🙄</div><div class=\"dialogue-block\"><span class=\"speaker\">Linh:</span> the didgeridoo! Australia. You play it with your lips, not your hands 😏</div><div class=\"dialogue-block\"><span class=\"speaker\">Nam:</span> and Scotland has the bagpipes. They play them LOUDLY at parades 🎺</div><div class=\"dialogue-block\"><span class=\"speaker\">Linh:</span> Vietnam has the đàn bầu — one string, and you bend the note softly until it sings 🪕</div><div class=\"dialogue-block\"><span class=\"speaker\">Nam:</span> our teacher played one chord on the piano and the whole class went quiet 😅</div><div class=\"chatty-clue\">🤔 Reality check: every country has an instrument that sounds like home. Learning the country <em>and</em> the instrument together is how you remember both.</div><div class=\"chatty-hint\"><strong>Pro Tip:</strong> adjective + <em>-ly</em> = adverb. loud → loudly · soft → softly · beautiful → beautifully · quick → quickly. It tells you <strong>how</strong> someone does something: <em>She plays the guitar beautifully.</em></div>"
+    },
+    {
+      "graphic": "📚",
+      "title": "The Words",
+      "label": "Learn",
+      "content": "<div class=\"vocab-list\"><div class=\"vocab-item\"><strong>1. quickly:</strong> <span>fast, with speed — She played the fast part quickly.</span></div><div class=\"vocab-item\"><strong>2. softly:</strong> <span>with very little sound — He hummed softly so nobody heard.</span></div><div class=\"vocab-item\"><strong>3. loudly:</strong> <span>with a lot of sound — They played the bagpipes loudly.</span></div><div class=\"vocab-item\"><strong>4. beautifully:</strong> <span>in a lovely way — Mai played the violin beautifully.</span></div><div class=\"vocab-item\"><strong>5. chord:</strong> <span>two or more notes played together, at the same time.</span></div><div class=\"vocab-item\"><strong>6. stick:</strong> <span>the thin wooden thing a drummer hits the drums with — a drumstick.</span></div><div class=\"vocab-item\"><strong>7. traditional:</strong> <span>belonging to a country's old culture, handed down for years — a traditional instrument.</span></div><div class=\"vocab-item\"><strong>8. popular:</strong> <span>liked by a lot of people — pop music is short for popular music.</span></div></div><div class=\"chatty-hint\"><strong>The rule in one line:</strong> adjective + ly = adverb. loud → loudly. And the adverb answers <strong>HOW?</strong> — <em>Tuan banged the drums loudly.</em> Not <em>loud</em>. Never <em>loud</em>.</div>"
+    },
+    {
+      "graphic": "🎵",
+      "title": "The Song — How Do You Play It?",
+      "label": "Song",
+      "content": "<div class=\"chatty-hint\"><strong>How to use this room:</strong> read the chant out loud with a clap on the strong beat — it is built so the adverb lands on the beat. Sing it twice: once for the words, once to hunt the adverbs.</div><div class=\"reading\"><p><strong>🎵 How Do You Play It?</strong> <em>(a class chant — clap on the strong beat)</em></p><p>I play the drums — I play them <strong>loudly</strong>.<br>I play the flute — I play it <strong>softly</strong>.<br>I play the violin — <strong>beautifully</strong>.<br>How do you play it? Tell me how!</p><p>The sitar sings so <strong>softly</strong>,<br>the bagpipes call so <strong>loudly</strong>,<br>the castanets go click-click <strong>quickly</strong> —<br>how do you play it? Tell me how!</p><p>One <strong>chord</strong>, then two, then three,<br>one <strong>stick</strong> for the drum and me.<br>Is it <strong>traditional</strong>? Is it <strong>popular</strong>?<br>Play it once and you will see.</p></div><div class=\"chatty-choices\" data-correct-feedback=\"🎉 Yes — loudly tells you HOW he plays them. Drums is the thing, play is the action, and only loudly answers how.\" data-wrong-feedback=\"❌ Not quite — ask the question. WHAT does he play, or HOW does he play it? The word that answers how is the adverb.\"><div><strong>Lyric hunt:</strong> in the first verse, which word tells you HOW the drums are played?</div><button data-answer=\"wrong\">drums</button><button data-answer=\"correct\">loudly</button><button data-answer=\"wrong\">play</button></div><div class=\"chatty-choices\" data-correct-feedback=\"🎉 Exactly — quickly is an adverb. It tells you how the castanets go.\" data-wrong-feedback=\"❌ Remember the two questions. A noun names a thing. A country tells you where. An adverb tells you HOW — and quickly answers how.\"><div><strong>Lyric hunt:</strong> the chant says the castanets go click-click quickly. What kind of word is quickly?</div><button data-answer=\"correct\">an adverb — it tells you how</button><button data-answer=\"wrong\">a noun — it names a thing</button><button data-answer=\"wrong\">a country — it tells you where</button></div><div class=\"chatty-clue\">🤔 Reality check: every verse hides its adverb, and every adverb answers the same question — <strong>HOW?</strong> Take the adverbs out and you still know <em>what</em> happens, but not <em>how</em> it happened.</div><div class=\"chatty-hint\"><strong>Act it out:</strong> pick one adverb from the chant and mime it for your partner — bang, hum, or click. They have to say it back in a full sentence: “You played it <em>loudly</em>.”</div><div class=\"chatty-feedback empty\" aria-live=\"polite\"></div>"
+    },
+    {
+      "graphic": "📺",
+      "title": "The Video — Around the World in Six Instruments",
+      "label": "Video",
+      "content": "<div class=\"chatty-hint\"><strong>Watch for:</strong> the video names six countries and one instrument each — and it always says <em>how</em> the instrument is played. Read the transcript once for the countries, then again for the adverbs.</div><div class=\"reading\"><p><strong>📺 Around the World in Six Instruments</strong> <em>(video transcript)</em></p><p>Every country keeps one instrument that sounds like home.</p><p>In <strong>Vietnam</strong>, the <strong>đàn bầu</strong> has one string and a thin bamboo stick. The player bends the note <em>softly</em> until it sings.</p><p>In <strong>Scotland</strong>, the <strong>bagpipes</strong> are played <em>loudly</em> at parades. You hear them before you see them.</p><p>In <strong>Australia</strong>, the <strong>didgeridoo</strong> is a long wooden pipe. You play it with your lips, and it sounds like the wind.</p><p>In <strong>Japan</strong>, the <strong>taiko drums</strong> are hit <em>hard</em> with big sticks. In <strong>Spain</strong>, dancers click <strong>castanets</strong> <em>quickly</em> in their hands. In <strong>India</strong>, the <strong>sitar</strong> has many strings and a soft, bright sound.</p><p>Some of these are <strong>traditional</strong> instruments — they belong to an old culture and have been handed down for years. Others, like the guitar, are <strong>popular</strong> all over the world today.</p></div><div class=\"chatty-choices\" data-correct-feedback=\"🎉 The bagpipes — Scotland, played loudly at parades.\" data-wrong-feedback=\"❌ Find the word parade in the transcript. Which country is that line about?\"><div><strong>Circle the correct answer:</strong> according to the video, which instrument is played loudly at parades?</div><button data-answer=\"wrong\">the đàn bầu</button><button data-answer=\"correct\">the bagpipes</button><button data-answer=\"wrong\">the sitar</button></div><div class=\"chatty-choices\" data-correct-feedback=\"🎉 The sitar has many strings and a soft, bright sound — the video says so directly.\" data-wrong-feedback=\"❌ Read the last line of the transcript again. Loud and hard goes with the taiko drums; long and wooden goes with the didgeridoo.\"><div><strong>Circle the correct answer:</strong> the sitar comes from India. How does the video describe its sound?</div><button data-answer=\"correct\">soft and bright</button><button data-answer=\"wrong\">loud and hard</button><button data-answer=\"wrong\">long and wooden</button></div><div class=\"chatty-clue\">🤔 Reality check: swap the adverbs round and the video breaks — nobody plays the bagpipes <em>softly</em> at a parade. The adverb is not decoration; it carries the meaning.</div><div class=\"chatty-feedback empty\" aria-live=\"polite\"></div>"
+    },
+    {
+      "graphic": "🧩",
+      "title": "The Definitions — From Memory",
+      "label": "Definitions",
+      "content": "<div class=\"chatty-hint\"><strong>No looking back:</strong> the transcript is behind you. Answer from memory — that is the whole point of this room. If you miss, you are allowed to walk back one room and read it again.</div><div class=\"chatty-choices\" data-correct-feedback=\"🎉 Yes — the stick is the thin wooden thing a drummer hits the drums with.\" data-wrong-feedback=\"❌ Ask what the thing does. Only one of these is something a drummer hits.\"><div><strong>Complete the definition:</strong> a _____ is the thin wooden thing a drummer hits the drums with.</div><button data-answer=\"wrong\">chord</button><button data-answer=\"correct\">stick</button><button data-answer=\"wrong\">sitar</button></div><div class=\"chatty-choices\" data-correct-feedback=\"🎉 Chord — two or more notes played together, at the same time.\" data-wrong-feedback=\"❌ A chord is not a thing you hit. It is what you hear when notes are played together.\"><div><strong>Complete the definition:</strong> two or more notes played together, at the same time, make a _____.</div><button data-answer=\"correct\">chord</button><button data-answer=\"wrong\">stick</button><button data-answer=\"wrong\">parade</button></div><div class=\"chatty-hint\"><strong>Now say it your way:</strong> give your partner a definition of <em>traditional</em> and <em>popular</em> without using the words. If they guess both, you have the vocabulary.</div><div class=\"chatty-feedback empty\" aria-live=\"polite\"></div>"
+    },
+    {
+      "graphic": "🔤",
+      "title": "Game 1 — Word Scramble",
+      "label": "Game 1",
+      "content": "<p>How to win: the hint under each row is the meaning — read it, then click the tiles in order. A wrong word shakes and clears itself, so nothing is lost.</p><div class=\"game\" data-game=\"scramble\" data-title=\"🔤 Word Scramble\" data-items=\"quickly=fast, with speed — how you do something;softly=with very little sound;loudly=with a lot of sound;beautifully=in a lovely way;chord=two or more notes played together;stick=the thin wooden thing a drummer hits the drums with;traditional=belonging to a country's old culture;popular=liked by a lot of people\"></div>"
+    },
+    {
+      "graphic": "🔗",
+      "title": "Game 2 — Country & Instrument",
+      "label": "Game 2",
+      "content": "<p>How to win: click a country on the left, then its instrument on the right. Six pairs. Wrong pairs shake and let go — guess boldly.</p><div class=\"game\" data-game=\"match\" data-title=\"🔗 Country &amp; Instrument\" data-items=\"Vietnam=the đàn bầu, a one-string zither;Scotland=the bagpipes, played at parades;Australia=the didgeridoo, a long wooden pipe;Japan=the taiko drums, hit with big sticks;Spain=castanets, clicked in the dancer's hands;India=the sitar, many strings, a soft bright sound\"></div>"
+    },
+    {
+      "graphic": "📦",
+      "title": "Game 3 — Adverb or Adjective?",
+      "label": "Game 3",
+      "content": "<p>How to win: click a word, then the group it belongs to. Remember the two questions — HOW? is the adverb, WHAT KIND? is the adjective.</p><div class=\"game\" data-game=\"sort\" data-title=\"📦 Adverb or Adjective?\" data-groups=\"ADVERB — it says HOW: quickly, softly, loudly, beautifully | ADJECTIVE — it says WHAT KIND: loud, soft, beautiful, popular\"></div>"
+    },
+    {
+      "graphic": "🎯",
+      "title": "The Test",
+      "label": "Test",
+      "content": "<div class=\"chatty-choices\" data-correct-feedback=\"🎉 Yes — beautifully. It tells us HOW she played.\" data-wrong-feedback=\"❌ The gap comes after the verb played, so it answers HOW. That is the adverb, and it ends in -ly.\"><div><strong>Scenario:</strong> Mai played the violin _____. Everybody stopped to listen.</div><button data-answer=\"wrong\">beautiful</button><button data-answer=\"correct\">beautifully</button><button data-answer=\"wrong\">beauty</button></div><div class=\"chatty-choices\" data-correct-feedback=\"🎉 Scotland — the bagpipes are played loudly at parades.\" data-wrong-feedback=\"❌ Match the instrument to its country first. Which country in Unit 2 goes with parades and bagpipes?\"><div><strong>Scenario:</strong> You hear the music loudly before you see the band. There are parades and bagpipes. Where are you?</div><button data-answer=\"wrong\">in Vietnam</button><button data-answer=\"correct\">in Scotland</button><button data-answer=\"wrong\">in India</button></div><div class=\"chatty-choices\" data-correct-feedback=\"🎉 Loudly — the adverb, and it tells you how he banged them.\" data-wrong-feedback=\"❌ You are looking for the word that answers HOW. Chord and stick are things, not adverbs — find the word ending in -ly.\"><div><strong>Scenario:</strong> “Tuan banged the drums loudly.” Which word tells you HOW he banged them?</div><button data-answer=\"wrong\">chord</button><button data-answer=\"wrong\">stick</button><button data-answer=\"correct\">loudly</button></div><div class=\"chatty-feedback empty\" aria-live=\"polite\"></div>"
+    },
+    {
+      "graphic": "🔑",
+      "title": "The Key",
+      "label": "Mastery",
+      "content": "<div class=\"summary-card\"><strong>🎓 You now hold the key</strong><ul><li><strong>adjective + ly = adverb:</strong> loud → loudly · soft → softly · beautiful → beautifully · quick → quickly.</li><li><strong>Adverbs say HOW:</strong> <em>Tuan banged the drums loudly.</em> He should have played <em>softly</em>.</li><li><strong>Six countries, six instruments:</strong> Vietnam – đàn bầu · Scotland – bagpipes · Australia – didgeridoo · Japan – taiko drums · Spain – castanets · India – sitar.</li><li><strong>Music words:</strong> chord (notes played together) · stick (a drumstick) · traditional (old, handed down) · popular (liked by many).</li><li><strong>Read for the adverb:</strong> the song and the video both say <em>how</em>, not just <em>what</em> — swap the adverbs and the meaning breaks.</li></ul></div><div class=\"chatty-hint\"><strong>Level Up:</strong> tonight, play or hear one piece of music and say two sentences about it out loud — what the instrument is, and how it is played. Then ask your partner about theirs: “How do you play it?” That is the pair discussion, done for real.</div><div class=\"chatty-hint\"><strong>Write it down (WB page 19):</strong> two sentences about an instrument you know — what it is, and how it is played. Use one adverb from the song.<textarea class=\"write-task\" id=\"music-write\" placeholder=\"My favourite instrument is the _____. You play it _____.\"></textarea></div>"
+    }
+  ]
+}

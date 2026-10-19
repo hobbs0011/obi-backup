@@ -1,0 +1,15 @@
+$meta
+  title = PaiS-HQ-Command — Apex Delegation Hub
+  description = PaiS-HQ-Command — the apex station and central pipeline-delegation hub, Agent 99 on duty of Phoenix AI Solutions (ESL.ED.TECH), answering to the Sovereign alone. One mastermind of many under the PaiS umbrella (PaiS Gaming and PaiS Promote scaffold next). Three faces: ⌘ Command Station (the magic chat — speak, and the empire listens), ◈ Phoenix Generators (PaiS's divisions, with the 👤 Student Evaluator desk under NET — Natural English Training — and Lesson Creator next), and ⚙ Settings (voice, the shelf, the ledger, the instruments, /auto). Recording a class? Drop the lesson video or audio and get a verbatim transcript — any length, split into parts at pauses and stitched back into one timeline — then write it up: class writeups and per-student reviews, built only from the filed evidence with verbatim quotes and timestamps. Every sovereign word is Soul DNA (captured verbatim, SDNAD), and commands route through Agent 99 to the Legion over a free always-on command tunnel (perchance server-plugin — a durable queue, no card, no external worker). Chat, vision, image gen, web lookup, voice dictation, transcription, and the Connected Generator Network (CGN). And the station can read and rewrite its own source — /forge, the self-forge, gated by PHOENIXOMEGAPROTOCOL. The whole realm wears one identity at /brand — the palette, 93 drawn icons, 30 marks cut from the sovereign's own decks, and GOSPEL 444, the tiger protocol itself.
+  tags = command station, ai, chat, assistant, teacher, class, writeup, review, transcription, summary, study, memory, sdnad, legion, phoenixcommand, pais, phoenix-ai-solutions, vision, image, tts, self-forge, self-editing, agent-99, delegation-hub
+  image = https://user.uploads.dev/file/c3d1e12a37ccb1bf4e4330fd721722ae.jpg
+  header
+    mode = minimal
+
+generateText = {import:ai-text-plugin}
+generateImage = {import:text-to-image-plugin}
+superFetch = {import:super-fetch-plugin}
+uploadPlugin = {import:upload-plugin}
+createServerSocket = {import:server-plugin}
+kv = {import:kv-plugin}
+secretPlugin = {import:secret-plugin}

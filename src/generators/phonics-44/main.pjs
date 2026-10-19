@@ -1,0 +1,8 @@
+$meta
+  title = THE 44 — a PrAis role
+  description = One function of the NET intake, as its own generator: the 44 sounds of English as a SPEAKING test, marked by hand from a recording, drilled ten minutes a day. Print the mark sheet, sit the set again in a week. No automatic scoring. PrAis · NET.
+  tags = prais, net, intake, phonics, phonemes, pronunciation, student, education, role
+  header
+    mode = minimal
+
+kv = {import:kv-plugin}
